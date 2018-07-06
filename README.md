@@ -15,7 +15,7 @@ NKDACS网站开发说明
 2. 在项目组页面下，点击项目`NKDACS-Website`，点击右上角的`Fork`按钮，这一步会把项目组的项目拷贝到自己账号下面
 
 ### 将项目Clone到本地计算机
-1. 进入你自己账户下的`NKDACS-Website`（https://github.com/你的用户名/NKDACS-Website），点击一下`Clone or download`，再点击下面那个链接右边的复制按钮(在鼠标指着的位置，或者直接复制那串地址也可)
+1. 进入你自己账户下的`NKDACS-Website`(`https://github.com/你的用户名/NKDACS-Website`)，点击一下`Clone or download`，再点击下面那个链接右边的复制按钮(在鼠标指着的位置，或者直接复制那串地址也可)
 2. 在终端输入命令`git clone 复制的链接地址`(例如 `git clone https://github.com/你的用户名/NKDACS-Website.git`)
 3. 此时发现，已经自动拷贝了一个文件夹在你当前目录下，这个文件夹就是当前已有的项目文件(可能网络速度有点慢，请耐心等待clone完成，或者有能力的话请“翻墙”使用github)
 
