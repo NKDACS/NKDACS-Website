@@ -7,7 +7,7 @@
 
 用户名:nkdacs
 
-密码:demo
+密码:test
 
 # 基于以下框架
 - [Python](http://python.org/)
