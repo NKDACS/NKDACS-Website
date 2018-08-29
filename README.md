@@ -10,10 +10,9 @@ NKDACS-Website的全部内容均已开源，欢迎各位向本Repo贡献代码�
 
 ## 基于以下工具
 
-!!! note ""
-    * MkDocs：**快速，简单，美观**的静态站点生成器
-    * Markdown：**简洁，强大**的轻量级标记语言
-    * MathJax：一个跨浏览器的JavaScript库，用于支持$\LaTeX$
+* MkDocs：**快速，简单，美观**的静态站点生成器
+* Markdown：**简洁，强大**的轻量级标记语言
+* MathJax：一个跨浏览器的JavaScript库，用于支持$\LaTeX$
 
 ## 网站特点
 
