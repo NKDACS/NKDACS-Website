@@ -1,0 +1,97 @@
+# Project Information
+site_name: NKDACS
+site_description: NKDACS 是一个南开大学统计与数据科学学院属下的科研组织，向学界及社会各界提供统计咨询服务。
+site_author: NKDACS IT Team
+site_url: https://nkdacs.org
+strict: true
+
+# Repository
+repo_name: 'NKDACS/NKDACS-Website'
+repo_url: 'https://github.com/NKDACS/NKDACS-Website'
+edit_uri: ''
+
+# Copyright
+copyright: 'Copyright &copy; 2017 - 2018 NKDACS'
+
+# Contents
+nav:
+  - 主页: index.md
+  - 知识分享:
+    - 基于CUDA的FFT加速算法: share/cuda-fft.md
+    - 2017-2018第一学期数理方程期末考试: share/PDE-final.md
+  - 教程:
+    - Markdown测试页面: tutorial/test.md
+    - Pytorch安装教程: tutorial/pytorch-install.md
+  - 项目发布:
+    - 南开大学教务助手微信小程序: projects/eamis-miniapp.md
+  - 关于我们:
+    - 团队介绍: about/intro.md
+    - 组织架构: about/structure.md
+  - 其他:
+    - 知识共享协议: others/cc.md
+    - 更换站点颜色: others/color.md
+
+
+# Theme
+theme:
+  name: null
+  custom_dir: 'mkdocs-material/material'
+  static_templates:
+    - 404.html
+  language: 'zh'
+  palette:
+    primary: 'blue grey'
+    accent: 'light blue'
+
+  include_search_page: false
+  search_index_only: true
+
+  logo:
+    icon: 'school'
+  feature:
+    tabs: true
+  font:
+    text: 'Fira Sans'
+    code: 'Fira Mono'
+
+# Customization
+extra:
+  search:
+    language: 'jp'
+  #disqus: ''
+  copyright: '<a href=https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh>CC BY-NC-ND 4.0</a>'
+  #pagetime: 'on'
+
+extra_javascript:
+  - '_static/js/extra.js?v=1'
+  - 'https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'
+
+extra_css:
+  - '_static/css/extra.css?v=1'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
