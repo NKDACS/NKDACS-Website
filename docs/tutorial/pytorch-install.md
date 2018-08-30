@@ -15,4 +15,4 @@
 
 根据如下图所示的提升，点选相关信息后，按给出的命令进行安装
 
-![Pytorch](../_static/img/tutorial/pytorch-install/pytorch.png)
+![Pytorch](/img/tutorial/pytorch-install/pytorch.png)

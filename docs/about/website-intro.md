@@ -6,7 +6,7 @@ NKDACS-Website的全部内容均已开源，欢迎各位向本Repo贡献代码�
 
 ## 网站结构
 
-此站点为静态站点，通过MkDocs对Markdown文件进行渲染生成html文件，托管于Github Pages以供访问。
+此站点为静态站点，通过MkDocs对Markdown文件进行渲染生成静态的html文件，直接用于访问。
 
 ## 基于以下工具
 
