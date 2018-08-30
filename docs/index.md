@@ -3,7 +3,7 @@ title: NKDACS
 # 欢迎来到 **NKDACS**
 
 **南开统计咨询** （NKDACS）是**南开大学统计与数据科学学院**属下的科研组织，向学界及社会各界提供统计咨询服务。
-<div align="center"><img  src="_static/img/nkdacs.png" style="height:96px;"/></div>
+<div align="center"><img  src="/img/nkdacs.png" style="height:96px;"/></div>
 
 **NKDACS** 建立此网站，旨在构建一个免费开放的知识整合站点，提供全面的统计学/数据分析/人工智能的知识分享，同时也会作为NKDACS的统计咨询发布平台。
 
