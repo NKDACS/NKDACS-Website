@@ -10,10 +10,9 @@ NKDACS-Website的全部内容均已开源，欢迎各位向本Repo贡献代码�
 
 ## 基于以下工具
 
-!!! note ""
-    * MkDocs：**快速，简单，美观**的静态站点生成器
-    * Markdown：**简洁，强大**的轻量级标记语言
-    * MathJax：一个跨浏览器的JavaScript库，用于支持$\LaTeX$
+* MkDocs：**快速，简单，美观**的静态站点生成器
+* Markdown：**简洁，强大**的轻量级标记语言
+* MathJax：一个跨浏览器的JavaScript库，用于支持$\LaTeX$
 
 ## 网站特点
 
@@ -32,4 +31,16 @@ NKDACS-Website的全部内容均已开源，欢迎各位向本Repo贡献代码�
 
 我们已将网站的全部文章的Markdown源码开源于此[Repo](https://github.com/NKDACS/NKDACS-Website)的docs文件夹内，而网站的所有页面均直接基于这些Markdown文件进行渲染生成，因此，您只需要修改相应的文件然后提交Pull Request，我们会根据采用情况进行Merge，或者您也可以针对具体的情况在[Repo](https://github.com/NKDACS/NKDACS-Website)内提出Issues，我们会做出相应的回应。
 
-**具体的操作指导将会补充在此处。**
+## 具体如何参与公共编辑？
+
+### 如何修改已有文章
+
+在每篇文章的右上角，点击笔形状的编辑按钮，登录Github账号后，将能直接对Markdown源码进行编辑。
+
+编辑完成后，请点击最下方的绿色按钮，最后确认提交，你也可以在下方的方框中补充说明一下修改理由，我们收到后会根据采用情况来决定是否Merge。
+
+### 如何投稿
+
+如果想要向我们投稿，请进入Github页面内的[docs](https://github.com/NKDACS/NKDACS-Website/tree/master/docs)文件夹，选择一个你想投稿的目录对应的文件夹，进入文件夹后，点击右上角的"Create new file"，随后便能开始撰写你的内容，最后同上面的操作步骤一样，发起Pull Request后，将由我们决定是否采用。
+
+**注意：请务必在文章中署名，若您是授权将您个人网站中的文章转载在本站，也请一并在文中附上原文地址。当您发起投稿后，将意味着同意本站所使用的"[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh)"知识共享协议，投稿前请先阅读协议条款，确定您是否接受这一协议。同时，您随时可以向我们申请撤销刊登文章的授权，只需要在Repo中申请删除对应文件的Pull Request即可。**
