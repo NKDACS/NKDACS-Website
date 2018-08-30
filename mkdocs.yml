@@ -8,7 +8,7 @@ strict: true
 # Repository
 repo_name: 'NKDACS/NKDACS-Website'
 repo_url: 'https://github.com/NKDACS/NKDACS-Website'
-edit_uri: ''
+edit_uri: 'edit/master/docs/'
 
 # Copyright
 copyright: 'Copyright &copy; 2017 - 2018 NKDACS'
