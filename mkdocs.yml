@@ -16,6 +16,8 @@ copyright: 'Copyright &copy; 2017 - 2018 NKDACS'
 # Contents
 nav:
   - 主页: index.md
+  - 统计咨询:
+    - 咨询案例: consulting/case.md
   - 知识分享:
     - 基于CUDA的FFT加速算法: share/cuda-fft.md
     - 2017-2018第一学期数理方程期末考试: share/PDE-final.md
