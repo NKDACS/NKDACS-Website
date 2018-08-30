@@ -10,44 +10,18 @@
 {% if not page.is_homepage and disqus %}
 {% set pageID = page.title | default("404", true) %}
 <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
-<div id="gitment_container">
-    <link rel="stylesheet" href="https://24oi.cf/gitment.css">
-    <script src="https://24oi.cf/gitment.js"></script>
-    <script>
-      const myTheme = {
-        render(state, instance) {
-          const container = document.createElement('div')
-          container.lang = "zh-CN"
-          container.className = 'gitment-container gitment-root-container'
-          const divv = document.createElement('form')
-          // container.appendChild(instance.renderSomething(state, instance))
-          container.appendChild(instance.renderHeader(state, instance))
-          divv.appendChild(instance.renderEditor(state, instance))
-          container.appendChild(divv)
-          container.appendChild(instance.renderComments(state, instance))
-          container.appendChild(instance.renderFooter(state, instance))
-          return container
-        },
-        renderSomething(state, instance) {
-          const container = document.createElement('div')
-          container.lang = "zh-CN"
-          if (state.user.login) {
-            container.innerText = `Hello, ${state.user.login}, 来说点什么吧？`
-          }
-          return container
-        }
-      }
-      const gitment = new Gitment({
-        id: '{{ page.title | default("404", true)  }}',
-        theme: myTheme,
-        owner: 'Ir1d',
-        repo: 'gitment',
-        oauth: {
-          client_id: 'd6a911c8fba0194626d4',
-          client_secret: '867ec7e13cc99b420bd147cbb62d5cfec271ba81',
-        },
-      })
-      gitment.render('gitment_container')
-    </script>
-</div>
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = "{{ page.canonical_url }}";
+    this.page.identifier =
+      "{{ page.canonical_url | replace(config.site_url, "") }}";
+  };
+  (function() {
+    var d = document, s = d.createElement("script");
+    s.src = "//{{ disqus }}.disqus.com/embed.js";
+    s.setAttribute("data-timestamp", +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
 {% endif %}
