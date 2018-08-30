@@ -2,7 +2,7 @@
 site_name: NKDACS
 site_description: NKDACS 是一个南开大学统计与数据科学学院属下的科研组织，向学界及社会各界提供统计咨询服务。
 site_author: NKDACS IT Team
-site_url: https://nkdacs.oncemath.com
+site_url: https://www.nkdacs.com
 strict: true
 
 # Repository
