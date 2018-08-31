@@ -57,9 +57,9 @@ theme:
     text: 'Fira Sans'
     code: 'Fira Mono'
 
-google_analytics:
-  - 'UA-124909690-1'
-  - 'auto'
+# google_analytics:
+#   - 'UA-124909690-1'
+#   - 'auto'
 
 # Customization
 extra:
