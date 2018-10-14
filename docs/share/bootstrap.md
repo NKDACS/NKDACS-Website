@@ -1,23 +1,16 @@
-﻿---
-title: "The Bootstrap"
-author: "李心珺 祁冠瑛"
-date: "2018年9月"
-output:
-  html_document:
-    keep_md: yes
-  word_document: default
----
+﻿# The Bootstrap
+
+!!! note ""
+    本文作者：李心珺 祁冠瑛
 
 ## Bootstrap方法源起
 
-统计推断(Statistical Inference)一直是统计学领域关注的重要话题。如何估计统计量的方差、如何估计置信区间，至始至终是学者们讨论的重要问题。在上世纪中后叶，随着计算机的发明与算力的发展，诸如Jacknife、Bootstrap这一类基于非参模拟的方法被广泛关注并得到了大量的应用。
+统计推断(Statistical Inference)一直是统计学领域关注的重要话题。而其中，如何估计统计量的方差、如何估计置信区间，至始至终是学者们讨论的重要问题。在上世纪中后叶，随着计算机的发明与算力的发展，诸如Jacknife、Bootstrap这一类基于非参模拟的方法被广泛关注并得到了大量的应用。
 
-Jackknife法最早由Quenouille[3]于1949年提出，用于对偏差项进行估计，但并没有得到学界太大关注。 1958年，Tukey[4]重新回顾了这一方法，并将其应用于对标准差的估计上。这一方法理论和计算简洁，并可以用于统计学界始终关注的标准差（方差）估计问题上，从而得到了学界的大量关注。Efron[2]受Jackknife法的启发，在1979年提出Bootstrap法。其也在后续工作中指出，Jackknife实际上可视为对Bootstrap法的线性估计。本文主要介绍Bootstrap方法的基本思想，结合例子说明Bootstrap方法的应用，并在文后简要介绍Jackknife方法。
+Jackknife法最早由Quenouille[3]于1949年提出，用于对偏差项进行估计。但在众多统计量满足渐近无偏性的情况下，将该方法用于纠偏这一课题，并没有得到学界太大关注。1958年，Tukey[4]重新回顾了这一方法，并将其应用于对标准差的估计上。这一方法理论和计算简洁，并可以用于统计学界始终关注的标准差（方差）估计问题上，从而得到了学界的大量关注。之后，Efron[2]受Jackknife法的启发，在1979年提出Bootstrap法。其也在后续工作中指出，Jackknife实际上可视为对Bootstrap法的线性估计。本文主要根据《All of Statistics》一书中第八章的内容，介绍Bootstrap方法的基本思想，结合例子说明Bootstrap方法的应用，并在文后简要介绍Jackknife方法。
 
 
 ## Bootstrap方法的基本思想
-
-
 
 ### 统计模拟思想
 
