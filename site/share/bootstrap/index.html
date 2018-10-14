@@ -1,0 +1,1727 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="NKDACS 是一个南开大学统计与数据科学学院属下的科研组织，向学界及社会各界提供统计咨询服务。">
+      
+      
+        <link rel="canonical" href="https://www.nkdacs.com/share/bootstrap/">
+      
+      
+        <meta name="author" content="李">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../..">
+      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>The Bootstrap</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts-gstatic.proxy.ustclug.org" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.proxy.ustclug.org/css?family=Fira+Sans:300,400,400i,700|Fira+Mono">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../../_static/css/extra.css?v=1">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#bootstrap" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.nkdacs.com" title="NKDACS" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                NKDACS
+              </span>
+              <span class="md-header-nav__topic">
+                The Bootstrap
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/NKDACS/NKDACS-Website/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      NKDACS/NKDACS-Website
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="主页" class="md-tabs__link">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../consulting/case/" title="统计咨询" class="md-tabs__link">
+          统计咨询
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="知识分享" class="md-tabs__link md-tabs__link--active">
+          知识分享
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../tutorial/test/" title="教程" class="md-tabs__link">
+          教程
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../projects/eamis-miniapp/" title="项目发布" class="md-tabs__link">
+          项目发布
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../about/website-intro/" title="关于" class="md-tabs__link">
+          关于
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../others/cc/" title="其他" class="md-tabs__link">
+          其他
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.nkdacs.com" title="NKDACS" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    NKDACS
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/NKDACS/NKDACS-Website/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      NKDACS/NKDACS-Website
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      统计咨询
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        统计咨询
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../consulting/case/" title="咨询案例" class="md-nav__link">
+      咨询案例
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      知识分享
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        知识分享
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="The Bootstrap" class="md-nav__link md-nav__link--active">
+      The Bootstrap
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PDE-final/" title="2017-2018第一学期数理方程期末考试" class="md-nav__link">
+      2017-2018第一学期数理方程期末考试
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      教程
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        教程
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/test/" title="Markdown测试页面" class="md-nav__link">
+      Markdown测试页面
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/pytorch-install/" title="Pytorch安装教程" class="md-nav__link">
+      Pytorch安装教程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      项目发布
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        项目发布
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../projects/eamis-miniapp/" title="南开大学教务助手微信小程序" class="md-nav__link">
+      南开大学教务助手微信小程序
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      关于
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        关于
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/website-intro/" title="网站简介" class="md-nav__link">
+      网站简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/intro/" title="团队介绍" class="md-nav__link">
+      团队介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/structure/" title="组织架构" class="md-nav__link">
+      组织架构
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      其他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        其他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../others/cc/" title="知识共享协议" class="md-nav__link">
+      知识共享协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../others/color/" title="更换站点颜色" class="md-nav__link">
+      更换站点颜色
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/NKDACS/NKDACS-Website/edit/master/docs/share/bootstrap.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h2 id="bootstrap">Bootstrap方法源起<a class="headerlink" href="#bootstrap" title="Permanent link">&para;</a></h2>
+<p>统计推断(Statistical Inference)一直是统计学领域关注的重要话题。如何估计统计量的方差、如何估计置信区间，至始至终是学者们讨论的重要问题。在上世纪中后叶，随着计算机的发明与算力的发展，诸如Jacknife、Bootstrap这一类基于非参模拟的方法被广泛关注并得到了大量的应用。</p>
+<p>Jackknife法最早由Quenouille[3]于1949年提出，用于对偏差项进行估计，但并没有得到学界太大关注。 1958年，Tukey[4]重新回顾了这一方法，并将其应用于对标准差的估计上。这一方法理论和计算简洁，并可以用于统计学界始终关注的标准差（方差）估计问题上，从而得到了学界的大量关注。Efron[2]受Jackknife法的启发，在1979年提出Bootstrap法。其也在后续工作中指出，Jackknife实际上可视为对Bootstrap法的线性估计。本文主要介绍Bootstrap方法的基本思想，结合例子说明Bootstrap方法的应用，并在文后简要介绍Jackknife方法。</p>
+<h2 id="bootstrap_1">Bootstrap方法的基本思想<a class="headerlink" href="#bootstrap_1" title="Permanent link">&para;</a></h2>
+<h3 id="_1">统计模拟思想<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><span><span class="MathJax_Preview">Y_1,Y_2,\cdots,Y_B</span><script type="math/tex">Y_1,Y_2,\cdots,Y_B</script></span> 是从分布 <span><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 中抽取的iid样本, 如果 <span><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span> 是一个使 <span><span class="MathJax_Preview">\int h(y)dG</span><script type="math/tex">\int h(y)dG</script></span> 收敛的函数, 则:</p>
+<div>
+<div class="MathJax_Preview">
+  \frac{1}{B}\sum_{j=1}^Bh(Y_j)\stackrel{ P}{\longrightarrow} \int h(y)dG=\mathbb{E}(h(Y))
+  \tag {1.1}
+</div>
+<script type="math/tex; mode=display">
+  \frac{1}{B}\sum_{j=1}^Bh(Y_j)\stackrel{ P}{\longrightarrow} \int h(y)dG=\mathbb{E}(h(Y))
+  \tag {1.1}
+</script>
+</div>
+<p>当 <span><span class="MathJax_Preview">B\rightarrow \infty</span><script type="math/tex">B\rightarrow \infty</script></span> 时. 特别的:</p>
+<div>
+<div class="MathJax_Preview">
+  \frac{1}{B}\sum_{j=1}^B (Y_j-\overline{Y})^2 =\frac{1}{B}\sum_{j=1}^B {Y_J}^2-( \frac{1}{B}\sum_{j=1}^B Y_j)^2 \stackrel{ P}{\longrightarrow} \int y^2dG - (\int ydG)^2 =\mathbb{V}(Y)
+  \tag {1.2}
+</div>
+<script type="math/tex; mode=display">
+  \frac{1}{B}\sum_{j=1}^B (Y_j-\overline{Y})^2 =\frac{1}{B}\sum_{j=1}^B {Y_J}^2-( \frac{1}{B}\sum_{j=1}^B Y_j)^2 \stackrel{ P}{\longrightarrow} \int y^2dG - (\int ydG)^2 =\mathbb{V}(Y)
+  \tag {1.2}
+</script>
+</div>
+<p>这为使用统计模拟的方法估计方差提供了一个思路.</p>
+<h3 id="bootstrap_2">Bootstrap的步骤<a class="headerlink" href="#bootstrap_2" title="Permanent link">&para;</a></h3>
+<p>Bootstrap 是一种统计模拟的方法,最早由Efron[2]在1979年提出, 可用于统计量的方差估计和估计统计量的置信区间. 以下是《All of Statistics》[1]书中对 Bootstrap 的定义:</p>
+<blockquote>
+<p>The bootstrap is a method for estimating standard errors and computing confidence intervals.</p>
+</blockquote>
+<p>Bootstrap包含两个步骤:</p>
+<blockquote>
+<p><strong>Step 1</strong>: Estimate <span><span class="MathJax_Preview">\mathbb{V}_F (T_n)</span><script type="math/tex">\mathbb{V}_F (T_n)</script></span> with <span><span class="MathJax_Preview">\mathbb{V}_{\hat{F}_n}(T_n)</span><script type="math/tex">\mathbb{V}_{\hat{F}_n}(T_n)</script></span>.
+<strong>Step 2</strong>: Approximate <span><span class="MathJax_Preview">\mathbb{V}_{\hat{F}_n}(T_n)</span><script type="math/tex">\mathbb{V}_{\hat{F}_n}(T_n)</script></span> using simulation.</p>
+</blockquote>
+<p>Step 2 常见的具体做法是: 从抽取的容量为n的样本<span><span class="MathJax_Preview">\hat{F_n}</span><script type="math/tex">\hat{F_n}</script></span>中不放回的抽取<span><span class="MathJax_Preview">X_1^*,\cdots,X_n^*</span><script type="math/tex">X_1^*,\cdots,X_n^*</script></span>, 并计算<span><span class="MathJax_Preview">T_n^*=g(X_1^*,\cdots,X_n^*)</span><script type="math/tex">T_n^*=g(X_1^*,\cdots,X_n^*)</script></span>. 通过观察<span><span class="MathJax_Preview">T_n^*</span><script type="math/tex">T_n^*</script></span>的分布, 可以估计 <span><span class="MathJax_Preview">\mathbb{V}_{\hat{F}_n}(T_n)</span><script type="math/tex">\mathbb{V}_{\hat{F}_n}(T_n)</script></span></p>
+<h2 id="bootstrap_3">用Bootstrap进行方差估计<a class="headerlink" href="#bootstrap_3" title="Permanent link">&para;</a></h2>
+<p>根据我们刚刚学习到的内容，我们可以利用随机模拟来近似<span><span class="MathJax_Preview">V_{\hat{F_{n}}}(T_{n})</span><script type="math/tex">V_{\hat{F_{n}}}(T_{n})</script></span>。<span><span class="MathJax_Preview">V_{\hat{F_{n}}}(T_{n})</span><script type="math/tex">V_{\hat{F_{n}}}(T_{n})</script></span>代表“当样本的分布为<span><span class="MathJax_Preview">\hat{F_{n}}</span><script type="math/tex">\hat{F_{n}}</script></span>时<span><span class="MathJax_Preview">T_{n}</span><script type="math/tex">T_{n}</script></span>的方差”。当我们假设样本的分布为<span><span class="MathJax_Preview">\hat{F_{n}}</span><script type="math/tex">\hat{F_{n}}</script></span>时我们如何模拟<span><span class="MathJax_Preview">T_{n}</span><script type="math/tex">T_{n}</script></span>的分布？答案是先生成服从分布<span><span class="MathJax_Preview">\hat{F_{n}}</span><script type="math/tex">\hat{F_{n}}</script></span>的样本<span><span class="MathJax_Preview">{X_{1}}^{*}</span><script type="math/tex">{X_{1}}^{*}</script></span>,...,<span><span class="MathJax_Preview">{X_{n}}^{*}</span><script type="math/tex">{X_{n}}^{*}</script></span>，然后计算<span><span class="MathJax_Preview">{T_{n}}^{*}=g({X_{1}}^{*},...,{X_{n}}^{*})</span><script type="math/tex">{T_{n}}^{*}=g({X_{1}}^{*},...,{X_{n}}^{*})</script></span>。这组成了<span><span class="MathJax_Preview">T_{n}</span><script type="math/tex">T_{n}</script></span>的分布中的一部分。这个思想可以用下面的图表来阐述：</p>
+<blockquote>
+<p>真实情况：<span><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">X_{1},...,X_{n}</span><script type="math/tex">X_{1},...,X_{n}</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">T_{n}=g(X_{1},...,X_{n})</span><script type="math/tex">T_{n}=g(X_{1},...,X_{n})</script></span></p>
+<p>在Bootstrap 下：<span><span class="MathJax_Preview">\hat{F}_{n}</span><script type="math/tex">\hat{F}_{n}</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">X^{*}_{1},...,X^{*}_{n}</span><script type="math/tex">X^{*}_{1},...,X^{*}_{n}</script></span> <span><span class="MathJax_Preview">\Rightarrow</span><script type="math/tex">\Rightarrow</script></span> <span><span class="MathJax_Preview">T^{*}_{n}=g(X^{*}_{1},...,X^{*}_{n})</span><script type="math/tex">T^{*}_{n}=g(X^{*}_{1},...,X^{*}_{n})</script></span></p>
+</blockquote>
+<p>我们如何生成服从<span><span class="MathJax_Preview">\hat{F_{n}}</span><script type="math/tex">\hat{F_{n}}</script></span>的样本<span><span class="MathJax_Preview">{X_{1}}^{*}</span><script type="math/tex">{X_{1}}^{*}</script></span>,...,<span><span class="MathJax_Preview">{X_{n}}^{*}</span><script type="math/tex">{X_{n}}^{*}</script></span>？注意到在<span><span class="MathJax_Preview">\hat{F_{n}}</span><script type="math/tex">\hat{F_{n}}</script></span>的分布中，<span><span class="MathJax_Preview">{X_{1}}</span><script type="math/tex">{X_{1}}</script></span>,...,<span><span class="MathJax_Preview">{X_{n}}</span><script type="math/tex">{X_{n}}</script></span>这样的每一个样本点概率均为1/n。所以生成样本的方法为：
+<strong>得到一个服从<span><span class="MathJax_Preview">\hat{F_{n}}</span><script type="math/tex">\hat{F_{n}}</script></span>分布的样本等价于从原始的数据集中随机抽取一个样本。</strong></p>
+<p>所以，要生成<span><span class="MathJax_Preview">{X_{1}}^{*}</span><script type="math/tex">{X_{1}}^{*}</script></span>,...,<span><span class="MathJax_Preview">{X_{n}}^{*}\sim\hat{F_{n}}</span><script type="math/tex">{X_{n}}^{*}\sim\hat{F_{n}}</script></span>，不放回地从原样本数据<span><span class="MathJax_Preview">{X_{1}}</span><script type="math/tex">{X_{1}}</script></span>,...,<span><span class="MathJax_Preview">{X_{n}}</span><script type="math/tex">{X_{n}}</script></span>中抽取n个样本就足够了。下面是整个过程的总结：</p>
+<ul>
+<li>利用Bootstrap进行<span><span class="MathJax_Preview">T_n</span><script type="math/tex">T_n</script></span>的方差估计</li>
+<li>生成<span><span class="MathJax_Preview">{X_{1}}^{*}</span><script type="math/tex">{X_{1}}^{*}</script></span>,...,<span><span class="MathJax_Preview">{X_{n}}^{*}\sim\hat{F_{n}}</span><script type="math/tex">{X_{n}}^{*}\sim\hat{F_{n}}</script></span></li>
+<li>计算<span><span class="MathJax_Preview">{T_{n}}^{*}=g({X_{1}}^{*},...,{X_{n}}^{*})</span><script type="math/tex">{T_{n}}^{*}=g({X_{1}}^{*},...,{X_{n}}^{*})</script></span></li>
+<li>重复步骤1和2，B次，来得到<span><span class="MathJax_Preview">{T_{n,1}}^{*}</span><script type="math/tex">{T_{n,1}}^{*}</script></span>,...,<span><span class="MathJax_Preview">{T_{n,B}}^{*}</span><script type="math/tex">{T_{n,B}}^{*}</script></span></li>
+<li>令<span><span class="MathJax_Preview">v_{boot}=\frac{1}{B}\Sigma^{B}_{b=1}{({T_{n,b}}^{*}-\frac{1}{B}\Sigma^{B}_{r=1}{T_{n,r}}^{*})}^{2}</span><script type="math/tex">v_{boot}=\frac{1}{B}\Sigma^{B}_{b=1}{({T_{n,b}}^{*}-\frac{1}{B}\Sigma^{B}_{r=1}{T_{n,r}}^{*})}^{2}</script></span></li>
+</ul>
+<h3 id="_2">例子<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>下面的过程展示了如何利用Bootstrap来估计中位数的标准差</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">&gt;</span>  Bootstrap <span class="kr">for</span> The Median
+
+Given data X <span class="o">=</span><span class="p">(</span>X<span class="p">(</span><span class="m">1</span><span class="p">),</span><span class="kc">...</span><span class="p">,</span>X<span class="p">(</span>n<span class="p">))</span>
+
+<span class="bp">T</span><span class="o">&lt;-</span>median<span class="p">(</span>X<span class="p">)</span>
+Tboot<span class="o">&lt;-</span><span class="kt">vector</span> of length B
+<span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span>B<span class="p">){</span>
+Xstar<span class="o">&lt;-</span>sample of size n from X<span class="p">(</span>with replacement<span class="p">)</span>
+Tboot<span class="p">[</span>i<span class="p">]</span><span class="o">&lt;-</span>median<span class="p">(</span>Xstar<span class="p">)</span>
+<span class="p">}</span>
+se<span class="o">&lt;-</span><span class="kp">sqrt</span><span class="p">(</span>variance<span class="p">(</span>Tboot<span class="p">))</span>
+</pre></div>
+</td></tr></table>
+
+<p>这个过程中运用了两个近似：第一个近似为用<span><span class="MathJax_Preview">V_{\hat{F_{n}}}(T_{n})</span><script type="math/tex">V_{\hat{F_{n}}}(T_{n})</script></span>来近似<span><span class="MathJax_Preview">V_{F}(T_{n})</span><script type="math/tex">V_{F}(T_{n})</script></span>，这里的逼近误差取决于<span><span class="MathJax_Preview">\hat{F_{n}}</span><script type="math/tex">\hat{F_{n}}</script></span>与<span><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span>的接近程度，由样本量<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>控制，并不能通过Bootstrap法减小；而第二个近似为用<span><span class="MathJax_Preview">v_{boot}</span><script type="math/tex">v_{boot}</script></span>来近似<span><span class="MathJax_Preview">V_{\hat{F_{n}}}(T_{n})</span><script type="math/tex">V_{\hat{F_{n}}}(T_{n})</script></span>，这个近似的误差由重抽样样本量<span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>控制，随着<span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>趋于无穷而趋为零。</p>
+<h2 id="bootstrap_4">Bootstrap置信区间<a class="headerlink" href="#bootstrap_4" title="Permanent link">&para;</a></h2>
+<p>类似于方差的估计，通过Bootstrap, 有以下3种方式可以估计置信区间.</p>
+<h3 id="1">方法 1: 基于正态假设的置信区间.<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>在分布接近正态分布时，例如满足正态性假设或者中心极限定理，可以使用如下公式计算和估计统计量<span><span class="MathJax_Preview">T_n</span><script type="math/tex">T_n</script></span>的置信区间:</p>
+<div>
+<div class="MathJax_Preview">
+  T_n \pm z_{\alpha/2} \cdot \hat{se}_{boot}
+  \tag {3.1}
+</div>
+<script type="math/tex; mode=display">
+  T_n \pm z_{\alpha/2} \cdot \hat{se}_{boot}
+  \tag {3.1}
+</script>
+</div>
+<p>其中 <span><span class="MathJax_Preview">\hat{se}_{boot}=\sqrt{var_{boot}}</span><script type="math/tex">\hat{se}_{boot}=\sqrt{var_{boot}}</script></span> 是标准差的Bootstrap估计, <span><span class="MathJax_Preview">z_{\alpha/2}</span><script type="math/tex">z_{\alpha/2}</script></span> 是标准正态分布的 <span><span class="MathJax_Preview">\alpha/2</span><script type="math/tex">\alpha/2</script></span> 分位数.</p>
+<p>此方法计算简单, 但需先验证数据是否服从正态分布. 若分布情况与正态相差较大, 则所得结果不准确.</p>
+<h3 id="2-bootstrap">方法 2: 基于枢轴量的Bootstrap置信区间<a class="headerlink" href="#2-bootstrap" title="Permanent link">&para;</a></h3>
+<p>枢轴量的定义如下:</p>
+<div>
+<div class="MathJax_Preview">
+  R_n=\hat{\theta}_n-\theta
+  \tag{3.2}
+</div>
+<script type="math/tex; mode=display">
+  R_n=\hat{\theta}_n-\theta
+  \tag{3.2}
+</script>
+</div>
+<p>其中 <span><span class="MathJax_Preview">\theta=T(F)</span><script type="math/tex">\theta=T(F)</script></span>, <span><span class="MathJax_Preview">\hat{\theta}_n=T(\hat F_n)</span><script type="math/tex">\hat{\theta}_n=T(\hat F_n)</script></span>.</p>
+<p>与传统的枢轴量法构造执行区间类似，方法2主要思想是利用构造关于枢轴量的置信区间,作为中间产物，然后来对<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>的置信区间进行计算。即构造<span><span class="MathJax_Preview">(\hat{R}_{n,\alpha},\,\hat{R}_{n,1-\alpha})</span><script type="math/tex">(\hat{R}_{n,\alpha},\,\hat{R}_{n,1-\alpha})</script></span>，从而<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>的置信区间为<span><span class="MathJax_Preview">(\hat{\theta}-\hat{R}_{n,1-\alpha},\,\hat{\theta}-\hat{R}_{n,\alpha})</span><script type="math/tex">(\hat{\theta}-\hat{R}_{n,1-\alpha},\,\hat{\theta}-\hat{R}_{n,\alpha})</script></span>。区别在于这里关于枢轴量置信区间的构造利用的是Bootstrap方法。</p>
+<p><span><span class="MathJax_Preview">1-\alpha</span><script type="math/tex">1-\alpha</script></span> Bootstrap pivotal confidence interval 定义如下:</p>
+<div>
+<div class="MathJax_Preview">
+  C_n=((2\hat{\theta}_n-\hat{\theta^*}_{1-\alpha/2}),(2\hat{\theta}_n-\hat{\theta^*}_{\alpha/2}))
+  \tag{3.3}
+</div>
+<script type="math/tex; mode=display">
+  C_n=((2\hat{\theta}_n-\hat{\theta^*}_{1-\alpha/2}),(2\hat{\theta}_n-\hat{\theta^*}_{\alpha/2}))
+  \tag{3.3}
+</script>
+</div>
+<p>其中 <span><span class="MathJax_Preview">\hat{\theta^*}_{1-\alpha/2}</span><script type="math/tex">\hat{\theta^*}_{1-\alpha/2}</script></span>, <span><span class="MathJax_Preview">\hat{\theta^*}_{\alpha/2}</span><script type="math/tex">\hat{\theta^*}_{\alpha/2}</script></span> 分别是伪样本 <span><span class="MathJax_Preview">\{\theta_{n,B}^*\}</span><script type="math/tex">\{\theta_{n,B}^*\}</script></span> 的 <span><span class="MathJax_Preview">1-\alpha/2</span><script type="math/tex">1-\alpha/2</script></span>, <span><span class="MathJax_Preview">\alpha/2</span><script type="math/tex">\alpha/2</script></span> 分位数.</p>
+<p>为了验证以上方法的可行性, 下面引入一个定理.</p>
+<blockquote>
+<p><strong>Theorem.</strong>   Under weak conditions on T(F),</p>
+<div>
+<div class="MathJax_Preview">\mathbb{P}_F(T(F) \in C_n) \rightarrow 1-\alpha \tag{3.4}</div>
+<script type="math/tex; mode=display">\mathbb{P}_F(T(F) \in C_n) \rightarrow 1-\alpha \tag{3.4}</script>
+</div>
+<p>as <span><span class="MathJax_Preview">n\rightarrow\infty</span><script type="math/tex">n\rightarrow\infty</script></span> and <span><span class="MathJax_Preview">B\rightarrow\infty</span><script type="math/tex">B\rightarrow\infty</script></span>, where <span><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> is given in <span><span class="MathJax_Preview">(3.3)</span><script type="math/tex">(3.3)</script></span></p>
+</blockquote>
+<p>证明的基本思路主要是叙述<span><span class="MathJax_Preview">R_n</span><script type="math/tex">R_n</script></span>置信区间与<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>置信区间之间的联系。</p>
+<p>设<span><span class="MathJax_Preview">R_n</span><script type="math/tex">R_n</script></span>的累积分布函数为:</p>
+<div>
+<div class="MathJax_Preview">
+  H(r)=\mathbb{P}_F(R_n \le r)
+  \tag{3.5}
+</div>
+<script type="math/tex; mode=display">
+  H(r)=\mathbb{P}_F(R_n \le r)
+  \tag{3.5}
+</script>
+</div>
+<p>设<span><span class="MathJax_Preview">C_n^*=(a,b)</span><script type="math/tex">C_n^*=(a,b)</script></span>为重抽样样本量<span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>趋于无穷时<span><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span>的渐近值, 其中, <span><span class="MathJax_Preview">a=\hat{\theta_n}-H^{-1}(1-\frac{\alpha}{2})</span><script type="math/tex">a=\hat{\theta_n}-H^{-1}(1-\frac{\alpha}{2})</script></span>, <span><span class="MathJax_Preview">b=\hat{\theta_n}-H^{-1}(\frac{\alpha}{2})</span><script type="math/tex">b=\hat{\theta_n}-H^{-1}(\frac{\alpha}{2})</script></span>.
+则:</p>
+<div>
+<div class="MathJax_Preview">\begin{align}
+  \mathbb{P}(a \le \theta \le b)
+  &amp;=\mathbb{P}(\hat{\theta_n}-H^{-1}(1-\frac{\alpha}{2}) \le \theta, \hat{\theta_n}-H^{-1}(\frac{\alpha}{2}) \ge \theta)\\
+  &amp;=\mathbb{P}(\hat{\theta_n}-\theta \le H^{-1}(1-\frac{\alpha}{2}), \hat{\theta_n}-\theta \ge H^{-1}(\frac{\alpha}{2}))\\
+  &amp;=\mathbb{P}(\hat{\theta_n}-\theta \le H^{-1}(1-\frac{\alpha}{2}))-\mathbb{p}(\hat{\theta_n}-\theta \le H^{-1}(\frac{\alpha}{2}))\\
+  &amp;=1-\frac{\alpha}{2}-\frac{\alpha}{2}=1-\alpha
+\end{align}</div>
+<script type="math/tex; mode=display">\begin{align}
+  \mathbb{P}(a \le \theta \le b)
+  &=\mathbb{P}(\hat{\theta_n}-H^{-1}(1-\frac{\alpha}{2}) \le \theta, \hat{\theta_n}-H^{-1}(\frac{\alpha}{2}) \ge \theta)\\
+  &=\mathbb{P}(\hat{\theta_n}-\theta \le H^{-1}(1-\frac{\alpha}{2}), \hat{\theta_n}-\theta \ge H^{-1}(\frac{\alpha}{2}))\\
+  &=\mathbb{P}(\hat{\theta_n}-\theta \le H^{-1}(1-\frac{\alpha}{2}))-\mathbb{p}(\hat{\theta_n}-\theta \le H^{-1}(\frac{\alpha}{2}))\\
+  &=1-\frac{\alpha}{2}-\frac{\alpha}{2}=1-\alpha
+\end{align}</script>
+</div>
+<p><span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span> 落在区间 <span><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> 中的概率为 <span><span class="MathJax_Preview">1-\alpha</span><script type="math/tex">1-\alpha</script></span>.</p>
+<p>同时, 有:</p>
+<div>
+<div class="MathJax_Preview">
+  \hat{H}(r) =\sum_{b=1}^B I(R^*_{n,b} \le r) \tag{3.6}
+</div>
+<script type="math/tex; mode=display">
+  \hat{H}(r) =\sum_{b=1}^B I(R^*_{n,b} \le r) \tag{3.6}
+</script>
+</div>
+<p>其中 <span><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> 为特征函数, 即用样本中小于<span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span>的比例来估计<span><span class="MathJax_Preview">H(r)</span><script type="math/tex">H(r)</script></span>.</p>
+<p><span><span class="MathJax_Preview">\hat{\theta_n}-\theta=R_n \sim H</span><script type="math/tex">\hat{\theta_n}-\theta=R_n \sim H</script></span>, 用 <span><span class="MathJax_Preview">\hat{\theta^*_r}-\hat{\theta}</span><script type="math/tex">\hat{\theta^*_r}-\hat{\theta}</script></span> 来估计 <span><span class="MathJax_Preview">H^{-1}(r)</span><script type="math/tex">H^{-1}(r)</script></span>, 即 <span><span class="MathJax_Preview">\hat{H}^{-1}(r)=\hat{\theta^*_r}-\hat{\theta}</span><script type="math/tex">\hat{H}^{-1}(r)=\hat{\theta^*_r}-\hat{\theta}</script></span></p>
+<p><span><span class="MathJax_Preview">\hat{H}^{-1}(r) \rightarrow H^{-1}(r)</span><script type="math/tex">\hat{H}^{-1}(r) \rightarrow H^{-1}(r)</script></span>, 当 <span><span class="MathJax_Preview">n\rightarrow \infty</span><script type="math/tex">n\rightarrow \infty</script></span>,
+<span><span class="MathJax_Preview">\therefore \hat{a}=\hat{\theta_n}-\hat{H}^{-1}(1-\frac{\alpha}{2}) \rightarrow a</span><script type="math/tex">\therefore \hat{a}=\hat{\theta_n}-\hat{H}^{-1}(1-\frac{\alpha}{2}) \rightarrow a</script></span>, <span><span class="MathJax_Preview">\hat{b}=\hat{\theta_n}-\hat{H}^{-1}(\frac{\alpha}{2}) \rightarrow b</span><script type="math/tex">\hat{b}=\hat{\theta_n}-\hat{H}^{-1}(\frac{\alpha}{2}) \rightarrow b</script></span>,</p>
+<p><span><span class="MathJax_Preview">\therefore \mathbb{P}_f(T(F) \in C_n) \rightarrow 1-\alpha</span><script type="math/tex">\therefore \mathbb{P}_f(T(F) \in C_n) \rightarrow 1-\alpha</script></span>.</p>
+<h3 id="3-bootstrap">方法 3: 直接利用Bootstrap分位数构造.<a class="headerlink" href="#3-bootstrap" title="Permanent link">&para;</a></h3>
+<p>考虑完方法2，我们自然会有新的想法。既然我们可以用<span><span class="MathJax_Preview">\hat{F}_n</span><script type="math/tex">\hat{F}_n</script></span>近似<span><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span>, 我们自然可以用<span><span class="MathJax_Preview">\hat{F}_n</span><script type="math/tex">\hat{F}_n</script></span>的分位数近似<span><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span>的分位数。于是，与构造枢轴量的方法相对比，为什么不直接构造<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>的Bootstrap分位数？下面即是这种想法的实现。</p>
+<p>The Bootstrap percentile interval:</p>
+<div>
+<div class="MathJax_Preview">
+  C_n=( \theta_{\alpha/2}^* , \theta_{1-\alpha/2}^* )
+  \tag{3.7}
+</div>
+<script type="math/tex; mode=display">
+  C_n=( \theta_{\alpha/2}^* , \theta_{1-\alpha/2}^* )
+  \tag{3.7}
+</script>
+</div>
+<p>如果<span><span class="MathJax_Preview">n\rightarrow \infty</span><script type="math/tex">n\rightarrow \infty</script></span>, 且<span><span class="MathJax_Preview">\hat\theta^*</span><script type="math/tex">\hat\theta^*</script></span>对称分布,有 Bootstrap percentile interval = Pivotal intervals。</p>
+<p>下面我们用一个具体例子说明上述三种方法具体是如何实现的。</p>
+<blockquote>
+<p><strong>Example.</strong> This example is from Efron and Tibshirani (1993). When drug companies introduce new medications, they are sometimes required to show bioequivalence. This means that the new drug is not substantially different than the current treatment. Here are data on eight subjects who used medical patches to infuse a hormone into the blood. Each subject received three treatments: placebo, old-patch, new-patch.</p>
+</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## import data</span>
+
+data<span class="o">=</span><span class="kt">data.frame</span><span class="p">(</span><span class="kt">matrix</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">9243</span><span class="p">,</span><span class="m">17649</span><span class="p">,</span><span class="m">16449</span><span class="p">,</span><span class="m">8406</span><span class="p">,</span><span class="m">-1200</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">9671</span><span class="p">,</span><span class="m">12013</span><span class="p">,</span><span class="m">14614</span><span class="p">,</span><span class="m">2342</span><span class="p">,</span><span class="m">2601</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">11792</span><span class="p">,</span><span class="m">19979</span><span class="p">,</span><span class="m">17274</span><span class="p">,</span><span class="m">8187</span><span class="p">,</span><span class="m">-2705</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">13357</span><span class="p">,</span><span class="m">21816</span><span class="p">,</span><span class="m">23798</span><span class="p">,</span><span class="m">8459</span><span class="p">,</span><span class="m">1982</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">9055</span><span class="p">,</span><span class="m">13850</span><span class="p">,</span><span class="m">12560</span><span class="p">,</span><span class="m">4795</span><span class="p">,</span><span class="m">-1290</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">6290</span><span class="p">,</span><span class="m">9806</span><span class="p">,</span><span class="m">10157</span><span class="p">,</span><span class="m">3516</span><span class="p">,</span><span class="m">351</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">12412</span><span class="p">,</span><span class="m">17208</span><span class="p">,</span><span class="m">16570</span><span class="p">,</span><span class="m">4796</span><span class="p">,</span><span class="m">-638</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">18806</span><span class="p">,</span><span class="m">29044</span><span class="p">,</span><span class="m">26325</span><span class="p">,</span><span class="m">10238</span><span class="p">,</span><span class="m">-2719</span><span class="p">),</span><span class="m">8</span><span class="p">,</span><span class="m">6</span><span class="p">,</span>byrow <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>
+
+<span class="kp">names</span><span class="p">(</span>data<span class="p">)</span><span class="o">&lt;-</span><span class="kt">c</span><span class="p">(</span><span class="s">&#39;subject&#39;</span><span class="p">,</span><span class="s">&#39;placebo&#39;</span><span class="p">,</span><span class="s">&#39;old&#39;</span><span class="p">,</span><span class="s">&#39;new&#39;</span><span class="p">,</span><span class="s">&#39;old-placebo&#39;</span><span class="p">,</span><span class="s">&#39;new-old&#39;</span><span class="p">)</span>
+
+data   <span class="c1"># raw data</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##   subject placebo   old   new old-placebo new-old
+## 1       1    9243 17649 16449        8406   -1200
+## 2       2    9671 12013 14614        2342    2601
+## 3       3   11792 19979 17274        8187   -2705
+## 4       4   13357 21816 23798        8459    1982
+## 5       5    9055 13850 12560        4795   -1290
+## 6       6    6290  9806 10157        3516     351
+## 7       7   12412 17208 16570        4796    -638
+## 8       8   18806 29044 26325       10238   -2719
+</pre></div>
+</td></tr></table>
+
+<blockquote>
+<p>Let Z = old-placebo and Y = new-old. The Food and Drug Administration (FDA) requirement for bioequivalence is that <span><span class="MathJax_Preview">|\theta|\le .20</span><script type="math/tex">|\theta|\le .20</script></span> where <span><span class="MathJax_Preview">\theta = \frac{\mathbb{E}_F(Y)}{\mathbb{E}_F(Z)}</span><script type="math/tex">\theta = \frac{\mathbb{E}_F(Y)}{\mathbb{E}_F(Z)}</script></span>.</p>
+</blockquote>
+<p>下面通过Bootstrap方法验证是否达到<span><span class="MathJax_Preview">|\theta|\le .20</span><script type="math/tex">|\theta|\le .20</script></span></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## Calculate theta hat</span>
+
+Y<span class="o">&lt;-</span>data<span class="o">$</span><span class="sb">`new-old`</span>
+Z<span class="o">&lt;-</span>data<span class="o">$</span><span class="sb">`old-placebo`</span>
+
+theta_hat<span class="o">=</span><span class="kp">mean</span><span class="p">(</span>Y<span class="p">)</span><span class="o">/</span><span class="kp">mean</span><span class="p">(</span>Z<span class="p">)</span>
+
+theta_hat        <span class="c1">#  estimated theta (theta hat)</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] -0.0713061
+</pre></div>
+</td></tr></table>
+
+<p>首先计算得到<span><span class="MathJax_Preview">\hat\theta=-.071</span><script type="math/tex">\hat\theta=-.071</script></span>, <span><span class="MathJax_Preview">|\hat \theta|\le.20</span><script type="math/tex">|\hat \theta|\le.20</script></span>. 在通过Bootstrap确定置信区间.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## Bootstrap simulation</span>
+
+B<span class="o">=</span><span class="m">1000</span>
+<span class="kp">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+
+samp<span class="o">=</span><span class="kr">function</span><span class="p">(){</span>  <span class="c1">#this function is to calculate a sample&#39;s theta</span>
+  sam<span class="o">=</span><span class="kp">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">8</span><span class="p">,</span><span class="m">8</span><span class="p">,</span>replace <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+  <span class="kr">return</span><span class="p">(</span><span class="kp">mean</span><span class="p">(</span>Y<span class="p">[</span>sam<span class="p">])</span><span class="o">/</span><span class="kp">mean</span><span class="p">(</span>Z<span class="p">[</span>sam<span class="p">]))</span>
+<span class="p">}</span>
+
+boot_theta<span class="o">&lt;-</span><span class="kp">replicate</span><span class="p">(</span>B<span class="p">,</span>samp<span class="p">())</span>  <span class="c1"># generate Bootstrap sample</span>
+
+
+sd<span class="p">(</span>boot_theta<span class="p">)</span>   <span class="c1">#标准差</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.09792018
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>hist<span class="p">(</span>boot_theta<span class="p">)</span> <span class="c1">#分布</span>
+</pre></div>
+</td></tr></table>
+
+<p><img alt="" src="../Bootstrap_files/figure-html/Bootstrap-1.png" /><!-- --></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PerI<span class="o">=</span>quantile<span class="p">(</span>boot_theta<span class="p">,</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.975</span><span class="p">))</span>   <span class="c1"># percentile interval</span>
+
+PivI<span class="o">=</span>quantile<span class="p">(</span><span class="m">2</span><span class="o">*</span>theta_hat<span class="o">-</span>boot_theta<span class="p">,</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.975</span><span class="p">))</span>   <span class="c1"># pivotal confidence interval</span>
+
+
+PivI   <span class="c1"># 95% pivotal confidence interval</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##        2.5%       97.5%
+## -0.28406678  0.08908286
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>PerI   <span class="c1"># 95% percentile interval</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##       2.5%      97.5%
+## -0.2316951  0.1414546
+</pre></div>
+</td></tr></table>
+
+<p>通过Bootstrap模拟, 我们可以估计<span><span class="MathJax_Preview">\hat\theta</span><script type="math/tex">\hat\theta</script></span>的标准差为.098. <span><span class="MathJax_Preview">\hat\theta</span><script type="math/tex">\hat\theta</script></span> 95% pivotal confidence interval 为 (-0.284, 0.060); 95% percentile interval 为(-0.232, 0.083).</p>
+<p>因为<span><span class="MathJax_Preview">(-0.284, 0.060) \nsubseteq (-.2, .2)</span><script type="math/tex">(-0.284, 0.060) \nsubseteq (-.2, .2)</script></span>, <span><span class="MathJax_Preview">(-0.232, 0.083) \nsubseteq (-.2, .2)</span><script type="math/tex">(-0.232, 0.083) \nsubseteq (-.2, .2)</script></span>, 在95%的置信水平上, <span><span class="MathJax_Preview">|\hat\theta|</span><script type="math/tex">|\hat\theta|</script></span>不小于0.2.</p>
+<h3 id="23">方法2与方法3的对比<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>首先，直观来看，方法3要比方法2的思路更加简洁，舍弃了构造枢轴量的部分。对于上下置信界限而言，二者在Bootstrap重抽样层面的随机波动是一致的。其都是渐进<span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>水平的置信区间，有着相同的精度。</p>
+<p>几何上看，方法2构造的置信区间是将方法3构造的置信区间关于<span><span class="MathJax_Preview">\hat\theta</span><script type="math/tex">\hat\theta</script></span>翻转得到的。</p>
+<h2 id="the-jackknife">The Jackknife<a class="headerlink" href="#the-jackknife" title="Permanent link">&para;</a></h2>
+<p>还有另外一种计算标准差的方法叫做the <strong>Jackknife</strong>。它的计算过程比Bootstrap更加简便但不如Bootstrap普遍。令<span><span class="MathJax_Preview">T_{n}=T(X_{1},...,X_{n})</span><script type="math/tex">T_{n}=T(X_{1},...,X_{n})</script></span>为一个统计量，<span><span class="MathJax_Preview">T_{(-i)}</span><script type="math/tex">T_{(-i)}</script></span>代表第<span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>个数据被剔除后的统计量。令<span><span class="MathJax_Preview">{\overline{T}}_{n}=n^{-1}\Sigma^{n}_{i=1}T_{(-i)}</span><script type="math/tex">{\overline{T}}_{n}=n^{-1}\Sigma^{n}_{i=1}T_{(-i)}</script></span>。利用jackknife法估计的<span><span class="MathJax_Preview">var(T_{n})</span><script type="math/tex">var(T_{n})</script></span>为</p>
+<div>
+<div class="MathJax_Preview">v_{jack}=\frac{n-1}{n}\Sigma^{n}_{i=1}(T_{(-i)}-{\overline{T}}_{n})^{2}</div>
+<script type="math/tex; mode=display">v_{jack}=\frac{n-1}{n}\Sigma^{n}_{i=1}(T_{(-i)}-{\overline{T}}_{n})^{2}</script>
+</div>
+<p>Jackknife法对标准差的估计为<span><span class="MathJax_Preview">\hat{se}_{jack}=\sqrt{v_{jack}}</span><script type="math/tex">\hat{se}_{jack}=\sqrt{v_{jack}}</script></span>。在合适的<span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>的条件下，可以看出<span><span class="MathJax_Preview">v_{jack}</span><script type="math/tex">v_{jack}</script></span>总是<span><span class="MathJax_Preview">var(T_{n})</span><script type="math/tex">var(T_{n})</script></span>的一个好的估计且<span><span class="MathJax_Preview">v_{jack}/var(T_{n})\xrightarrow{P}1</span><script type="math/tex">v_{jack}/var(T_{n})\xrightarrow{P}1</script></span>。但与Bootstrap不同的是，Jackknife法不总能提供样本分位点的标准差的估计。</p>
+<h2 id="_3">总结<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>本文主要归纳了Bootstrap法的基本思想，以及如何使用Bootstrap法进行方差估计和置信区间估计。最后我们将通过整理《All of Statistics》[1]一书中The Bootstrap的章后习题解答，通过实例来进一步说明Bootstrap方法是如何操作的、以及其具体作用。</p>
+<h2 id="_4">习题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">习题1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p><strong>Consider the data in Example 8.6. Find the plug-in estimate of the correlation coefficient. Estimate the standard error using the Bootstrap. Find a 95 percent confidence interval using the Normal, pivotal, and percentile methods.</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">set.seed</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+
+<span class="c1">## import data</span>
+
+lsat<span class="o">&lt;-</span><span class="kt">c</span><span class="p">(</span><span class="m">576</span><span class="p">,</span><span class="m">635</span><span class="p">,</span><span class="m">558</span><span class="p">,</span><span class="m">578</span><span class="p">,</span><span class="m">666</span><span class="p">,</span><span class="m">580</span><span class="p">,</span><span class="m">555</span><span class="p">,</span><span class="m">661</span><span class="p">,</span><span class="m">651</span><span class="p">,</span><span class="m">605</span><span class="p">,</span><span class="m">653</span><span class="p">,</span><span class="m">575</span><span class="p">,</span><span class="m">545</span><span class="p">,</span><span class="m">572</span><span class="p">,</span><span class="m">594</span><span class="p">)</span>
+gpa<span class="o">&lt;-</span><span class="kt">c</span><span class="p">(</span><span class="m">3.39</span><span class="p">,</span><span class="m">3.30</span><span class="p">,</span><span class="m">2.81</span><span class="p">,</span><span class="m">3.03</span><span class="p">,</span><span class="m">3.44</span><span class="p">,</span><span class="m">3.07</span><span class="p">,</span><span class="m">3.00</span><span class="p">,</span><span class="m">3.43</span><span class="p">,</span><span class="m">3.36</span><span class="p">,</span><span class="m">3.13</span><span class="p">,</span><span class="m">3.12</span><span class="p">,</span><span class="m">2.74</span><span class="p">,</span><span class="m">2.76</span><span class="p">,</span><span class="m">2.88</span><span class="p">,</span><span class="m">3.96</span><span class="p">)</span>
+
+x<span class="o">&lt;-</span><span class="kt">data.frame</span><span class="p">(</span><span class="kp">cbind</span><span class="p">(</span>lsat<span class="p">,</span>gpa<span class="p">))</span>
+<span class="kp">names</span><span class="p">(</span>x<span class="p">)</span><span class="o">&lt;-</span><span class="kt">c</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+
+x    <span class="c1"># view raw data</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      y    z
+## 1  576 3.39
+## 2  635 3.30
+## 3  558 2.81
+## 4  578 3.03
+## 5  666 3.44
+## 6  580 3.07
+## 7  555 3.00
+## 8  661 3.43
+## 9  651 3.36
+## 10 605 3.13
+## 11 653 3.12
+## 12 575 2.74
+## 13 545 2.76
+## 14 572 2.88
+## 15 594 3.96
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## Find the plug-in estimate of the correlation coefficient.</span>
+
+theta_hat<span class="o">&lt;-</span>cor<span class="p">(</span>x<span class="o">$</span>y<span class="p">,</span>x<span class="o">$</span>z<span class="p">)</span>
+
+theta_hat    <span class="c1"># estimated correlation coefficient</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.5459189
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## Generate Bootstrap sample</span>
+
+B<span class="o">=</span><span class="m">1000</span>   <span class="c1"># number of times of resample</span>
+
+samp_cor<span class="o">=</span><span class="kr">function</span><span class="p">(){</span> <span class="c1"># we will run this function many times</span>
+  sam<span class="o">=</span><span class="kp">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="kp">nrow</span><span class="p">(</span>x<span class="p">),</span>replace <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+  <span class="kr">return</span><span class="p">(</span>cor<span class="p">(</span>x<span class="o">$</span>y<span class="p">[</span>sam<span class="p">],</span>x<span class="o">$</span>z<span class="p">[</span>sam<span class="p">]))</span>
+<span class="p">}</span>
+
+boot_theta<span class="o">&lt;-</span><span class="kp">replicate</span><span class="p">(</span>B<span class="p">,</span>samp_cor<span class="p">())</span> <span class="c1"># generate Bootstrap sample</span>
+
+<span class="kp">head</span><span class="p">(</span>boot_theta<span class="p">)</span>  <span class="c1"># view Bootstrap sample</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.3740009 0.2912169 0.9014656 0.7495317 0.9369355 0.5049581
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## Estimate the standard error using the Bootstrap.</span>
+
+sd<span class="p">(</span>boot_theta<span class="p">)</span>  <span class="c1"># estimated sd of theta hat</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.1872623
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">##  FIND 95% CI</span>
+
+
+<span class="c1">### Normal</span>
+
+CI_normal<span class="o">&lt;-</span>theta_hat<span class="o">+</span>sd<span class="p">(</span>boot_theta<span class="p">)</span><span class="o">*</span>qnorm<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.975</span><span class="p">))</span>
+
+CI_normal  <span class="c1"># 95% normal CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.1788915 0.9129464
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">### Pivotal</span>
+
+CI_pivotal<span class="o">&lt;-</span>quantile<span class="p">(</span>theta_hat<span class="o">*</span><span class="m">2</span><span class="o">-</span>boot_theta<span class="p">,</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.975</span><span class="p">))</span>
+
+CI_pivotal    <span class="c1"># 95% pivotal CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
+## 0.1594942 0.8815078
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">### Percentile</span>
+
+CI_percentile<span class="o">&lt;-</span>quantile<span class="p">(</span>boot_theta<span class="p">,</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.975</span><span class="p">))</span>
+
+CI_percentile  <span class="c1"># 95% percentile CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
+## 0.2103301 0.9323437
+</pre></div>
+</td></tr></table>
+
+<h3 id="2">习题2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p><strong>(Computer Experiment.) Conduct a simulation to compare the various Bootstrap confidence interval methods. Let <span><span class="MathJax_Preview">n = 50</span><script type="math/tex">n = 50</script></span> and let  <span><span class="MathJax_Preview">T(F)=\int(x-\mu)^3dF(x)/{\sigma^3}</span><script type="math/tex">T(F)=\int(x-\mu)^3dF(x)/{\sigma^3}</script></span> be the skewness. Draw <span><span class="MathJax_Preview">Y_1, \cdots , Y_n \sim N(0, 1)</span><script type="math/tex">Y_1, \cdots , Y_n \sim N(0, 1)</script></span> and set <span><span class="MathJax_Preview">X_i = e^{Y_i}</span><script type="math/tex">X_i = e^{Y_i}</script></span>, <span><span class="MathJax_Preview">i = 1,\cdots, n</span><script type="math/tex">i = 1,\cdots, n</script></span>. Construct the three types of Bootstrap 95 percent intervals for <span><span class="MathJax_Preview">T(F)</span><script type="math/tex">T(F)</script></span> from the data <span><span class="MathJax_Preview">X_1,\cdots ,X_n</span><script type="math/tex">X_1,\cdots ,X_n</script></span>. Repeat this whole thing many times and estimate the true coverage of the three intervals.</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">set.seed</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+
+<span class="c1">## draw Y ~ N(0,1), X=exp(Y)</span>
+
+n<span class="o">=</span><span class="m">50</span>
+y<span class="o">&lt;-</span>rnorm<span class="p">(</span>n<span class="p">)</span>
+x<span class="o">&lt;-</span><span class="kp">exp</span><span class="p">(</span>y<span class="p">)</span>
+
+<span class="c1">## define skewness</span>
+
+skew<span class="o">&lt;-</span><span class="kr">function</span><span class="p">(</span>x<span class="p">){</span>
+  <span class="kp">mean</span><span class="p">((</span>x<span class="o">-</span><span class="kp">mean</span><span class="p">(</span>x<span class="p">))</span><span class="o">^</span><span class="m">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span>sd<span class="p">(</span>x<span class="p">)</span><span class="o">^</span><span class="m">3</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">## estimate T(F) hat</span>
+
+tf_hat<span class="o">&lt;-</span>skew<span class="p">(</span>x<span class="p">)</span>
+
+tf_hat   <span class="c1"># estimated skewness</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1.577831
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## Bootstrap SAMPLE</span>
+
+B<span class="o">=</span><span class="m">1000</span>  <span class="c1"># boostrap sample size</span>
+
+samp_skew<span class="o">&lt;-</span><span class="kr">function</span><span class="p">(</span>x<span class="p">){</span>
+  sam<span class="o">=</span><span class="kp">sample</span><span class="p">(</span>x<span class="p">,</span>replace <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+  skew<span class="p">(</span>sam<span class="p">)</span>
+<span class="p">}</span>
+
+tf_boot<span class="o">&lt;-</span><span class="kp">replicate</span><span class="p">(</span>B<span class="p">,</span>samp_skew<span class="p">(</span>x<span class="p">))</span>  <span class="c1"># draw Bootstrap sample</span>
+
+<span class="c1">## estimate CI</span>
+
+<span class="c1">###  normal</span>
+
+CI_normal<span class="o">&lt;-</span>tf_hat<span class="o">+</span>sd<span class="p">(</span>tf_boot<span class="p">)</span><span class="o">*</span>qnorm<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.975</span><span class="p">))</span>
+
+CI_normal  <span class="c1"># 95% normal CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.8295817 2.3260806
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">### Pivotal</span>
+
+CI_pivotal<span class="o">&lt;-</span>quantile<span class="p">(</span>tf_hat<span class="o">-</span>tf_boot<span class="p">,</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.975</span><span class="p">))</span><span class="o">+</span>tf_hat
+
+CI_pivotal    <span class="c1"># 95% pivotal CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
+## 0.6466346 2.1780094
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">### Percentile</span>
+
+CI_percentile<span class="o">&lt;-</span>quantile<span class="p">(</span>tf_boot<span class="p">,</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.975</span><span class="p">))</span>
+
+CI_percentile  <span class="c1"># 95% percentile CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
+## 0.9776529 2.5090277
+</pre></div>
+</td></tr></table>
+
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">## plot the distribution of Bootstrap sample and CIs</span>
+
+ci<span class="o">&lt;-</span><span class="kt">data.frame</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span>tf_hat<span class="o">+</span>sd<span class="p">(</span>tf_boot<span class="p">)</span><span class="o">*</span>qnorm<span class="p">(</span><span class="kp">seq</span><span class="p">(</span><span class="m">.005</span><span class="p">,</span><span class="m">.995</span><span class="p">,</span><span class="m">.005</span><span class="p">)),</span><span class="m">2</span><span class="o">*</span>tf_hat<span class="o">-</span>tf_boot<span class="p">,</span>tf_boot<span class="p">))</span>
+ci<span class="o">&lt;-</span><span class="kp">cbind</span><span class="p">(</span>ci<span class="p">,</span><span class="kt">data.frame</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="kp">rep</span><span class="p">(</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="m">199</span><span class="p">),</span><span class="kp">rep</span><span class="p">(</span><span class="s">&#39;pivotal&#39;</span><span class="p">,</span>B<span class="p">),</span><span class="kp">rep</span><span class="p">(</span><span class="s">&#39;percentile&#39;</span><span class="p">,</span>B<span class="p">))))</span>
+<span class="kp">names</span><span class="p">(</span>ci<span class="p">)</span><span class="o">&lt;-</span><span class="kt">c</span><span class="p">(</span><span class="s">&#39;dist&#39;</span><span class="p">,</span><span class="s">&#39;cla&#39;</span><span class="p">)</span>
+
+ggplot<span class="p">(</span>ci<span class="p">,</span>aes<span class="p">(</span>x<span class="o">=</span>dist<span class="p">,</span>fill<span class="o">=</span>cla<span class="p">))</span> <span class="o">+</span> geom_density<span class="p">(</span>alpha<span class="o">=</span><span class="m">.5</span><span class="p">)</span> <span class="o">+</span>
+    geom_vline<span class="p">(</span>aes<span class="p">(</span>xintercept<span class="o">=</span>CI_normal<span class="p">[</span><span class="m">1</span><span class="p">]),</span> size<span class="o">=</span><span class="m">.5</span><span class="p">,</span> colour<span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span><span class="o">+</span>
+    geom_vline<span class="p">(</span>aes<span class="p">(</span>xintercept<span class="o">=</span>CI_normal<span class="p">[</span><span class="m">2</span><span class="p">]),</span> size<span class="o">=</span><span class="m">.5</span><span class="p">,</span> colour<span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span><span class="o">+</span>
+    geom_vline<span class="p">(</span>aes<span class="p">(</span>xintercept<span class="o">=</span>CI_percentile<span class="p">[</span><span class="m">1</span><span class="p">]),</span> size<span class="o">=</span><span class="m">.5</span><span class="p">,</span> colour<span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">)</span><span class="o">+</span>
+    geom_vline<span class="p">(</span>aes<span class="p">(</span>xintercept<span class="o">=</span>CI_percentile<span class="p">[</span><span class="m">2</span><span class="p">]),</span> size<span class="o">=</span><span class="m">.5</span><span class="p">,</span> colour<span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">)</span><span class="o">+</span>
+    geom_vline<span class="p">(</span>aes<span class="p">(</span>xintercept<span class="o">=</span>CI_pivotal<span class="p">[</span><span class="m">1</span><span class="p">]),</span>size<span class="o">=</span><span class="m">.5</span><span class="p">,</span> colour<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span><span class="o">+</span>
+    geom_vline<span class="p">(</span>aes<span class="p">(</span>xintercept<span class="o">=</span>CI_pivotal<span class="p">[</span><span class="m">2</span><span class="p">]),</span>size<span class="o">=</span><span class="m">.5</span><span class="p">,</span> colour<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span><span class="o">+</span>
+  geom_vline<span class="p">(</span>aes<span class="p">(</span>xintercept<span class="o">=</span>tf_hat<span class="p">),</span>size<span class="o">=</span><span class="m">1</span><span class="p">,</span> colour<span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">)</span><span class="o">+</span> theme<span class="p">(</span>legend.title<span class="o">=</span>element_blank<span class="p">())</span> <span class="o">+</span>
+  geom_text<span class="p">(</span>aes<span class="p">(</span>x<span class="o">=</span><span class="m">1.45</span><span class="p">,</span>y<span class="o">=</span><span class="m">.15</span><span class="p">,</span>label<span class="o">=</span><span class="s">&#39;theta hat&#39;</span><span class="p">),</span>size<span class="o">=</span><span class="m">4</span><span class="p">,</span>angle<span class="o">=</span><span class="m">90</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+<img alt="" src="../Bootstrap_files/figure-html/exercise-2-1.png" /></p>
+<h3 id="3">习题3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><strong>Let <span><span class="MathJax_Preview">X_1,\cdots ,X_n \sim t_3</span><script type="math/tex">X_1,\cdots ,X_n \sim t_3</script></span> where <span><span class="MathJax_Preview">n = 25</span><script type="math/tex">n = 25</script></span>. Let <span><span class="MathJax_Preview">\theta = T (F) = (q_{.75}-q_{.25})/1.34</span><script type="math/tex">\theta = T (F) = (q_{.75}-q_{.25})/1.34</script></span> where <span><span class="MathJax_Preview">q_p</span><script type="math/tex">q_p</script></span> denotes the <span><span class="MathJax_Preview">p^{th}</span><script type="math/tex">p^{th}</script></span> quantile. Do a simulation to compare the coverage and length of the following confidence intervals for <span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>:</strong>
+    i. <strong>Normal interval with standard error from the Bootstrap,</strong>
+    ii. <strong>Bootstrap percentile interval, and</strong>
+    iii. <strong>pivotal Bootstrap interval.</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">set.seed</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+
+<span class="c1">##  sample X ~ t3</span>
+
+n<span class="o">=</span><span class="m">25</span>
+x<span class="o">&lt;-</span>rt<span class="p">(</span>n<span class="p">,</span><span class="m">3</span><span class="p">)</span>
+
+<span class="c1">##  estimate theta hat</span>
+
+theta_hat<span class="o">&lt;-</span><span class="kp">as.numeric</span><span class="p">((</span>quantile<span class="p">(</span>x<span class="p">,</span><span class="m">.75</span><span class="p">)</span><span class="o">-</span>quantile<span class="p">(</span>x<span class="p">,</span><span class="m">.25</span><span class="p">))</span><span class="o">/</span><span class="m">1.34</span><span class="p">)</span>
+
+theta_hat  <span class="c1"># estimated theta</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1.398754
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">##  Bootstrap sample</span>
+
+B<span class="o">=</span><span class="m">1000</span>  <span class="c1"># boostrap sample size</span>
+
+samp<span class="o">&lt;-</span><span class="kr">function</span><span class="p">(</span>x<span class="p">){</span>
+  sam<span class="o">=</span><span class="kp">sample</span><span class="p">(</span>x<span class="p">,</span>replace <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+  <span class="kp">as.numeric</span><span class="p">((</span>quantile<span class="p">(</span>sam<span class="p">,</span><span class="m">.75</span><span class="p">)</span><span class="o">-</span>quantile<span class="p">(</span>sam<span class="p">,</span><span class="m">.25</span><span class="p">))</span><span class="o">/</span><span class="m">1.34</span><span class="p">)</span>
+<span class="p">}</span>
+
+theta_boot<span class="o">&lt;-</span><span class="kp">replicate</span><span class="p">(</span>B<span class="p">,</span>samp<span class="p">(</span>x<span class="p">))</span>
+
+<span class="kp">head</span><span class="p">(</span>theta_boot<span class="p">)</span>  <span class="c1"># view Bootstrap sample</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1.1268643 1.3457015 0.8375122 1.7733377 1.7208744 1.6869699
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">##  i. Normal interval with standard error from the Bootstrap</span>
+
+sd<span class="p">(</span>theta_boot<span class="p">)</span>  <span class="c1">#  standard error from the Bootstrap</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.3034024
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>norm_CI<span class="o">&lt;-</span>theta_hat<span class="o">+</span>sd<span class="p">(</span>theta_boot<span class="p">)</span><span class="o">*</span>qnorm<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.0975</span><span class="p">))</span>
+
+norm_CI  <span class="c1"># 95% normal CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.8040967 1.0055666
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>norm_CI<span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">-</span>norm_CI<span class="p">[</span><span class="m">1</span><span class="p">]</span>  <span class="c1"># length of normal CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.2014699
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">##  ii. Bootstrap percentile interval</span>
+
+percentile_CI<span class="o">&lt;-</span>quantile<span class="p">(</span>theta_boot<span class="p">,</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.975</span><span class="p">))</span>
+
+percentile_CI    <span class="c1">#  95% percentile CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
+## 0.8152139 1.9755735
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">as.numeric</span><span class="p">(</span>percentile_CI<span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">-</span>percentile_CI<span class="p">[</span><span class="m">1</span><span class="p">])</span>  <span class="c1"># length of percentile CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1.16036
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">##  iii. pivotal Bootstrap interval</span>
+
+pivotal_CI<span class="o">&lt;-</span>quantile<span class="p">(</span>theta_hat<span class="o">-</span>theta_boot<span class="p">,</span><span class="kt">c</span><span class="p">(</span><span class="m">.025</span><span class="p">,</span><span class="m">.975</span><span class="p">))</span><span class="o">+</span>theta_hat
+
+pivotal_CI  <span class="c1">#  95% pivotal CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##      2.5%     97.5%
+## 0.8219355 1.9822950
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">as.numeric</span><span class="p">(</span>pivotal_CI<span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">-</span>pivotal_CI<span class="p">[</span><span class="m">1</span><span class="p">])</span>  <span class="c1"># length of pivotal CI</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 1.16036
+</pre></div>
+</td></tr></table>
+
+<h3 id="4">习题4<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p><strong>Let <span><span class="MathJax_Preview">X_1, \cdots ,X_n</span><script type="math/tex">X_1, \cdots ,X_n</script></span> be distinct observations (no ties). Show that there are <span><span class="MathJax_Preview">\displaystyle {2n-1} \choose n</span><script type="math/tex">\displaystyle {2n-1} \choose n</script></span> distinct Bootstrap samples.</strong></p>
+<ul>
+<li>
+<p>原问题等价为将 <span><span class="MathJax_Preview">X_1, \cdots ,X_{n}</span><script type="math/tex">X_1, \cdots ,X_{n}</script></span> 放入<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>个口袋中, 每个口袋中可放<span><span class="MathJax_Preview">0\sim n</span><script type="math/tex">0\sim n</script></span>个. 也等价为将 <span><span class="MathJax_Preview">X_1, \cdots ,X_{2n}</span><script type="math/tex">X_1, \cdots ,X_{2n}</script></span> 放入 <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 个口袋中,每个口袋至少放入一个.</p>
+<p>运用"隔板法"的思想, 放入方式的数量<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>为:</p>
+</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+    x=\frac{(2n-1)\times(2n-2)\times \dots \times n}{n !} = {2n-1\choose n}
+  </div>
+<script type="math/tex; mode=display">
+    x=\frac{(2n-1)\times(2n-2)\times \dots \times n}{n !} = {2n-1\choose n}
+  </script>
+</div>
+<p>所以, there are <span><span class="MathJax_Preview">{2n-1} \choose n</span><script type="math/tex">{2n-1} \choose n</script></span> distinct Bootstrap samples.</p>
+<h3 id="5">习题5<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>Let <span><span class="MathJax_Preview">X_{1},...,X_{n}</span><script type="math/tex">X_{1},...,X_{n}</script></span> be distinct observations(no ties). Let<span><span class="MathJax_Preview">{X_{1}}^{*},...,{X_{n}}^{*}</span><script type="math/tex">{X_{1}}^{*},...,{X_{n}}^{*}</script></span>denote a Bootstrap sample and let<span><span class="MathJax_Preview">\overline{X}^{*}_{n}=n^{-1}\Sigma^{n}_{i=1}X^{*}_{i}</span><script type="math/tex">\overline{X}^{*}_{n}=n^{-1}\Sigma^{n}_{i=1}X^{*}_{i}</script></span>.</p>
+<p>Find:<span><span class="MathJax_Preview">\mathbb{E}(\overline{X}^{*}_{n}|{X_{1}}^{*},...,{X_{n}}^{*})</span><script type="math/tex">\mathbb{E}(\overline{X}^{*}_{n}|{X_{1}}^{*},...,{X_{n}}^{*})</script></span>,<span><span class="MathJax_Preview">\mathbb{V}(\overline{X}^{*}_{n}|{X_{1}}^{*},...,{X_{n}}^{*})</span><script type="math/tex">\mathbb{V}(\overline{X}^{*}_{n}|{X_{1}}^{*},...,{X_{n}}^{*})</script></span>,<span><span class="MathJax_Preview">\mathbb{E}(\overline{X}^{*}_{n})</span><script type="math/tex">\mathbb{E}(\overline{X}^{*}_{n})</script></span>and<span><span class="MathJax_Preview">\mathbb{V}(\overline{X}^{*}_{n})</span><script type="math/tex">\mathbb{V}(\overline{X}^{*}_{n})</script></span>.</p>
+<p>答案分别为：<span><span class="MathJax_Preview">\overline{X}_{n}</span><script type="math/tex">\overline{X}_{n}</script></span>,<span><span class="MathJax_Preview">n^{-2}\Sigma^{n}_{i=1}(\overline{X}_{n}-X_{i})^{2}</span><script type="math/tex">n^{-2}\Sigma^{n}_{i=1}(\overline{X}_{n}-X_{i})^{2}</script></span>,<span><span class="MathJax_Preview">\mathbb{E}(\overline{X}_{n})</span><script type="math/tex">\mathbb{E}(\overline{X}_{n})</script></span>和<span><span class="MathJax_Preview">\mathbb{V}(\overline{X}_{n})+\mathbb{E}(n^{-2}\Sigma^{n}_{i=1}(\overline{X}_{n}-X_{i})^{2})</span><script type="math/tex">\mathbb{V}(\overline{X}_{n})+\mathbb{E}(n^{-2}\Sigma^{n}_{i=1}(\overline{X}_{n}-X_{i})^{2})</script></span></p>
+<p>其中前两个答案容易得到，后两个答案用到了条件期望的期望为无条件期望和无条件方差等于条件方差的期望加条件期望的方差。</p>
+<h3 id="6">习题6<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>(<strong>Computer Experiment</strong>.) Let <span><span class="MathJax_Preview">X_{1},...,X_{n}</span><script type="math/tex">X_{1},...,X_{n}</script></span> Normal <span><span class="MathJax_Preview">(\mu,1)</span><script type="math/tex">(\mu,1)</script></span>. Let <span><span class="MathJax_Preview">\theta=e^{\mu}</span><script type="math/tex">\theta=e^{\mu}</script></span> and let <span><span class="MathJax_Preview">\hat{\theta}=e^{\overline{X}}</span><script type="math/tex">\hat{\theta}=e^{\overline{X}}</script></span>. Create a data set (using <span><span class="MathJax_Preview">\mu=5</span><script type="math/tex">\mu=5</script></span>) consisting of <span><span class="MathJax_Preview">n=100</span><script type="math/tex">n=100</script></span> observations.</p>
+<p>(a) Use the Bootstrap to get the <strong>se</strong> and 95 percent confidence interval for <span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>.</p>
+<p>(b) Plot a histogram of the Bootstrap replications. This is an estimate of the distribution of <span><span class="MathJax_Preview">\hat{\theta}</span><script type="math/tex">\hat{\theta}</script></span>. Compare this to the true sampling distribution of <span><span class="MathJax_Preview">\hat{\theta}</span><script type="math/tex">\hat{\theta}</script></span>.</p>
+<p><span><span class="MathJax_Preview">(a)</span><script type="math/tex">(a)</script></span></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>set<span class="o">&lt;-</span>rnorm<span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>  <span class="c1">#按照题目要求生成原样本集</span>
+theta<span class="o">&lt;-</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span>
+<span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">#抽取1000个伪样本集并求每一个的T值</span>
+  x<span class="o">&lt;-</span><span class="kp">sample</span><span class="p">(</span>set<span class="p">,</span><span class="m">100</span><span class="p">,</span><span class="bp">T</span><span class="p">)</span>
+  theta<span class="p">[</span>i<span class="p">]</span><span class="o">&lt;-</span><span class="kp">exp</span><span class="p">(</span><span class="kp">mean</span><span class="p">(</span>x<span class="p">))</span>
+<span class="p">}</span>
+se<span class="o">&lt;-</span><span class="kp">sqrt</span><span class="p">(</span>var<span class="p">(</span>theta<span class="p">)</span><span class="o">*</span><span class="m">999</span><span class="o">/</span><span class="m">1000</span><span class="p">)</span> <span class="c1">#求Bootstrap法得到的标准差估计</span>
+thetahat<span class="o">&lt;-</span><span class="kp">exp</span><span class="p">(</span><span class="kp">mean</span><span class="p">(</span>set<span class="p">))</span>      <span class="c1">#利用Pivotal的方法求置信区间</span>
+low<span class="o">&lt;-</span><span class="m">2</span><span class="o">*</span>thetahat<span class="o">-</span>quantile<span class="p">(</span>theta<span class="p">,</span><span class="m">0.975</span><span class="p">)</span>
+high<span class="o">&lt;-</span><span class="m">2</span><span class="o">*</span>thetahat<span class="o">-</span>quantile<span class="p">(</span>theta<span class="p">,</span><span class="m">0.025</span><span class="p">)</span>
+se
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 13.0223
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kp">print</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span>low<span class="p">,</span>high<span class="p">))</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##    97.5%     2.5%
+## 108.1646 159.4769
+</pre></div>
+</td></tr></table>
+
+<p><span><span class="MathJax_Preview">(b)</span><script type="math/tex">(b)</script></span></p>
+<p>可以通过随机变量函数的密度函数来计算<span><span class="MathJax_Preview">\hat{\theta}</span><script type="math/tex">\hat{\theta}</script></span>真实的密度函数，得到真实的密度函数为<span><span class="MathJax_Preview">{\phi}_{(5,0.01)}(lny)*\frac{1}{y}</span><script type="math/tex">{\phi}_{(5,0.01)}(lny)*\frac{1}{y}</script></span>。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>hist<span class="p">(</span>theta<span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p><img alt="" src="../Bootstrap_files/figure-html/unnamed-chunk-2-1.png" /><!-- --></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curve<span class="p">(</span><span class="kp">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="kp">log</span><span class="p">(</span>x<span class="p">)</span><span class="m">-5</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">0.02</span><span class="p">)</span><span class="o">/</span>x<span class="o">/</span><span class="kp">sqrt</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="kc">pi</span><span class="p">)</span><span class="o">/</span><span class="m">0.1</span><span class="p">,</span><span class="m">50</span><span class="p">,</span><span class="m">250</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p><img alt="" src="../Bootstrap_files/figure-html/unnamed-chunk-2-2.png" /><!-- --></p>
+<p>经过比较可以看出，Bootstrap得到的<span><span class="MathJax_Preview">\hat{\theta}</span><script type="math/tex">\hat{\theta}</script></span>的柱状图较好地反映了真实的密度函数。</p>
+<h3 id="7">习题7<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>Let <span><span class="MathJax_Preview">X_{1},...,X_{n}\sim Uniform(0,\theta)</span><script type="math/tex">X_{1},...,X_{n}\sim Uniform(0,\theta)</script></span>. Let <span><span class="MathJax_Preview">\hat{\theta}=X_{max}=max\{X_{1},...,X_{n}\}</span><script type="math/tex">\hat{\theta}=X_{max}=max\{X_{1},...,X_{n}\}</script></span>. Generate a data set of size 50 with <span><span class="MathJax_Preview">\theta=1</span><script type="math/tex">\theta=1</script></span>.</p>
+<p>(a) Find the distribution of <span><span class="MathJax_Preview">\hat{\theta}</span><script type="math/tex">\hat{\theta}</script></span>. Compare the true distribution of <span><span class="MathJax_Preview">\hat{\theta}</span><script type="math/tex">\hat{\theta}</script></span> to the histograms from the Bootstrap.</p>
+<p>(b) This is a case where the Bootstrap does very poorly. In fact, we can prove that this is the case. Show that <span><span class="MathJax_Preview">P(\theta=\hat{\theta})=0</span><script type="math/tex">P(\theta=\hat{\theta})=0</script></span> and yet <span><span class="MathJax_Preview">P(\hat{{\theta}^{*}}=\hat{\theta})\approx.632</span><script type="math/tex">P(\hat{{\theta}^{*}}=\hat{\theta})\approx.632</script></span>. Hint: show that, <span><span class="MathJax_Preview">P(\hat{{\theta}^{*}}=\hat{\theta})=1-{(1-(1/n))}^{n}</span><script type="math/tex">P(\hat{{\theta}^{*}}=\hat{\theta})=1-{(1-(1/n))}^{n}</script></span> then take the limit as n gets large.</p>
+<p><span><span class="MathJax_Preview">(a)</span><script type="math/tex">(a)</script></span></p>
+<p>可以通过次序统计量的密度计算出<span><span class="MathJax_Preview">\hat{\theta}</span><script type="math/tex">\hat{\theta}</script></span>的真实的密度函数为<span><span class="MathJax_Preview">50*(y)^{49}</span><script type="math/tex">50*(y)^{49}</script></span></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>X<span class="o">&lt;-</span>runif<span class="p">(</span><span class="m">50</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>  <span class="c1">#按题目要求生成原样本集</span>
+thetahat<span class="o">&lt;-</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span>
+<span class="kr">for</span> <span class="p">(</span>i <span class="kr">in</span> <span class="m">1</span><span class="o">:</span><span class="m">1000</span><span class="p">)</span> <span class="p">{</span> <span class="c1">#抽取1000个伪样本集并求每一个的T值</span>
+  Y<span class="o">&lt;-</span><span class="kp">sample</span><span class="p">(</span>X<span class="p">,</span><span class="m">50</span><span class="p">,</span><span class="bp">T</span><span class="p">)</span>
+  thetahat<span class="p">[</span>i<span class="p">]</span><span class="o">&lt;-</span><span class="kp">max</span><span class="p">(</span>Y<span class="p">)</span>
+<span class="p">}</span>
+hist<span class="p">(</span>thetahat<span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p><img alt="" src="../Bootstrap_files/figure-html/unnamed-chunk-3-1.png" /><!-- --></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curve<span class="p">(</span><span class="m">50</span><span class="o">*</span>x<span class="o">^</span><span class="p">(</span><span class="m">49</span><span class="p">),</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p><img alt="" src="../Bootstrap_files/figure-html/unnamed-chunk-3-2.png" /><!-- --></p>
+<p>可以看到，Bootstrap法得到的柱状图对密度函数的描述并不是很好。</p>
+<p><span><span class="MathJax_Preview">(b)</span><script type="math/tex">(b)</script></span></p>
+<p>第一个结论容易证明，因为次序统计量为一个连续型随机变量，所以取得某一个值的概率为0。
+第二个结论中，<span><span class="MathJax_Preview">P(\hat{{\theta}^{*}}=\hat{\theta})</span><script type="math/tex">P(\hat{{\theta}^{*}}=\hat{\theta})</script></span> 即为从样本集中抽取伪样本集抽到了最大的一个的概率，所以概率为<span><span class="MathJax_Preview">1-{(1-(1/n))}^{n}</span><script type="math/tex">1-{(1-(1/n))}^{n}</script></span>。当n趋于无穷时，<span><span class="MathJax_Preview">{(1-(1/n))}^{n}</span><script type="math/tex">{(1-(1/n))}^{n}</script></span>的极限为<span><span class="MathJax_Preview">\frac{1}{e}</span><script type="math/tex">\frac{1}{e}</script></span>。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="m">1-1</span><span class="o">/</span><span class="kp">exp</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## [1] 0.6321206
+</pre></div>
+</td></tr></table>
+
+<h1 id="_5">参考文献<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<p>[1] Wasserman L. All of Statistics: A Concise Course in Statistical Inference[M]. Springer, 2010: 107-116</p>
+<p>[2] Efron B. Bootstrap Methods: Another Look at the Jackknife[J]. Annals of Statistics, 1979, 7(1): 1-26.</p>
+<p>[3] Quenouille M H. Problems in Plane Sampling[J]. Annals of Mathematical Statistics, 1949, 20(3): 355-375.</p>
+<p>[4] Tukey, John W. "Bias and confidence in not quite large samples (abstract)". The Annals of Mathematical Statistics, 1958, 29 (2): 614.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../consulting/case/" title="咨询案例" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                咨询案例
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../PDE-final/" title="2017-2018第一学期数理方程期末考试" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                2017-2018第一学期数理方程期末考试
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017 - 2018 NKDACS
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.a26c1c19.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
+      
+        <script src="../../_static/js/extra.js?v=1"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
