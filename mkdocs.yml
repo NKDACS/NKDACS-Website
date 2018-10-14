@@ -19,7 +19,7 @@ nav:
   - 统计咨询:
     - 咨询案例: consulting/case.md
   - 知识分享:
-    - 基于CUDA的FFT加速算法: share/cuda-fft.md
+    - The Bootstrap: share/bootstrap.md
     - 2017-2018第一学期数理方程期末考试: share/PDE-final.md
   - 教程:
     - Markdown测试页面: tutorial/test.md
@@ -71,7 +71,7 @@ extra:
 
 extra_javascript:
   - '_static/js/extra.js?v=1'
-  - 'https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'
+  - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'
 
 extra_css:
   - '_static/css/extra.css?v=1'

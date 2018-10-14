@@ -1,27 +1,21 @@
-<!-- Set from config but allow override -->
-{% set disqus = config.extra.disqus %} {% if page and page.meta and page.meta.disqus is string %} {% set disqus = page.meta.disqus
-  %} {% endif %}
-{% set copyright = config.extra.copyright %} {% if page and page.meta and page.meta.copyright is string %} {% set copyright = page.meta.copyright
-  %} {% endif %}
-{% if not page.is_homepage %}
-<hr><blockquote class="page-copyright"><p>本页面的内容基于 <strong>{{ copyright }}</strong> 协议提供。传播分享本页面时，需要注明原文作者和页面地址，同时不可对内容进行任何修改和商业使用！</p></blockquote>
+{% set disqus = config.extra.disqus %}
+{% if page and page.meta and page.meta.disqus is string %}
+  {% set disqus = page.meta.disqus %}
 {% endif %}
-<!-- Comments Integration -->
 {% if not page.is_homepage and disqus %}
-{% set pageID = page.title | default("404", true) %}
-<h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
-<div id="disqus_thread"></div>
-<script>
-  var disqus_config = function () {
-    this.page.url = "{{ page.canonical_url }}";
-    this.page.identifier =
-      "{{ page.canonical_url | replace(config.site_url, "") }}";
-  };
-  (function() {
-    var d = document, s = d.createElement("script");
-    s.src = "//{{ disqus }}.disqus.com/embed.js";
-    s.setAttribute("data-timestamp", +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
+  <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "{{ page.canonical_url }}";
+      this.page.identifier =
+        "{{ page.canonical_url | replace(config.site_url, "") }}";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//{{ disqus }}.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
 {% endif %}
