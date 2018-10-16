@@ -22,7 +22,7 @@ nav:
     - The Bootstrap: share/bootstrap.md
     - 2017-2018第一学期数理方程期末考试: share/PDE-final.md
   - 教程:
-    - Markdown测试页面: tutorial/test.md
+    - Markdown 说明: tutorial/md-tutorial.md
     - Pytorch安装教程: tutorial/pytorch-install.md
   - 项目发布:
     - 南开大学教务助手微信小程序: projects/eamis-miniapp.md

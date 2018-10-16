@@ -2,6 +2,8 @@
 
 基本的Markdown命令可在网上搜索优秀的学习资源进行学习，本网站还支持了一些特殊的命令，基于Material for MkDocs[^1]。更多的具体情况请查看 [此链接](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
 
+也可以参考我们做的一个[幻灯片](./files/md-tutor.html)
+
 ## 代码测试
 
 ``` Python

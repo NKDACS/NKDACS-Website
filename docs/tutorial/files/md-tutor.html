@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="NKDACS-IT部/张万鹏">
+  <title>Markdwon  分享</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Markdwon  分享</h1>
+  <p class="author">NKDACS-IT部/张万鹏</p>
+</section>
+
+<section id="markdown-简介" class="slide level2">
+<h2>Markdown 简介</h2>
+<p>Markdown 是一个 Web 上使用的文本到 HTML 的转换工具，可以通过简单、易读易写的文本格式生成结构化的 HTML 文档。目前 github、Stackoverflow、 知乎等网站均支持这种格式。而在我们的常用工具中，如 Jupyter Notebook、R Studio 也均支持了 Markdown。如今 Markdown 的使用范围也远不止 Web 上 HTML 生成，它凭借着优秀的排版效果、使用体验和跨平台支持，在学术界也开始备受青睐。</p>
+</section>
+<section class="slide level2">
+
+<h3 id="段落和换行">段落和换行</h3>
+<p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的<strong>前后</strong>要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。</p>
+</section>
+<section class="slide level2">
+
+<h3 id="标题">标题</h3>
+<p>在行首插入1到6个 <code>#</code>，对应标题的1到6阶，例如：</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">
+<span class="fu"># 这是 H1</span>
+
+<span class="fu">## 这是 H2</span>
+
+<span class="fu">###### 这是 H6</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="区块引用">区块引用</h3>
+<p>Markdown 通过 <code>&gt;</code> 符号来进行区块引用</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">
+&gt;<span class="dt"> 这是一次</span>
+<span class="dt">&gt; 关于 Markdown 的分享</span>
+<span class="dt">&gt;</span>
+<span class="dt">&gt; 来自 NKDACS</span></code></pre></div>
+<blockquote>
+<p>这是一次 关于 Markdown 的分享</p>
+<p>来自 NKDACS</p>
+</blockquote>
+</section>
+<section class="slide level2">
+
+<h3 id="无序列表">无序列表</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">
+* <span class="fl">南开大学</span>
+<span class="fl">* 统计与数据科学学院</span>
+<span class="fl">* NKDACS</span></code></pre></div>
+<p><em>注：<code>*</code>号可替换为<code>+</code>/<code>-</code></em></p>
+<ul>
+<li>南开大学</li>
+<li>统计与数据科学学院</li>
+<li>NKDACS</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="有序列表">有序列表</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">
+1. <span class="fl">南开大学</span>
+<span class="fl">2. 统计与数据科学学院</span>
+<span class="fl">3. NKDACS</span></code></pre></div>
+<ol type="1">
+<li>南开大学</li>
+<li>统计与数据科学学院</li>
+<li>NKDACS</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<h3 id="段落列表">段落列表</h3>
+<p>列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">
+1. <span class="fl"> 这是第一项的第一段内容哦！</span>
+
+<span class="bn">    这是第一项的第二段内容哦！</span>
+
+2. <span class="fl"> 这是第二项的内容！</span></code></pre></div>
+<ol type="1">
+<li><p>这是第一项的第一段内容哦！</p>
+<p>这是第一项的第二段内容哦！</p></li>
+<li><p>这是第二项的内容！</p></li>
+</ol>
+</section>
+<section class="slide level2">
+
+<h3 id="代码">代码</h3>
+<p>如果要标记一小段行内代码，你可以用反引号把它包起来（<code>`</code>），例如：</p>
+<pre><code>Example: cout&lt;&lt;&quot;Hello, World!&quot;.
+Example: `cout&lt;&lt;&quot;Hello, World!&quot;`.</code></pre>
+<p>Example: cout&lt;&lt;&quot;Hello, World!&quot;.</p>
+<p>Example: <code>cout&lt;&lt;&quot;Hello, World!&quot;</code>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="代码区块">代码区块</h3>
+<p>首末使用三个 <code>`</code> 包围，能够把代码按代码块展现出来</p>
+<pre><code>```python
+
+import torch
+import numpy as np
+
+np_data = np.arange(6).reshape((2, 3))
+torch_data = torch.from_numpy(np_data)
+tensor2array = torch_data.numpy()
+
+```</code></pre>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">
+<span class="im">import</span> torch
+<span class="im">import</span> numpy <span class="im">as</span> np
+
+np_data <span class="op">=</span> np.arange(<span class="dv">6</span>).reshape((<span class="dv">2</span>, <span class="dv">3</span>))
+torch_data <span class="op">=</span> torch.from_numpy(np_data)
+tensor2array <span class="op">=</span> torch_data.numpy()</code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="链接行内式">链接（行内式）</h3>
+<p>通过方括号、圆括号，能够让文字变成链接：</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">
+我们 NKDACS 的<span class="ot">[官网](https://www.nkdacs.com)</span></code></pre></div>
+<p>我们 NKDACS 的<a href="https://www.nkdacs.com">官网</a></p>
+</section>
+<section class="slide level2">
+
+<h3 id="链接参考式">链接（参考式）</h3>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">
+I get 10 times more traffic from <span class="ot">[Google] [1] </span>than from
+<span class="ot">[Yahoo] [2] </span>or <span class="ot">[MSN] [3]</span>.
+
+  <span class="ot">[1]: http://google.com/        &quot;Google&quot;</span>
+  <span class="ot">[2]: http://search.yahoo.com/  &quot;Yahoo Search&quot;</span>
+  <span class="ot">[3]: http://search.msn.com/    &quot;MSN Search&quot;</span></code></pre></div>
+<p>I get 10 times more traffic from <a href="http://google.com/" title="Google">Google</a> than from <a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="强调">强调</h3>
+<p>Markdown 使用星号和底线作为标记强调字词的符号，被单个包围会被转成斜体，用两个围则被转成粗体</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">
+*single asterisks*
+_single underscores_
+**double asterisks**
+__double underscores__</code></pre></div>
+<p><em>single asterisks</em></p>
+<p><em>single underscores</em></p>
+<p><strong>double asterisks</strong></p>
+<p><strong>double underscores</strong></p>
+</section>
+<section class="slide level2">
+
+<h3 id="图片">图片</h3>
+<p>插入图片的方式很简单，如下所示：</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">
+<span class="al">![图片的描述文字](http://www.nankai.edu.cn/_upload/tpl/00/3f/63/template63/images/logo.png)</span></code></pre></div>
+<figure>
+<img src="http://www.nankai.edu.cn/_upload/tpl/00/3f/63/template63/images/logo.png" alt="图片的描述文字" /><figcaption>图片的描述文字</figcaption>
+</figure>
+</section>
+<section class="slide level2">
+
+<h3 id="转义">转义</h3>
+<p>Markdown 有很多内置符号，我们有时候反而只是单纯地想打印出它们，这时只需在相应符号前加一个反斜杠即可</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">
+我想打一个反斜杠符号出来：\\</code></pre></div>
+<p>我想打一个反斜杠符号出来：\</p>
+</section>
+<section id="nkdacs-网站上的一些特殊情况" class="slide level2">
+<h2>NKDACS 网站上的一些特殊情况</h2>
+<ul>
+<li><p>Markdown 规则众多，在基本框架格式上，NKDACS.com 采用了较为通用且严格的规则，因此需要多加注意，至少满足前面所讲的基本要求是肯定没有问题的。</p></li>
+<li><p>与此同时，在细节之处，我们也补充加入了少量新特性，从而满足一些特殊的需求。</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="latex"><span class="math inline">\(\LaTeX\)</span></h3>
+<ul>
+<li><p>网站支持 <span class="math inline">\(\LaTeX\)</span>，因此各位请放心使用 <span class="math inline">\(\LaTeX\)</span>，并且基本上支持绝大多数语句！只需要在 Markdown 中正常使用<code>$ $</code>包围起来的 <span class="math inline">\(\LaTeX\)</span> 语句即可。</p></li>
+<li><p>需要特别注意的是，我们只支持<code>$ $</code>和<code>$$ $$</code>包围起来的 <span class="math inline">\(\LaTeX\)</span> 语句，并不支持<code>\( \)</code>和<code>\[\]</code>包围起来的语句。</p></li>
+</ul>
+<p><strong>注意：</strong></p>
+<ol type="1">
+<li><code>$</code>符号内包围的公式开头和末尾不要有空格！</li>
+<li><code>$$ $$</code>的前一行和后一行都需要是空行！</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<h3 id="特殊格式">特殊格式</h3>
+<p>属于进阶用法，请在熟练掌握基本 Markdown 语法后，查看我们放在 nkdacs 网站上的说明页面：</p>
+<p><a href="https://www.nkdacs.com/tutorial/test/" class="uri">https://www.nkdacs.com/tutorial/test/</a></p>
+</section>
+<section class="slide level2">
+
+</section>
+<section><section id="谢谢" class="titleslide slide level1"><h1>谢谢</h1></section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

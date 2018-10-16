@@ -44,6 +44,7 @@ Bootstrap 是一种统计模拟的方法,最早由Efron[2]在1979年提出, 可�
 Bootstrap包含两个步骤:
 
 > **Step 1**: Estimate $\mathbb{V}_F (T_n)$ with $\mathbb{V}_{\hat{F}_n}(T_n)$.
+>
 > **Step 2**: Approximate $\mathbb{V}_{\hat{F}_n}(T_n)$ using simulation.
 
 Step 2 常见的具体做法是: 从抽取的容量为n的样本$\hat{F_n}$中不放回的抽取$X_1^*,\cdots,X_n^*$, 并计算$T_n^*=g(X_1^*,\cdots,X_n^*)$. 通过观察$T_n^*$的分布, 可以估计 $\mathbb{V}_{\hat{F}_n}(T_n)$
