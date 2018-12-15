@@ -1,31 +1,24 @@
-# Project Information
 site_name: NKDACS
 site_description: NKDACS 是一个南开大学统计与数据科学学院属下的科研组织，向学界及社会各界提供统计咨询服务。
-site_author: NKDACS IT Team
-site_url: https://www.nkdacs.com
+site_url: 'https://www.nkdacs.com'
 strict: true
-
-# Repository
-repo_name: 'NKDACS/NKDACS-Website'
 repo_url: 'https://github.com/NKDACS/NKDACS-Website'
 edit_uri: 'edit/master/docs/'
-
-# Copyright
+remote_branch: gh-pages
+remote_name: 'origin'
+site_author: NKDACS IT Team
 copyright: 'Copyright &copy; 2017 - 2018 NKDACS'
 
-# Contents
 nav:
   - 主页: index.md
   - 统计咨询:
     - 咨询案例: consulting/case.md
   - 知识分享:
-    - The Bootstrap: share/bootstrap.md
-    - 2017-2018第一学期数理方程期末考试: share/PDE-final.md
+    - The Bootstrap: share/bootstrap/bootstrap.md
+    - Chapter 1: share/chap1/chap1.md
   - 教程:
     - Markdown 说明: tutorial/md-tutorial.md
     - Pytorch安装教程: tutorial/pytorch-install.md
-  - 项目发布:
-    - 南开大学教务助手微信小程序: projects/eamis-miniapp.md
   - 关于:
     - 网站简介: about/website-intro.md
     - 团队介绍: about/intro.md
@@ -34,47 +27,31 @@ nav:
     - 知识共享协议: others/cc.md
     - 更换站点颜色: others/color.md
 
-
-# Theme
 theme:
-  name: null
-  custom_dir: 'mkdocs-material/material'
-  static_templates:
-    - 404.html
+  name: 'material'
+  font: false
   language: 'zh'
+  logo:
+    icon: 'school'
   palette:
     primary: 'blue grey'
     accent: 'light blue'
-
   include_search_page: false
   search_index_only: true
-
-  logo:
-    icon: 'school'
   feature:
     tabs: true
-  font:
-    text: 'Fira Sans'
-    code: 'Fira Mono'
 
-# google_analytics:
-#   - 'UA-124909690-1'
-#   - 'auto'
-
-# Customization
 extra:
   search:
     language: 'jp'
-  #disqus: ''
-  copyright: '<a href=https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh>CC BY-NC-ND 4.0</a>'
-  #pagetime: 'on'
-
+  social:
+    - type: 'github'
+      link: 'https://github.com/NKDACS'
+    - type: 'globe'
+      link: 'http://stat.nankai.edu.cn/'
 extra_javascript:
-  - '_static/js/extra.js?v=1'
-  - 'https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'
-
-extra_css:
-  - '_static/css/extra.css?v=1'
+  - _static/js/extra.js
+  - //cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_SVG
 
 # Extensions
 markdown_extensions:

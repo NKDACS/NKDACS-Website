@@ -27,6 +27,19 @@ NKDACS-Website的全部内容均已开源，欢迎各位向本Repo贡献代码�
 * 作为一个知识共享平台，NKDACS-Website应该是一个有严格逻辑框架的网站，将会有着广而深的框架式学术内容，传统的博客框架更多地基于时间顺序结构，以及简单的分类和标签结构，而MkDocs作为Wiki化的文档管理系统，与本网站的需求一拍而合。
 * 上手简单、易维护。NKDACS是一个学生团体，而学生的学籍变动快，一旦负责网站设计、维护的同学毕业离校，将会存在网站交接的难题，MkDocs上手简单、设计规范、无需进行服务器维护，对比传统的Django/Flask框架，更适合学生团队持续运营。
 
+## 如何在本地模拟运行本网站？
+
+1. 逐步运行如下命令
+
+```
+git clone https://github.com/NKDACS/NKDACS-Website/
+cd NKDACS-Website/
+pip install -r requirements
+mkdocs serve
+```
+
+2. 本地浏览器访问 http://127.0.0.1:8000/ ，查看网站效果。
+
 ## 如何指出NKDACS-Website上的错误，以及如何在这个平台上分享知识？
 
 我们已将网站的全部文章的Markdown源码开源于此[Repo](https://github.com/NKDACS/NKDACS-Website)的docs文件夹内，而网站的所有页面均直接基于这些Markdown文件进行渲染生成，因此，您只需要修改相应的文件然后提交Pull Request，我们会根据采用情况进行Merge，或者您也可以针对具体的情况在[Repo](https://github.com/NKDACS/NKDACS-Website)内提出Issues，我们会做出相应的回应。

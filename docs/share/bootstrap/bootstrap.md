@@ -279,7 +279,7 @@ sd(boot_theta)   #标准差
 hist(boot_theta) #分布
 ```
 
-![](Bootstrap_files/figure-html/Bootstrap-1.png)<!-- -->
+![](figure-html/Bootstrap-1.png)<!-- -->
 
 ```r
 PerI=quantile(boot_theta,c(.025,.975))   # percentile interval
@@ -551,7 +551,7 @@ ggplot(ci,aes(x=dist,fill=cla)) + geom_density(alpha=.5) +
   geom_vline(aes(xintercept=tf_hat),size=1, colour="black")+ theme(legend.title=element_blank()) +
   geom_text(aes(x=1.45,y=.15,label='theta hat'),size=4,angle=90)
 ```
-![](Bootstrap_files/figure-html/exercise-2-1.png)
+![](figure-html/exercise-2-1.png)
 
 
 
@@ -741,13 +741,13 @@ print(c(low,high))
 hist(theta)
 ```
 
-![](Bootstrap_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+![](figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 ```r
 curve(exp(-(log(x)-5)^2/0.02)/x/sqrt(2*pi)/0.1,50,250)
 ```
 
-![](Bootstrap_files/figure-html/unnamed-chunk-2-2.png)<!-- -->
+![](figure-html/unnamed-chunk-2-2.png)<!-- -->
 
 经过比较可以看出，Bootstrap得到的$\hat{\theta}$的柱状图较好地反映了真实的密度函数。
 
@@ -772,13 +772,13 @@ for (i in 1:1000) { #抽取1000个伪样本集并求每一个的T值
 hist(thetahat)
 ```
 
-![](Bootstrap_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](figure-html/unnamed-chunk-3-1.png)<!-- -->
 
 ```r
 curve(50*x^(49),0,1)
 ```
 
-![](Bootstrap_files/figure-html/unnamed-chunk-3-2.png)<!-- -->
+![](figure-html/unnamed-chunk-3-2.png)<!-- -->
 
 可以看到，Bootstrap法得到的柱状图对密度函数的描述并不是很好。
 
