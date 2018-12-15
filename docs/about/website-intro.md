@@ -29,7 +29,7 @@ NKDACS-Website的全部内容均已开源，欢迎各位向本Repo贡献代码�
 
 ## 如何在本地模拟运行本网站？
 
-1. 在终端界面逐步运行如下命令（需要安装 python, git 等）
+1.在终端界面逐步运行如下命令（需要安装 python, git 等）
 
 ```
 git clone https://github.com/NKDACS/NKDACS-Website/
@@ -38,7 +38,7 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-2. 本地浏览器访问 http://127.0.0.1:8000/ ，查看网站效果。
+2.本地浏览器访问 http://127.0.0.1:8000/ ，查看网站效果。
 
 ## 如何指出NKDACS-Website上的错误，以及如何在这个平台上分享知识？
 
