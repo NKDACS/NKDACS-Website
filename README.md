@@ -34,7 +34,7 @@ NKDACS-Website的全部内容均已开源，欢迎各位向本Repo贡献代码�
 ```
 git clone https://github.com/NKDACS/NKDACS-Website/
 cd NKDACS-Website/
-pip install -r requirements
+pip install -r requirements.txt
 mkdocs serve
 ```
 
