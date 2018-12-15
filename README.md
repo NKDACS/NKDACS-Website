@@ -29,7 +29,7 @@ NKDACS-Website的全部内容均已开源，欢迎各位向本Repo贡献代码�
 
 ## 如何在本地模拟运行本网站？
 
-1. 逐步运行如下命令
+1. 在终端界面逐步运行如下命令（需要安装 python, git 等）
 
 ```
 git clone https://github.com/NKDACS/NKDACS-Website/
