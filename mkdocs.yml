@@ -1,4 +1,4 @@
-site_name: NKDACS
+﻿site_name: NKDACS
 site_description: NKDACS 是一个南开大学统计与数据科学学院属下的科研组织，向学界及社会各界提供统计咨询服务。
 site_url: 'https://www.nkdacs.com'
 strict: true
@@ -17,8 +17,12 @@ nav:
     - The Bootstrap: share/bootstrap/bootstrap.md
     - Chapter 1: share/chap1/chap1.md
   - 教程:
+    - Markdown 模板: tutorial/md-template.md
     - Markdown 说明: tutorial/md-tutorial.md
     - Pytorch安装教程: tutorial/pytorch-install.md
+  - 会议:
+    - 2019.04: conference/April.md
+    - 2019.05: conference/May.md
   - 关于:
     - 网站简介: about/website-intro.md
     - 团队介绍: about/intro.md
