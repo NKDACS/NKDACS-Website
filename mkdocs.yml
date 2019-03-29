@@ -20,9 +20,6 @@ nav:
     - Markdown 模板: tutorial/md-template.md
     - Markdown 说明: tutorial/md-tutorial.md
     - Pytorch安装教程: tutorial/pytorch-install.md
-  - 会议:
-    - 2019.04: conference/April.md
-    - 2019.05: conference/May.md
   - 关于:
     - 网站简介: about/website-intro.md
     - 团队介绍: about/intro.md

@@ -1,3 +1,6 @@
+!!! note ""
+    本文作者：王晓媛 魏正萌 王雅丽 王嘉茜 王音戈
+
 ## 第一章：导论
 ### 1.1统计学习概述
 统计学习是一套以理解数据为目的的庞大的工具集,统计学习的工具可分为两大类:有指导的学习和无指导的学习。
@@ -1329,7 +1332,7 @@ summary(data2$Grad.Rate)
 
 
 
-###9.
+###9
 
 
 
@@ -1544,8 +1547,9 @@ summary(model1)
 ## F-statistic: 252.4 on 7 and 384 DF,  p-value: < 2.2e-16
 ```
 
-10. 本习题是关于 Boston 房屋数据集的。
+### 10 
 
+本习题是关于 Boston 房屋数据集的。
 
 （a）开始载入Boston 数据集。 Boston 数据集是 MASS 软件包中的一部分。
  > library(MASS)
@@ -1909,3 +1913,7 @@ detach(Boston)
 
 
 在与犯罪率关系较强的变量中，这些郊区的数据更优，呈现出更好的城市面貌，使得犯罪率较其他数据有非常明显的下降。
+
+
+## 参考文献
+[1] James G , Witten D , Hastie T , et al. An Introduction to Statistical Learning[M]. Springer New York, 2013.
