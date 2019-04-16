@@ -13,6 +13,8 @@ nav:
   - 主页: index.md
   - 统计咨询:
     - 咨询案例: consulting/case.md
+    - 大数据量化投资平台: consulting/big data.md
+    - 天津市南开区“小升初”随机派位系统: consulting/ps to jms.md
   - 知识分享:
     - The Bootstrap: share/bootstrap/bootstrap.md
     - Chapter 1: share/chap1/chap1.md
