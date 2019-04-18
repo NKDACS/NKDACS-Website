@@ -11,8 +11,10 @@ copyright: 'Copyright &copy; 2017 - 2018 NKDACS'
 
 nav:
   - 主页: index.md
+  - 案例比赛:
+    - 案例比赛: competition/case.md
   - 统计咨询:
-    - 咨询案例: consulting/case.md
+    - 咨询案例: consulting/all.md
   - 知识分享:
     - The Bootstrap: share/bootstrap/bootstrap.md
     - Chapter 1: share/chap1/chap1.md
