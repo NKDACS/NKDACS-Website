@@ -18,6 +18,7 @@ nav:
   - 知识分享:
     - The Bootstrap: share/bootstrap/bootstrap.md
     - Chapter 1: share/chap1/chap1.md
+    - Random number: share/Random number/Random number.md
   - 教程:
     - Markdown 模板: tutorial/md-template.md
     - Markdown 说明: tutorial/md-tutorial.md
