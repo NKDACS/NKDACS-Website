@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script src="echarts.min.js"></script>
+</head>
+
+<body>
+    <!------------------------------->
+    <!--矩形树图-->
+    <!------------------------------->
+    <div id="tritreemap" style="width:100%;height:800px;"></div>
+    <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('tritreemap'));
+
+            option = {
+    backgroundColor: "#404A59",
+    color: ['#ffd285', '#ff733f', '#ec4863'],
+
+    title: [{
+        text: '2019-nCoV 新型冠状病毒疫情传播预测(2020.1.30)',
+        left: '1%',
+        top: '6%',
+        textStyle: {
+            color: '#fff'
+        }
+    }],
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        x: 300,
+        top: '10%',
+        textStyle: {
+            color: '#ffd285',
+        },
+        data: ['全国预测总数', '湖北预测总数', '武汉预测总数']
+    },
+    grid: {
+        left: '1%',
+        right: '35%',
+        top: '16%',
+        bottom: '6%',
+        containLabel: true
+    },
+    toolbox: {
+        "show": false,
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        "axisLine": {
+            lineStyle: {
+                color: '#FF4500'
+            }
+        },
+        "axisTick": {
+            "show": false
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        boundaryGap: false,
+        data: ['2020.1.30.', '2020.1.31.', '2020.2.1.', '2020.2.2.', '2020.2.3.']
+    },
+    yAxis: {
+        "axisLine": {
+            lineStyle: {
+                color: '#fff'
+            }
+        },
+        splitLine: {
+            show: true,
+            lineStyle: {
+                color: '#fff'
+            }
+        },
+        "axisTick": {
+            "show": false
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        type: 'value'
+    },
+    series: [{
+        name: '全国预测总数',
+        smooth: true,
+        type: 'line',
+        symbolSize: 8,
+      	symbol: 'circle',
+        data: [9118, 10602, 12136, 13651, 15083]
+    }, {
+        name: '湖北预测总数',
+        smooth: true,
+        type: 'line',
+        symbolSize: 8,
+      	symbol: 'circle',
+        data: [6026, 6998, 8033, 9091, 10102]
+    }, {
+        name: '武汉预测总数',
+        smooth: true,
+        type: 'line',
+        symbolSize: 8,
+      	symbol: 'circle',
+        data: [2950, 3720,4427, 4988, 5581]
+    }]
+};
+myChart.setOption(option);
+    </script>
+</body>
+
+</html>
