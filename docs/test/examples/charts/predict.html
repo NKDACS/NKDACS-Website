@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2019nCoV</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.min.js"></script>
+    <link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
+
+	<!-- Fonts and icons -->
+	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Open+Sans:300,400,600,700"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['../assets/css/fonts.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/css/azzara.min.css">
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link rel="stylesheet" href="../../assets/css/demo.css">
+</head>
+<body>
+	<div class="wrapper">
+		<!--
+			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
+		-->
+		<div class="main-header" data-background-color="purple">
+			<!-- Logo Header -->
+			<div class="logo-header">
+				<a href="index.html" class="logo">
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="fa fa-bars"></i>
+					</span>
+				</button>
+				<button class="topbar-toggler more"><i class="fa fa-ellipsis-v"></i></button>
+				<div class="navbar-minimize">
+					<button class="btn btn-minimize btn-rounded">
+						<i class="fa fa-bars"></i>
+					</button>
+				</div>
+			</div>
+			<!-- End Logo Header -->
+
+			<!-- Navbar Header -->
+			<nav class="navbar navbar-header navbar-expand-lg">
+				
+				<div class="container-fluid">
+					<div class="collapse" id="search-nav">
+						<form class="navbar-left navbar-form nav-search mr-md-3">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<button type="submit" class="btn btn-search pr-1">
+										<i class="fa fa-search search-icon"></i>
+									</button>
+								</div>
+								<input type="text" placeholder="Search ..." class="form-control">
+							</div>
+						</form>
+					</div>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item toggle-nav-search hidden-caret">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+								<i class="fa fa-search"></i>
+							</a>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+								<div class="avatar-sm">
+									<img src="../../assets/img/nankai.jpg" alt="..." class="avatar-img rounded-circle">
+								</div>
+							</a>
+							<ul class="dropdown-menu dropdown-user animated fadeIn">
+								<li>
+									<div class="user-box">
+										<div class="avatar-lg"><img src="../assets/img/nankai.jpg" alt="image profile" class="avatar-img rounded"></div>
+										<div class="u-text">
+											<h4>NKDACS数据可视化</h4>
+											<!--<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a> -->
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="dropdown-divider"></div>
+									<div class="user-box">
+										<div class="u-text">
+											<p class="text-muted">陈笑洋 张宸玥 王玉珏 刘城昕 马佳明</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</li>
+						
+					</ul>
+				</div>
+			</nav>
+			<!-- End Navbar -->
+		</div>
+		<!-- Sidebar -->
+		<div class="sidebar">
+			
+			<div class="sidebar-background"></div>
+			<div class="sidebar-wrapper scrollbar-inner">
+					<ul class="nav">
+						<li class="nav-item active">
+							<a href="../index.html">
+								<i class="fas fa-home"></i>
+								<p>项目介绍</p>
+							</a>
+						</li>
+						<li class="nav-item active submenu">
+							<a data-toggle="collapse" href="#charts">
+								<i class="far fa-chart-bar"></i>
+								<p>疫情发展</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse show" id="charts">
+								<ul class="nav nav-collapse">
+									<li class="active">
+										<a href="../charts/predict.html">
+											<span class="sub-item">疫情发展预测</span>
+										</a>
+									</li>
+									<li>
+										<a href="../charts/review.html">
+											<span class="sub-item">疫情发展回顾</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+			</div>
+		</div>
+	
+		<!-- main-panel -->
+
+	<div class="main-panel">
+		<div class="content">
+			<div class="page-inner">
+				<h4 class="page-title">疫情发展预测</h4>
+				<div class="page-category">该预测基于国家卫建委公布的从2019年12月12日-2020年2月1日的新型冠状病毒肺炎疫情数据，应用了传播动力学及黄森忠博士建构的普适SEIR模型，基于“南开大学智英健康数据研究中心”开发的程序EpiSIX，着重研究了武汉市，湖北省和全国的疫情发展情况，并对未来五天的确诊人数进行了预测，做出了疫情发展及疾控效率的研判。</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">新型冠状病毒肺炎确诊病例数时序图</div>
+							</div>
+							<div class="card-body">
+								<div class="chart-container">
+									<div id="liandong" style="width:100%;height:500px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">新型冠状病毒肺炎新增病例数时序图</div>
+							</div>
+							<div class="card-body">
+								<div class="card-sub">
+									截止目前，每日新增的确诊病例数仍是上涨状态，形式不容乐观。但积极的一面是，确诊增长率已稳定控制在20%以下，并逐步下降。依据黄森忠教授的模型预测，预计在2月7日前后会出现爆发增长的拐点。								</div>
+								<div class="chart-container">
+									<div id="add" style="width:100%;height:500px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!--   Core JS Files   -->
+	<script src="../../assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="../../assets/js/core/popper.min.js"></script>
+	<script src="../../assets/js/core/bootstrap.min.js"></script>
+	<!-- jQuery UI -->
+	<script src="../../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="../../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<!-- Chart JS -->
+	<script src="../../assets/js/plugin/chart.js/chart.min.js"></script>
+	<!-- Bootstrap Toggle -->
+	<script src="../../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+	<!-- jQuery Scrollbar -->
+	<script src="../../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<!-- Azzara JS -->
+	<script src="../../assets/js/ready.min.js"></script>
+	<!-- Azzara DEMO methods, don't include it in your project! -->
+	<script src="../../assets/js/setting-demo.js"></script>
+
+
+
+		
+
+<!-- 第一个图 -->
+<script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('liandong'));
+        var xAxisData = ['12/8/19','12/31/19','1/3/20','1/5/20','1/11/20','1/12/20','1/13/20','1/14/20','1/15/20','1/16/20','1/17/20','1/18/20','1/19/20','1/20/20','1/21/20','1/22/20','1/23/20','1/24/20','1/25/20','1/26/20','1/27/20','1/28/20','1/29/20','1/30/20','1/31/20',
+        '2/1/20','2/2/20','2/3/20','2/4/20','2/5/20','2/6/20'];
+//全国
+var firstLineData = [1,27,44,59,41,41,41,41,41,45,62,121,198,291,440,571,830,1287,1975,2744,4515,5974,7711,8149,11791,13831,'_', '_', '_', '_', '_'];
+var firstLineDottedData = ['_', '_', '_', '_', '_','_', '_', '_', '_', '_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_',9118,10602,12136,15363,17074,18627,19992,21166];
+//湖北
+var sendLineData = [1,27,44,59,41,41,41,41,41,45,62,121,198,270,375,444,549,729,1052,1423,2714,3554,4586,6026,7153,9074,'_', '_', '_', '_', '_'];
+var sendLineDottedData = ['_', '_', '_', '_', '_','_', '_', '_', '_', '_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_',6026,6998,8033,9790,10987,12091,13069,13905];
+//武汉
+var threeLineData = [1,27,44,59,41,41,41,41,41,45,62,121,198,270,375,437,495,572,618,698,1590,1905,2261,2639,3215,4109,'_', '_', '_', '_', '_'];
+var threeLineDottedData = ['_', '_', '_', '_', '_','_', '_', '_', '_', '_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_',2950,3720,4427,4596,5120,5568,6233,6808];
+
+var lineitemStyle2 = {
+normal: {
+    label: {
+        formatter: function(params) {
+            return dataValue - params.value;
+        },
+        fontSize: 40,
+        padding: [90, 0, 0, 0],
+        color: '#7d838b',
+        textStyle: {
+            baseline: 'top'
+        }
+    },
+    color: 'rgba(255,170,0,0.7)',
+    borderColor: 'rgba(255,170,0,0.5)',
+    borderWidth: 10
+}
+};
+var lineitemStyle1 = {
+normal: {
+    label: {
+        formatter: function(params) {
+            return dataValue - params.value;
+        },
+        fontSize: 40,
+        padding: [90, 0, 0, 0],
+        color: '#7d838b',
+        textStyle: {
+            baseline: 'top'
+        }
+    },
+    color: 'rgba(0,133,245,0.7)',
+    borderColor: 'rgba(0,133,245,0.5)',
+    borderWidth: 10
+}
+};
+var lineitemStyle = {
+normal: {
+    label: {
+        formatter: function(params) {
+            return dataValue - params.value;
+        },
+        fontSize: 40,
+        padding: [90, 0, 0, 0],
+        color:'#7d838b',
+        textStyle: {
+            baseline: 'top'
+        }
+    },
+    color: 'rgba(255,37,117,0.7)',
+    borderColor: 'rgba(255,37,117,0.5)',
+    borderWidth: 10
+}
+};
+
+option = {
+backgroundColor: '#ffffff',
+legend: {
+        data: ['全国（真实）', '湖北（真实）','武汉（真实）','全国（预测）', '湖北（预测）','武汉（预测）'],
+        top: -5,
+        right: '10%',
+        textStyle: {
+            color: '#7d838b',
+        },
+    },
+title: {
+    text: '',
+    subtext: '',
+    x: 'center'
+},
+grid: {
+    left: '1%',
+    right: '4%',
+    top: '15%',
+    bottom: '5%',
+    containLabel: true
+},
+xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    axisTick: {
+        show: false
+    },
+    axisLine: {
+        lineStyle: {
+            color: '#7d838b'
+        },
+        onZero: true
+    },
+    axisLabel: {
+        fontSize: 11,
+        color: '#7d838b'
+    },
+    data: xAxisData
+},
+yAxis: {
+    type: 'value',
+    axisTick: {
+        show: false
+    },
+    axisLine: {
+        lineStyle: {
+            color: '#7d838b'
+        },
+        onZero: false
+    },
+    axisLabel: {
+        fontSize: 11,
+        color: '#7d838b'
+    },
+    splitLine: {
+        lineStyle: {
+            type: 'dotted',
+            color: '#7d838b'
+        }
+    },
+    scale: true
+},
+"dataZoom": [{
+
+
+        "show": true,
+        "height": 20,
+        "xAxisIndex": [
+            0
+        ],
+        bottom: 0,
+        "start": 63,
+        "end": 95,
+    
+        handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+        handleSize: '110%',
+        handleStyle:{
+            color:"#d3dee5",
+            
+        },
+           textStyle:{
+            color:"#fff"},
+           borderColor:"#90979c"
+        
+        
+    },{
+        "type": "slider",
+          
+        "show": false,
+        "height": 10,
+        "start": 25,
+        "end": 65
+    }],
+series: [{
+    name: '全国（真实）',
+    smooth: true,
+    type: 'line',
+    symbolSize: 1,
+    symbol: 'circle',
+    itemStyle: lineitemStyle,
+    data: firstLineData,
+    tooltip: {
+        formatter: '{b0},{a0}: {c0}<br />{b2}'
+    }
+}, {
+    name: '全国（预测）',
+    smooth: true,
+    type: 'line',
+    symbolSize: 1,
+    symbol: 'diamond',
+    itemStyle: lineitemStyle,
+    lineStyle: {
+        normal: {
+            type: 'dotted'
+        }
+    },
+   
+    data: firstLineDottedData,
+    tooltip: {
+        formatter: '{b0},{a0}: {c0}<br />{b2}'
+    }
+}, {
+    name: '湖北（真实）',
+    smooth: true,
+    type: 'line',
+    symbolSize: 1,
+    symbol: 'circle',
+    itemStyle: lineitemStyle1,
+    data: sendLineData,
+    tooltip: {
+        formatter: '{b0},{a0}: {c0}<br />{b2}'
+    }
+}, {
+    name: '湖北（预测）',
+    smooth: true,
+    type: 'line',
+    symbolSize: 1,
+    symbol: 'diamond',
+    itemStyle: lineitemStyle1,
+    lineStyle: {
+        normal: {
+            type: 'dotted'
+        }
+    },
+    data: sendLineDottedData,
+    tooltip: {
+        formatter: '{b0},{a0}: {c0}<br />{b2}'
+    }
+}, {
+    type: 'line',
+    name: '武汉（真实）',
+    smooth: true,
+    symbolSize: 1,
+    symbol: 'circle',
+    itemStyle: lineitemStyle2,
+    data: threeLineData,
+    tooltip: {
+        formatter: '{b0},{a0}: {c0}<br />{b2}'
+    }
+}, {
+    type: 'line',
+    name: '武汉（预测）',
+    smooth: true,
+    symbol: 'diamond',
+    symbolSize: 1,
+    itemStyle: lineitemStyle2,
+    lineStyle: {
+        normal: {
+            type: 'dotted'
+        }
+    },
+    data: threeLineDottedData,
+    tooltip: {
+        formatter: '{b0},{a0}: {c0}<br />{b2}'
+    }
+}]
+};
+
+myChart.setOption(option);
+</script>
+
+
+ <!-- 第二个图 -->
+
+ <script type="text/javascript">
+	var myChart = echarts.init(document.getElementById('add'));
+	var charts = {
+unit: '病例数',
+names: ['全国每日新增的确诊病例数'],
+lineX: ['1/15/20','1/16/20','1/17/20','1/18/20','1/19/20','1/20/20','1/21/20','1/22/20','1/23/20','1/24/20','1/25/20','1/26/20','1/27/20','1/28/20','1/29/20','1/30/20','1/31/20','2/1/20'],
+value: [
+[4,17,59,77,93,149,131,259,457,688,769,1771,1459,1737,438,3642,2040]
+]
+
+}
+var color = ['rgba(255,37,117', 'rgba(0,133,245','rgba(255,170,0']
+var lineY = []
+
+for (var i = 0; i < charts.names.length; i++) {
+var x = i
+if (x > color.length - 1) {
+x = color.length - 1
+}
+var data = {
+name: charts.names[i],
+type: 'line',
+color: color[x] + ')',
+smooth: true,
+areaStyle: {
+	normal: {
+		color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+			offset: 0,
+			color: color[x] + ', 0.3)'
+		}, {
+			offset: 0.8,
+			color: color[x] + ', 0)'
+		}], false),
+		shadowColor: 'rgba(0, 0, 0, 0.1)',
+		shadowBlur: 10
+	}
+},
+symbol: 'circle',
+symbolSize: 5,
+data: charts.value[i]
+}
+lineY.push(data)
+}
+
+
+var option = {
+backgroundColor:'#ffffff',
+tooltip: {
+trigger: 'axis'
+},
+legend: {
+data: charts.names,
+textStyle: {
+	fontSize: 12,
+	color: '#7d838b'
+},
+right: '4%'
+},
+
+grid: {
+
+top: '15%',
+left: '1%',
+right: '4%',
+bottom: '8%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: charts.lineX,
+axisLabel: {
+	textStyle: {
+		color: '#7d838b'
+	},
+	formatter: function(params) {
+		return params.split(' ')[0] 
+	}
+}
+},
+yAxis: {
+name: charts.unit,
+type: 'value',
+axisLabel: {
+	formatter: '{value}',
+	textStyle: {
+		color: '#7d838b'
+	}
+},
+splitLine: {
+	lineStyle: {
+		type: 'dotted',
+		color: '#7d838b'
+	}
+},
+axisLine: {
+	lineStyle: {
+		color: '#7d838b'
+	}
+}
+},
+"dataZoom": [{
+
+
+	"show": true,
+	"height": 20,
+	"xAxisIndex": [
+		0
+	],
+	bottom: 19,
+	"start": 63,
+	"end": 95,
+
+	handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+	handleSize: '110%',
+	handleStyle:{
+		color:"#d3dee5",
+		
+	},
+	   textStyle:{
+		color:"#fff"},
+	   borderColor:"#90979c"
+	
+	
+},{
+	"type": "slider",
+	  
+	"show": false,
+	"height": 10,
+	"start": 25,
+	"end": 65
+}],
+series: lineY
+}
+setInterval(() => {
+myChart.setOption({
+legend: {
+selected: {
+  '出口': false,
+  '入口': false
+}
+}
+})
+myChart.setOption({
+legend: {
+selected: {
+  '出口': true,
+  '入口': true
+}
+}
+})
+},10000);
+window.onresize = function(){
+myChart.resize();
+//myChart1.resize();    //若有多个图表变动，可多写
+
+}
+
+myChart.setOption(option);
+</script>
+
+
+</body>
+
+</html>
