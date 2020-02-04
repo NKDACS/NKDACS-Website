@@ -353,7 +353,7 @@
                     x: 'center'
                 },
                 grid: {
-                    left: '1%',
+                    left: '-0.85%',
                     right: '4%',
                     top: '15%',
                     bottom: '5%',
@@ -380,6 +380,7 @@
                     data: xAxisData
                 },
                 yAxis: {
+                    name:"病例数",
                     type: 'value',
                     axisTick: {
                         show: false
@@ -391,8 +392,9 @@
                         onZero: false
                     },
                     axisLabel: {
-                        fontSize: 11,
-                        color: '#7d838b'
+                        fontSize: 9,
+                        color: '#7d838b',
+                        rotate:45
                     },
                     splitLine: {
                         lineStyle: {
