@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>2019nCoV</title>
-	<meta name="renderer" content="webkit">
-	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.common.js"></script>
+    <title>2019nCoV</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   	<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.common.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.min.js"></script>
 	<link rel="icon" href="../../assets/img/icon.ico" type="image/x-icon"/>
 	
@@ -36,7 +37,11 @@
 		<div class="main-header" data-background-color="purple">
 			<!-- Logo Header -->
 			<div class="logo-header">
-				
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="fa fa-bars"></i>
+					</span>
+				</button>
 				<button class="topbar-toggler more"><i class="fa fa-ellipsis-v"></i></button>
 				<div class="navbar-minimize">
 					<button class="btn btn-minimize btn-rounded">
@@ -171,22 +176,10 @@
 		<div class="content">
 			<div class="page-inner">
 				<h4 class="page-title">疫情发展回顾</h4>
-				<div class="page-category">随着新型冠状病毒肺炎疫情的蔓延，每日更新的疫情相关数据和新闻牵动着亿万人的心。我们决定将这些数据和事件都收集下来，尝试用所学知识，帮助大家更好地了解和回溯疫情的发展全程，给更多人带来启发与反思，为战胜疫情提供自己的微薄力量。
+				<div class="page-category">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着新型冠状病毒肺炎疫情的蔓延，每日更新的疫情相关数据和新闻牵动着亿万人的心。我们决定将这些数据和事件都收集下来，尝试用所学知识，帮助大家更好地了解和回溯疫情的发展全程，给更多人带来启发与反思，为战胜疫情提供自己的微薄力量。
 				</div>
 				<div class="row">
-					<div class="col-md-12">
-						<div class="card">
-							<div class="card-header">
-								<div class="card-title">全国新型冠状病毒肺炎确诊病例数日历图
-								</div>
-							</div>
-							<div class="card-body">
-								<div class="chart-container">
-									<div id="dateplot" style="width:100%;height:520px;"></div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 
 				<div class="col-md-12">
 						<div class="card">
@@ -198,6 +191,15 @@
 							<div class="card-body">
 								<div id = 'shijian'>
 								<section id="cd-timeline" class="cd-container">
+                                    
+										<div class="cd-timeline-block">
+										<div class="cd-timeline-img cd-movie">
+										</div>
+										<div class="cd-timeline-content">
+										<h4>12.8 全国确诊新型肺炎病例</h4>
+										<span class="cd-date">2019-12-8</span>
+										</div>
+										</div>
 
 									<div class="cd-timeline-block">
 									<div class="cd-timeline-img cd-picture">
@@ -207,13 +209,20 @@
 									<span class="cd-date">2020-1-1</span>
 									</div>
 									</div>
-									
-									<!-- 这是一块 -->
 									<div class="cd-timeline-block">
 										<div class="cd-timeline-img cd-movie">
 										</div>
 										<div class="cd-timeline-content">
-										<h4>1.20 钟南山提出确定有人传人现象</h4>
+										<h4>1.17 病毒核酸检测试剂盒投入使用 </h4>
+										<span class="cd-date">2020-1-17</span>
+										</div>
+										</div>
+									<!-- 这是一块 -->
+									   <div class="cd-timeline-block">
+										<div class="cd-timeline-img cd-movie">
+										</div>
+										<div class="cd-timeline-content">
+										<h4>1.20 提出确定有人传人现象</h4>
 										<span class="cd-date">2020-1-20</span>
 										</div>
 										</div>
@@ -229,8 +238,7 @@
 										<div class="cd-timeline-img cd-movie">
 										</div>
 										<div class="cd-timeline-content">
-										<h4>1.24 湖北省封省 </h4>
-										
+										<h4>1.24 湖北省启动一级响应 </h4>
 										<span class="cd-date">2020-1-24</span>
 										</div>
 										</div>
@@ -258,13 +266,11 @@
 										<span class="cd-date">2020-1-31</span>
 										</div>
 										</div>
-								
-								
 										<div class="cd-timeline-block">
 										<div class="cd-timeline-img cd-movie">
 										</div>
 										<div class="cd-timeline-content">
-										<h4>2.2 火神山医院完工，明日接诊</h4>
+										<h4>2.2 火神山医院完工</h4>
 										<span class="cd-date">2020-2-2</span>
 										</div>
 										</div>
@@ -277,30 +283,52 @@
 						</div>
 					</div>
 					</div>
-
-					<div class="col-md-12">
-						<div class="card">
-							<div class="card-header">
-								<div class="card-title">全国死亡率治愈率对比折柱图
-								</div>
-							</div>
-							<div class="card-body">
-								<div class="card-sub">
-									对比折柱图直观反映了疫情的治愈速率与死亡速率的关系。从图中可以看出，近几天，治愈速率从小于死亡速率逐步开始转变为大于死亡速率，防控措施展现出了积极的效果。
-经过春节假期近两周的全国动员与防控，目前已初步控制住疫情蔓延趋势。但春节假期结束也意味着又即将迎来春运返程大潮，一线城市将会面临新的挑战。目前我们面对的疫情防控和医疗救治工作仍然十分艰巨，还需大家的共同努力。</div>
-							</div>
-								<div class="chart-container">
-									<div id="linebarquanguo" style="width:100%;height:600px;"></div>
-								</div>
-							</div>
-						</div>
 					</div>
 
 
 
 
 				</div>
-			</div>
+            </div>
+            
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">全国新型冠状病毒肺炎确诊病例数日历图
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <div id="dateplot" style="width:100%;height:520px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">全国死亡率治愈率对比折柱图
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对比折柱图直观反映了疫情的治愈速率与死亡速率的关系。从图中可以看出，近几天，治愈速率从小于死亡速率逐步开始转变为大于死亡速率，防控措施展现出了积极的效果。
+经过春节假期近两周的全国动员与防控，目前已初步控制住疫情蔓延趋势。但春节假期结束也意味着又即将迎来春运返程大潮，一线城市将会面临新的挑战。目前我们面对的疫情防控和医疗救治工作仍然十分艰巨，还需大家的共同努力。</div>
+                    </div>
+                        <div class="chart-container">
+                            <div id="linebarquanguo" style="width:100%;height:600px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="../charts/predict.html">
+                    <button class="btn btn-secondary">疫情发展预测</button>
+                </a>
+
+
+               
 		</div>
 		
 	</div>
@@ -871,7 +899,7 @@
     <!------------------------------->
     <script type="text/javascript">
             var myChart = echarts.init(document.getElementById('dateplot'));
-            var dateList = [[ "2020-1-1","初七","*"],[ "2020-1-2","初八" ],[ "2020-1-3","初九" ],[ "2020-1-4","初十" ],[ "2020-1-5","十一" ],[ "2020-1-6","十二" ],[ "2020-1-7","十三" ],[ "2020-1-8","十四" ],[ "2020-1-9","十五" ],[ "2020-1-10","十六" ],[ "2020-1-11","十七" ],[ "2020-1-12","十八" ],[ "2020-1-13","十九" ],[ "2020-1-14","二十" ],[ "2020-1-15","廿一" ],[ "2020-1-16","廿二" ],[ "2020-1-17","廿三" ],[ "2020-1-18","廿四" ],[ "2020-1-19","廿五" ],[ "2020-1-20","廿六","*" ],[ "2020-1-21","廿七" ],[ "2020-1-22","廿八" ],[ "2020-1-23","廿九","武汉封城" ],[ "2020-1-24","除夕","湖北封省" ],[ "2020-1-25","春节","*" ],[ "2020-1-26","初二","*"],[ "2020-1-27","初三" ],[ "2020-1-28","初四" ],[ "2020-1-29","初五" ],[ "2020-1-30","初六" ],[ "2020-1-31","初七","*" ]
+            var dateList = [[ "2020-1-1","初七","*"],[ "2020-1-2","初八" ],[ "2020-1-3","初九" ],[ "2020-1-4","初十" ],[ "2020-1-5","十一" ],[ "2020-1-6","十二" ],[ "2020-1-7","十三" ],[ "2020-1-8","十四" ],[ "2020-1-9","十五" ],[ "2020-1-10","十六" ],[ "2020-1-11","十七" ],[ "2020-1-12","十八" ],[ "2020-1-13","十九" ],[ "2020-1-14","二十" ],[ "2020-1-15","廿一" ],[ "2020-1-16","廿二" ],[ "2020-1-17","廿三" ],[ "2020-1-18","廿四" ],[ "2020-1-19","廿五" ],[ "2020-1-20","廿六","*" ],[ "2020-1-21","廿七" ],[ "2020-1-22","廿八" ],[ "2020-1-23","廿九","武汉封城" ],[ "2020-1-24","除夕","*" ],[ "2020-1-25","春节","*" ],[ "2020-1-26","初二","*"],[ "2020-1-27","初三" ],[ "2020-1-28","初四" ],[ "2020-1-29","初五" ],[ "2020-1-30","初六" ],[ "2020-1-31","初七","*" ]
 ];
 
 var heatmapData = [];
@@ -894,11 +922,11 @@ for (var i = 0; i < dateList.length; i++) {
 
 option = {
     backgroundColor:'#ffffff',
-    tooltip: {
-        formatter: function (params) {
-            return '全国确诊人数: ' + params.value[1];
-        }
-    },
+    //tooltip: {
+      //  formatter: function (params) {
+        //    return '全国确诊人数: ' + params.value[1];
+        //}
+    //},
     visualMap: {
         "min": 0,
         "max": 12000,
