@@ -39,7 +39,7 @@ Main components
 -------------------------------- */
 #cd-timeline {
 	width: 100%;
-	height:1150px;   /* 改时间线的长度的，就是那条线*/
+	height:1500px;   /* 改时间线的长度的，就是那条线*/
 position: relative;
 padding: 2em 0;
 margin-top: 2em;

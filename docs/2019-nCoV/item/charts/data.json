@@ -1,18 +1,6 @@
 dataJson({
     "real": [{
-        "date":      "1.18",
-        "diagnosis": 121,
-        "hubei":     121,
-        "wuhan":     121,
-        "die":       3,
-        "cure":      25
-        },{"date":   "1.19",
-        "diagnosis": 198,
-        "hubei":     198,
-        "wuhan":     198,
-        "die":       4,
-        "cure":      25
-        },{"date":   "1.20",
+        "date":   "1.20",
         "diagnosis": 291,
         "hubei":     270,
         "wuhan":     270,
@@ -96,39 +84,107 @@ dataJson({
         "wuhan":     5142,
         "die":       361,
         "cure":      475
+    },
+    {
+       "date": "2.3",
+       "diagnosis": 20438,
+       "hubei": 13522,
+       "wuhan": 6384,
+       "die": 425,
+       "cure": 632
+     },
+     {
+       "date": "2.4",
+       "diagnosis": 24324,
+       "hubei": 16678,
+       "wuhan": 8351,
+       "die": 490,
+       "cure": 892
+     },
+     {
+       "date": "2.5",
+       "diagnosis": 28018,
+       "hubei": 19665,
+       "wuhan": 10117,
+       "die": 563,
+       "cure": 1153
+     },
+     {
+       "date": "2.6",
+       "diagnosis": 31161,
+       "hubei": 22112,
+       "wuhan": 11618,
+       "die": 636,
+       "cure": 1540
+     },
+     {
+       "date": "2.7",
+       "diagnosis": 34546,
+       "hubei": 24953,
+       "wuhan": 13603,
+       "die": 722,
+       "cure": 2050
+     }],
+    "predictive": [
+    {
+      "date": "2.6",
+      "diagnosis": 29335.5,
+      "hubei": 19675,
+      "wuhan": 11684,
+      "quanguoshang": 30929,
+      "quanguoxia": 27742,
+      "wuhanshang": 12529,
+      "wuhanxia": 10839,
+      "hubeishang": 21139,
+      "hubeixia": 18211
+    },
+    {
+      "date": "2.7",
+      "diagnosis": 31727.5,
+      "hubei": 21686,
+      "wuhan": 12833,
+      "quanguoshang": 33255,
+      "quanguoxia": 30200,
+      "wuhanshang": 13681,
+      "wuhanxia": 11985,
+      "hubeishang": 23159,
+      "hubeixia": 20213
+    },
+    {
+      "date": "2.8",
+      "diagnosis": 38306,
+      "hubei": 28436,
+      "wuhan": 15271.5,
+      "quanguoshang": 40444,
+      "quanguoxia": 36168,
+      "wuhanshang": 16023,
+      "wuhanxia": 14520,
+      "hubeishang": 30168,
+      "hubeixia": 26704
+    },
+    {
+      "date": "2.9",
+      "diagnosis": 41151,
+      "hubei": 30641.5,
+      "wuhan": 16304.5,
+      "quanguoshang": 43233,
+      "quanguoxia": 39069,
+      "wuhanshang": 17021,
+      "wuhanxia": 15588,
+      "hubeishang": 32341,
+      "hubeixia": 28942
+    },
+    {
+      "date": "2.10",
+      "diagnosis": 43925.5,
+      "hubei": 32813,
+      "wuhan": 17289,
+      "quanguoshang": 45937,
+      "quanguoxia": 41914,
+      "wuhanshang": 17966,
+      "wuhanxia": 16612,
+      "hubeishang": 34467,
+      "hubeixia": 31159
     }],
-    "predictive": [{
-        "date":      "1.30",
-        "diagnosis": 9118,
-        "hubei":     6026,
-        "wuhan":     2950
-        },{"date":   "1.31",
-        "diagnosis": 10602,
-        "hubei":     6998,
-        "wuhan":     3720
-        },{"date":   "2.1",
-        "diagnosis": 12136,
-        "hubei":     8033,
-        "wuhan":     4427
-        },{"date":   "2.2",
-        "diagnosis": 15363,
-        "hubei":     9790,
-        "wuhan":     4596
-        },{"date":   "2.3",
-        "diagnosis": 17074,
-        "hubei":     10987,
-        "wuhan":     5120
-        },{"date":   "2.4",
-        "diagnosis": 18627,
-        "hubei":     12091,
-        "wuhan":     5568
-        },{"date":   "2.5",
-        "diagnosis": 19992,
-        "hubei":     13069,
-        "wuhan":     6233
-        },{"date":   "2.6",
-        "diagnosis": 21166,
-        "hubei":     13905,
-        "wuhan":     6808
-    }]
+
 })
