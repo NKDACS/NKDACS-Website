@@ -138,8 +138,8 @@ dataJson({
        "diagnosis": 40171,
        "hubei": 29631,
        "wuhan": 16902,
-       "die": 811,
-       "cure": 2649
+       "die": 908,
+       "cure": 3281
      }],
     "predictive": [
     {

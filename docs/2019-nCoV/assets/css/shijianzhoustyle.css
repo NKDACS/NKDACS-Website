@@ -95,7 +95,7 @@ margin: 1em 0;
 height:100px; 
 }
 .cd-timeline-block:last-child {
-padding-top: 20px;
+/*padding-top: 20px;*/
 padding-bottom: 85px;
 margin: 1em 0;
 /*width:100%;可以改间隔，方块间的间隔*/

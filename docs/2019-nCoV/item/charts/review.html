@@ -24,7 +24,7 @@
 
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../assets/css/azzara.css">
+	<link rel="stylesheet" href="../../assets/css/azzara.min.css">
 	<link rel="stylesheet" href="../../assets/css/shijianzhoustyle.css" />
 
 
@@ -184,10 +184,9 @@
 				<div class="col-md-12">
 						<div class="card">
 							<div class="card-header">
-								<div id = 'shijian'>
 								<div class="card-title">全国新型冠状病毒肺炎大事记</div>
-							</div>
-							<div id = 'shijian'>
+                            </div>
+                            <div id = 'shijian'>
 							<div class="card-body">
 								<div id = 'shijian'>
 								<section id="cd-timeline" class="cd-container">
@@ -298,14 +297,11 @@
 										<span class="cd-date">2020-2-6</span>
 										</div>
 										</div>
-
-							
-                        </div>
+                                </div>
                         <div class="card-sub">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-消息来源：人民日报、人民网、环球时报、腾讯新闻</div>
-					</div>
-					</div>
+                            消息来源：人民日报、人民网、环球时报、腾讯新闻</div>
+                        </div>
 					</div>
 
 
@@ -334,17 +330,17 @@
                         <div class="card-sub">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对比折柱图直观反映了疫情的治愈速率与死亡速率的关系。从图中可以看出，近几天，治愈速率从小于死亡速率逐步开始转变为大于死亡速率，防控措施展现出了积极的效果。
 经过春节假期近两周的全国动员与防控，目前已初步控制住疫情蔓延趋势。但春节假期结束也意味着又即将迎来春运返程大潮，一线城市将会面临新的挑战。目前我们面对的疫情防控和医疗救治工作仍然十分艰巨，还需大家的共同努力。</div>
-                        <div class="chart-container" style="padding-bottom:56%;">
-                            <div id="linebarquanguo" style="width:100%;"></div>
+                        <div class="chart-container" style="padding-top:0.5rem;">
+                            <div id="linebarquanguo" style="width:100%;padding-bottom:63%;"></div>
                         </div>
                     </div>
                         
                     </div>
-                </div>
 
-                <a href="../charts/predict.html">
-                    <button class="btn btn-secondary">疫情发展预测</button>
-                </a>
+                    <a href="../charts/predict.html">
+                        <button class="btn btn-secondary">疫情发展预测</button>
+                    </a>
+                </div>
 
 
                
@@ -379,290 +375,14 @@
     
     <!-- Process Data -->
     <script type="text/javascript">
-        // 三条折线图
-        xAxisData = []; firstLineData = []; firstLineDottedData = []; sendLineData = []; sendLineDottedData = []; threeLineData = []; threeLineDottedData = [];
-        function addData(date,r0,r2,r4,p1,p3,p5){
-            xAxisData.push(date);
-            firstLineData.push(r0);
-            sendLineData.push(r2);
-            threeLineData.push(r4);
-            firstLineDottedData.push(p1);
-            sendLineDottedData.push(p3);
-            threeLineDottedData.push(p5);
-        };
-        delta = 3;
-        n = 0;
-        rdays = data["real"].length;
-        pdays = data["predictive"].length;
-        for (i = pdays-1; i > -1; i--) {
-            if (data["real"][rdays-delta]["date"] == data["predictive"][i]["date"]){n = i;break;}
-        };
-        for (i = 0; i < rdays+pdays-n-delta; i++) {
-            if (i < rdays-delta) {
-                addData(data["real"][i]["date"],data["real"][i]["diagnosis"],data["real"][i]["hubei"],data["real"][i]["wuhan"],'_','_','_');
-            } else if (i < rdays) {
-                j = i+delta-rdays+n;
-                addData(data["real"][i]["date"],data["real"][i]["diagnosis"],data["real"][i]["hubei"],data["real"][i]["wuhan"],data["predictive"][j]["diagnosis"],data["predictive"][j]["hubei"],data["predictive"][j]["wuhan"]);
-            } else {
-                j = i+delta-rdays+n;
-                addData(data["predictive"][j]["date"],'_','_','_',data["predictive"][j]["diagnosis"],data["predictive"][j]["hubei"],data["predictive"][j]["wuhan"]);
-            }
-        };
         // 折柱图
         items5 = []; die = []; cure =[]; rate=[];
-        // add
-        lineX = []; lineY = [];
         for (let idx in data["real"]) {
             items5.push(data["real"][idx]["date"]);
             die.push(data["real"][idx]["die"]);
             cure.push(data["real"][idx]["cure"]);
             rate.push((die[idx]/cure[idx]).toFixed(2));
-            lineX.push(data["real"][idx]["date"]);
-            lineY.push(data["real"][idx]["diagnosis"]-data["real"][(idx-1<0)?0:idx-1]["diagnosis"]);
         };
-    </script>
-
-    <!------------------------------->
-    <!--三条折线图-->
-    <!------------------------------->
-    <script type="text/javascript">
-        var myChart = echarts.init(document.getElementById('liandong'));
-        
-        var lineitemStyle2 = {
-        normal: {
-            label: {
-                formatter: function(params) {
-                    return dataValue - params.value;
-                },
-                fontSize: 40,
-                padding: [90, 0, 0, 0],
-                color: '#7d838b',
-                textStyle: {
-                    baseline: 'top'
-                }
-            },
-            color: 'rgba(255,170,0,0.7)',
-            borderColor: 'rgba(255,170,0,0.5)',
-            borderWidth: 10
-        }
-        };
-        var lineitemStyle1 = {
-        normal: {
-            label: {
-                formatter: function(params) {
-                    return dataValue - params.value;
-                },
-                fontSize: 40,
-                padding: [90, 0, 0, 0],
-                color: '#7d838b',
-                textStyle: {
-                    baseline: 'top'
-                }
-            },
-            color: 'rgba(0,133,245,0.7)',
-            borderColor: 'rgba(0,133,245,0.5)',
-            borderWidth: 10
-        }
-        };
-        var lineitemStyle = {
-        normal: {
-            label: {
-                formatter: function(params) {
-                    return dataValue - params.value;
-                },
-                fontSize: 40,
-                padding: [90, 0, 0, 0],
-                color:'#7d838b',
-                textStyle: {
-                    baseline: 'top'
-                }
-            },
-            color: 'rgba(255,37,117,0.7)',
-            borderColor: 'rgba(255,37,117,0.5)',
-            borderWidth: 10
-        }
-        };
-
-        option = {
-            backgroundColor: '#ffffff',
-            legend: {
-                    data: ['全国（真实）', '湖北（真实）','武汉（真实）','全国（预测）', '湖北（预测）','武汉（预测）'],
-                    top: -5,
-                    right: '10%',
-                    textStyle: {
-                        color: '#7d838b',
-                    },
-                },
-            title: {
-                text: '',
-                subtext: '',
-                x: 'center'
-            },
-            grid: {
-                left: '1%',
-                right: '4%',
-                top: '15%',
-                bottom: '5%',
-                containLabel: true
-            },
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                axisTick: {
-                    show: false
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: '#7d838b'
-                    },
-                    onZero: true
-                },
-                axisLabel: {
-                    fontSize: 11,
-                    color: '#7d838b'
-                },
-                data: xAxisData
-            },
-            yAxis: {
-                type: 'value',
-                axisTick: {
-                    show: false
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: '#7d838b'
-                    },
-                    onZero: false
-                },
-                axisLabel: {
-                    fontSize: 11,
-                    color: '#7d838b'
-                },
-                splitLine: {
-                    lineStyle: {
-                        type: 'dotted',
-                        color: '#7d838b'
-                    }
-                },
-                scale: true
-            },
-            "dataZoom": [{
-
-
-                    "show": true,
-                    "height": 20,
-                    "xAxisIndex": [
-                        0
-                    ],
-                    bottom: 0,
-                    "start": 70,
-                    "end": 100,
-                
-                    handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
-                    handleSize: '110%',
-                    handleStyle:{
-                        color:"#d3dee5",
-                        
-                    },
-                    textStyle:{
-                        color:"#fff"},
-                    borderColor:"#90979c"
-                    
-                    
-                },{
-                    "type": "slider",
-                    
-                    "show": false,
-                    "height": 10,
-                    "start": 25,
-                    "end": 65
-                }],
-            series: [{
-                name: '全国（真实）',
-                smooth: true,
-                type: 'line',
-                symbolSize: 1,
-                symbol: 'circle',
-                itemStyle: lineitemStyle,
-                data: firstLineData,
-                tooltip: {
-                    formatter: '{b0},{a0}: {c0}<br />{b2}'
-                }
-            }, {
-                name: '全国（预测）',
-                smooth: true,
-                type: 'line',
-                symbolSize: 1,
-                symbol: 'diamond',
-                itemStyle: lineitemStyle,
-                lineStyle: {
-                    normal: {
-                        type: 'dotted'
-                    }
-                },
-            
-                data: firstLineDottedData,
-                tooltip: {
-                    formatter: '{b0},{a0}: {c0}<br />{b2}'
-                }
-            }, {
-                name: '湖北（真实）',
-                smooth: true,
-                type: 'line',
-                symbolSize: 1,
-                symbol: 'circle',
-                itemStyle: lineitemStyle1,
-                data: sendLineData,
-                tooltip: {
-                    formatter: '{b0},{a0}: {c0}<br />{b2}'
-                }
-            }, {
-                name: '湖北（预测）',
-                smooth: true,
-                type: 'line',
-                symbolSize: 1,
-                symbol: 'diamond',
-                itemStyle: lineitemStyle1,
-                lineStyle: {
-                    normal: {
-                        type: 'dotted'
-                    }
-                },
-                data: sendLineDottedData,
-                tooltip: {
-                    formatter: '{b0},{a0}: {c0}<br />{b2}'
-                }
-            }, {
-                type: 'line',
-                name: '武汉（真实）',
-                smooth: true,
-                symbolSize: 1,
-                symbol: 'circle',
-                itemStyle: lineitemStyle2,
-                data: threeLineData,
-                tooltip: {
-                    formatter: '{b0},{a0}: {c0}<br />{b2}'
-                }
-            }, {
-                type: 'line',
-                name: '武汉（预测）',
-                smooth: true,
-                symbol: 'diamond',
-                symbolSize: 1,
-                itemStyle: lineitemStyle2,
-                lineStyle: {
-                    normal: {
-                        type: 'dotted'
-                    }
-                },
-                data: threeLineDottedData,
-                tooltip: {
-                    formatter: '{b0},{a0}: {c0}<br />{b2}'
-                }
-            }]
-        };
-
-        myChart.setOption(option);
     </script>
 
     <!------------------------------->
@@ -670,9 +390,9 @@
     <!------------------------------->
     <script type="text/javascript">
     
-        var myChart3 = echarts.init(document.getElementById('linebarquanguo'));
-        scale = 1.8; // width/height
-        myChart3._zr.painter._height = myChart3._zr.painter._width/scale;
+        var myChart = echarts.init(document.getElementById('linebarquanguo'));
+        scale = 1.6; // width/height
+        myChart._zr.painter._height = myChart._zr.painter._width/scale;
         option = {
         "title": {
             "text": "",
@@ -905,12 +625,7 @@
             }
             ]
         };
-        myChart3.setOption(option);
-        window.onresize = function(){
-        myChart3.resize();
-        //myChart1.resize();    //若有多个图表变动，可多写
-
-        }
+        myChart.setOption(option);
 
     </script>
            
@@ -1025,147 +740,6 @@ option = {
 };
             
 myChart.setOption(option);
-    </script>
-
-    <!------------------------------->
-    <!--add-->
-    <!------------------------------->
-    <script type="text/javascript">
-        var myChart = echarts.init(document.getElementById('add'));
-        
-        option = {
-            backgroundColor:'#ffffff',
-            tooltip: {
-                trigger: 'axis'
-            },
-            legend: {
-                data: '全国每日新增的确诊病例数',
-                textStyle: {
-                    fontSize: 12,
-                    color: '#7d838b'
-                },
-                right: '4%'
-            },
-            grid: {
-                
-                top: '15%',
-                left: '1%',
-                right: '4%',
-                bottom: '8%',
-                containLabel: true
-            },
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: lineX,
-                axisLabel: {
-                    textStyle: {
-                        color: '#7d838b'
-                    },
-                    formatter: function(params) {
-                        return params.split(' ')[0] 
-                    }
-                }
-            },
-            yAxis: {
-                name: "病例数",
-                type: 'value',
-                axisLabel: {
-                    formatter: '{value}',
-                    textStyle: {
-                        color: '#7d838b'
-                    }
-                },
-                splitLine: {
-                    lineStyle: {
-                        type: 'dotted',
-                        color: '#7d838b'
-                    }
-                },
-                axisLine: {
-                    lineStyle: {
-                        color: '#7d838b'
-                    }
-                }
-            },
-            "dataZoom": [{
-
-
-                    "show": true,
-                    "height": 20,
-                    "xAxisIndex": [
-                        0
-                    ],
-                    bottom: 19,
-                    "start": 70,
-                    "end": 100,
-                
-                    handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
-                    handleSize: '110%',
-                    handleStyle:{
-                        color:"#d3dee5",
-                        
-                    },
-                    textStyle:{
-                        color:"#fff"},
-                    borderColor:"#90979c"
-                    
-                    
-                },{
-                    "type": "slider",
-                    
-                    "show": false,
-                    "height": 10,
-                    "start": 25,
-                    "end": 65
-                }],
-            series: {
-                name: '全国每日新增的确诊病例数',
-                type: 'line',
-                color: 'rgba(255,37,117)',
-                smooth: true,
-                areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(255,37,117,0.3)'
-                        }, {
-                            offset: 0.8,
-                            color: 'rgba(255,37,117,0)'
-                        }], false),
-                        shadowColor: 'rgba(0, 0, 0, 0.1)',
-                        shadowBlur: 10
-                    }
-                },
-                symbol: 'circle',
-                symbolSize: 5,
-                data: lineY
-            }
-        }
-        setInterval(() => {
-            myChart.setOption({
-            legend: {
-                selected: {
-                '出口': false,
-                '入口': false
-                }
-            }
-            })
-            myChart.setOption({
-            legend: {
-                selected: {
-                '出口': true,
-                '入口': true
-                }
-            }
-            })
-        },10000);
-        window.onresize = function(){
-            myChart.resize();
-            //myChart1.resize();    //若有多个图表变动，可多写
-
-        }
-        myChart.setOption(option);
     </script>
 
 </body>
