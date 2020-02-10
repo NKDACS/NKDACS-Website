@@ -124,6 +124,22 @@ dataJson({
        "wuhan": 13603,
        "die": 722,
        "cure": 2050
+     },
+     {
+       "date": "2.8",
+       "diagnosis": 37198,
+       "hubei": 27100,
+       "wuhan": 14982,
+       "die": 811,
+       "cure": 2649
+     },
+     {
+       "date": "2.9",
+       "diagnosis": 40171,
+       "hubei": 29631,
+       "wuhan": 16902,
+       "die": 811,
+       "cure": 2649
      }],
     "predictive": [
     {
