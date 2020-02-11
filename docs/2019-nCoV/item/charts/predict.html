@@ -348,11 +348,11 @@
             addminut=[];addminuthubei=[];addminutqita=[];
             for (i = 0; i < rdays; i++) {
                 a=data["real"][i]["add-cure"]/data["real"][i]["add"];
-                addminut.push(a);
+                addminut.push(a.toFixed(2));
                 a=data["real"][i]["add-cure-hubei"]/data["real"][i]["add-hubei"];
-                addminuthubei.push(a);
+                addminuthubei.push(a.toFixed(2));
                 a=data["real"][i]["add-cure-qita"]/data["real"][i]["add-qita"];
-                addminutqita.push(a);
+                addminutqita.push(a.toFixed(2));
             }
 
 
