@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
    	<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.common.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts.min.js"></script>
-    <script src="https://gallery.echartsjs.com/dep/echarts/map/js/china.js"></script>
+    <script src="../../assets/js/china.js"></script>
 	<link rel="icon" href="../../assets/img/icon.ico" type="image/x-icon"/>
 	
 	<!-- Fonts and icons -->
@@ -26,7 +26,7 @@
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../assets/css/azzara.min.css">
-	<link rel="stylesheet" href="../../assets/css/shijianzhoustyle.css" />
+	<link rel="stylesheet" href="../../assets/css/time-axis.css" />
 
 
 </head>
@@ -166,136 +166,31 @@
 				</div>
 				<div class="row">
 				<div class="col-md-12">
-				<div class="chart-container" style="width:100%;">
-                    <div id="main" style="width:100%;padding-bottom:100%;"></div>
+				<div class="chart-container" style="margin-bottom: 20px;">
+                    <div id="main" style="width:100%;height:400px;"></div>
                 </div>
 						<div class="card">
 							<div class="card-header">
 								<div class="card-title">全国新型冠状病毒肺炎大事记</div>
                             </div>
-                            <div id = 'shijian'>
+                            
 							<div class="card-body">
-								<div id = 'shijian'>
-								<section id="cd-timeline" class="cd-container">
-                                    
-										<div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-movie">
-										</div>
-										<div class="cd-timeline-content">
-										<h4>全国确诊新型肺炎病例</h4>
-										<span class="cd-date">2019-12-8</span>
-										</div>
-										</div>
+								<div class="maintime">
+			                          <ul class="time-axis"></ul>
+		                        </div>
+		
+					
 
-									<div class="cd-timeline-block">
-									<div class="cd-timeline-img cd-picture">
-									</div>
-									<div class="cd-timeline-content">
-									<h4>华南海鲜市场休市</h4>
-									<span class="cd-date">2020-1-1</span>
-									</div>
-									</div>
-									<!-- 这是一块 -->
-									   <div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-movie">
-										</div>
-										<div class="cd-timeline-content">
-										<h4>提出确定有人传人现象</h4>
-										<span class="cd-date">2020-1-20</span>
-										</div>
-										</div>
-										<div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-picture">
-										</div>
-										<div class="cd-timeline-content">
-										<h4>武汉封城</h4>
-										<span class="cd-date">2020-1-23</span>
-										</div>
-										</div>
-										<div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-movie">
-										</div>
-										<div class="cd-timeline-content">
-										<h4>湖北省启动一级响应 </h4>
-										<span class="cd-date">2020-1-24</span>
-										</div>
-										</div>
-										<div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-picture">
-										</div>
-										<div class="cd-timeline-content">
-										<h4>火神山医院开工</h4>
-										<span class="cd-date">2020-1-25</span>
-										</div>
-										</div>
-										<div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-movie">
-										</div>
-										<div class="cd-timeline-content">
-											<h4>雷神山医院开工</h4>
-											<span class="cd-date">2020-1-26</span>
-										</div>
-										</div>
-										<div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-picture">
-										</div>
-										<div class="cd-timeline-content">
-										<h4>WHO宣布把新型冠状病毒被列为PHEIC</h4>
-										<span class="cd-date">2020-1-31</span>
-										</div>
-										</div>
-										<div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-movie">
-										</div>
-										<div class="cd-timeline-content">
-										<h4>火神山医院完工</h4>
-										<span class="cd-date">2020-2-2</span>
-										</div>
-                                        </div>
-                                        <div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-picture">
-										</div>
-										<div class="cd-timeline-content">
-										<h4>火神山医院开始接诊</h4>
-										<span class="cd-date">2020-2-3</span>
-										</div>
-										</div>
-										<div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-movie">
-										</div>
-										<div class="cd-timeline-content">
-										<h4>武汉连夜建三所“方舱医院”</h4>
-										<span class="cd-date">2020-2-3</span>
-										</div>
-                                        </div>
-                                        <div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-picture">
-										</div>
-										<div class="cd-timeline-content">
-										<h4>武昌方舱医院开始接诊首批确诊轻微病患</h4>
-										<span class="cd-date">2020-2-5 23:40</span>
-										</div>
-										</div>
-										<div class="cd-timeline-block">
-										<div class="cd-timeline-img cd-movie">
-										</div>
-										<div class="cd-timeline-content">
-										<h4>武汉国际会展中心的方舱医院正式接诊</h4>
-										<span class="cd-date">2020-2-6</span>
-										</div>
-										</div>
-                                </div>
+
+
+
+
+							</div>
+							
                         <div class="card-sub">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             消息来源：人民日报、人民网、环球时报、腾讯新闻</div>
                         </div>
-					</div>
-
-
-
-
-				</div>
-                    
                     <div class="card">
                         <div class="card-header">
                             <div class="card-title">全国新型冠状病毒肺炎确诊病例数（2020年1月）
@@ -317,12 +212,13 @@
                         <div class="card-sub">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对比折柱图直观反映了疫情的治愈速率与死亡速率的关系。从图中可以看出，近几天，治愈速率从小于死亡速率逐步开始转变为大于死亡速率，防控措施展现出了积极的效果。
 经过春节假期近两周的全国动员与防控，目前已初步控制住疫情蔓延趋势。但春节假期结束也意味着又即将迎来春运返程大潮，一线城市将会面临新的挑战。目前我们面对的疫情防控和医疗救治工作仍然十分艰巨，还需大家的共同努力。</div>
-                        <div class="chart-container" style="padding-top:0.5rem;">
-                            <div id="linebarquanguo" style="width:100%;padding-bottom:63%;"></div>
+                        <div class="chart-container" style="padding-top:1rem;margin-left:-12px;margin-right:-12px;">
+                            <div id="linebarquanguo" style="width:100%;padding-bottom:67%;"></div>
                         </div>
                     </div>
                         
                     </div>
+					</div>
 
                     <a href="../charts/predict.html">
                         <button class="btn btn-secondary">疫情发展预测</button>
@@ -351,6 +247,99 @@
 	<script src="../../assets/js/ready.min.js"></script>
 	<!-- Azzara DEMO methods, don't include it in your project! -->
 	<script src="../../assets/js/setting-demo.js"></script>
+	<script type="text/javascript" src="../../assets/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+			//这是要遍历时间轴的数据
+			var dimeAxis=[{
+				date:'2019-12-08',
+				title:'全国确诊新型肺炎病例',
+				// achievement:''
+			},
+			{
+				date:'2020-01-01',
+				title:'华南海鲜市场休市',
+				// achievement:''
+			},
+			{
+				date:'2020-01-20',
+				title:'提出确定有人传人现象',
+				// achievement:''
+			},
+			{
+				date:'2020-01-23',
+				title:'武汉封城 ',
+				// achievement:''
+			},
+			{
+				date:'2020-01-24',
+				title:'湖北省启动一级响应',
+				// achievement:''
+			},
+			{
+				date:'2020-01-25',
+				title:'火神山医院开工',
+				 // achievement:''
+			},
+			{
+				date:'2020-01-26',
+				title:'雷神山医院开工',
+				// achievement:''
+			},
+			{
+				date:'2020-01-31',
+				title:'WHO宣布把新型冠状病毒被列为PHEIC',
+				// achievement:''
+			},
+			{
+				date:'2020-02-02',
+				title:'火神山医院完工',
+				// achievement:''
+			},
+			{
+				date:'2020-02-03',
+				title:'火神山医院开始接诊',
+				// achievement:''
+			},
+			{
+				date:'2020-02-03',
+				title:'武汉连夜建三所“方舱医院”',
+				// achievement:''
+			},
+			{
+				date:'2020-02-05',
+				title:'武昌方舱医院开始接诊首批确诊轻微病患(晚23:40）',
+				// achievement:''
+			},
+			{
+				date:'2020-02-06',
+				title:'武汉国际会展中心的方舱医院正式接诊',
+				// achievement:''
+			},
+			{
+				date:'2020-02-08',
+				title:'雷神山医院交付使用',
+				// achievement:''
+			}
+			,
+			{
+				date:'2020-02-08',
+				title:'暂命名为“新型冠状病毒肺炎”，简称“新冠肺炎（NCP）”',
+				// achievement:''
+			}];
+			
+			
+			$(function(){
+				$.each(dimeAxis,function(i,e){
+					var html='<li class="time-axis-item">'+
+								 '<div class="time-axis-date">'+e.date+'<span></span></div>'+
+								 '<div class="time-axis-title">'+e.title+'</div>'
+								 +
+							 '</li>';
+					$('.time-axis').append(html);		
+				});
+			});
+		</script>
+					
 
     <!-- Import Data -->
     <script type="text/javascript">
@@ -395,7 +384,6 @@
         drawAdMap();
         function drawAdMap() {
             var myChart = echarts.init(document.getElementById('main'));
-            myChart._zr.painter._height = myChart._zr.painter._width;
             option = {
                 baseOption: {
                     timeline: {
@@ -404,7 +392,7 @@
                         autoPlay: true,
                         playInterval: 750,
                         left: 'center',
-                        top: '88%',
+                        //top: '86%',
                         width: '95%',
                         label: {
                             normal: {
@@ -495,9 +483,10 @@
                             name: '确诊数',
                             type: 'map',
                             mapType: 'china',
-                            top: '6%',
-                            left: '2%',
-                            right: '2%',
+                            top: '15%',
+                            //left: '2%',
+                            //right: '2%',
+                            zoom: 1.25,
                             itemStyle: {
                                 normal: {
                                     label: {
@@ -631,7 +620,7 @@
     <script type="text/javascript">
     
         var myChart = echarts.init(document.getElementById('linebarquanguo'));
-        scale = 1.6; // width/height
+        scale = 1.5; // width/height
         myChart._zr.painter._height = myChart._zr.painter._width/scale;
         option = {
         "title": {
@@ -677,7 +666,7 @@
                 }
                 }
             ],
-            "top": "5%",
+            "top": "0%",
             "textStyle": {
                 "color": "#fff"
             }
