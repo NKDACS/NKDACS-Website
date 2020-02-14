@@ -1,249 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<script>
-		var _hmt = _hmt || [];
-		(function() {
-		  var hm = document.createElement("script");
-		  hm.src = "https://hm.baidu.com/hm.js?fb5e483df756e582ec9f4fdf8c58bcef";
-		  var s = document.getElementsByTagName("script")[0]; 
-		  s.parentNode.insertBefore(hm, s);
-		})();
-		</script>
-		
-		
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>2019nCoV</title>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.common.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.min.js"></script>
-    <link rel="icon" href="../assets/img/icon.ico" type="image/x-icon"/>
-
-	<!-- Fonts and icons -->
-	<script src="../assets/js/plugin/webfont/webfont.min.js"></script>
-	<script>
-		WebFont.load({
-			google: {"families":["Open+Sans:300,400,600,700"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['../assets/css/fonts.css']},
-			active: function() {
-				sessionStorage.fonts = true;
-			}
-		});
-	</script>
-
-	<!-- CSS Files -->
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/azzara.min.css">
-
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-</head>
-<body>
-	<div class="wrapper">
-		<!--
-			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
-		-->
-		<div class="main-header" data-background-color="purple">
-			<!-- Logo Header -->
-			<div class="logo-header">
-				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon">
-						<i class="fa fa-bars"></i>
-					</span>
-				</button>
-				<button class="topbar-toggler more"><i class="fa fa-ellipsis-v"></i></button>
-				<div class="navbar-minimize">
-					<button class="btn btn-minimize btn-rounded">
-						<i class="fa fa-bars"></i>
-					</button>
-				</div>
-			</div>
-			<!-- End Logo Header -->
-
-			<!-- Navbar Header -->
-			<nav class="navbar navbar-header navbar-expand-lg">
-				
-				<div class="container-fluid">
-					<div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3">
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<button type="submit" class="btn btn-search pr-1">
-										<i class="fa fa-search search-icon"></i>
-									</button>
-								</div>
-								<input type="text" placeholder="Search ..." class="form-control">
-							</div>
-						</form>
-					</div>
-					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<li class="nav-item toggle-nav-search hidden-caret">
-							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
-								<i class="fa fa-search"></i>
-							</a>
-						</li>
-						<li class="nav-item dropdown hidden-caret">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
-								<div class="avatar-sm">
-									<img src="../assets/img/nankai.jpg" alt="..." class="avatar-img rounded-circle">
-								</div>
-							</a>
-							<ul class="dropdown-menu dropdown-user animated fadeIn">
-								<li>
-									<div class="user-box">
-										<div class="avatar-lg"><img src="../assets/img/nankai.jpg" alt="image profile" class="avatar-img rounded"></div>
-										<div class="u-text">
-											<h4>NKDACS数据可视化</h4>
-											<!--<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a> -->
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="dropdown-divider"></div>
-									<div class="user-box">
-										<div class="u-text">
-											<p class="text-muted">陈笑洋 张宸玥 王玉珏 刘城昕 马佳明</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</li>
-						
-					</ul>
-				</div>
-			</nav>
-			<!-- End Navbar -->
-		</div>
-
-		<!-- Sidebar -->
-		<div class="sidebar">
-			
-			<div class="sidebar-background"></div>
-			<div class="sidebar-wrapper scrollbar-inner">
-					<ul class="nav">
-						<li class="nav-item active">
-							<a href="index.html">
-								<i class="fas fa-home"></i>
-								<p>项目介绍</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#charts">
-								<i class="far fa-chart-bar"></i>
-								<p>疫情发展</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="charts">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="charts/predict.html">
-											<span class="sub-item">疫情发展预测</span>
-										</a>
-									</li>
-									<li>
-										<a href="charts/review.html">
-											<span class="sub-item">疫情发展回顾</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-			</div>
-		</div>
-		
-		
-<!-- main-panel -->
-
-<div class="main-panel">
-	<div class="content">
-		<div class="page-inner">
-			<h4 class="page-title">2019-nCoV新型冠状病毒疫情传播预测</h4>
-			<div class="page-category">
-    <p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自2019年12月，武汉发现新型冠状病毒（2019-nCoV）以来，南开大学积极响应国家号召，集合在生物、医药、大数据统计等学科的尖端力量，从疫苗与生物制剂研究、流行病模型预测、社会服务等多个方面开展疫情防控科研攻关。</p>
-    <p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中，南开统计黄森忠教授团队致力于传染病模型预测，他们应用学校自主研发的EpiSIX程序，实时跟踪2019-nCoV疫情，并将预判结果提呈疾控部门参考，同时，对未来可能的疫情防控积累数据与经验。</p>  
-	<p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;疾控的成功离不开国家为控制疫情采取的有效措施以及广大人民群众的积极相应。随着春运返程高峰的到来，疾控工作不能有一丝松懈。我们一起注意防护，保持乐观，众志成城，共克时艰！</p>   
-</br>
-<!-- <p><font color="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击页面左上角查看详细预测结果</font></p>  
--->
-	<a href="charts/predict.html">
-	<button class="btn btn-secondary">疫情发展预测</button>
-</a>
-<a href="charts/review.html">
-	<button class="btn btn-secondary">疫情发展回顾</button>
-</a>
-</br>
-</br>
-
-</br>
-<p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 该预测的共同发布者为靳祯教授（山西大学复杂系统所所长）和彭志行副教授（南京医科大学公共卫生学院）。
-</p>
-</br>   
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NKDACS数据可视化小组：陈笑洋 张宸玥 王玉珏 刘城昕 马佳明</p>
-    
-
-			</div>
-			
-
-
-
-
-			</div>
-		</div>
-	</div>
-	
-</div>
-
-						
-<!--   Core JS Files   -->
-<script src="../assets/js/core/jquery.3.2.1.min.js"></script>
-<script src="../assets/js/core/popper.min.js"></script>
-<script src="../assets/js/core/bootstrap.min.js"></script>
-
-<!-- jQuery UI -->
-<script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-
-<!-- jQuery Scrollbar -->
-<script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-
-<!-- Moment JS -->
-<script src="../assets/js/plugin/moment/moment.min.js"></script>
-
-<!-- Chart JS -->
-<script src="../assets/js/plugin/chart.js/chart.min.js"></script>
-
-<!-- jQuery Sparkline -->
-<script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-
-<!-- Chart Circle -->
-<script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
-
-<!-- Datatables -->
-<script src="../assets/js/plugin/datatables/datatables.min.js"></script>
-
-<!-- Bootstrap Notify -->
-<script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-
-<!-- Bootstrap Toggle -->
-<script src="../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-
-<!-- jQuery Vector Maps -->
-<script src="../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-<script src="../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
-
-<!-- Google Maps Plugin -->
-<script src="../assets/js/plugin/gmaps/gmaps.js"></script>
-
-<!-- Sweet Alert -->
-<script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-
-<!-- Azzara JS -->
-<script src="../assets/js/ready.min.js"></script>
-
-<!-- Azzara DEMO methods, don't include it in your project! -->
-<script src="../assets/js/setting-demo.js"></script>
-<script src="../assets/js/demo.js"></script>
-</body>
+<html lang='en'>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="Content-Type" content="charset=utf-8" />
+        <title>2019nCoV</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <link rel="icon" href="../assets/img/icon.png" type="image/x-icon"/>
+        <!-- Fonts and icons -->
+        <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+        <script>
+            WebFont.load({
+                google: {"families":["Open+Sans:300,400,600,700"]},
+                custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font        Awesome 5 Brands"], urls: ['../assets/css/fonts.css']},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
+        <!-- CSS Files -->
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/azzara.min.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="main-header" data-background-color="purple">
+                <!-- Logo Header -->
+                <div class="logo-header">
+                    <a href="index.html" class="logo">
+                        <img src="../assets/img/logonkdacs.svg" alt="navbar brand" class="navbar-brand">
+                    </a>
+                    <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </button>
+                    <button class="topbar-toggler more">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <div class="navbar-minimize">
+                        <button class="btn btn-minimize btn-rounded">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Navbar Header -->
+                <nav class="navbar navbar-header navbar-expand-lg">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                            <li class="nav-item dropdown hidden-caret">
+                                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-info"></i>
+                                </a>
+                                <ul class="dropdown-menu animated fadeIn" aria-labelledby="infoDropdown">
+                                    <li>
+                                        <div class="dropdown-item">
+                                            <h5 style="text-align:center;margin:0;">NKDACS数据可视化</h5>
+                                        </div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item">
+                                            <p class="text-muted" style="text-align:center;text-indent:0;font-size:14px;margin:0;">陈笑洋 张宸玥 王玉珏 刘城昕 马佳明</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown hidden-caret">
+                                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+                                    <div class="avatar-sm">
+                                        <img src="../assets/img/nankai.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                </a>
+                                <!--<ul class="dropdown-menu dropdown-user animated fadeIn">
+                                    <li>
+                                        <div class="user-box">
+                                            <img src="../assets/img/nankai_.png" style="margin:0 auto;">
+                                        </div>
+                                    </li>
+                                </ul>-->
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-background"></div>
+                <div class="sidebar-wrapper scrollbar-inner">
+                    <div class="sidebar-content">
+                        <div class="user">
+                                <div class="avatar">
+                                <img src="../assets/img/nankai_.png">
+                                </div>
+                        </div>
+                        <ul class="nav">
+                            <li class="nav-item active">
+                                <a href="index.html">
+                                    <i class="fas fa-home"></i>
+                                    <p>项目介绍</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a data-toggle="collapse" href="#situation">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <p>疫情发展</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="situation">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="situation/predict.html">
+                                                <span class="sub-item">疫情发展预测</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="situation/review.html">
+                                               <span class="sub-item">疫情发展回顾</span> 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Panel -->
+            <div class="main-panel">
+                <div class="content">
+                    <div class="page-inner">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <div class="page-header">
+                                    <h4 class="page-title">2019-nCoV新型冠状病毒疫情传播预测</h4>
+                                </div>
+                                <p>自2019年12月，武汉发现新型冠状病毒（2019-nCoV）以来，南开大学积极响应国家号召，集合在生物、医药、大数据统计等学科的尖端力量，从疫苗与生物制剂研究、流行病模型预测、社会服务等多个方面开展疫情防控科研攻关。</p>
+                                <p>其中，南开统计黄森忠教授团队致力于传染病模型预测，他们应用学校自主研发的EpiSIX程序，实时跟踪2019-nCoV疫情，并将预判结果提呈疾控部门参考，同时，对未来可能的疫情防控积累数据与经验。</p>
+                                <p>疾控的成功离不开国家为控制疫情采取的有效措施以及广大人民群众的积极相应。随着春运返程高峰的到来，疾控工作不能有一丝松懈。我们一起注意防护，保持乐观，众志成城，共克时艰！</p>
+                                <div class="row" style="margin-bottom:0.7rem;">
+                                    <div class="col" style="padding:0;text-align:center;">
+                                        <a href="situation/predict.html">
+                                            <button class="btn btn-secondary">
+                                                <span class="btn-label">
+                                                    <i class="far fa-chart-bar"></i>
+                                                    疫情发展预测
+                                                </span>
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="col" style="padding:0;text-align:center;">
+                                        <a href="situation/review.html">
+                                            <button class="btn btn-secondary">
+                                                <span class="btn-label">
+                                                    <i class="far fa-calendar-alt"></i>
+                                                    疫情发展回顾
+                                                </span>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <p>该预测的共同发布者为靳祯教授（山西大学复杂系统所所长）和彭志行副教授（南京医科大学公共卫生学院）。</p>
+                                <p>NKDACS数据可视化小组：陈笑洋 张宸玥 王玉珏 刘城昕 马佳明</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--   Core JS Files   -->
+        <script src="../assets/js/core/jquery.3.2.1.min.js"></script>
+        <script src="../assets/js/core/popper.min.js"></script>
+        <script src="../assets/js/core/bootstrap.min.js"></script>
+        <!-- jQuery UI -->
+        <script src="../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <script src="../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+        <!-- jQuery Scrollbar -->
+        <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <!-- Azzara JS -->
+        <script src="../assets/js/ready.min.js"></script>
+        <!-- echart JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts.min.js"></script>
+        
+    </body>
 </html>
