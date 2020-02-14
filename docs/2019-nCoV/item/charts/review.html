@@ -1,396 +1,391 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" charset="UTF-8" />
-    <title>2019nCoV</title>
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-   	<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.common.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts.min.js"></script>
-    <script src="../../assets/js/china.js"></script>
-	<link rel="icon" href="../../assets/img/icon.ico" type="image/x-icon"/>
-	
-	<!-- Fonts and icons -->
-	<script src="../../assets/js/plugin/webfont/webfont.min.js"></script>
-	<script>
-		WebFont.load({
-			google: {"families":["Open+Sans:300,400,600,700"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['../../assets/css/fonts.css']},
-			active: function() {
-				sessionStorage.fonts = true;
-			}
-		});
-	</script>
-
-	<!-- CSS Files -->
-	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../assets/css/azzara.min.css">
-	<link rel="stylesheet" href="../../assets/css/time-axis.css" />
-
-
-</head>
-<body>
-    
-	<div class="wrapper">
-		<!--
-				Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
-		-->
-		<div class="main-header" data-background-color="purple">
-			<!-- Logo Header -->
-			<div class="logo-header">
-				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon">
-						<i class="fa fa-bars"></i>
-					</span>
-				</button>
-				<button class="topbar-toggler more"><i class="fa fa-ellipsis-v"></i></button>
-				<div class="navbar-minimize">
-					<button class="btn btn-minimize btn-rounded">
-						<i class="fa fa-bars"></i>
-					</button>
-				</div>
-			</div>
-			<!-- End Logo Header -->
-
-
-
-
-
-
-
-
-
-			
-			<!-- Navbar Header -->
-			<nav class="navbar navbar-header navbar-expand-lg">
-				
-				<div class="container-fluid">
-					<div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3">
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<button type="submit" class="btn btn-search pr-1">
-										<i class="fa fa-search search-icon"></i>
-									</button>
-								</div>
-								<input type="text" placeholder="Search ..." class="form-control">
-							</div>
-						</form>
-					</div>
-					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<li class="nav-item toggle-nav-search hidden-caret">
-							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
-								<i class="fa fa-search"></i>
-							</a>
-						</li>
-						
-						<li class="nav-item dropdown hidden-caret">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
-								<div class="avatar-sm">
-									<img src="../../assets/img/nankai.jpg" alt="..." class="avatar-img rounded-circle">
-								</div>
-							</a>
-							<ul class="dropdown-menu dropdown-user animated fadeIn">
-								<li>
-									<div class="user-box">
-										<div class="avatar-lg"><img src="../../assets/img/nankai.jpg" alt="image profile" class="avatar-img rounded"></div>
-										<div class="u-text">
-											<h4>NKDACS数据可视化</h4>
-											<!--<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a> -->
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="dropdown-divider"></div>
-									<div class="user-box">
-										<div class="u-text">
-											<p class="text-muted">陈笑洋 张宸玥 王玉珏 刘城昕 马佳明</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</li>
-						
-					</ul>
-				</div>
-			</nav>
-			<!-- End Navbar -->
-		</div>
-		<!-- Sidebar -->
-		<div class="sidebar">
-			
-			<div class="sidebar-wrapper scrollbar-inner">
-				<div class="sidebar-content">
-					
-					<ul class="nav">
-						<li class="nav-item">
-							<a href="../index.html">
-								<i class="fas fa-home"></i>
-								<p>项目介绍</p>
-							</a>
-						</li>
-						<li class="nav-item active submenu">
-							<a data-toggle="collapse" href="#charts">
-								<i class="far fa-chart-bar"></i>
-								<p>疫情发展</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse show" id="charts">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="../charts/predict.html">
-											<span class="sub-item">疫情发展预测</span>
-										</a>
-									</li>
-									<li class="active">
-										<a href="../charts/review.html">
-											<span class="sub-item">疫情发展回顾</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-	<!-- main-panel -->
-
-	<div class="main-panel">
-		<div class="content">
-			<div class="page-inner">
-				<h4 class="page-title">疫情发展回顾</h4>
-				<div class="page-category">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着新型冠状病毒肺炎疫情的蔓延，每日更新的疫情相关数据和新闻牵动着亿万人的心。危难时刻，医务工作者逆行向前，争分夺秒与病魔抗战；工人、记者、人民警察放弃假期和团聚，坚守在疫情防控第一线。向所有一线工作者致敬，我们安危与共，齐心抗疫！
-				</div>
-				<div class="row">
-				<div class="col-md-12">
-				<div class="chart-container" style="margin-bottom: 20px;">
-                    <div id="main" style="width:100%;height:400px;"></div>
-                </div>
-						<div class="card">
-							<div class="card-header">
-								<div class="card-title">全国新型冠状病毒肺炎大事记</div>
-                            </div>
-                            
-							<div class="card-body">
-								<div class="maintime">
-			                          <ul class="time-axis"></ul>
-		                        </div>
-		
-					
-
-
-
-
-
-							</div>
-							
-                        <div class="card-sub">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            消息来源：人民日报、人民网、环球时报、腾讯新闻</div>
-                        </div>
-
-                    
-                    
-
-                    <div class="card">
-                    <div class="card-header">
-                        <div class="card-title">全国死亡率治愈率对比折柱图
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-sub">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对比折柱图直观反映了疫情的治愈速率与死亡速率的关系。近几天，治愈速率已经远大于死亡速率，防控和救治措施展现出了明显的效果。 经过春节假期近两周的全国动员与防控，目前已初步控制住疫情蔓延趋势。但春节假期结束也意味着又即将迎来春运返程大潮，一线城市将会面临新的挑战。</div>
-                        <div class="chart-container" style="padding-top:1rem;margin-left:-12px;margin-right:-12px;">
-                            <div id="linebarquanguo" style="width:100%;padding-bottom:67%;"></div>
-                        </div>
-                    </div>
-                        
-                    </div>
-					</div>
-
-                    <a href="../charts/predict.html">
-                        <button class="btn btn-secondary">疫情发展预测</button>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="Content-Type" content="charset=utf-8" />
+        <title>2019nCoV</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <link rel="icon" href="../../assets/img/icon.png" type="image/x-icon"/>
+        <!-- Fonts and icons -->
+        <script src="../../assets/js/plugin/webfont/webfont.min.js"></script>
+        <script>
+            WebFont.load({
+                google: {"families":["Open+Sans:300,400,600"]},
+                custom: {"families":["Font Awesome 5 Solid", "Font Awesome 5 Regular"], urls: ['../../assets/css/fonts.css']},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
+        <!-- CSS Files -->
+        <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../assets/css/azzara.min.css">
+        <link rel="stylesheet" href="../../assets/css/time-axis.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="main-header" data-background-color="purple">
+                <!-- Logo Header -->
+                <div class="logo-header">
+                    <a href="../index.html" class="logo">
+                        <img src="../../assets/img/logonkdacs.svg" alt="navbar brand" class="navbar-brand">
                     </a>
+                    <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </button>
+                    <button class="topbar-toggler more">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <div class="navbar-minimize">
+                        <button class="btn btn-minimize btn-rounded">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
                 </div>
+                <!-- Navbar Header -->
+                <nav class="navbar navbar-header navbar-expand-lg">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                            <li class="nav-item dropdown hidden-caret">
+                                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-info"></i>
+                                </a>
+                                <ul class="dropdown-menu animated fadeIn" aria-labelledby="infoDropdown">
+                                    <li>
+                                        <div class="dropdown-item">
+                                            <h5 style="text-align:center;margin:0;">NKDACS数据可视化</h5>
+                                        </div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item">
+                                            <p class="text-muted" style="text-align:center;text-indent:0;font-size:14px;margin:0;">陈笑洋 张宸玥 王玉珏 刘城昕 马佳明</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown hidden-caret">
+                                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+                                    <div class="avatar-sm">
+                                        <img src="../../assets/img/nankai.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-background"></div>
+                <div class="sidebar-wrapper scrollbar-inner">
+                    <div class="sidebar-content">
+                        <div class="user">
+                                <div class="avatar">
+                                <img src="../../assets/img/nankai_.png">
+                                </div>
+                        </div>
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a href="../index.html">
+                                    <i class="fas fa-home"></i>
+                                    <p>项目介绍</p>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a data-toggle="collapse" href="#charts">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <p>疫情发展</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse show" id="charts">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="predict.html">
+                                                <span class="sub-item">疫情发展预测</span>
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="review.html">
+                                               <span class="sub-item">疫情发展回顾</span> 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Panel -->
+            <div class="main-panel">
+                <div class="content">
+                    <div class="page-inner">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto" style="padding:0 2.5%;">
+                                <div class="page-header">
+                                    <h4 class="page-title">疫情发展回顾</h4>
+                                </div>
+                                <p>随着新型冠状病毒肺炎疫情的蔓延，每日更新的疫情相关数据和新闻牵动着亿万人的心。危难时刻，医务工作者逆行向前，争分夺秒与病魔抗战；工人、记者、人民警察放弃假期和团聚，坚守在疫情防控第一线。向所有一线工作者致敬，我们安危与共，齐心抗疫！</p>
+                                <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>全国各地确诊人数分布图</p>
+                                    <div class="c-ratio">
+                                        <div class="chart" id="map"></div>
+                                    </div>
+                                </div>
+                                <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>全国确诊人数日历图</p>
+                                    <ul class="nav nav-pills nav-secondary nav-pills-no-bd justify-content-center" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="pills-calendar1-tab-nobd" data-toggle="pill" href="#pills-calendar1-nobd" role="tab" aria-controls="pills-calendar1-nobd" aria-selected="false">2020年1月</a>
+                                            </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="pills-calender2-tab-nobd" data-toggle="pill" href="#pills-calender2-nobd" role="tab" aria-controls="pills-calender2-nobd" aria-selected="true">2020年2月</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade" id="pills-calendar1-nobd" role="tabpanel" aria-labelledby="pills-calendar1-tab-nobd">
+                                            <div class="c-height" style="height:420px;">
+                                                <div class="chart" id="calendar1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade show active" id="pills-calender2-nobd" role="tabpanel" aria-labelledby="pills-calender2-tab-nobd">
+                                            <div class="c-height" style="height:420px;">
+                                                <div class="chart" id="calender2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p style="margin:0;">注：点按日历图中带红色“*”的日期，即可显示当日发生的重要事件。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </br>
 
 
-               
-		</div>
-		
-	</div>
-	<!--   Core JS Files   -->
-	<script src="../../assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="../../assets/js/core/popper.min.js"></script>
-	<script src="../../assets/js/core/bootstrap.min.js"></script>
-	<!-- jQuery UI -->
-	<script src="../../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="../../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-	<!-- Chart JS -->
-	<script src="../../assets/js/plugin/chart.js/chart.min.js"></script>
-	<!-- Bootstrap Toggle -->
-	<script src="../../assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-	<!-- jQuery Scrollbar -->
-	<script src="../../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-	<!-- Azzara JS -->
-	<script src="../../assets/js/ready.min.js"></script>
-	<!-- Azzara DEMO methods, don't include it in your project! -->
-	<script src="../../assets/js/setting-demo.js"></script>
-	<script type="text/javascript" src="../../assets/js/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript">
-			//这是要遍历时间轴的数据
-			var dimeAxis=[{
-				date:'2019-12-08',
-				title:'全国确诊新型肺炎病例',
-				// achievement:''
-			},
-			{
-				date:'2020-01-01',
-				title:'华南海鲜市场休市',
-				// achievement:''
-			},
-			{
-				date:'2020-01-20',
-				title:'提出确定有人传人现象',
-				// achievement:''
-			},
-			{
-				date:'2020-01-23',
-				title:'武汉封城 ',
-				// achievement:''
-			},
-			{
-				date:'2020-01-24',
-				title:'湖北省启动一级响应',
-				// achievement:''
-			},
-			{
-				date:'2020-01-25',
-				title:'火神山医院开工',
-				 // achievement:''
-			},
-			{
-				date:'2020-01-26',
-				title:'雷神山医院开工',
-				// achievement:''
-			},
-			{
-				date:'2020-01-31',
-				title:'WHO宣布把新型冠状病毒被列为PHEIC',
-				// achievement:''
-			},
-			{
-				date:'2020-02-02',
-				title:'火神山医院完工',
-				// achievement:''
-			},
-			{
-				date:'2020-02-03',
-				title:'火神山医院开始接诊',
-				// achievement:''
-			},
-			{
-				date:'2020-02-03',
-				title:'武汉连夜建三所“方舱医院”',
-				// achievement:''
-			},
-			{
-				date:'2020-02-05',
-				title:'武昌方舱医院开始接诊首批确诊轻微病患(晚23:40）',
-				// achievement:''
-			},
-			{
-				date:'2020-02-06',
-				title:'武汉国际会展中心的方舱医院正式接诊',
-				// achievement:''
-			},
-			{
-				date:'2020-02-08',
-				title:'雷神山医院交付使用',
-				// achievement:''
-			}
-			,
-			{
-				date:'2020-02-08',
-				title:'暂命名为“新型冠状病毒肺炎”，简称“新冠肺炎（NCP）”',
-				// achievement:''
-			}];
-			
-			
-			$(function(){
-				$.each(dimeAxis,function(i,e){
-					var html='<li class="time-axis-item">'+
-								 '<div class="time-axis-date">'+e.date+'<span></span></div>'+
-								 '<div class="time-axis-title">'+e.title+'</div>'
-								 +
-							 '</li>';
-					$('.time-axis').append(html);		
-				});
-			});
-		</script>
-					
 
-    <!-- Import Data -->
-    <script type="text/javascript">
-        function dataJson(fileData) {
-            data = fileData;
-        }
-    </script>
-    <script type="text/javascript" src="./data.json?cb=dataJson"></script>
-    <script type="text/javascript">
-        function dataJson(fileData) {
-            mapdata = fileData;
-        }
-    </script>
-    <script type="text/javascript" src="./mapdata.json?cb=dataJson"></script>
-    <!-- Process Data -->
-    <script type="text/javascript">
-        // 折柱图
-        items5 = []; die = []; cure =[]; rate=[];
-        for (let idx in data["real"]) {
-            items5.push(data["real"][idx]["date"]);
-            die.push(data["real"][idx]["die"]);
-            cure.push(data["real"][idx]["cure"]);
-            rate.push((die[idx]/cure[idx]).toFixed(2));
-        };
-    </script>
-    <script type="text/javascript">
-        date = [];
-        options = [];
-        for (i = 0; i < mapdata.length; i++) {
-            tmp = [];
-            date.push(mapdata[i].date);
-            delete mapdata[i].date;
-            for (key in mapdata[i]) {
-                tmp.push({name: key, value: mapdata[i][key]});
+                                <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>全国新型冠状病毒肺炎大事记</p>
+                                    <div class="maintime">
+                                        <ul class="time-axis"></ul>
+                                    </div>
+                                    <p style="margin:0;">消息来源：人民日报、人民网、环球时报、腾讯新闻</p>
+                                </div>
+                            </br>
+                                <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>全国死亡率治愈率对比折柱图</p>
+                            
+                                    <div class="c-height">
+                                        <div class="chart" id="linebarquanguo"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="../charts/predict.html">
+                                <button class="btn btn-secondary">疫情发展预测</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--   Core JS Files   -->
+        <script src="../../assets/js/core/jquery.3.2.1.min.js"></script>
+        <script src="../../assets/js/core/popper.min.js"></script>
+        <script src="../../assets/js/core/bootstrap.min.js"></script>
+        <!-- jQuery UI -->
+        <script src="../../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <script src="../../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+        <!-- jQuery Scrollbar -->
+        <script src="../../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <!-- Azzara JS -->
+        <script src="../../assets/js/ready.min.js"></script>
+        <!-- echart JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts.min.js"></script>
+        <!-- ChinaMap JS -->
+        <script src="../../assets/js/china.js"></script>
+        
+        <!-- Import Data -->
+        <script type="text/javascript">
+            function dataJson(fileData) {
+                mapdata = fileData;
+            }
+        </script>
+        <script type="text/javascript" src="./mapdata.json?cb=dataJson"></script>
+        <script type="text/javascript">
+            function dataJson(fileData) {
+                data = fileData;
+            }
+        </script>
+        <script type="text/javascript" src="./data.json?cb=dataJson"></script>
+        <!-- Process Data -->
+        <script type="text/javascript">
+            // map
+            mapDate = [];mapOptions = [];
+            for (i = 0; i < mapdata.length; i++) {
+                tmp = [];
+                mapDate.push(mapdata[i].date);
+                delete mapdata[i].date;
+                for (key in mapdata[i]) {
+                    tmp.push({name: key, value: mapdata[i][key]});
+                };
+                mapOptions.push({title: {text: mapDate[i].replace(".","月")+"日"}, series: {data: tmp}});
             };
-            options.push({title: {text: date[i].replace(".","月")+"日全国各地确诊人数"}, series: {data: tmp}});
-        };
-    </script>
-
-    <!--地图-->
-    <script type="text/javascript">
-        drawAdMap();
-        function drawAdMap() {
-            var myChart = echarts.init(document.getElementById('main'));
-            option = {
+            // calender1
+            dateList1 = [[ "2020-1-1","初七","*","华南海鲜市场休市"],[ "2020-1-2","初八"],[ "2020-1-3","初九" ],[ "2020-1-4","初十" ],[ "2020-1-5","十一" ],[ "2020-1-6","十二" ],[ "2020-1-7","十三" ],[ "2020-1-8","十四" ],[ "2020-1-9","十五" ],[ "2020-1-10","十六" ],[ "2020-1-11","十七" ],[ "2020-1-12","十八" ],[ "2020-1-13","十九" ],[ "2020-1-14","二十" ],[ "2020-1-15","廿一" ],[ "2020-1-16","廿二" ],[ "2020-1-17","廿三" ],[ "2020-1-18","廿四" ],[ "2020-1-19","廿五" ],[ "2020-1-20","廿六","*","提出确定有人传人现象" ],[ "2020-1-21","廿七" ],[ "2020-1-22","廿八" ],[ "2020-1-23","廿九","武汉封城","武汉封城" ],[ "2020-1-24","除夕","*","湖北省启动一级响应" ],[ "2020-1-25","春节","*","火神山医院开工" ],[ "2020-1-26","初二","*","雷神山医院开工"],[ "2020-1-27","初三" ],[ "2020-1-28","初四" ],[ "2020-1-29","初五" ],[ "2020-1-30","初六" ],[ "2020-1-31","初七","*"," WHO宣布把此次疫情列为PHEIC" ]];
+            heatmapData1=[];lunarData1=[];people1=[27,27,27,27,27,27,27,27,27,41,41,41,41,41,41,45,62,121,198,291,440,571,830,1287,1975,2744,4515,5974,7711,8149,11791];
+            for (var i = 0; i < dateList1.length; i++) {
+                heatmapData1.push([
+                    dateList1[i][0],
+                    people1[i]
+                ]);
+                lunarData1.push([
+                    dateList1[i][0],
+                    1,
+                    dateList1[i][1],
+                    dateList1[i][2],
+                    dateList1[i][3]
+                ]);
+            };
+            // calender2
+            dateList2 = [[ "2020-2-1","初八"],[ "2020-2-2","初九","*","火神山医院完工" ],[ "2020-2-3","初十","*","火神山医院开始接诊，武汉连夜建三所“方舱医院”" ],[ "2020-2-4","十一" ],[ "2020-2-5","十二","*","武昌方舱医院开始接诊首批确诊轻微病患(晚23:40）" ],[ "2020-2-6","十三","*","武汉国际会展中心的方舱医院正式接诊"],[ "2020-2-7","十四" ],[ "2020-2-8","十五","*","雷神山医院交付使用" ],[ "2020-2-9","十六" ],[ "2020-2-10","十七" ],[ "2020-2-11","十八","*","世界卫生组织将新型冠状病毒命名为“COVID-19”" ],[ "2020-2-12","十九" ],[ "2020-2-13","二十","*","湖北省将临床诊断病例数纳入确诊病例数进行公布"],[ "2020-2-14","廿一" ],[ "2020-2-15","廿二" ],[ "2020-2-16","廿三" ],[ "2020-2-17","廿四" ],[ "2020-2-18","廿五" ],[ "2020-2-19","廿六" ],[ "2020-2-20","廿七" ],[ "2020-2-21","廿八" ],[ "2020-2-22","廿九" ],[ "2020-2-23","初一" ],[ "2020-2-24","初二","*" ],[ "2020-2-25","初三" ],[ "2020-2-26","初四"],[ "2020-2-27","初五" ],[ "2020-2-28","初六" ],[ "2020-2-29","初七" ]];
+            heatmapData2=[];lunarData2=[];people2=[14380,17205,20438,24324,28018,31161,34546,37198,40171,42638,44653,59804,63851];
+            for (var i = 0; i < dateList2.length; i++) {
+                heatmapData2.push([
+                    dateList2[i][0],
+                    people2[i]
+                ]);
+                lunarData2.push([
+                    dateList2[i][0],
+                    1,
+                    dateList2[i][1],
+                    dateList2[i][2],
+                    dateList2[i][3]
+                ]);
+            };
+            // linebarquanguo
+            items5 = []; die = []; cure =[]; rate=[];
+            for (let idx in data["real"]) {
+                items5.push(data["real"][idx]["date"]);
+                die.push(data["real"][idx]["die"]);
+                cure.push(data["real"][idx]["cure"]);
+                rate.push((die[idx]/cure[idx]).toFixed(2));
+            };
+            // 时间轴
+            dimeAxis=[{
+                date:'2019-12-08',
+                title:'全国确诊新型肺炎病例',
+                // achievement:''
+            },
+            {
+                date:'2020-01-01',
+                title:'华南海鲜市场休市',
+                // achievement:''
+            },
+            {
+                date:'2020-01-20',
+                title:'提出确定有人传人现象',
+                // achievement:''
+            },
+            {
+                date:'2020-01-23',
+                title:'武汉封城 ',
+                // achievement:''
+            },
+            {
+                date:'2020-01-24',
+                title:'湖北省启动一级响应',
+                // achievement:''
+            },
+            {
+                date:'2020-01-25',
+                title:'火神山医院开工',
+                 // achievement:''
+            },
+            {
+                date:'2020-01-26',
+                title:'雷神山医院开工',
+                // achievement:''
+            },
+            {
+                date:'2020-01-31',
+                title:'WHO宣布把此次疫情列为PHEIC',
+                // achievement:''
+            },
+            {
+                date:'2020-02-02',
+                title:'火神山医院完工',
+                // achievement:''
+            },
+            {
+                date:'2020-02-03',
+                title:'火神山医院开始接诊',
+                // achievement:''
+            },
+            {
+                date:'2020-02-03',
+                title:'武汉连夜建三所“方舱医院”',
+                // achievement:''
+            },
+            {
+                date:'2020-02-05',
+                title:'武昌方舱医院开始接诊首批确诊轻微病患(晚23:40）',
+                // achievement:''
+            },
+            {
+                date:'2020-02-06',
+                title:'武汉国际会展中心的方舱医院正式接诊',
+                // achievement:''
+            },
+            {
+                date:'2020-02-08',
+                title:'雷神山医院交付使用',
+                // achievement:''
+            }
+            ,
+            {
+                date:'2020-02-08',
+                title:'暂命名为“新型冠状病毒肺炎”，简称“新冠肺炎（NCP）”',
+                // achievement:''
+            },
+            {
+                date:'2020-02-11',
+                title:'世界卫生组织将新型冠状病毒命名为“COVID-19”',
+                // achievement:''
+            },
+            {
+                date:'2020-02-13',
+                title:'湖北省将临床诊断病例数纳入确诊病例数进行公布',
+                // achievement:''
+            }];
+            $(function(){
+                $.each(dimeAxis,function(i,e){
+                    var html='<li class="time-axis-item">'+
+                                 '<div class="time-axis-date">'+e.date+'<span></span></div>'+
+                                 '<div class="time-axis-title">'+e.title+'</div>'
+                                 +
+                             '</li>';
+                    $('.time-axis').append(html);       
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            var myChart1 = echarts.init(document.getElementById('map'));
+            var myChart2 = echarts.init(document.getElementById('calendar1'));
+            var myChart3 = echarts.init(document.getElementById('calender2'));
+            var myChart4 = echarts.init(document.getElementById('linebarquanguo'));
+            option1 = {
                 baseOption: {
                     timeline: {
-                        data: date,
+                        data: mapDate,
                         axisType: 'category',
                         autoPlay: true,
                         playInterval: 750,
                         left: 'center',
-                        //top: '86%',
+                        bottom: -15,
                         width: '95%',
                         label: {
-                            normal: {
-                                textStyle: {
-                                    color: '#333333'
-                                }
-                            },
+                            position: 7,
                             emphasis: {
                                 textStyle: {
                                     color: '#808B96'
@@ -398,46 +393,43 @@
                             }
                         },
                         symbol: 'none',
-                        lineStyle: {
-                            color: '#555'
-                        },
                         checkpointStyle: {
                             borderColor: '#777',
                             borderWidth: 2
                         },
                         controlStyle: {
-                            //showNextBtn: true,
-                            //showPrevBtn: true,
-                            normal: {
-                                color: '#666',
-                                borderColor: '#666'
-                            },
+                            itemSize: 18,
                             emphasis: {
                                 color: '#aaa',
                                 borderColor: '#aaa'
                             }
-                        },
+                        }
                     },
-                    tooltip: { //tooltip提示框，鼠标悬浮交互时的信息提示
-                        trigger: 'item' //触发类型，默认数据触发，见下图，可选为：'item' | 'axis'
+                    tooltip: {
+                        trigger: 'item'
                     },
                     title: {
-                        x: 'center'
+                        left: 13,
+                        //borderWidth: 2,
+                        textStyle: {
+                            fontSize: 15,
+                            fontWeight: 'normal'
+                        }
                     },
                     visualMap: {
                         type: 'piecewise',
                         pieces: [{
-                                min: 1000,
+                                min: 5000,
                                 color: '#922b21'
                             },
                             {
-                                min: 500,
-                                max: 999,
+                                min: 1000,
+                                max: 4999,
                                 color: '#c0392b'
                             },
                             {
                                 min: 250,
-                                max: 499,
+                                max: 999,
                                 color: '#cd6155'
                             },
                             {
@@ -461,28 +453,22 @@
                             }
                         ],
                         itemWidth: 9,
-                        itemHeight: 18,
+                        itemHeight: 16,
                         itemGap: -2,
                         textStyle: {
                             color: '#7B93A7'
                         },
-                        bottom: '12%',
-                        left: "3%",
+                        bottom: '8%',
+                        left: "2%",
                     },
-                    series: [ //通用,驱动图表生成的数据内容数组，数组中每一项为一个系列的选项及数据，其中个别选项仅在部分图表类型中有效
+                    series: [
                         {
                             name: '确诊数',
                             type: 'map',
                             mapType: 'china',
-                            top: '15%',
-                            //left: '2%',
-                            //right: '2%',
+                            top: '10%',
                             zoom: 1.25,
                             itemStyle: {
-                                normal: {
-                                    label: {
-                                    }
-                                },
                                 emphasis: {
                                     borderWidth: 1,
                                     borderColor: '#566573',
@@ -490,365 +476,413 @@
                                 }
                             }}]
                 },
-                options: options
+                options: mapOptions
             };
-            myChart.setOption(option);
-        }
-    </script>
-    
-    <!--日历图-->
-    <script type="text/javascript">
-                var myChart = echarts.init(document.getElementById('dateplot'));
-                var dateList = [[ "2020-1-1","初七","*"],[ "2020-1-2","初八" ],[ "2020-1-3","初九" ],[ "2020-1-4","初十" ],[ "2020-1-5","十一" ],[ "2020-1-6","十二" ],[ "2020-1-7","十三" ],[ "2020-1-8","十四" ],[ "2020-1-9","十五" ],[ "2020-1-10","十六" ],[ "2020-1-11","十七" ],[ "2020-1-12","十八" ],[ "2020-1-13","十九" ],[ "2020-1-14","二十" ],[ "2020-1-15","廿一" ],[ "2020-1-16","廿二" ],[ "2020-1-17","廿三" ],[ "2020-1-18","廿四" ],[ "2020-1-19","廿五" ],[ "2020-1-20","廿六","*" ],[ "2020-1-21","廿七" ],[ "2020-1-22","廿八" ],[ "2020-1-23","廿九","武汉封城" ],[ "2020-1-24","除夕","*" ],[ "2020-1-25","春节","*" ],[ "2020-1-26","初二","*"],[ "2020-1-27","初三" ],[ "2020-1-28","初四" ],[ "2020-1-29","初五" ],[ "2020-1-30","初六" ],[ "2020-1-31","初七","*" ]
-    ];
-
-    var heatmapData = [];
-    var lunarData = [];
-    var people=[27,27,27,27,27,27,27,27,27,41,41,41,41,41,41,45,
-    62,121,198,291,440,571,830,1287,1975,2744,4515,5974,7711,8149,11791];
-    for (var i = 0; i < dateList.length; i++) {
-        heatmapData.push([
-            dateList[i][0],
-            people[i]
-        ]);
-        lunarData.push([
-            dateList[i][0],
-            1,
-            dateList[i][1],
-            dateList[i][2]
-        ]);
-    }
-
-
-    option = {
-        backgroundColor:'#ffffff',
-        //tooltip: {
-        //  formatter: function (params) {
-            //    return '全国确诊人数: ' + params.value[1];
-            //}
-        //},
-        visualMap: {
-            "min": 0,
-            "max": 12000,
-            "calculable": true,
-            "seriesIndex": [2],
-            "orient": "horizontal",
-            "right": "center",
-            "bottom": "0%",
-            "color": ["#3686e7", "#bcfdd6"]
-        },
-    
-    
-
-        calendar: [{
-            left: '4%',
-        right: '4%',
-        top: '15%',
-        bottom: '10%',
-            cellSize: [150, 80],
-            yearLabel: {show: false},
-            orient: 'vertical',
-            dayLabel: {
-                firstDay: 1,
-                nameMap: 'cn'
-            },
-            
-            monthLabel: {
-                show: true,
-                color:'#fff'
-            },
-            range: '2020-01'
-        }],
-        
-
-        series: [{
-            type: 'scatter',
-            coordinateSystem: 'calendar',
-            symbolSize: 1,
-            label: {
-                normal: {
-                    show: true,
+            option2 = {
+                backgroundColor:'transparent',
+                tooltip: {
                     formatter: function (params) {
-                        var d = echarts.number.parseDate(params.value[0]);
-                        return d.getDate() + '\n\n' + params.value[2] + '\n\n';
-                    },
-                    textStyle: {
-                        color: '#000'
+                        var a;
+                        for (var i = 0; i < dateList1.length; i++) {
+                            if(lunarData1[i][0]==params.value[0]){
+                                a=lunarData1[i][4]
+                            }
+                        }
+                        return a;
                     }
-                }
-            },
-            data: lunarData
-        }, {
-            type: 'scatter',
-            coordinateSystem: 'calendar',
-            symbolSize: 1,
-            label: {
-                normal: {
-                    show: true,
+                },
+                visualMap: {
+                    "min": 0,
+                    "max": 15000,
+                    "calculable": true,
+                    "seriesIndex": [2],
+                    "orient": "horizontal",
+                    "right": "center",
+                    "bottom": "0%",
+                    "color": ["#3686e7", "#bcfdd6"]
+                },
+                calendar: [{
+                    left: '4%',
+                    right: '4%',
+                    top: '4%',
+                    bottom: '10%',
+                    cellSize: [150, 80],
+                    yearLabel: {show: false},
+                    orient: 'vertical',
+                    dayLabel: {
+                        show: false,
+                        firstDay: 1,
+                        nameMap: 'cn'
+                    },
+                    monthLabel: {
+                        show: true,
+                        color:'#fff'
+                    },
+                    range: '2020-01'
+                }],
+                series: [{
+                    type: 'scatter',
+                    coordinateSystem: 'calendar',
+                    symbolSize: 1,
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter: function (params) {
+                                var d = echarts.number.parseDate(params.value[0]);
+                                return d.getDate() + '\n\n' + params.value[2] + '\n\n';
+                            },
+                            textStyle: {
+                                color: '#000'
+                            }
+                        }
+                    },
+                    data: lunarData1
+                }, {
+                    type: 'scatter',
+                    coordinateSystem: 'calendar',
+                    symbolSize: 1,
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter: function (params) {
+                                return '\n\n\n' + (params.value[3] || '');
+                            },
+                            textStyle: {
+                                fontSize: 14,
+                                fontWeight: 700,
+                                color: "#CD5C5C"
+                            }
+                        }
+                    },
+                    data: lunarData1
+                }, {
+                    name: '确诊数',
+                    type: 'heatmap',
+                    coordinateSystem: 'calendar',
+                    data: heatmapData1
+                }]
+            };
+            option3 = {
+                backgroundColor:'transparent',
+                tooltip: {
                     formatter: function (params) {
-                        return '\n\n\n' + (params.value[3] || '');
-                    },
-                    textStyle: {
-                        fontSize: 14,
-                        fontWeight: 700,
-                        color: "#CD5C5C"
+                        var a;
+                        for (var i = 0; i < dateList2.length; i++) {
+                            if(lunarData2[i][0]==params.value[0]){
+                                a=lunarData2[i][4]
+                            }
+                        }
+                        return a;
                     }
+                },
+                visualMap: {
+                    "min": 10000,
+                    "max": 100000,
+                    "calculable": true,
+                    "seriesIndex": [2],
+                    "orient": "horizontal",
+                    "right": "center",
+                    "bottom": "0%",
+                    "color": ["#3686e7", "#bcfdd6"]
+                },
+                calendar: [{
+                    left: '4%',
+                    right: '4%',
+                    top: '4%',
+                    bottom: '10%',
+                    cellSize: [150, 80],
+                    yearLabel: {show: false},
+                    orient: 'vertical',
+                    dayLabel: {
+                        show: false,
+                        firstDay: 1,
+                        nameMap: 'cn'
+                    },
+                    monthLabel: {
+                        show: true,
+                        color:'#fff'
+                    },
+                    range: '2020-02'
+                }],
+                series: [{
+                    type: 'scatter',
+                    coordinateSystem: 'calendar',
+                    symbolSize: 1,
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter: function (params) {
+                                var d = echarts.number.parseDate(params.value[0]);
+                                return d.getDate() + '\n\n' + params.value[2] + '\n\n';
+                            },
+                            textStyle: {
+                                color: '#000'
+                            }
+                        }
+                    },
+                    data: lunarData2
+                }, {
+                    type: 'scatter',
+                    coordinateSystem: 'calendar',
+                    symbolSize: 1,
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter: function (params) {
+                                return '\n\n\n' + (params.value[3] || '');
+                            },
+                            textStyle: {
+                                fontSize: 14,
+                                fontWeight: 700,
+                                color: "#CD5C5C"
+                            }
+                        }
+                    },
+                    data: lunarData2
+                }, {
+                    name: '确诊数',
+                    type: 'heatmap',
+                    coordinateSystem: 'calendar',
+                    data: heatmapData2
+                }]
+            };
+            option4 = {
+            "title": {
+                "text": "",
+                "left": "center",
+                "y": "10",
+                "textStyle": {
+                    "color": "#fff"
                 }
-            },
-            data: lunarData
-        }, {
-            name: '降雨量',
-            type: 'heatmap',
-            coordinateSystem: 'calendar',
-            data: heatmapData
-        }]
-    };
+                },
                 
-    myChart.setOption(option);
-    </script>
-
-    <!--折柱图-->
-    <script type="text/javascript">
-    
-        var myChart = echarts.init(document.getElementById('linebarquanguo'));
-        scale = 1.5; // width/height
-        myChart._zr.painter._height = myChart._zr.painter._width/scale;
-        option = {
-        "title": {
-            "text": "",
-            "left": "center",
-            "y": "10",
-            "textStyle": {
-                "color": "#fff"
-            }
-            },
-            "backgroundColor": "#ffffff",
-            "color": "#384757",
-            "tooltip": {
-            "trigger": "axis",
-            "axisPointer": {
-                "type": "cross",
-                "crossStyle": {
-                "color": "#384757"
-                }
-            }
-            },
-            "legend": {
-            "data": [
-                {
-                "name": "死亡人数",
-                "icon": "circle",
-                "textStyle": {
-                    "color": "#7d838b"
+                
+                "backgroundColor": 'transparent',
+                "color": "#384757",
+                "tooltip": {
+                "trigger": "axis",
+                "axisPointer": {
+                    "type": "cross",
+                    "crossStyle": {
+                    "color": "#384757"
+                    }
                 }
                 },
-                {
-                "name": '治愈人数',
-                "icon": "circle",
-                "textStyle": {
-                    "color": "#7d838b"
-                }
-                },
-                {
-                "name": "死亡人数与治愈人数比",
-                "icon": "circle",
-                "textStyle": {
-                    "color": "#7d838b"
-                }
-                }
-            ],
-            "top": "0%",
-            "textStyle": {
-                "color": "#fff"
-            }
-            },
-        "dataZoom": [{
-
-
-                "show": true,
-                "height": '5%',
-                "xAxisIndex": [
-                    0
+                "legend": {
+            
+                "data": [
+                    {
+                    "name": "死亡人数",
+                    "icon": "circle",
+                    "textStyle": {
+                        "color":  "#7d838b"
+                    }
+                    },
+                    {
+                    "name": '治愈人数',
+                    "icon": "circle",
+                    "textStyle": {
+                        "color":  "#7d838b"
+                    }
+                    },
+                    {
+                    "name": "死亡人数与治愈人数比",
+                    "icon": "circle",
+                    "textStyle": {
+                        "color":  "#7d838b"
+                    }
+                    }
                 ],
-                bottom: '2%',
-                "start": 70,
-                "end": 100,
-            
-                handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
-                handleSize: '110%',
-                handleStyle:{
-                    color:"#d3dee5",
+                "top": "0%",
+                "right": '5%',
+                
+                },
+            dataZoom: {
+                        type: 'slider',
+                        xAxisIndex: [0],
+                        height: '6%',
+                        bottom: '2%',
+                        start: 50,
+                        end: 100,
+                        showDetail: false,
+                        handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                        borderColor: '#90979c'
+                    },
+
+
+
+
+                
+                xAxis: {
+                    type: 'category',
+                    "axisLine": {
+                        lineStyle: {
+                            color: '#566573'
+                        }
+                    },
+                    "axisTick": {
+                        "show": false
+                    },
+                    axisLabel: {
+                        fontSize: 11
+                    },
+                    boundaryGap: true,
+                    data: items5
+                },
+        "yAxis": [
+                {
+                    "type": "value",
+                    "name": "人数",
+                    "nameTextStyle": {
+                    "color": "'#566573'"
+                    },
                     
-                },
-                textStyle:{
-                    color:"#fff"},
-                borderColor:"#90979c"
-                
-                
-            },{
-                "type": "slider",
-                
-                "show": false,
-                "height": 10,
-                "start": 25,
-                "end": 65
-            }],
-            xAxis: {
-                type: 'category',
-                "axisLine": {
+                    "axisLabel": {
+                    "show": true,
+                    "textStyle": {
+                        "color": "'#566573'"
+                    }
+                    },
+                    "axisLine": {
+                    "show": true,
                     lineStyle: {
-                        color: '#FF4500'
+                                color: '#566573'
+                            }
+
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            type: 'dotted',
+                            color: '#fff'
+                        }
+                    },
+                    "axisTick": {
+                        "show": false
+                    }},
+                        
+                {
+                    "type": "value",
+                    "name": "",  //这里把名字删了否则会挤
+                    "nameTextStyle": {
+                    "color": "#566573"
+                    },
+                    
+
+                    "show": true,
+                    "axisLabel": {
+                    "show": true,
+                    "textStyle": {
+                        "color": "#566573"
+                    }
+                    }
+                }
+                ],
+            
+                
+                grid: {
+                        left: 0,
+                        right: 15,
+                        top: '15%',
+                        bottom: '10%',
+                        containLabel: true
+                    },
+                "series": [
+                {
+                    "name": "死亡人数",
+                    "type": "bar",
+                    "data": die,
+                    "barWidth": "auto",
+                    "itemStyle": {
+                    "normal": {
+                        "color": {
+                        "type": "linear",
+                        "x": 0,
+                        "y": 0,
+                        "x2": 0,
+                        "y2": 1,
+                        "colorStops": [
+                            {
+                            "offset": 0,
+                            "color": "rgba(255,37,117,0.7)"
+                            },
+                            {
+                            "offset": 0.5,
+                            "color": "rgba(0,133,245,0.7)"
+                            },
+                            {
+                            "offset": 1,
+                            "color": "rgba(0,133,245,0.3)"
+                            }
+                        ],
+                        "globalCoord": false
+                        }
+                    }
                     }
                 },
-                "axisTick": {
-                    "show": false
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: 'black'
+                {
+                    "name": "治愈人数",
+                    "type": "bar",
+                    "data": cure,
+                    "barWidth": "auto",
+                    "itemStyle": {
+                    "normal": {
+                        "color": {
+                        "type": "linear",
+                        "x": 0,
+                        "y": 0,
+                        "x2": 0,
+                        "y2": 1,
+                        "colorStops": [
+                            {
+                            "offset": 0,
+                            "color": "rgba(255,37,117,0.7)"
+                            },
+                            {
+                            "offset": 0.5,
+                            "color": "rgba(0,255,252,0.7)"
+                            },
+                            {
+                            "offset": 1,
+                            "color": "rgba(0,255,252,0.3)"
+                            }
+                        ],
+                        "globalCoord": false
+                        }
                     }
+                    },
+                    "barGap": "0"
                 },
-                boundaryGap: true,
-                data: items5
-            },
+                {
+                    "name": "死亡人数与治愈人数比",
+                    "type": "line",
+                    "yAxisIndex": 1,
+                    "data": rate,
+                    "itemStyle": {
+                    "normal": {
+                        "color": "#ffaa00"
+                    }
+                    },
+                    "smooth": true
+                }
+                ]
+            };
+            myChart1.setOption(option1);
+            myChart2.setOption(option2);
+            myChart3.setOption(option3);
+            myChart4.setOption(option4);
+            charts = [myChart1,myChart2,myChart3,myChart4];
+            $('a[data-toggle="pill"]').on('shown.bs.tab', function(e) {
+                for(var i = 0; i < charts.length; i++) {
+                    charts[i].resize();
+                }
+            });
+            $(window).resize(function(){
+                for(var i = 0; i < charts.length; i++) {
+                    charts[i].resize();
+                }
+            });
+        </script>
         
-            "yAxis": [
-            {
-                "type": "value",
-                "name": "人数",
-                "nameTextStyle": {
-                "color": "#7d838b"
-                },
-                
-                "axisLabel": {
-                "show": true,
-                "textStyle": {
-                    "color": "#7d838b"
-                }
-                },
-                "axisLine": {
-                "show": true
-                },
-                splitLine: {
-                    show: true,
-                    lineStyle: {
-                        type: 'dotted',
-                        color: '#fff'
-                    }
-                },
-                "axisTick": {
-                    "show": false
-                }},
-                    
-            {
-                "type": "value",
-                "name": "",  //这里把名字删了否则会挤
-                "nameTextStyle": {
-                "color": "#7d838b"
-                },
-                
-
-                "show": true,
-                "axisLabel": {
-                "show": true,
-                "textStyle": {
-                    "color": "#7d838b"
-                }
-                }
-            }
-            ],
-            'grid': {
-            
-            top: '15%',
-            left: '1%',
-            right: '4%',
-            bottom: '8%',
-            containLabel: true
-        },
-            "series": [
-            {
-                "name": "死亡人数",
-                "type": "bar",
-                "data": die,
-                "barWidth": "auto",
-                "itemStyle": {
-                "normal": {
-                    "color": {
-                    "type": "linear",
-                    "x": 0,
-                    "y": 0,
-                    "x2": 0,
-                    "y2": 1,
-                    "colorStops": [
-                        {
-                        "offset": 0,
-                        "color": "rgba(255,37,117,0.7)"
-                        },
-                        {
-                        "offset": 0.5,
-                        "color": "rgba(0,133,245,0.7)"
-                        },
-                        {
-                        "offset": 1,
-                        "color": "rgba(0,133,245,0.3)"
-                        }
-                    ],
-                    "globalCoord": false
-                    }
-                }
-                }
-            },
-            {
-                "name": "治愈人数",
-                "type": "bar",
-                "data": cure,
-                "barWidth": "auto",
-                "itemStyle": {
-                "normal": {
-                    "color": {
-                    "type": "linear",
-                    "x": 0,
-                    "y": 0,
-                    "x2": 0,
-                    "y2": 1,
-                    "colorStops": [
-                        {
-                        "offset": 0,
-                        "color": "rgba(255,37,117,0.7)"
-                        },
-                        {
-                        "offset": 0.5,
-                        "color": "rgba(0,255,252,0.7)"
-                        },
-                        {
-                        "offset": 1,
-                        "color": "rgba(0,255,252,0.3)"
-                        }
-                    ],
-                    "globalCoord": false
-                    }
-                }
-                },
-                "barGap": "0"
-            },
-            {
-                "name": "死亡人数与治愈人数比",
-                "type": "line",
-                "yAxisIndex": 1,
-                "data": rate,
-                "itemStyle": {
-                "normal": {
-                    "color": "#ffaa00"
-                }
-                },
-                "smooth": true
-            }
-            ]
-        };
-        myChart.setOption(option);
-
-    </script>
-
-</body>
-
-</html>
+    </body>
+</html>  

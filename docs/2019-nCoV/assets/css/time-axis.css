@@ -4,8 +4,9 @@ body{
 }
 
 .maintime{
-	width: 90%;
-	margin: 20px auto;
+	width: 100%;
+	margin: 20px 5px;
+
 }
 
 .time-axis{
@@ -17,7 +18,7 @@ body{
 .time-axis:before{
 	content: '';
 	position: absolute;
-	left: 115px;
+	left: 100px;
 	top: 15px;
 	width: 1px;
 	height: 100%;
@@ -25,7 +26,7 @@ body{
 }
 .time-axis-item{
 	list-style: none;
-	padding-left: 150px;
+	padding-left: 125px;
 	position: relative;
 	line-height: 45px;
 	/*font-style: italic;*/
@@ -44,7 +45,7 @@ body{
 
 .time-axis-date span{
 	position: absolute;
-	right: -49px;
+	right: -35px;
 	top: 35%;
 	display: block;
 	width: 13px;
