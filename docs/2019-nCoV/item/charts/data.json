@@ -474,6 +474,25 @@ dataJson({"real":
     "add-cure-qita": 391,
     "zhejiang": 1155,
     "jjj": 774
+  },
+  {
+    "date": "2.14",
+    "diagnosis": 66492,
+    "hubei": 54406,
+    "wuhan": 37914,
+    "qita": 12086,
+    "add": 2641,
+    "add-hubei": 2420,
+    "add-qita": 221,
+    "die": 1523,
+    "cure": 8096,
+    "cure-hubei": 4774,
+    "cure-qita": 3322,
+    "add-cure": 1373,
+    "add-cure-hubei": 912,
+    "add-cure-qita": 461,
+    "zhejiang": 1162,
+    "jjj": 786
   }
     
     ]
