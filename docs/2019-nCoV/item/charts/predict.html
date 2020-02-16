@@ -290,7 +290,7 @@
                 backgroundColor: 'transparent',
                 legend: {
                     right: '5%',
-                    data: ['全国','湖北','武汉','湖北以外']
+                    data: ['全国','湖北','武汉']
                 },
                 grid: {
                     left: 0,
@@ -378,28 +378,6 @@
                         itemStyle: {color:'rgba(255,170,0,0.7)',borderColor:'rgba(255,170,0,0.5)',borderWidth:1},
                         lineStyle: {opacity: 0},
                         areaStyle: {color: '#FFF3B2',opacity: 0.8}
-                    },
-                    {   name: '湖北以外',
-                        type: 'line',
-                        symbolSize: 4,
-                        symbol: 'rect',
-                        itemStyle: {color:'rgba(2,191,138,0.7)',borderColor:'rgba(2,191,138,0.5)',borderWidth:2},
-                        data: others
-                    },
-                    {   name: '湖北以外', //下界
-                        type: 'line',
-                        data: othersLow,
-                        stack: '湖北外预测',
-                        itemStyle: {color:'rgba(2,191,138,0.7)',borderColor:'rgba(2,191,138,0.7)',borderWidth:1},
-                        lineStyle: {opacity: 0}
-                    },
-                    {   name: '湖北以外', //区间长度
-                        type: 'line',
-                        data: othersDelta,
-                        stack: '湖北外预测',
-                        itemStyle: {color:'rgba(2,191,138,0.7)',borderColor:'rgba(2,191,138,0.5)',borderWidth:1},
-                        lineStyle: {opacity: 0},
-                        areaStyle: {color: '#9BCD9B',opacity: 0.8}
                     }
                 ],
                 xAxis: {
