@@ -512,6 +512,25 @@ dataJson({"real":
     "add-cure-qita": 474,
     "zhejiang": 1167,
     "jjj": 802
+  },
+  {
+    "date": "2.16",
+    "diagnosis": 70548,
+    "hubei": 58182,
+    "wuhan": 41152,
+    "qita": 12366,
+    "add": 2048,
+    "add-hubei": 1933,
+    "add-qita": 115,
+    "die": 1770,
+    "cure": 10844,
+    "cure-hubei": 6639,
+    "cure-qita": 4205,
+    "add-cure": 1425,
+    "add-cure-hubei": 1016,
+    "add-cure-qita": 409,
+    "zhejiang": 1171,
+    "jjj": 806
   }
     
     ]
@@ -551,9 +570,7 @@ dataJson({"real":
     "wuhanshang": 13681,
     "wuhanxia": 11985,
     "hubeishang": 23159,
-    "hubeixia": 20213,
-    "qitashang": "_",
-    "qitaxia": "_"
+    "hubeixia": 20213
   },
   {
     "date": "2.8",
@@ -677,9 +694,7 @@ dataJson({"real":
     "zhejiangshang": 1208,
     "zhejiangxia": 1175,
     "jjjshang": 825,
-    "jjjxia": 778,
-    "qitashang": "_",
-    "qitaxia": "_"
+    "jjjxia": 778
   },
   {
     "date": "2.15",
@@ -695,9 +710,7 @@ dataJson({"real":
     "zhejiangshang": 1213,
     "zhejiangxia": 1185,
     "jjjshang": 836,
-    "jjjxia": 794,
-    "qitashang": "_",
-    "qitaxia": "_"
+    "jjjxia": 794
   },
   {
     "date": "2.16",
@@ -713,9 +726,7 @@ dataJson({"real":
     "zhejiangshang": 1217,
     "zhejiangxia": 1192,
     "jjjshang": 845,
-    "jjjxia": 807,
-    "qitashang": "_",
-    "qitaxia": "_"
+    "jjjxia": 807
   }
 ]
 
