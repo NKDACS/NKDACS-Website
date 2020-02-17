@@ -197,10 +197,13 @@
             }
         </script>
         <script type="text/javascript" src="./data.json?cb=dataJson"></script>
+        
+
         <!-- Process Data -->
         <script type="text/javascript">
-            dateReal=[];dateWithPredict=[];total=[];hubei=[];wuhan=[];zhejiang=[];others=[];jjj=[];totalDelta=[];totalLow=[];hubeiDelta=[];hubeiLow=[];wuhanDelta=[];wuhanLow=[];othersDelta=[];othersLow=[];zhejiangDelta=[];zhejiangLow=[];jjjDelta=[];jjjLow=[];
-            function addData(date,r0,r1,r2,r3,r4,r5,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12){ 
+            dateReal=[];dateWithPredict=[];total=[];hubei=[];wuhan=[];zhejiang=[];others=[];jjj=[];beijing=[];tianjin=[];shanghai=[];henan=[];chongqing=[];hunan=[];jiangxi=[];jiangsu=[];anhui=[];guangdong=[];jjjDelta=[];
+                jjjLow=[];totalDelta=[];totalLow=[];hubeiDelta=[];hubeiLow=[];wuhanDelta=[];wuhanLow=[];othersDelta=[];othersLow=[];zhejiangDelta=[];zhejiangLow=[];beijingDelta=[];beijingLow=[];tianjinDelta=[];tianjinLow=[];shanghaiDelta=[];shanghaiLow=[];chongqingDelta=[];chongqingLow=[];henanDelta=[];henanLow=[];jiangxiDelta=[];jiangxiLow=[];guangdongDelta=[];guangdongLow=[];anhuiDelta=[];anhuiLow=[];hunanDelta=[];hunanLow=[];jiangsuDelta=[];jiangsuLow=[];
+            function addData(date,r0,r1,r2,r3,r4,r5,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15){ 
                 dateWithPredict.push(date);
                 total.push(r0);
                 hubei.push(r1);
@@ -208,6 +211,16 @@
                 others.push(r3);
                 zhejiang.push(r4);
                 jjj.push(r5);
+                beijing.push(r6);
+                tianjin.push(r7);
+                shanghai.push(r8);
+                chongqing.push(r9);
+                henan.push(r10);
+                jiangxi.push(r11);
+                guangdong.push(r12);
+                anhui.push(r13);
+                hunan.push(r14);
+                jiangsu.push(r15);
                 othersDelta.push(p1-p2);
                 othersLow.push(p2);
                 zhejiangDelta.push(p3-p4);
@@ -220,6 +233,27 @@
                 hubeiLow.push(p10);
                 wuhanDelta.push(p11-p12);
                 wuhanLow.push(p12);
+                beijingDelta.push(p13-p14);
+                beijingLow.push(p14);
+                tianjinDelta.push(p15-p16);
+                tianjinLow.push(p16);
+                shanghaiDelta.push(p17-p18);
+                shanghaiLow.push(p18);
+                chongqingDelta.push(p19-p20);
+                chongqingLow.push(p20);
+                henanDelta.push(p21-p22);
+                henanLow.push(p22);
+                jiangxiDelta.push(p23-p24);
+                jiangxiLow.push(p24);
+                guangdongDelta.push(p25-p26);
+                guangdongLow.push(p26);
+                anhuiDelta.push(p27-p28);
+                anhuiLow.push(p28);
+                hunanDelta.push(p29-p30);
+                hunanLow.push(p30);
+                jiangsuDelta.push(p31-p32);
+                jiangsuLow.push(p32);
+
             };
             delta = 9;
             n = 0;
@@ -233,7 +267,11 @@
                     addData(data["real"][i]["date"],
                     data["real"][i]["diagnosis"],data["real"][i]["hubei"],data["real"][i]["wuhan"],
                     data["real"][i]["qita"],data["real"][i]["zhejiang"],data["real"][i]["jjj"],
-                    '_','_','_','_','_','_','_','_','_','_','_','_');
+                    '_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_',
+                    data["real"][i]["beijing"],data["real"][i]["tianjin"],data["real"][i]["shanghai"],
+                    data["real"][i]["chongqing"],data["real"][i]["henan"],data["real"][i]["jiangxi"],
+                    data["real"][i]["guangdong"],data["real"][i]["anhui"],data["real"][i]["hunan"],
+                    data["real"][i]["jiangsu"]);
                 } else if (i < rdays) {
                     j = i+delta-rdays+n;
                     addData(data["real"][i]["date"],
@@ -244,7 +282,22 @@
                     data["predictive"][j]["jjjshang"],data["predictive"][j]["jjjxia"],
                     data["predictive"][j]["quanguoshang"],data["predictive"][j]["quanguoxia"],
                     data["predictive"][j]["hubeishang"],data["predictive"][j]["hubeixia"],
-                    data["predictive"][j]["wuhanshang"],data["predictive"][j]["wuhanxia"]);
+                    data["predictive"][j]["wuhanshang"],data["predictive"][j]["wuhanxia"],
+                    data["predictive"][j]["beijingshang"],data["predictive"][j]["beijingxia"],
+                    data["predictive"][j]["tianjinshang"],data["predictive"][j]["tianjinxia"],
+                    data["predictive"][j]["shanghaishang"],data["predictive"][j]["shanghaixia"],
+                    data["predictive"][j]["chongqingshang"],data["predictive"][j]["chongqingxia"],
+                    data["predictive"][j]["henanshang"],data["predictive"][j]["henanxia"],
+                    data["predictive"][j]["jiangxishang"],data["predictive"][j]["jiangxixia"],
+                    data["predictive"][j]["guangdongshang"],data["predictive"][j]["guangdongxia"],
+                    data["predictive"][j]["anhuishang"],data["predictive"][j]["anhuixia"],
+                    data["predictive"][j]["hunanshang"],data["predictive"][j]["hunanxia"],
+                    data["predictive"][j]["jiangsushang"],data["predictive"][j]["jiangsuxia"],
+                    data["real"][i]["beijing"],data["real"][i]["tianjin"],data["real"][i]["shanghai"],
+                    data["real"][i]["chongqing"],data["real"][i]["henan"],data["real"][i]["jiangxi"],
+                    data["real"][i]["guangdong"],data["real"][i]["anhui"],data["real"][i]["hunan"],
+                    data["real"][i]["jiangsu"]
+                    );
                 } else {
                     j = i+delta-rdays+n;
                     addData(data["predictive"][j]["date"],
@@ -254,7 +307,18 @@
                     data["predictive"][j]["jjjshang"],data["predictive"][j]["jjjxia"],
                     data["predictive"][j]["quanguoshang"],data["predictive"][j]["quanguoxia"],
                     data["predictive"][j]["hubeishang"],data["predictive"][j]["hubeixia"],
-                    data["predictive"][j]["wuhanshang"],data["predictive"][j]["wuhanxia"]);
+                    data["predictive"][j]["wuhanshang"],data["predictive"][j]["wuhanxia"],
+                    data["predictive"][j]["beijingshang"],data["predictive"][j]["beijingxia"],
+                    data["predictive"][j]["tianjinshang"],data["predictive"][j]["tianjinxia"],
+                    data["predictive"][j]["shanghaishang"],data["predictive"][j]["shanghaixia"],
+                    data["predictive"][j]["chongqingshang"],data["predictive"][j]["chongqingxia"],
+                    data["predictive"][j]["henanshang"],data["predictive"][j]["henanxia"],
+                    data["predictive"][j]["jiangxishang"],data["predictive"][j]["jiangxixia"],
+                    data["predictive"][j]["guangdongshang"],data["predictive"][j]["guangdongxia"],
+                    data["predictive"][j]["anhuishang"],data["predictive"][j]["anhuixia"],
+                    data["predictive"][j]["hunanshang"],data["predictive"][j]["hunanxia"],
+                    data["predictive"][j]["jiangsushang"],data["predictive"][j]["jiangsuxia"],
+                    '_','_','_','_','_','_','_','_','_','_');
                 }
             };
             
@@ -290,7 +354,7 @@
                 backgroundColor: 'transparent',
                 legend: {
                     right: '5%',
-                    data: ['全国','湖北','武汉']
+                    data: ['全国','湖北','武汉','北京','天津','上海','重庆']
                 },
                 grid: {
                     left: 0,
@@ -313,71 +377,159 @@
                     }
                 },
                 series: [
-                    {   name: '全国',
+                {   name: '全国',
                         type: 'line',
                         symbolSize: 4,
                         symbol: 'rect',
-                        itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:2},
+                        itemStyle: {color:'rgba(255,87,21,0.7)',borderColor:'rgba(2255,87,21,0.5)',borderWidth:2},
                         data: total
                     },
                     {   name: '全国', //下界
                         type: 'line',
                         data: totalLow,
                         stack: '全国预测',
-                        itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:1},
+                        itemStyle: {color:'rgba(255,87,21,0.7)',borderColor:'rgba(255,87,21,0.5)',borderWidth:1},
                         lineStyle: {opacity: 0}
                     },
                     {   name: '全国', //区间长度
                         type: 'line',
                         data: totalDelta,
                         stack: '全国预测',
-                        itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:1},
+                        itemStyle: {color:'rgba(255,87,21,0.7)',borderColor:'rgba(255,87,21,0.5)',borderWidth:1},
                         lineStyle: {opacity: 0},
-                        areaStyle: {color: '#FFE9EE',opacity: 0.8}
+                        areaStyle: {color: '#ff5715',opacity: 0.3}
                     },
                     {   name: '湖北',
                         type: 'line',
                         symbolSize: 4,
                         symbol: 'rect',
-                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:2},
+                        itemStyle: {color:'rgba(255,153,21,0.7)',borderColor:'rgba(255,153,21,0.5)',borderWidth:2},
                         data: hubei
                     },
                     {   name: '湖北', //下界
                         type: 'line',
                         data: hubeiLow,
                         stack: '湖北预测',
-                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:1},
+                        itemStyle: {color:'rgba(255,153,21,0.7)',borderColor:'rgba(255,153,21,0.5)',borderWidth:1},
                         lineStyle: {opacity: 0}
                     },
                     {   name: '湖北', //区间长度
                         type: 'line',
                         data: hubeiDelta,
                         stack: '湖北预测',
-                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:1},
+                        itemStyle: {color:'rgba(255,153,21,0.7)',borderColor:'rgba(255,153,21,0.5)',borderWidth:1},
                         lineStyle: {opacity: 0},
-                        areaStyle: {color: '#E7FAFA',opacity: 0.8}
+                        areaStyle: {color: '#ff9915',opacity: 0.3}
                     },
                     {   name: '武汉',
                         type: 'line',
                         symbolSize: 4,
                         symbol: 'rect',
-                        itemStyle: {color:'rgba(255,170,0,0.7)',borderColor:'rgba(255,170,0,0.5)',borderWidth:2},
+                        itemStyle: {color:'rgba(255,219,21,0.7)',borderColor:'rgba(255,219,21,0.5)',borderWidth:2},
                         data: wuhan
                     },
                     {   name: '武汉', //下界
                         type: 'line',
                         data: wuhanLow,
                         stack: '武汉预测',
-                        itemStyle: {color:'rgba(255,170,0,0.7)',borderColor:'rgba(255,170,0,0.5)',borderWidth:1},
+                        itemStyle: {color:'rgba(255,219,21,0.7)',borderColor:'rgba(255,219,21,0.5)',borderWidth:1},
                         lineStyle: {opacity: 0}
                     },
                     {   name: '武汉', //区间长度
                         type: 'line',
                         data: wuhanDelta,
                         stack: '武汉预测',
-                        itemStyle: {color:'rgba(255,170,0,0.7)',borderColor:'rgba(255,170,0,0.5)',borderWidth:1},
+                        itemStyle: {color:'rgba(255,219,21,0.7)',borderColor:'rgba(255,219,21,0.5)',borderWidth:1},
                         lineStyle: {opacity: 0},
-                        areaStyle: {color: '#FFF3B2',opacity: 0.8}
+                        areaStyle: {color: '#ffdb15',opacity: 0.3}
+                    },
+                    {   name: '北京',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(186,255,21,0.7)',borderColor:'rgba(186,255,21,0.5)',borderWidth:2},
+                        data: beijing
+                    },
+                    {   name: '北京', //下界
+                        type: 'line',
+                        data: beijingLow,
+                        stack: '北京预测',
+                        itemStyle: {color:'rgba(186,255,21,0.7)',borderColor:'rgba(186,255,21,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '北京', //区间长度
+                        type: 'line',
+                        data: beijingDelta,
+                        stack: '北京预测',
+                        itemStyle: {color:'rgba(186,255,21,0.7)',borderColor:'rgba(186,255,21,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#baff15',opacity: 0.3}
+                    },
+                    {   name: '天津',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(70,230,33,0.7)',borderColor:'rgba(70,230,33,0.5)',borderWidth:2},
+                        data: tianjin
+                    },
+                    {   name: '天津', //下界
+                        type: 'line',
+                        data: tianjinLow,
+                        stack: '天津预测',
+                        itemStyle: {color:'rgba(70,230,33,0.7)',borderColor:'rgba(70,230,33,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '天津', //区间长度
+                        type: 'line',
+                        data: tianjinDelta,
+                        stack: '天津预测',
+                        itemStyle: {color:'rgba(70,230,33,0.7)',borderColor:'rgba(70,230,33,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#46e621',opacity: 0.3}
+                    },
+                    {   name: '上海',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(0,223,147,0.7)',borderColor:'rgba(0,223,147,0.5)',borderWidth:2},
+                        data: shanghai
+                    },
+                    {   name: '上海', //下界
+                        type: 'line',
+                        data: shanghaiLow,
+                        stack: '上海预测',
+                        itemStyle: {color:'rgba(0,223,147,0.7)',borderColor:'rgba(0,223,147,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '上海', //区间长度
+                        type: 'line',
+                        data: shanghaiDelta,
+                        stack: '上海预测',
+                        itemStyle: {color:'rgba(0,223,147,0.7)',borderColor:'rgba(0,223,147,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#00df93',opacity: 0.3}
+                    },
+                    {   name: '重庆',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(0,173,223,0.7)',borderColor:'rgba(20,173,223,0.5)',borderWidth:2},
+                        data: chongqing
+                    },
+                    {   name: '重庆', //下界
+                        type: 'line',
+                        data: chongqingLow,
+                        stack: '重庆预测',
+                        itemStyle: {color:'rgba(0,173,223,0.7)',borderColor:'rgba(0,173,223,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '重庆', //区间长度
+                        type: 'line',
+                        data: chongqingDelta,
+                        stack: '重庆预测',
+                        itemStyle: {color:'rgba(0,173,223,0.7)',borderColor:'rgba(0,173,223,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#00addf',opacity: 0.3}
                     }
                 ],
                 xAxis: {
@@ -425,12 +577,13 @@
                     borderColor: '#90979c'
                 }
             };
+
             option2 = {
                 backgroundColor: 'transparent',
                 legend: {
                     right: '5%',
-                    data: ['浙江','京津冀']
-                },              
+                    data: ['浙江','河南','江西','广东','安徽','湖南','江苏']
+                },
                 grid: {
                     left: 0,
                     right: 15,
@@ -456,45 +609,155 @@
                         type: 'line',
                         symbolSize: 4,
                         symbol: 'rect',
-                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:2},
+                        itemStyle: {color:'rgba(255,87,21,0.7)',borderColor:'rgba(2255,87,21,0.5)',borderWidth:2},
                         data: zhejiang
                     },
                     {   name: '浙江', //下界
                         type: 'line',
                         data: zhejiangLow,
                         stack: '浙江预测',
-                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:2},
+                        itemStyle: {color:'rgba(255,87,21,0.7)',borderColor:'rgba(255,87,21,0.5)',borderWidth:1},
                         lineStyle: {opacity: 0}
                     },
                     {   name: '浙江', //区间长度
                         type: 'line',
                         data: zhejiangDelta,
                         stack: '浙江预测',
-                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:2},
+                        itemStyle: {color:'rgba(255,87,21,0.7)',borderColor:'rgba(255,87,21,0.5)',borderWidth:1},
                         lineStyle: {opacity: 0},
-                        areaStyle: {color: '#E7FAFA',opacity: 0.8}
+                        areaStyle: {color: '#ff5715',opacity: 0.3}
                     },
-                    {   name: '京津冀',
+                    {   name: '河南',
                         type: 'line',
                         symbolSize: 4,
                         symbol: 'rect',
-                        itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:2},
-                        data: jjj
+                        itemStyle: {color:'rgba(255,153,21,0.7)',borderColor:'rgba(255,153,21,0.5)',borderWidth:2},
+                        data: henan
                     },
-                    {   name: '京津冀', //下界
+                    {   name: '河南', //下界
                         type: 'line',
-                        data: jjjLow,
-                        stack: '京津冀预测',
-                        itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:2},
+                        data: henanLow,
+                        stack: '河南预测',
+                        itemStyle: {color:'rgba(255,153,21,0.7)',borderColor:'rgba(255,153,21,0.5)',borderWidth:1},
                         lineStyle: {opacity: 0}
                     },
-                    {   name: '京津冀', //区间长度
+                    {   name: '河南', //区间长度
                         type: 'line',
-                        data: jjjDelta,
-                        stack: '京津冀预测',
-                        itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:2},
+                        data: henanDelta,
+                        stack: '河南预测',
+                        itemStyle: {color:'rgba(255,153,21,0.7)',borderColor:'rgba(255,153,21,0.5)',borderWidth:1},
                         lineStyle: {opacity: 0},
-                        areaStyle: {color: '#FFE9EE',opacity: 0.8}
+                        areaStyle: {color: '#ff9915',opacity: 0.3}
+                    },
+                    {   name: '江西',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(255,219,21,0.7)',borderColor:'rgba(255,219,21,0.5)',borderWidth:2},
+                        data: jiangxi
+                    },
+                    {   name: '江西', //下界
+                        type: 'line',
+                        data: jiangxiLow,
+                        stack: '江西预测',
+                        itemStyle: {color:'rgba(255,219,21,0.7)',borderColor:'rgba(255,219,21,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '江西', //区间长度
+                        type: 'line',
+                        data: jiangxiDelta,
+                        stack: '江西预测',
+                        itemStyle: {color:'rgba(255,219,21,0.7)',borderColor:'rgba(255,219,21,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#ffdb15',opacity: 0.3}
+                    },
+                    {   name: '广东',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(186,255,21,0.7)',borderColor:'rgba(186,255,21,0.5)',borderWidth:2},
+                        data: guangdong
+                    },
+                    {   name: '广东', //下界
+                        type: 'line',
+                        data: guangdongLow,
+                        stack: '广东预测',
+                        itemStyle: {color:'rgba(186,255,21,0.7)',borderColor:'rgba(186,255,21,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '广东', //区间长度
+                        type: 'line',
+                        data: guangdongDelta,
+                        stack: '广东预测',
+                        itemStyle: {color:'rgba(186,255,21,0.7)',borderColor:'rgba(186,255,21,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#baff15',opacity: 0.3}
+                    },
+                    {   name: '安徽',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(70,230,33,0.7)',borderColor:'rgba(70,230,33,0.5)',borderWidth:2},
+                        data: anhui
+                    },
+                    {   name: '安徽', //下界
+                        type: 'line',
+                        data: anhuiLow,
+                        stack: '安徽预测',
+                        itemStyle: {color:'rgba(70,230,33,0.7)',borderColor:'rgba(70,230,33,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '安徽', //区间长度
+                        type: 'line',
+                        data: anhuiDelta,
+                        stack: '安徽预测',
+                        itemStyle: {color:'rgba(70,230,33,0.7)',borderColor:'rgba(70,230,33,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#46e621',opacity: 0.3}
+                    },
+                    {   name: '湖南',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(0,223,147,0.7)',borderColor:'rgba(0,223,147,0.5)',borderWidth:2},
+                        data:hunan
+                    },
+                    {   name: '湖南', //下界
+                        type: 'line',
+                        data: hunanLow,
+                        stack: '湖南预测',
+                        itemStyle: {color:'rgba(0,223,147,0.7)',borderColor:'rgba(0,223,147,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '湖南', //区间长度
+                        type: 'line',
+                        data: hunanDelta,
+                        stack: '湖南预测',
+                        itemStyle: {color:'rgba(0,223,147,0.7)',borderColor:'rgba(0,223,147,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#00df93',opacity: 0.3}
+                    },
+                    {   name: '江苏',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(0,173,223,0.7)',borderColor:'rgba(20,173,223,0.5)',borderWidth:2},
+                        data: jiangsu
+                    },
+                    {   name: '江苏', //下界
+                        type: 'line',
+                        data: jiangsuLow,
+                        stack: '江苏预测',
+                        itemStyle: {color:'rgba(0,173,223,0.7)',borderColor:'rgba(0,173,223,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '江苏', //区间长度
+                        type: 'line',
+                        data: jiangsuDelta,
+                        stack: '江苏预测',
+                        itemStyle: {color:'rgba(0,173,223,0.7)',borderColor:'rgba(0,173,223,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#00addf',opacity: 0.3}
                     }
                 ],
                 xAxis: {
@@ -530,7 +793,6 @@
                     },
                     scale: true
                 },
-
                 dataZoom: {
                     type: 'slider',
                     xAxisIndex: [0],
@@ -543,6 +805,13 @@
                     borderColor: '#90979c'
                 }
             };
+
+            
+
+
+
+
+
             option3 = {
                 backgroundColor:'transparent',
 
@@ -641,16 +910,16 @@
                 },{
                     name: '湖北',
                     type: 'line',
-                    color: 'rgba(0,133,245)',
+                    color: 'rgba(255,153,21)',
                     smooth: true,
                     areaStyle: {
                         normal: {
                             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                 offset: 0,
-                                color: 'rgba(0,133,245,0.3)'
+                                color: 'rgba(255,153,21,0.3)'
                             }, {
                                 offset: 0.8,
-                                color: 'rgba(0,133,245,0)'
+                                color: 'rgba(255,153,21,0)'
                             }], false),
                             shadowColor: 'rgba(0, 0, 0, 0.1)',
                             shadowBlur: 10
@@ -662,16 +931,16 @@
                 },{
                     name: '湖北以外全国各地',
                     type: 'line',
-                    color: 'rgba(255,170,0)',
+                    color: 'rgba(255,219,21)',
                     smooth: true,
                     areaStyle: {
                         normal: {
                             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                 offset: 0,
-                                color: 'rgba(255,170,0,0.3)'
+                                color: 'rgba(255,219,21,0.3)'
                             }, {
                                 offset: 0.8,
-                                color: 'rgba(255,170,0,0)'
+                                color: 'rgba(255,219,21,0)'
                             }], false),
                             shadowColor: 'rgba(0, 0, 0, 0.1)',
                             shadowBlur: 10
@@ -783,16 +1052,16 @@
                 },{
                     name: '湖北',
                     type: 'line',
-                    color: 'rgba(0,133,245)',
+                    color: 'rgba(255,153,21)',
                     smooth: true,
                     areaStyle: {
                         normal: {
                             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                 offset: 0,
-                                color: 'rgba(0,133,245,0.3)'
+                                color: 'rgba(255,153,21,0.3)'
                             }, {
                                 offset: 0.8,
-                                color: 'rgba(0,133,245,0)'
+                                color: 'rgba(255,153,21,0)'
                             }], false),
                             shadowColor: 'rgba(0, 0, 0, 0.1)',
                             shadowBlur: 10
@@ -804,16 +1073,16 @@
                 },{
                     name: '武汉',
                     type: 'line',
-                    color: 'rgba(255,170,0)',
+                    color: 'rgba(255,219,21)',
                     smooth: true,
                     areaStyle: {
                         normal: {
                             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                 offset: 0,
-                                color: 'rgba(255,170,0,0.3)'
+                                color: 'rgba(255,219,21,0.3)'
                             }, {
                                 offset: 0.8,
-                                color: 'rgba(255,170,0,0)'
+                                color: 'rgba(255,219,21,0)'
                             }], false),
                             shadowColor: 'rgba(0, 0, 0, 0.1)',
                             shadowBlur: 10
@@ -838,3 +1107,4 @@
         
     </body>
 </html> 
+

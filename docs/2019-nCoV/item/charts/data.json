@@ -17,7 +17,18 @@ dataJson({"real":
         "add-cure-hubei": 0,
         "add-cure-qita": 0,
         "zhejiang": 0,
-        "jjj": 5
+        "jjj": 5,
+         "guangdong": 14,
+    "beijing": 5,
+    "shanghai": 2,
+  
+    "tianjin": 0,
+    "henan": 0,
+    "chongqing": 0,
+    "hunan": 0,
+    "jiangxi": 0,
+    "anhui": 0,
+    "jiangsu": 0
       },
       {
         "date": "1.21",
@@ -36,7 +47,18 @@ dataJson({"real":
         "add-cure-hubei": 3,
         "add-cure-qita": 0,
         "zhejiang": 5,
-        "jjj": 12
+        "jjj": 12,
+        "guangdong": 26,
+    "beijing": 10,
+    "shanghai": 9,
+   
+    "tianjin": 2,
+    "henan": 1,
+    "chongqing": 5,
+    "hunan": 1,
+    "jiangxi": 2,
+    "anhui": 0,
+    "jiangsu": 0
       },
       {
         "date": "1.22",
@@ -55,7 +77,18 @@ dataJson({"real":
         "add-cure-hubei": 0,
         "add-cure-qita": 0,
         "zhejiang": 26,
-        "jjj": 18
+        "jjj": 18,
+        "guangdong": 32,
+    "beijing": 14,
+    "shanghai": 16,
+    
+    "tianjin": 4,
+    "henan": 5,
+    "chongqing": 6,
+    "hunan": 4,
+    "jiangxi": 3,
+    "anhui": 1,
+    "jiangsu": 1
       },
       {
         "date": "1.23",
@@ -73,8 +106,19 @@ dataJson({"real":
         "add-cure": 6,
         "add-cure-hubei": 0,
         "add-cure-qita": 6,
-        "zhejiang": 43,
-        "jjj": 33
+       
+        "jjj": 33,
+        "guangdong": 53,
+    "beijing": 26,
+    "shanghai": 20,
+    "zhejiang": 43,
+    "tianjin": 5,
+    "henan": 9,
+    "chongqing": 27,
+    "hunan": 24,
+    "jiangxi": 7,
+    "anhui": 15,
+    "jiangsu": 9
       },
       {
         "date": "1.24",
@@ -93,7 +137,18 @@ dataJson({"real":
         "add-cure-hubei": 4,
         "add-cure-qita": 0,
         "zhejiang": 62,
-        "jjj": 52
+        "jjj": 52,
+         "guangdong": 78,
+    "beijing": 36,
+    "shanghai": 33,
+
+    "tianjin": 8,
+    "henan": 32,
+    "chongqing": 57,
+    "hunan": 43,
+    "jiangxi": 18,
+    "anhui": 39,
+    "jiangsu": 18
       },
       {
         "date": "1.25",
@@ -112,7 +167,18 @@ dataJson({"real":
         "add-cure-hubei": 10,
         "add-cure-qita": 1,
         "zhejiang": 104,
-        "jjj": 74
+        "jjj": 74,
+        "guangdong": 98,
+    "beijing": 49,
+    "shanghai": 40,
+
+    "tianjin": 10,
+    "henan": 83,
+    "chongqing": 75,
+    "hunan": 69,
+    "jiangxi": 36,
+    "anhui": 60,
+    "jiangsu": 31
       },
       {
         "date": "1.26",
@@ -131,7 +197,18 @@ dataJson({"real":
         "add-cure-hubei": 2,
         "add-cure-qita": 0,
         "zhejiang": 128,
-        "jjj": 100
+        "jjj": 100,
+         "guangdong": 146,
+    "beijing": 68,
+    "shanghai": 53,
+
+    "tianjin": 14,
+    "henan": 128,
+    "chongqing": 110,
+    "hunan": 100,
+    "jiangxi": 48,
+    "anhui": 70,
+    "jiangsu": 47
       },
       {
         "date": "1.27",
@@ -150,7 +227,18 @@ dataJson({"real":
         "add-cure-hubei": 3,
         "add-cure-qita": 6,
         "zhejiang": 173,
-        "jjj": 136
+        "jjj": 136,
+         "guangdong": 188,
+    "beijing": 80,
+    "shanghai": 66,
+
+    "tianjin": 23,
+    "henan": 168,
+    "chongqing": 132,
+    "hunan": 143,
+    "jiangxi": 72,
+    "anhui": 106,
+    "jiangsu": 70
       },
       {
         "date": "1.28",
@@ -169,7 +257,18 @@ dataJson({"real":
         "add-cure-hubei": 33,
         "add-cure-qita": 10,
         "zhejiang": 296,
-        "jjj": 179
+        "jjj": 179,
+        "guangdong": 241,
+    "beijing": 91,
+    "shanghai": 80,
+ 
+    "tianjin": 24,
+    "henan": 206,
+    "chongqing": 147,
+    "hunan": 221,
+    "jiangxi": 109,
+    "anhui": 152,
+    "jiangsu": 99
       },
       {
         "date": "1.29",
@@ -188,7 +287,20 @@ dataJson({"real":
         "add-cure-hubei": 10,
         "add-cure-qita": 11,
         "zhejiang": 428,
-        "jjj": 206
+        "jjj": 206,
+        "guangdong": 311,
+    "beijing": 111,
+    "shanghai": 101,
+
+    "tianjin": 27,
+    "henan": 278,
+    "chongqing": 165,
+    "hunan": 277,
+    "jiangxi": 162,
+    "anhui": 200,
+    "jiangsu": 129
+  
+
       },
       {
         "date": "1.30",
@@ -207,7 +319,17 @@ dataJson({"real":
         "add-cure-hubei": 26,
         "add-cure-qita": 21,
         "zhejiang": 537,
-        "jjj": 245
+        "jjj": 245,
+         "guangdong": 393,
+    "beijing": 132,
+    "shanghai": 128,
+
+    "tianjin": 31,
+    "henan": 352,
+    "chongqing": 206,
+    "hunan": 332,
+    "jiangxi": 240,
+    "anhui": 237,
       },
       {
         "date": "1.31",
@@ -226,7 +348,19 @@ dataJson({"real":
         "add-cure-hubei": 50,
         "add-cure-qita": 22,
         "zhejiang": 599,
-        "jjj": 284
+        "jjj": 284,
+        "guangdong": 520,
+    "beijing": 156,
+    "shanghai": 153,
+   
+    "tianjin": 32,
+    "henan": 422,
+    "chongqing": 238,
+    "hunan": 389,
+    "jiangxi": 286,
+    "anhui": 297,
+    "jiangsu": 202
+
       },
       {
         "date": "2.1",
@@ -245,7 +379,18 @@ dataJson({"real":
         "add-cure-hubei": 49,
         "add-cure-qita": 36,
         "zhejiang": 661,
-        "jjj": 328
+        "jjj": 328,
+        "guangdong": 604,
+    "beijing": 183,
+    "shanghai": 177,
+
+    "tianjin": 41,
+    "henan": 493,
+    "chongqing": 262,
+    "hunan": 463,
+    "jiangxi": 333,
+    "anhui": 340,
+    "jiangsu": 236
       },
       {
         "date": "2.2",
@@ -263,8 +408,19 @@ dataJson({"real":
         "add-cure": 147,
         "add-cure-hubei": 80,
         "add-cure-qita": 67,
-        "zhejiang": 724,
-        "jjj": 373
+    
+        "jjj": 373,
+        "guangdong": 683,
+    "beijing": 212,
+    "shanghai": 193,
+    "zhejiang": 724,
+    "tianjin": 48,
+    "henan": 566,
+    "chongqing": 300,
+    "hunan": 521,
+    "jiangxi": 391,
+    "anhui": 408,
+    "jiangsu": 271
       },
       {
         "date": "2.3",
@@ -283,7 +439,19 @@ dataJson({"real":
         "add-cure-hubei": 101,
         "add-cure-qita": 56,
         "zhejiang": 829,
-        "jjj": 414
+        "jjj": 414,
+
+    "guangdong": 797,
+    "beijing": 228,
+    "shanghai": 208,
+    "zhejiang": 829,
+    "tianjin": 60,
+    "henan": 675,
+    "chongqing": 337,
+    "hunan": 593,
+    "jiangxi": 476,
+    "anhui": 480,
+    "jiangsu": 308
       },
       {
         "date": "2.4",
@@ -302,7 +470,18 @@ dataJson({"real":
         "add-cure-hubei": 124,
         "add-cure-qita": 136,
         "zhejiang": 895,
-        "jjj": 455
+        "jjj": 455,
+        "guangdong": 870,
+    "beijing": 253,
+    "shanghai": 233,
+    "zhejiang": 895,
+    "tianjin": 67,
+    "henan": 764,
+    "chongqing": 366,
+    "hunan": 661,
+    "jiangxi": 548,
+    "anhui": 530,
+    "jiangsu": 341
       },
       {
         "date": "2.5",
@@ -321,7 +500,18 @@ dataJson({"real":
         "add-cure-hubei": 113,
         "add-cure-qita": 148,
         "zhejiang": 954,
-        "jjj": 500
+        "jjj": 500,
+        "guangdong": 944,
+    "beijing": 274,
+    "shanghai": 254,
+    "zhejiang": 954,
+    "tianjin": 69,
+    "henan": 851,
+    "chongqing": 389,
+    "hunan": 711,
+    "jiangxi": 600,
+    "anhui": 591,
+    "jiangsu": 373
       },
       {
         "date": "2.6",
@@ -340,7 +530,18 @@ dataJson({"real":
         "add-cure-hubei": 184,
         "add-cure-qita": 203,
         "zhejiang": 1006,
-        "jjj": 547
+        "jjj": 547,
+         "guangdong": 1018,
+    "beijing": 297,
+    "shanghai": 269,
+    "zhejiang": 1006,
+    "tianjin": 79,
+    "henan": 914,
+    "chongqing": 411,
+    "hunan": 772,
+    "jiangxi": 661,
+    "anhui": 665,
+    "jiangsu": 408
       },
       {
         "date": "2.7",
@@ -359,7 +560,18 @@ dataJson({"real":
         "add-cure-hubei": 298,
         "add-cure-qita": 212,
         "zhejiang": 1048,
-        "jjj": 591
+        "jjj": 591,
+        "guangdong": 1075,
+    "beijing": 315,
+    "shanghai": 281,
+    "zhejiang": 1048,
+    "tianjin": 81,
+    "henan": 981,
+    "chongqing": 426,
+    "hunan": 803,
+    "jiangxi": 698,
+    "anhui": 733,
+    "jiangsu": 439
       },
       {
         "date": "2.8",
@@ -378,7 +590,19 @@ dataJson({"real":
         "add-cure-hubei": 324,
         "add-cure-qita": 275,
         "zhejiang": 1075,
-        "jjj": 622
+        "jjj": 622,
+         "guangdong": 1120,
+    "beijing": 326,
+    "shanghai": 292,
+    "zhejiang": 1075,
+    "tianjin": 88,
+    "henan": 1033,
+    "chongqing": 446,
+    "hunan": 838,
+    "jiangxi": 740,
+    "anhui": 779,
+    "jiangsu": 468
+
       },
       {
         "date": "2.9",
@@ -397,7 +621,18 @@ dataJson({"real":
         "add-cure-hubei": 356,
         "add-cure-qita": 276,
         "zhejiang": 1092,
-        "jjj": 646
+        "jjj": 646,
+         "guangdong": 1151,
+    "beijing": 337,
+    "shanghai": 295,
+    "zhejiang": 1092,
+    "tianjin": 91,
+    "henan": 1073,
+    "chongqing": 468,
+    "hunan": 879,
+    "jiangxi": 771,
+    "anhui": 830,
+    "jiangsu": 492
       },
       {
         "date": "2.10",
@@ -416,7 +651,18 @@ dataJson({"real":
         "add-cure-hubei": 427,
         "add-cure-qita": 288,
         "zhejiang": 1117,
-        "jjj": 676
+        "jjj": 676,
+         "guangdong": 1177,
+    "beijing": 342,
+    "shanghai": 302,
+    "zhejiang": 1117,
+    "tianjin": 95,
+    "henan": 1105,
+    "chongqing": 486,
+    "hunan": 912,
+    "jiangxi": 804,
+    "anhui": 860,
+    "jiangsu": 515
       },
   {
     "date": "2.11",
@@ -435,7 +681,18 @@ dataJson({"real":
     "add-cure-hubei": 417,
     "add-cure-qita": 327,
     "zhejiang": 1131,
-    "jjj": 709
+    "jjj": 709,
+     "guangdong": 1219,
+    "beijing": 352,
+    "shanghai": 306,
+    "zhejiang": 1131,
+    "tianjin": 106,
+    "henan": 1135,
+    "chongqing": 505,
+    "hunan": 946,
+    "jiangxi": 844,
+    "anhui": 889,
+    "jiangsu": 543
   },
   {
     "date": "2.12",
@@ -454,7 +711,18 @@ dataJson({"real":
     "add-cure-hubei": 802,
     "add-cure-qita": 369,
     "zhejiang": 1145,
-    "jjj": 743
+    "jjj": 743,
+    "guangdong": 1241,
+    "beijing": 366,
+    "shanghai": 313,
+    "zhejiang": 1145,
+    "tianjin": 112,
+    "henan": 1169,
+    "chongqing": 518,
+    "hunan": 968,
+    "jiangxi": 872,
+    "anhui": 910,
+    "jiangsu": 570
   },
   {
     "date": "2.13",
@@ -473,7 +741,19 @@ dataJson({"real":
     "add-cure-hubei": 421,
     "add-cure-qita": 391,
     "zhejiang": 1155,
-    "jjj": 774
+    "jjj": 774,
+    "guangdong": 1261,
+    "beijing": 372,
+    "shanghai": 318,
+    "zhejiang": 1155,
+    "tianjin": 119,
+    "henan": 1184,
+    "chongqing": 529,
+    "hunan": 988,
+    "jiangxi": 900,
+    "anhui": 934,
+    "jiangsu": 593
+
   },
   {
     "date": "2.14",
@@ -492,7 +772,19 @@ dataJson({"real":
     "add-cure-hubei": 912,
     "add-cure-qita": 461,
     "zhejiang": 1162,
-    "jjj": 786
+    "jjj": 786,
+    "guangdong": 1294,
+    "beijing": 375,
+    "shanghai": 326,
+    "zhejiang": 1162,
+    "tianjin": 120,
+    "henan": 1212,
+    "chongqing": 537,
+    "hunan": 1001,
+    "jiangxi": 913,
+    "anhui": 950,
+    "jiangsu": 604
+
   },
   {
     "date": "2.15",
@@ -511,7 +803,18 @@ dataJson({"real":
     "add-cure-hubei": 849,
     "add-cure-qita": 474,
     "zhejiang": 1167,
-    "jjj": 802
+    "jjj": 802,
+    "guangdong": 1316,
+    "beijing": 380,
+    "shanghai": 328,
+    "zhejiang": 1167,
+    "tianjin": 122,
+    "henan": 1231,
+    "chongqing": 544,
+    "hunan": 1004,
+    "jiangxi": 925,
+    "anhui": 962,
+    "jiangsu": 617
   },
   {
     "date": "2.16",
@@ -530,7 +833,18 @@ dataJson({"real":
     "add-cure-hubei": 1016,
     "add-cure-qita": 409,
     "zhejiang": 1171,
-    "jjj": 806
+    "jjj": 806,
+    "guangdong": 1322,
+    "beijing": 381,
+    "shanghai": 331,
+    "zhejiang": 1171,
+    "tianjin": 124,
+    "henan": 1246,
+    "chongqing": 551,
+    "hunan": 1006,
+    "jiangxi": 930,
+    "anhui": 973,
+    "jiangsu": 626
   }
     
     ]
@@ -546,7 +860,8 @@ dataJson({"real":
     "wuhanshang": 11406,
     "wuhanxia": 9739,
     "hubeishang": 13328,
-    "hubeixia": 12091
+    "hubeixia": 12091,
+
   },
   {
     "date": "2.6",
@@ -694,7 +1009,28 @@ dataJson({"real":
     "zhejiangshang": 1208,
     "zhejiangxia": 1175,
     "jjjshang": 825,
-    "jjjxia": 778
+    "jjjxia": 778,
+     "beijingxia": 378,
+    "beijingshang": 393,
+    "tianjinxia": 120,
+    "tianjinshang": 130,
+    "shanghaishang": 324,
+    "shanghaixia": 342,
+    "chongqingshang": 546,
+    "chongqingxia": 580,
+    
+    "henanxia": 1204,
+    "henanshang": 1250,
+    "jiangxixia": 902,
+    "jiangxishang": 941,
+    "guangdongxia": 1280,
+    "guangdongshang": 1334,
+    "anhuixia": 950,
+    "anhuishang": 1002,
+    "hunanxia": 989,
+    "hunanshang": 1030,
+    "jiangsuxia": 590,
+    "jiangsushang": 622
   },
   {
     "date": "2.15",
@@ -710,7 +1046,30 @@ dataJson({"real":
     "zhejiangshang": 1213,
     "zhejiangxia": 1185,
     "jjjshang": 836,
-    "jjjxia": 794
+    "jjjxia": 794,
+
+    "beijingxia": 382,
+    "beijingshang": 395,
+    "tianjinxia": 124,
+    "tianjinshang": 133,
+    "shanghaishang": 328,
+    "shanghaixia": 338,
+    "chongqingshang": 557,
+    "chongqingxia": 589,
+    
+    "henanxia": 1219,
+    "henanshang": 1259,
+    "jiangxixia": 916,
+    "jiangxishang": 950,
+    "guangdongxia": 1294,
+    "guangdongshang": 1342,
+    "anhuixia": 968,
+    "anhuishang": 1014,
+    "hunanxia": 1002,
+    "hunanshang": 1038,
+    "jiangsuxia": 601,
+    "jiangsushang": 630
+
   },
   {
     "date": "2.16",
@@ -726,7 +1085,121 @@ dataJson({"real":
     "zhejiangshang": 1217,
     "zhejiangxia": 1192,
     "jjjshang": 845,
-    "jjjxia": 807
+    "jjjxia": 807,
+    "beijingxia": 385,
+    "beijingshang": 397,
+    "tianjinxia": 127,
+    "tianjinshang": 135,
+    "shanghaishang": 331,
+    "shanghaixia": 339,
+    "chongqingshang": 568,
+    "chongqingxia": 597,
+ 
+    "henanxia": 1232,
+    "henanshang": 1266,
+    "jiangxixia": 927,
+    "jiangxishang": 957,
+    "guangdongxia": 1306,
+    "guangdongshang": 1348,
+    "anhuixia": 983,
+    "anhuishang": 1023,
+    "hunanxia": 1013,
+    "hunanshang": 1045,
+    "jiangsuxia": 611,
+    "jiangsushang": 636
+  },
+  {
+    "date": "2.17",
+    "quanguoxia": 71992,
+    "quanguoshang": 74817,
+    "hubeixia": 59061,
+    "hubeishang": 61650,
+    "wuhanxia": 42236,
+    "wuhanshang": 43657,
+    "beijingxia": 395,
+    "beijingshang": 401,
+    "tianjinxia": 129,
+    "tianjinshang": 135,
+    "shanghaishang": 335,
+    "shanghaixia": 342,
+    "chongqingshang": 562,
+    "chongqingxia": 571,
+    "zhejiangxia": 1195,
+    "zhejiangshang": 1214, //浙江有了
+    "henanxia": 1250,
+    "henanshang": 1272,
+    "jiangxixia": 936,
+    "jiangxishang": 952,
+    "guangdongxia": 1315,
+    "guangdongshang": 1324,
+    "anhuixia": 995,
+    "anhuishang": 1031,
+    "hunanxia": 1035,
+    "hunanshang": 1049,
+    "jiangsuxia": 620,
+    "jiangsushang": 632
+},
+  {
+    "date": "2.18",
+    "quanguoxia": 73638,
+    "quanguoshang": 76266,
+    "hubeixia": 60668,
+    "hubeishang": 63090,
+    "wuhanxia": 42897,
+    "wuhanshang": 44185,
+    "beijingxia": 399,
+    "beijingshang": 404,
+    "tianjinxia": 131,
+    "tianjinshang": 136,
+    "shanghaishang": 337,
+    "shanghaixia": 343,
+    "chongqingshang": 567,
+    "chongqingxia": 575,
+    "zhejiangxia": 1200, //浙江有了
+    "zhejiangshang": 1216,
+    "henanxia": 1261,
+    "henanshang": 1281,
+    "jiangxixia": 944,
+    "jiangxishang": 957,
+    "guangdongxia": 1325,
+    "guangdongshang": 1334,
+    "anhuixia": 1007,
+    "anhuishang": 1023,
+    "hunanxia": 1044,
+    "hunanshang": 1058,
+    "jiangsuxia": 627,
+    "jiangsushang": 640
+  },
+  {
+    "date": "2.19",
+    "quanguoxia": 75147,
+    "quanguoshang": 77587,
+    "hubeixia": 62156,
+    "hubeishang": 64415,
+    "wuhanxia": 43497,
+    "wuhanshang": 44660,
+    "beijingxia": 402,
+    "beijingshang": 407,
+    "tianjinxia": 133,
+    "tianjinshang": 137,
+    "shanghaishang": 339,
+    "shanghaixia": 344,
+    "chongqingshang": 572,
+    "chongqingxia": 580,
+    "zhejiangxia": 1204, //浙江有了
+    "zhejiangshang": 1218,
+    "henanxia": 1270,
+    "henanshang": 1286,
+    "jiangxixia": 951,
+    "jiangxishang": 967,
+    "guangdongxia": 1334,
+    "guangdongshang": 1348,
+    "anhuixia": 1016,
+    "anhuishang": 1030,
+    "hunanxia": 1052,
+    "hunanshang": 1067,
+    "jiangsuxia": 634,
+    "jiangsushang": 649
   }
 ]
 
