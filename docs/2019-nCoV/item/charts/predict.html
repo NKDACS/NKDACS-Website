@@ -141,6 +141,40 @@
                                     <div class="c-height">
                                         <div class="chart" id="mainPredict"></div>
                                     </div>
+                                    <div class="nav-item">
+                                        <p>其他省市预测图，点击左侧按钮，可切换不同省市</p>
+                                        <select class="selectpicker" id="dropdown" style="width:100px;">
+                                            <option value=0 selected="">北京</option>
+                                            <option value=1 >广东</option>
+                                            <option value=2>上海</option>
+                                            <option value=3>浙江</option>
+                                            <option value=4>天津</option>
+                                            <option value=5>河南</option>
+                                            <option value=6>重庆</option>
+                                            <option value=7>四川</option>
+                                            <option value=8>山东</option>
+                                            <option value=9>云南</option>
+                                            <option value=10>湖南</option>
+                                            <option value=11>江西</option>
+                                            <option value=12>辽宁</option>
+                                            <option value=13>海南</option>
+                                            <option value=14>安徽</option>
+                                            <option value=15>福建</option>
+                                            <option value=16>贵州</option>
+                                            <option value=17>山西</option>
+                                            <option value=18>宁夏</option>
+                                            <option value=19>广西</option>
+                                            <option value=20>河北</option>
+                                            <option value=21>黑龙江</option>
+                                            <option value=22>江苏</option>
+                                            <option value=23>吉林</option>
+                                            <option value=24>内蒙古</option>
+                                            <option value=25>陕西</option>
+                                            <option value=26>新疆</option>
+                                            <option value=27>甘肃</option>
+
+                                        </select>
+                                    </div>
                                     <div class="c-height">
                                         <div class="chart" id="extraPredict"></div>
                                 </div>
@@ -281,9 +315,159 @@
 
 
         </script>
+        <!-- select -->
+        <script type="text/javascript">
+            choose=["北京","广东","上海","浙江","天津","河南","重庆","四川","山东","云南","湖南","江西","辽宁","海南","安徽","福建","贵州","山西","宁夏","广西","河北","黑龙江","江苏","吉林","内蒙古","陕西","新疆","甘肃"];
+            choosereal=["beijing","guangdong","shanghai","zhejiang","tianjin","henan","chongqing","sichuan","shandong","yunnan","hunan","jiangxi","liaoning","hainan","anhui","fujian","guizhou","shan1xi","ningxia","guangxi","hebei","heilongjiang","jiangsu","jilin","neimenggu","shan3xi","xinjiang","gansu"];
+            chooseshang=["beijingshang","guangdongshang","shanghaishang","zhejiangshang","tianjinshang","henanshang","chongqingshang","sichuanshang","shandongshang","yunnanshang","hunanshang","jiangxishang","liaoningshang","hainanshang","anhuishang","fujianshang","guizhoushang","shan1xishang","ningxiashang","guangxishang","hebeishang","heilongjiangshang","jiangsushang","jilinshang","neimenggushang","shan3xishang",
+            "xinjiangshang","gansushang"];
+            choosexia=["beijingxia","guangdongxia","shanghaixia","zhejiangxia","tianjinxia","henanxia","chongqingxia","sichuanxia","shandongxia","yunnanxia","hunanxia","jiangxixia","liaoningxia","hainanxia","anhuixia","fujianxia","guizhouxia","shan1xixia","ningxiaxia","guangxixia","hebeixia","heilongjiangxia","jiangsuxia","jilinxia","neimengguxia","shan3xixia","xinjiangxia","gansuxia"];
+
+            var myChart;
+            function selectChart(n){
+                shengfen=choose[n];
+                NN=0;
+                for (var i = 0; i < choose.length; i++) {
+                    if(choose[i]==shengfen){
+                        NN=i
+                    }
+                }
+                    function addDatachoose(date,r,pup,plow){ 
+                        totalchoose.push(r);
+                        totalDeltachoose.push(pup-plow);
+                        totalLowchoose.push(plow);
+                    };
+                    delta = 4;
+                    n = 0;
+                    rdays = data["real"].length;
+                    pdays = data["predictive"].length;
+                    for (i = pdays-1; i > -1; i--) {
+                        if (data["real"][rdays-delta]["date"] == data["predictive"][i]["date"]){n = i;break;}
+                    };
+                    function addDataN(N){
+                        totalchoose=[];totalDeltachoose=[];totalLowchoose=[];
+                        for (i = 0; i < rdays+pdays-n-delta; i++) {
+                            if (i < rdays-delta) {
+                                addDatachoose(data["real"][i]["date"],
+                                data["real"][i][choosereal[N]],
+                                '_','_');
+                            } else if (i < rdays) {
+                                j = i+delta-rdays+n;
+                                addDatachoose(data["real"][i]["date"],
+                                data["real"][i][choosereal[N]],
+                                data["predictive"][j][chooseshang[N]],data["predictive"][j][choosexia[N]]);
+                            } else {
+                                j = i+delta-rdays+n;
+                                addDatachoose(data["predictive"][j]["date"],
+                                '_',
+                                data["predictive"][j][chooseshang[N]],data["predictive"][j][choosexia[N]]);
+                            }
+                        }
+                    }
+                    addDataN(NN);
+                    //if (myChart != null && myChart != "" && myChart != undefined) {myChart.dispose();}
+                    myChart = echarts.init(document.getElementById('extraPredict'));
+                    option = {
+                        backgroundColor: 'transparent',
+                        legend: {
+                            right: '5%',
+                            data: [shengfen]
+                        },
+                        grid: {
+                            left: 0,
+                            right: 15,
+                            top: '15%',
+                            bottom: '10%',
+                            containLabel: true
+                        },
+                        tooltip: {
+                            trigger: 'axis',
+                            formatter: function(params) {
+                                res=params[0].name+'<br>';
+                                for (i=0;i<params.length/3;i++) {
+                                    res+=params[3*i].seriesName+': '+params[3*i].value+'<br>';
+                                    lower=params[3*i+1].value;
+                                    upper=(isNaN(params[3*i+2].value))?'_':lower+params[3*i+2].value;
+                                    res+=params[3*i+1].seriesName+'预测区间: ['+lower+', '+upper+']<br>';
+                                };
+                                return res
+                            }
+                        },
+                        series: [
+                            {   name: shengfen,
+                                type: 'line',
+                                symbolSize: 4,
+                                symbol: 'rect',
+                                itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:2},
+                                data: totalchoose
+                            },
+                            {   name: shengfen, //下界
+                                type: 'line',
+                                data: totalLowchoose,
+                                stack: '预测',
+                                itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:1},
+                                lineStyle: {opacity: 0}
+                            },
+                            {   name: shengfen, //区间长度
+                                type: 'line',
+                                data: totalDeltachoose,
+                                stack: '预测',
+                                itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:1},
+                                lineStyle: {opacity: 0},
+                                areaStyle: {color: '#FFE9EE',opacity: 0.8}
+                            }
+                        ],
+                        xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            axisTick: {
+                                show: false
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#566573'
+                                }
+                            },
+                            axisLabel: {
+                                fontSize: 11
+                            },
+                            data: dateWithPredict
+                        },
+                        yAxis: {
+                            name:"病例数",
+                            type: 'value',
+                            nameTextStyle: {
+                                verticalAlign: 'middle'
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#566573'
+                                }
+                            },
+                            axisLabel: {
+                                fontSize: 8.5,
+                                rotate:60
+                            },
+                            scale: true
+                        },
+                        dataZoom: {
+                            type: 'slider',
+                            xAxisIndex: [0],
+                            height: '6%',
+                            bottom: '2%',
+                            start: 50,
+                            end: 100,
+                            showDetail: false,
+                            handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                            borderColor: '#90979c'
+                        }
+                    };
+                    myChart.setOption(option);
+            }
+            selectChart(0);
+        </script>
         <script type="text/javascript">
             var myChart1 = echarts.init(document.getElementById('mainPredict'));
-            var myChart2 = echarts.init(document.getElementById('extraPredict'));
             var myChart3 = echarts.init(document.getElementById('addminutt'));
             var myChart4 = echarts.init(document.getElementById('add'));
             option1 = {
@@ -803,15 +987,18 @@
                 }]
             };
             myChart1.setOption(option1);
-            myChart2.setOption(option2);
             myChart3.setOption(option3);
             myChart4.setOption(option4);
-            charts = [myChart1,myChart2,myChart3,myChart4];
+            charts = [myChart1,myChart,myChart3,myChart4];
             $(window).resize(function(){
                 for(var i = 0; i < charts.length; i++) {
                     charts[i].resize();
                 }
             });
+            select=document.getElementById("dropdown");
+            select.onchange=function(){
+                selectChart(select.value);
+            }
         </script>
         
     </body>
