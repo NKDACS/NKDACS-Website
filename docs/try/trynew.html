@@ -1,146 +1,70 @@
 <html>
-<head>
-  <meta name="description" content="DevLab: Configure a popup">
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>ArcGIS JavaScript Tutorials: Configure pop-ups</title>
-  <style>
-    html,
-    body,
-    #viewDiv {
-      padding: 0;
-      margin: 0;
-      height: 100%;
-      width: 100%;
-    }
-  </style>
-  <link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/themes/light/main.css">  
-  <script src="https://js.arcgis.com/4.14/"></script>
-</head>
-
-<script>
-  require([
-      "esri/Map",
-      "esri/views/MapView",
-      "esri/layers/FeatureLayer"
-    ],
-    function(
-      Map, 
-      MapView,
-      FeatureLayer
-    ) {
-
-      var map = new Map({
-        basemap: "topo-vector"
-      });
-
-      var view = new MapView({
-        container: "viewDiv",
-        map: map,
-        center: [-118.80543,34.02700],
-        zoom: 13
-      });
-
-      // Define a popup for Trailheads
-      var popupTrailheads = {
-        "title": "Trailhead",
-        "content": "<b>Trail:</b> {TRL_NAME}<br><b>City:</b> {CITY_JUR}<br><b>Cross Street:</b> {X_STREET}<br><b>Parking:</b> {PARKING}<br><b>Elevation:</b> {ELEV_FT} ft"
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>ArcGIS JavaScript Tutorials: Track your location</title>
+    <style>
+      html, body, #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
       }
-      
-      // Create the layer and set the popup
-      var trailheads = new FeatureLayer({
-        url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads_Styled/FeatureServer/0",
-        outFields: ["TRL_NAME","CITY_JUR","X_STREET","PARKING","ELEV_FT"],
-        popupTemplate: popupTrailheads
-      });
-          
-      // Add the layer
-      map.add(trailheads);
+    </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.14/"></script>
     
-    
-      // Define a popup for Trails
-      var popupTrails = {
-        title: "Trail Information",
-        content: function(){
-           return "This is {TRL_NAME} with {ELEV_GAIN} ft of climbing."; 
-        }
-      }
-          
-      // Create the layer and set the renderer
-      var trails = new FeatureLayer({
-        url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trails_Styled/FeatureServer/0",
-        outFields: ["TRL_NAME","ELEV_GAIN"],
-        popupTemplate: popupTrails
-      });
-    
-      // Add the layer
-      map.add(trails,0);
-    
-      // Define popup for Parks and Open Spaces
-      var popupOpenspaces = {
-        "title": "{PARK_NAME}",
-        "content": [{
-          "type": "fields",
-          "fieldInfos": [
-            {
-              "fieldName": "AGNCY_NAME",
-              "label": "Agency",
-              "isEditable": true,
-              "tooltip": "",
-              "visible": true,
-              "format": null,
-              "stringFieldOption": "text-box"
-            },
-            {
-              "fieldName": "TYPE",
-              "label": "Type",
-              "isEditable": true,
-              "tooltip": "",
-              "visible": true,
-              "format": null,
-              "stringFieldOption": "text-box"
-            },
-            {
-              "fieldName": "ACCESS_TYP",
-              "label": "Access",
-              "isEditable": true,
-              "tooltip": "",
-              "visible": true,
-              "format": null,
-              "stringFieldOption": "text-box"
-            },
-            {
-              "fieldName": "GIS_ACRES",
-              "label": "Acres",
-              "isEditable": true,
-              "tooltip": "",
-              "visible": true,
-              "format": {
-                "places": 2,
-                "digitSeparator": true
-              },
-              "stringFieldOption": "text-box"
+    <script>
+      require([
+          "esri/Map",
+          "esri/views/MapView",
+          "esri/widgets/Locate",
+          "esri/widgets/Track",
+          "esri/Graphic"
+        ], function(Map, MapView, Locate, Track, Graphic) {
+
+        var map = new Map({
+          basemap: "streets-navigation-vector"
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: map,
+          center: [-40, 28],
+          zoom: 2
+        });
+
+        // var locate = new Locate({
+        //   view: view,
+        //   useHeadingEnabled: false,
+        //   goToOverride: function(view, options) {
+        //     options.target.scale = 1500;
+        //     return view.goTo(options.target);
+        //   }
+        // });
+        // view.ui.add(locate, "top-left");
+        
+        var track = new Track({
+          view: view,
+          graphic: new Graphic({
+            symbol: {
+              type: "simple-marker",
+              size: "12px",
+              color: "green",
+              outline: {
+                color: "#efefef",
+                width: "1.5px"
+              }
             }
-          ]
-        }]
-      }
-    
-      var openspaces = new FeatureLayer({
-        url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space_Styled/FeatureServer/0",
-        outFields: ["TYPE","PARK_NAME", "AGNCY_NAME","ACCESS_TYP","GIS_ACRES","TRLS_MI","TOTAL_GOOD","TOTAL_FAIR", "TOTAL_POOR"],
-        popupTemplate: popupOpenspaces
+          }),
+          useHeadingEnabled: false
+        });
+        view.ui.add(track, "top-left");
+
       });
-    
-      // Add the layer
-      map.add(openspaces,0);
-     
-    });
-
-  </script>
-</head>
-
-<body>
-  <div id="viewDiv"></div>
-</body>
-
+    </script>
+  </head>
+  <body>
+    <div id="viewDiv"></div>
+  </body>
 </html>
