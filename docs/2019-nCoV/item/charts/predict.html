@@ -255,10 +255,11 @@
                 wuhanDelta.push(p11-p12);
                 wuhanLow.push(p12);
             };
-            delta = 9;
             n = 0;
             rdays = data["real"].length;
             pdays = data["predictive"].length;
+            delta = pdays-1;
+
             for (i = pdays-1; i > -1; i--) {
                 if (data["real"][rdays-delta]["date"] == data["predictive"][i]["date"]){n = i;break;}
             };
@@ -337,10 +338,11 @@
                         totalDeltachoose.push(pup-plow);
                         totalLowchoose.push(plow);
                     };
-                    delta = 4;
                     n = 0;
                     rdays = data["real"].length;
                     pdays = data["predictive"].length;
+                    delta = pdays-1;
+
                     for (i = pdays-1; i > -1; i--) {
                         if (data["real"][rdays-delta]["date"] == data["predictive"][i]["date"]){n = i;break;}
                     };

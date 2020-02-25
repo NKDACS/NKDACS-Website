@@ -1623,6 +1623,60 @@ dataJson({"real":
 ,
     "predictive": [
   {
+    "date": "1.30",
+    "quanguoxia": 9118,
+    "quanguoshang": 9118,
+    "hubeixia": 6026,
+    "hubeishang": 6026,
+    "wuhanxia": 2950,
+    "wuhanshang": 2950
+  },
+  {
+    "date": "1.31",
+    "quanguoxia": 10602,
+    "quanguoshang": 10602,
+    "hubeixia": 6998,
+    "hubeishang": 6998,
+    "wuhanxia": 3720,
+    "wuhanshang": 3720
+  },
+  {
+    "date": "2.1",
+    "quanguoxia": 12136,
+    "quanguoshang": 12136,
+    "hubeixia": 8033,
+    "hubeishang": 8033,
+    "wuhanxia": 4427,
+    "wuhanshang": 4427
+  },
+  {
+    "date": "2.2",
+    "quanguoxia": 15363,
+    "quanguoshang": 15363,
+    "hubeixia": 9790,
+    "hubeishang": 9790,
+    "wuhanxia": 4596,
+    "wuhanshang": 4596
+  },
+  {
+    "date": "2.3",
+    "quanguoxia": 17074,
+    "quanguoshang": 17074,
+    "hubeixia": 10987,
+    "hubeishang": 10987,
+    "wuhanxia": 5120,
+    "wuhanshang": 5120
+  },
+  {
+    "date": "2.4",
+    "quanguoxia": 18627,
+    "quanguoshang": 18627,
+    "hubeixia": 12091,
+    "hubeishang": 12091,
+    "wuhanxia": 5568,
+    "wuhanshang": 5568
+  },
+  {
     "date": "2.5",
     "quanguoxia": 25245,
     "quanguoshang": 28531,
