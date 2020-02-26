@@ -135,7 +135,7 @@
                                 <div class="page-header">
                                     <h4 class="page-title">疫情发展预测</h4>
                                 </div>
-                                <p>基于传播动力学及黄森忠博士建构的普适SEIR模型，运用“南开大学智英健康数据研究中心”开发的程序EpiSIX，我们对2019-nCoV新型冠状病毒数据做出疫情发展及至今疾控效率的研判。我们利用国家卫健委公布的从2019.12.12至2020.2.22的被确诊病例总数的数据链，着重研究了武汉市、 湖北省、全国和几个特殊地区的疫情发展，做出如下三天的区间预测。</p>
+                                <p>基于传播动力学及黄森忠博士建构的普适SEIR模型，运用“南开大学智英健康数据研究中心”开发的程序EpiSIX，我们对2019-nCoV新型冠状病毒数据做出疫情发展及至今疾控效率的研判。我们利用国家卫健委公布的从2019.12.12至2020.2.25的被确诊病例总数的数据链，着重研究了武汉市、 湖北省、全国和几个特殊地区的疫情发展，做出如下三天的区间预测。</p>
                                 <div class="c">
                                     <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>新冠肺炎确诊病例数时序区间预测图</p>
                                     <div class="c-height">
@@ -194,7 +194,7 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-body">
-                                            <p style="margin:0;"> 总体结论: 大部分都落在预测区间内，但有少数几个偏离预测区间下界较多(10%左右)。另外，因为在2月20日出现山东任城监狱200个密集型的感染现象，所以山东省的预测和实际数据就出现一个较大的偏移(但若减去这突增的200个，则预测实际数据还是在的预测区间附近的)。总体上，这说明全国各地，每天确诊的实际数据均在下坡，是疫情处于受控状态的特征。</p>
+                                            <p style="margin:0;"> 总体结论：大部分都落在预测区间内或者附近，有少数几个偏离预测区间下界较多(15%左右)。这说明全国各地，每天确诊的实际数据均在下坡，是疫情处于受控状态的特征。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -258,7 +258,7 @@
             n = 0;
             rdays = data["real"].length;
             pdays = data["predictive"].length;
-            delta = pdays-1;
+            delta = rdays-10;
 
             for (i = pdays-1; i > -1; i--) {
                 if (data["real"][rdays-delta]["date"] == data["predictive"][i]["date"]){n = i;break;}
@@ -341,7 +341,7 @@
                     n = 0;
                     rdays = data["real"].length;
                     pdays = data["predictive"].length;
-                    delta = pdays-1;
+                    delta = rdays-25;
 
                     for (i = pdays-1; i > -1; i--) {
                         if (data["real"][rdays-delta]["date"] == data["predictive"][i]["date"]){n = i;break;}
