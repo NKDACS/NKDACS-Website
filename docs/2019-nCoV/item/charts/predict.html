@@ -161,25 +161,6 @@
                                 </div>
                             </br>
                                 <div class="c">
-                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"}></i>新冠肺炎新增治愈/新增确诊比值时序图</p>
-                                    <div class="c-height">
-                                        <div class="chart" id="addminutt"></div>
-                                    </div>
-                                </div>
-                            </br>
-                                <div class="c">
-                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>新冠肺炎累计确诊增长率时序图</p>
-                                    <div class="c-height">
-                                        <div class="chart" id="add"></div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p style="margin:0;">总体结论: 大部分都落在预测区间附近，但有少数几个偏离预测区间下界较多(4%左右)。这说明全国各地，每天确诊的实际数据均在下坡，是疫情处于受控状态的特征。</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="c">
                                     <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>新冠肺炎各省市停时日期图</p>
                                     <div class="nav-item">
                                         <select class="selectpicker" id="dropdown1" style="width:100px;">
@@ -199,10 +180,38 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-body">
-                                            <p style="margin:0;">停时指不再有新增确诊病例的日期，海外输入病例不计入统计。</p>
+                                            <p style="margin:0;">停时指不再有新增确诊病例的日期，海外输入病例不计入统计。全国、湖北、武汉疫情可能的停时估计在2020年4月14日至5月21日之间。</p>
                                         </div>
                                     </div>
                                 </div>
+                                
+
+
+
+
+
+
+
+                                <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"}></i>新冠肺炎新增治愈/新增确诊比值时序图</p>
+                                    <div class="c-height">
+                                        <div class="chart" id="addminutt"></div>
+                                    </div>
+                                </div>
+                            </br>
+                                <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>新冠肺炎累计确诊增长率时序图</p>
+                                    <div class="c-height">
+                                        <div class="chart" id="add"></div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p style="margin:0;">总体结论: 大部分都落在预测区间附近，但有少数几个偏离预测区间下界较多(4%左右)。这说明全国各地，每天确诊的实际数据均在下坡，是疫情处于受控状态的特征。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
                             </div>
                             <a href="../charts/review.html">
                                 <button class="btn btn-secondary">疫情发展回顾</button>
@@ -1011,8 +1020,8 @@
   cityData22:[21,15,11,10,10,9,2],
   cityList33:["河北","北京","山西","天津","内蒙古"],
   cityData33:[24,15,4,3,3],
-  cityList44:["湖北","湖南","河南"],
-  cityData44:[35,29,20],
+  cityList44:["湖南","河南"],
+  cityData44:[29,20],
   cityList55:["广东","广西","海南"],
   cityData55:[21,3,3],
   cityList66:["四川","重庆","贵州","云南"],
@@ -1028,7 +1037,7 @@
 var label11 = ["2020.3.17","2020.3.17","2020.4.01"];
 var label22 = ["2020.3.16","2020.3.23","2020.3.24","2020.3.24","2020.3.27","2020.3.29","2020.4.05"];
 var label33 = ["2020.3.17","2020.3.17","2020.3.18","2020.3.29","2020.4.08"]
-var label44 = ["2020.4.04","2020.4.13","2020.4.21"];
+var label44 = ["2020.4.04","2020.4.13"];
 var label55 = ["2020.3.17","2020.3.17","2020.4.05"];
 var label66 = ["2020.3.17","2020.3.17","2020.3.28","2020.4.09"];
 var label77 = ["2020.3.17","2020.3.17","2020.3.17","2020.3.24"];
@@ -1290,7 +1299,7 @@ for (var i = 0; i < charts.cityList77.length; i++) {
                  lineY=lineYall[nn];
                  datatingshi=dataall[nn];
 
-var mychart5 = echarts.init(document.getElementById('tingshi'));                   
+var myChart5 = echarts.init(document.getElementById('tingshi'));                   
 option5= {
     backgroundColor:'transparent',
   title: {
@@ -1300,8 +1309,8 @@ option5= {
   grid: {
     borderWidth: 0,
     top: '10%',
-    left: '5%',
-    right: '15%',
+    left: '0%',
+    right: '20%',
     bottom: '3%'
   },
   color: color,
@@ -1368,6 +1377,7 @@ option5= {
     type: 'bar',
     zlevel: 2,
     barWidth: '10px',
+
     data: lineY,
     animationDuration: 1500,
     label: {
@@ -1386,7 +1396,12 @@ option5= {
   }],
   animationEasing: 'cubicOut'
 }
-mychart5.setOption(option5);
+myChart5.setOption(option5);
+ $(window).resize(function(){
+                
+                    myChart5.resize();
+                })
+              
 }
  selectChart1(0);
   
@@ -1408,12 +1423,13 @@ mychart5.setOption(option5);
             myChart3.setOption(option3);
             myChart4.setOption(option4);
             
-            charts = [myChart1,myChart,myChart3,myChart4,mychart5];//,myChart5
+            charts1 = [myChart1,myChart,myChart3,myChart4];//,myChart5
             $(window).resize(function(){
-                for(var i = 0; i < charts.length; i++) {
-                    charts[i].resize();
+                for(var i = 0; i < charts1.length; i++) {
+                    charts1[i].resize();
                 }
-            });
+            });            
+
             select=document.getElementById("dropdown");
             select.onchange=function(){
                 selectChart(select.value);
