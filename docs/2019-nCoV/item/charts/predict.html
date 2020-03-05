@@ -142,17 +142,37 @@
                                         <div class="chart" id="mainPredict"></div>
                                     </div>
                                     <div class="nav-item">
+                                        <p>其他省市预测图，点击左侧按钮，可切换不同省市</p>
                                         <select class="selectpicker" id="dropdown" style="width:100px;">
                                             <option value=0 selected="">北京</option>
-                                            <option value=1>天津</option>
-                                            <option value=2>重庆</option>
-                                            <option value=3>广东</option>
-                                            <option value=4>浙江</option>
-                                            <option value=5>湖南</option>
-                                            <option value=6>河南</option>
-                                            <option value=7>江苏</option>
-                                            <option value=8>江西</option>
-                                            <option value=9>安徽</option>
+                                            <option value=1 >广东</option>
+                                            <option value=2>上海</option>
+                                            <option value=3>浙江</option>
+                                            <option value=4>天津</option>
+                                            <option value=5>河南</option>
+                                            <option value=6>重庆</option>
+                                            <option value=7>四川</option>
+                                            <option value=8>山东</option>
+                                            <option value=9>云南</option>
+                                            <option value=10>湖南</option>
+                                            <option value=11>江西</option>
+                                            <option value=12>辽宁</option>
+                                            <option value=13>海南</option>
+                                            <option value=14>安徽</option>
+                                            <option value=15>福建</option>
+                                            <option value=16>贵州</option>
+                                            <option value=17>山西</option>
+                                            <option value=18>宁夏</option>
+                                            <option value=19>广西</option>
+                                            <option value=20>河北</option>
+                                            <option value=21>黑龙江</option>
+                                            <option value=22>江苏</option>
+                                            <option value=23>吉林</option>
+                                            <option value=24>内蒙古</option>
+                                            <option value=25>陕西</option>
+                                            <option value=26>新疆</option>
+                                            <option value=27>甘肃</option>
+
                                         </select>
                                     </div>
                                     <div class="c-height">
@@ -184,14 +204,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-
-
-
-
-
-
-
                                 <div class="c">
                                     <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"}></i>新冠肺炎新增治愈/新增确诊比值时序图</p>
                                     <div class="c-height">
@@ -210,8 +222,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                
                             </div>
                             <a href="../charts/review.html">
                                 <button class="btn btn-secondary">疫情发展回顾</button>
@@ -269,10 +279,11 @@
                 wuhanDelta.push(p11-p12);
                 wuhanLow.push(p12);
             };
-            delta = 9;
             n = 0;
             rdays = data["real"].length;
             pdays = data["predictive"].length;
+            delta = rdays-10;
+
             for (i = pdays-1; i > -1; i--) {
                 if (data["real"][rdays-delta]["date"] == data["predictive"][i]["date"]){n = i;break;}
             };
@@ -331,13 +342,12 @@
         </script>
         <!-- select -->
         <script type="text/javascript">
-            choose=["北京","天津","重庆","广东","浙江","湖南","河南","江苏","江西","安徽"];
-            choosereal=["beijing","tianjin","chongqing","guangdong","zhejiang",
-            "hunan","henan","jiangsu","jiangxi","anhui"];
-            chooseshang=["beijingshang","tianjinshang","chongqingshang","guangdongshang","zhejiangshang",
-            "hunanshang","henanshang","jiangsushang","jiangxishang","anhuishang"];
-            choosexia=["beijingxia","tianjinxia","chongqingxia","guangdongxia","zhejiangxia",
-            "hunanxia","henanxia","jiangsuxia","jiangxixia","anhuixia"];
+            choose=["北京","广东","上海","浙江","天津","河南","重庆","四川","山东","云南","湖南","江西","辽宁","海南","安徽","福建","贵州","山西","宁夏","广西","河北","黑龙江","江苏","吉林","内蒙古","陕西","新疆","甘肃"];
+            choosereal=["beijing","guangdong","shanghai","zhejiang","tianjin","henan","chongqing","sichuan","shandong","yunnan","hunan","jiangxi","liaoning","hainan","anhui","fujian","guizhou","shan1xi","ningxia","guangxi","hebei","heilongjiang","jiangsu","jilin","neimenggu","shan3xi","xinjiang","gansu"];
+            chooseshang=["beijingshang","guangdongshang","shanghaishang","zhejiangshang","tianjinshang","henanshang","chongqingshang","sichuanshang","shandongshang","yunnanshang","hunanshang","jiangxishang","liaoningshang","hainanshang","anhuishang","fujianshang","guizhoushang","shan1xishang","ningxiashang","guangxishang","hebeishang","heilongjiangshang","jiangsushang","jilinshang","neimenggushang","shan3xishang",
+            "xinjiangshang","gansushang"];
+            choosexia=["beijingxia","guangdongxia","shanghaixia","zhejiangxia","tianjinxia","henanxia","chongqingxia","sichuanxia","shandongxia","yunnanxia","hunanxia","jiangxixia","liaoningxia","hainanxia","anhuixia","fujianxia","guizhouxia","shan1xixia","ningxiaxia","guangxixia","hebeixia","heilongjiangxia","jiangsuxia","jilinxia","neimengguxia","shan3xixia","xinjiangxia","gansuxia"];
+
             var myChart;
             function selectChart(n){
                 shengfen=choose[n];
@@ -352,10 +362,11 @@
                         totalDeltachoose.push(pup-plow);
                         totalLowchoose.push(plow);
                     };
-                    delta = 4;
                     n = 0;
                     rdays = data["real"].length;
                     pdays = data["predictive"].length;
+                    delta = rdays-25;
+
                     for (i = pdays-1; i > -1; i--) {
                         if (data["real"][rdays-delta]["date"] == data["predictive"][i]["date"]){n = i;break;}
                     };
@@ -481,12 +492,10 @@
             }
             selectChart(0);
         </script>
-       
         <script type="text/javascript">
             var myChart1 = echarts.init(document.getElementById('mainPredict'));
             var myChart3 = echarts.init(document.getElementById('addminutt'));
             var myChart4 = echarts.init(document.getElementById('add'));
-            //var myChart5 = echarts.init(document.getElementById('tingshi'));
             option1 = {
                 backgroundColor: 'transparent',
                 legend: {
@@ -1004,13 +1013,8 @@
                 }]
             };
 
-           
-//初始化
-           
-          
 
-
-            var charts = { // 按顺序排列从大到小
+             var charts = { // 按顺序排列从大到小
   cityList: ["湖南","四川","河北","广东","江西","河南","黑龙江","北京","江苏","重庆","安徽","山东","福建","陕西","浙江","山西","天津",
               // "云南","贵州","辽宁","吉林","海南","广西","内蒙古","宁夏","甘肃","新疆",
               "上海"],
@@ -1339,7 +1343,7 @@ option5= {
     axisLabel: {
       show: true,
       inside: false,
-      right:'50%',
+      
       textStyle: {
         color: '#607B8B',
         fontSize: '14',
@@ -1378,6 +1382,7 @@ option5= {
     zlevel: 2,
     barWidth: '10px',
 
+
     data: lineY,
     animationDuration: 1500,
     label: {
@@ -1404,40 +1409,22 @@ myChart5.setOption(option5);
               
 }
  selectChart1(0);
-  
-
-//var options = [option11,option22,option44]//,option44,option55,option66,option77
-            
-            
-                     
-           
-
-
-
-           
-
-
-
 
             myChart1.setOption(option1);
             myChart3.setOption(option3);
             myChart4.setOption(option4);
-            
-            charts1 = [myChart1,myChart,myChart3,myChart4];//,myChart5
+            charts = [myChart1,myChart,myChart3,myChart4];
             $(window).resize(function(){
-                for(var i = 0; i < charts1.length; i++) {
-                    charts1[i].resize();
+                for(var i = 0; i < charts.length; i++) {
+                    charts[i].resize();
                 }
-            });            
-
+            });
             select=document.getElementById("dropdown");
             select.onchange=function(){
                 selectChart(select.value);
             }
-           
-
         </script>
-        <script type="text/javascript">
+         <script type="text/javascript">
              select1=document.getElementById("dropdown1");
             select1.onchange=function(){
                 selectChart1(select1.value);
