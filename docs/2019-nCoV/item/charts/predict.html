@@ -135,7 +135,7 @@
                                 <div class="page-header">
                                     <h4 class="page-title">疫情发展预测</h4>
                                 </div>
-                                <p>基于传播动力学及黄森忠博士建构的普适SEIR模型，运用“南开大学智英健康数据研究中心”开发的程序EpiSIX，我们对2019-nCoV新型冠状病毒数据做出疫情发展及至今疾控效率的研判。我们依据国家及各地卫健委公布的从2019.12.12日至2020.3.2日的被确诊病例总数的数据链，对疫情发展做出如下5天（2020.3.3 至 2020.3.7）的区间预测及可能的停时(即疫情结束时间点)的估计。</p>
+                                <p>基于传播动力学及黄森忠博士建构的普适SEIR模型，运用“南开大学智英健康数据研究中心”开发的程序EpiSIX，我们对2019-nCoV新型冠状病毒数据做出疫情发展及至今疾控效率的研判。我们依据国家及各地卫健委公布的从2019.12.12日至2020.3.7日的被确诊病例总数的数据链，对疫情发展做出如下5天（2020.3.8 至 2020.3.12）的区间预测及可能的停时(即疫情结束时间点)的估计。</p>
                                 <div class="c">
                                     <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>新冠肺炎确诊病例数时序区间预测图</p>
                                     <div class="c-height">
@@ -178,6 +178,23 @@
                                     <div class="c-height">
                                         <div class="chart" id="extraPredict"></div>
                                 </div>
+                                <div class="nav-item">
+                                    <p>海外确诊人数预测图，点击左侧按钮，可切换不同国家</p>
+                                    <select class="selectpicker" id="dropdown2" style="width:100px;">
+                                        <option value=0 selected="">韩国</option>
+                                        <option value=1 >日本</option>
+                                        <option value=2 >伊朗</option>
+                                        <option value=3>意大利</option>
+                                        <option value=4>德国</option>
+                                        <option value=5>法国</option>
+                                        <option value=6>西班牙</option>
+                                        <option value=7>英国</option>
+                                        <option value=8>美国</option>
+                                    </select>
+                                </div>
+                                <div class="c-height">
+                                    <div class="chart" id="worldPredict"></div>
+                            </div>
                                 </div>
                             </br>
                                 <div class="c">
@@ -218,7 +235,7 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-body">
-                                            <p style="margin:0;">总体结论: 大部分都落在预测区间附近，但有少数几个偏离预测区间下界较多(4%左右)。这说明全国各地，每天确诊的实际数据均在下坡，是疫情处于受控状态的特征。</p>
+                                            <p style="margin:0;">总体结论：所有的实际值都落在预测区间的下界。这是疫情处于受控状态的特征。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -248,7 +265,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.common.js"></script>
        
+        
         <!-- Import Data -->
+        <script type="text/javascript">
+            function dataJson(fileData) {
+                worlddata = fileData;
+            }
+        </script>
+        <script type="text/javascript" src="./wdata.json?cb=dataJson"></script>
         <script type="text/javascript">
             function dataJson(fileData) {
                 data = fileData;
@@ -257,7 +281,7 @@
         <script type="text/javascript" src="./data.json?cb=dataJson"></script>
         <!-- Process Data -->
         <script type="text/javascript">
-            dateReal=[];dateWithPredict=[];total=[];hubei=[];wuhan=[];zhejiang=[];others=[];jjj=[];totalDelta=[];totalLow=[];hubeiDelta=[];hubeiLow=[];wuhanDelta=[];wuhanLow=[];othersDelta=[];othersLow=[];zhejiangDelta=[];zhejiangLow=[];jjjDelta=[];jjjLow=[];
+            dateReal=[];dateWithPredict=[];total=[];hubei=[];wuhan=[];zhejiang=[];others=[];jjj=[];totalDelta=[];totalLow=[];hubeiDelta=[];hubeiLow=[];wuhanDelta=[];wuhanLow=[];othersDelta=[];othersLow=[];zhejiangDelta=[];zhejiangLow=[];jjjDelta=[];jjjLow=[];dateWithPredict1=[];
             function addData(date,r0,r1,r2,r3,r4,r5,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12){ 
                 dateWithPredict.push(date);
                 total.push(r0);
@@ -340,6 +364,167 @@
 
 
         </script>
+
+         <script type="text/javascript">
+            
+            choose1=["韩国","日本","伊朗","意大利","德国","法国","西班牙","英国","美国"];
+    choosereal1=["韩国","日本","伊朗","意大利","德国","法国","西班牙","英国","美国"];
+    chooseshang1=["hanguoshang","ribenshang","yilangshang","yidalishang","deguoshang","faguoshang","xibanyashang","yingguoshang","meiguoshang"];
+    choosexia1=["hanguoxia","ribenxia","yilangxia","yidalixia","deguoxia","faguoxia","xibanyaxia","yingguoxia","meiguoxia"];
+
+
+            var myChart6;
+            function selectChart2(n){
+                shengfen=choose1[n];
+                NN=0;
+                for (var i = 0; i < choose1.length; i++) {
+                    if(choose1[i]==shengfen){
+                        NN=i
+                    }
+                }
+                var dateworld=[];
+                    function addDatachoose(date,r,pup,plow){ 
+                        dateworld.push(date);
+                        totalchoose.push(r);
+                        totalDeltachoose.push(pup-plow);
+                        totalLowchoose.push(plow);
+                    };
+                    n = 0;
+                    rdays = worlddata["real"].length;
+                    pdays = worlddata["predictive"].length;
+                    delta = 0;
+
+                    // for (i = pdays-1; i > -1; i--) {
+                    //     if (worlddata["real"][rdays-delta]["date"] == worlddata["predictive"][i]["date"]){n = i;break;}
+                    // };
+                    function addDataN(N){
+                        totalchoose=[];totalDeltachoose=[];totalLowchoose=[];
+                        for (i = 0; i < rdays+pdays-n-delta; i++) {
+                            if (i < rdays-delta) {
+                                addDatachoose(worlddata["real"][i]["date"],
+                                worlddata["real"][i][choosereal1[N]],
+                                '_','_');
+                            } else if (i < rdays) {
+                                j = i+delta-rdays+n;
+                                addDatachoose(worlddata["real"][i]["date"],
+                                worlddata["real"][i][choosereal1[N]],
+                                worlddata["predictive"][j][chooseshang1[N]],worlddata["predictive"][j][choosexia1[N]]);
+                            } else {
+                                j = i+delta-rdays+n;
+                                addDatachoose(worlddata["predictive"][j]["date"],
+                                '_',
+                                worlddata["predictive"][j][chooseshang1[N]],worlddata["predictive"][j][choosexia1[N]]);
+                            }
+                        }
+                    }
+                    addDataN(NN);
+                    //if (myChart != null && myChart != "" && myChart != undefined) {myChart.dispose();}
+                    myChart6 = echarts.init(document.getElementById('worldPredict'));
+                    option6 = {
+                        backgroundColor: 'transparent',
+                        legend: {
+                            right: '5%',
+                            data: [shengfen]
+                        },
+                        grid: {
+                            left: 0,
+                            right: 15,
+                            top: '15%',
+                            bottom: '10%',
+                            containLabel: true
+                        },
+                        tooltip: {
+                            trigger: 'axis',
+                            formatter: function(params) {
+                                res=params[0].name+'<br>';
+                                for (i=0;i<params.length/3;i++) {
+                                    res+=params[3*i].seriesName+': '+params[3*i].value+'<br>';
+                                    lower=params[3*i+1].value;
+                                    upper=(isNaN(params[3*i+2].value))?'_':lower+params[3*i+2].value;
+                                    res+=params[3*i+1].seriesName+'预测区间: ['+lower+', '+upper+']<br>';
+                                };
+                                return res
+                            }
+                        },
+                        series: [
+                            {   name: shengfen,
+                                type: 'line',
+                                symbolSize: 4,
+                                symbol: 'rect',
+                                itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:2},
+                                data: totalchoose
+                            },
+                            {   name: shengfen, //下界
+                                type: 'line',
+                                data: totalLowchoose,
+                                stack: '预测',
+                                itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:1},
+                                lineStyle: {opacity: 0}
+                            },
+                            {   name: shengfen, //区间长度
+                                type: 'line',
+                                data: totalDeltachoose,
+                                stack: '预测',
+                                itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:1},
+                                lineStyle: {opacity: 0},
+                                areaStyle: {color: '#E7FAFA',opacity: 0.8}
+                            }
+                        ],
+                        xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            axisTick: {
+                                show: false
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#566573'
+                                }
+                            },
+                            axisLabel: {
+                                fontSize: 11
+                            },
+                            data: dateworld
+                        },
+                        yAxis: {
+                            name:"病例数",
+                            type: 'value',
+                            nameTextStyle: {
+                                verticalAlign: 'middle'
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#566573'
+                                }
+                            },
+                            axisLabel: {
+                                fontSize: 8.5,
+                                rotate:60
+                            },
+                            scale: true
+                        },
+                        dataZoom: {
+                            type: 'slider',
+                            xAxisIndex: [0],
+                            height: '6%',
+                            bottom: '2%',
+                            start: 50,
+                            end: 100,
+                            showDetail: false,
+                            handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                            borderColor: '#90979c'
+                        }
+                    };
+                    myChart6.setOption(option6);
+
+                $(window).resize(function(){
+                
+                    myChart6.resize();
+                })
+            }
+            selectChart2(0);
+        </script>
+
         <!-- select -->
         <script type="text/javascript">
             choose=["北京","广东","上海","浙江","天津","河南","重庆","四川","山东","云南","湖南","江西","辽宁","海南","安徽","福建","贵州","山西","宁夏","广西","河北","黑龙江","江苏","吉林","内蒙古","陕西","新疆","甘肃"];
@@ -1430,6 +1615,12 @@ myChart5.setOption(option5);
                 selectChart1(select1.value);
             }
         </script>
+         <script type="text/javascript">
+            select2=document.getElementById("dropdown2");
+           select2.onchange=function(){
+               selectChart2(select2.value);
+           }
+       </script>
         
     </body>
 </html> 
