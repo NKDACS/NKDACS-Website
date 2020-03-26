@@ -1,0 +1,182 @@
+dataJson({"亚洲":
+	[
+  {
+    "name": "中国大陆",
+    "gdvalue": 47,
+    "gdlabel": "2020.2.6",
+    "stvalue": 150,
+    "stlabel": "5月中旬"
+  },
+  {
+    "name": "韩国",
+    "gdvalue": 62,
+    "gdlabel": "2020.3.2",
+    "stvalue": 120,
+    "stlabel": "4月下旬"
+  },
+  {
+    "name": "日本",
+    "gdvalue": 69,
+    "gdlabel": "2020.3.15",
+    "stvalue": 180,
+    "stlabel": "6月下旬"
+  },
+  {
+    "name": "伊朗",
+    "gdvalue": 69,
+    "gdlabel": "2020.3.14",
+    "stvalue": 120,
+    "stlabel": "4月下旬"
+  },
+  {
+    "name": "土耳其",
+    "gdvalue": 82,
+    "gdlabel": "2020.3.28",
+    "stvalue": 150,
+    "stlabel": "5月中旬"
+  },
+  {
+    "name": "以色列",
+    "gdvalue": 82,
+    "gdlabel": "2020.3.29",
+    "stvalue": 150,
+    "stlabel": "5月中旬"
+  },
+  {
+    "name": "马来西亚",
+    "gdvalue": 80,
+    "gdlabel": "2020.3.25",
+    "stvalue": 150,
+    "stlabel": "5月中旬"
+  }
+  ],
+	"欧洲1":
+	[
+  {
+    "name": "意大利",
+    "gdvalue": 68,
+    "gdlabel": "2020.3.21",
+    "stvalue": 150,
+    "stlabel": "5月中旬"
+  },
+  {
+    "name": "西班牙",
+    "gdvalue": 70,
+    "gdlabel": "2020.3.23",
+    "stvalue": 150,
+    "stlabel": "5月中旬"
+  },
+  {
+    "name": "德国",
+    "gdvalue": 69,
+    "gdlabel": "2020.3.22",
+    "stvalue": 130,
+    "stlabel": "5月上旬"
+  },
+  {
+    "name": "法国",
+    "gdvalue": 69,
+    "gdlabel": "2020.3.22",
+    "stvalue": 130,
+    "stlabel": "5月上旬"
+  },
+  {
+    "name": "瑞士",
+    "gdvalue": 73,
+    "gdlabel": "2020.3.26",
+    "stvalue": 130,
+    "stlabel": "5月上旬"
+  },
+  {
+    "name": "英国",
+    "gdvalue": 73,
+    "gdlabel": "2020.3.25",
+    "stvalue": 130,
+    "stlabel": "5月上旬"
+  },
+  {
+    "name": "荷兰",
+    "gdvalue": 76,
+    "gdlabel": "2020.3.27",
+    "stvalue": 150,
+    "stlabel": "5月中旬"
+  }
+	],
+	"欧洲2":
+	[
+  
+  {
+    "name": "比利时",
+    "gdvalue": 76,
+    "gdlabel": "2020.3.27",
+    "stvalue": 150,
+    "stlabel": "5月中旬"
+  },
+  {
+    "name": "奥地利",
+    "gdvalue": 73,
+    "gdlabel": "2020.3.26",
+    "stvalue": 130,
+    "stlabel": "5月上旬"
+  },
+  {
+    "name": "葡萄牙",
+    "gdvalue": 77,
+    "gdlabel": "2020.3.29",
+    "stvalue": 130,
+    "stlabel": "5月上旬"
+  },
+  {
+    "name": "捷克",
+    "gdvalue": 80,
+    "gdlabel": "2020.4.2",
+    "stvalue": 150,
+    "stlabel": "5月中旬"
+  },
+  {
+    "name": "丹麦",
+    "gdvalue": 73,
+    "gdlabel": "2020.3.25",
+    "stvalue": 150,
+    "stlabel": "5月中旬"
+  },
+  {
+    "name": "瑞典",
+    "gdvalue": 70,
+    "gdlabel": "2020.3.23",
+    "stvalue": 130,
+    "stlabel": "5月上旬"
+  },
+  {
+    "name": "挪威",
+    "gdvalue": 68,
+    "gdlabel": "2020.3.17",
+    "stvalue": 130,
+    "stlabel": "5月上旬"
+  }
+	],
+	"其他国家":
+	[
+  {
+    "name": "澳大利亚",
+    "gdvalue": 78,
+    "gdlabel": "2020.3.30",
+    "stvalue": 180,
+    "stlabel": "6月下旬"
+  },
+  {
+    "name": "美国",
+    "gdvalue": 78,
+    "gdlabel": "2020.3.30",
+    "stvalue": 150,
+    "stlabel": "5月中旬"
+  },
+  {
+    "name": "加拿大",
+    "gdvalue": 70,
+    "gdlabel": "2020.3.23",
+    "stvalue": 120,
+    "stlabel": "4月下旬"
+  }
+	]
+});
