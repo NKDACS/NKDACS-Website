@@ -137,13 +137,11 @@
                                 </div>
                                 <p>基于传播动力学及黄森忠博士建构的普适SEIR模型，运用“南开大学智英健康数据研究中心”开发的程序EpiSIX，我们对2019-nCoV新型冠状病毒数据做出疫情发展及至今疾控效率的研判。我们依据国家及各地卫健委公布的从2019.12.12日至2020.3.7日的被确诊病例总数的数据链，对疫情发展做出如下5天（2020.3.8 至 2020.3.12）的区间预测及可能的停时(即疫情结束时间点)的估计。</p>
                                 <div class="c">
-                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>新冠肺炎确诊病例数时序区间预测图</p>
-                                    <div class="c-height">
-                                        <div class="chart" id="mainPredict"></div>
-                                    </div>
-                                   
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>
+                                    海外新冠肺炎确诊病例数时序区间预测图</p>
+                                    
                                 <div class="nav-item">
-                                    <p>海外确诊人数预测图，点击左侧按钮，可切换不同国家</p>
+                                    <p>点击左侧按钮，可切换不同国家</p>
                                     <select class="selectpicker" id="dropdown2" style="width:100px;">
                                         <option value=0 selected="">韩国</option>
                                         <option value=1 >日本</option>
@@ -164,6 +162,39 @@
                                     <p style="margin:0;">注：从3月13日起日本确诊人数中去掉了钻石公主号的累积确诊人数。</p>
                                 </div>
                             </div>
+                                </div>
+
+
+                            <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>
+                                    世界各国新冠肺炎拐点及停时日期图</p>
+                                    <div class="nav-item">
+                                        <select class="selectpicker" id="dropdown3" style="width:100px;">
+                                            <option value=0 >亚洲</option>
+                                            <option value=1>欧洲1</option>
+                                            <option value=2>欧洲2</option>
+                                            <option value=3>北美洲</option>
+                                            <option value=4>大洋洲</option>
+                                          
+                                        </select>
+                                    </div>
+                                    <div class="c-height">
+                                        <div class="chart" id="golbaldata"></div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p style="margin:0;">图标指示处为拐点，在此之后流行病进程将下降； 停时指不再有新增确诊病例的日期。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                               <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>新冠肺炎确诊病例数时序区间预测图</p>
+                                    <div class="c-height">
+                                        <div class="chart" id="mainPredict"></div>
+                                    </div>
+                                   
+                                
                                 </div>
                             </br>
                                 <div class="c">
@@ -190,27 +221,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="c">
-                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>
-                                    世界各国新冠肺炎拐点及停时日期图</p>
-                                    <div class="nav-item">
-                                        <select class="selectpicker" id="dropdown3" style="width:100px;">
-                                            <option value=0 >亚洲</option>
-                                            <option value=1>欧洲1</option>
-                                            <option value=2>欧洲2</option>
-                                            <option value=3>其他国家</option>
-                                          
-                                        </select>
-                                    </div>
-                                    <div class="c-height">
-                                        <div class="chart" id="golbaldata"></div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <p style="margin:0;">图标指示处为拐点，在此之后流行病进程将下降； 停时指不再有新增确诊病例的日期。</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </br>
                                 <div class="c">
                                     <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>新冠肺炎累计确诊增长率时序图</p>
@@ -1631,7 +1642,7 @@ myChart5.setOption(option5);
             };
              gdvaluedata=[];namelabel=[];
 
-             var dazhou=["亚洲","欧洲1","欧洲2","其他国家"];
+             var dazhou=["亚洲","欧洲1","欧洲2","北美洲","大洋洲"];
              var cn = dazhou[nnn];
         
     

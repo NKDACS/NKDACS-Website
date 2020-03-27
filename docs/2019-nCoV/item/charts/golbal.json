@@ -155,15 +155,9 @@ dataJson({"亚洲":
     "stlabel": "5月上旬"
   }
 	],
-	"其他国家":
+	"北美洲":
 	[
-  {
-    "name": "澳大利亚",
-    "gdvalue": 78,
-    "gdlabel": "2020.3.30",
-    "stvalue": 180,
-    "stlabel": "6月下旬"
-  },
+ 
   {
     "name": "美国",
     "gdvalue": 78,
@@ -178,5 +172,16 @@ dataJson({"亚洲":
     "stvalue": 120,
     "stlabel": "4月下旬"
   }
-	]
+	],
+  "大洋洲":
+  [
+     {
+    "name": "澳大利亚",
+    "gdvalue": 78,
+    "gdlabel": "2020.3.30",
+    "stvalue": 180,
+    "stlabel": "6月下旬"
+  }
+   
+  ]
 });
