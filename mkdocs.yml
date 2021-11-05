@@ -19,6 +19,7 @@ nav:
     - The Bootstrap: share/bootstrap/bootstrap.md
     - Chapter 1: share/chap1/chap1.md
     - Random number: share/Random number/Random number.md
+    - 用数据揭开安大略省彩票零售商丑闻: share/lottery/lottery.md
   - 教程:
     - Markdown 模板: tutorial/md-template.md
     - Markdown 说明: tutorial/md-tutorial.md
