@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>2019nCoV</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.min.js"></script>
+    <style type="text/css">　　
+        body {background-color:#1c2e40}
+        p {text-indent:2rem; line-height: 2;color:white; background-color:#1c2e40;font-family: sans-serif}
+        h1 {color:white; background-color:#1c2e40;font-family: sans-serif}
+        h2 {color:white; background-color:#1c2e40;font-family: sans-serif}
+        h3 {text-indent:5rem; color:white; background-color:#1c2e40;font-family: sans-serif}
+
+    </style>　　
+
+
+</head>
+
+<body bgcolor='#1c2e40'>
+    <h1>2019-nCoV新型冠状病毒疫情传播预测（2月2日）</h1>
+    <p>  黄森忠：南开大学统计研究院客座教授，南开大学智英健康数据研究中心主任。该预测的共同发布者为靳祯教授（山西大学复杂系统所所长）和彭志行副教授（南京医科大学公共卫生学院）。</p>
+    <p>  基于国家卫建委公布的从2019年12月12日-2020年2月1日的疫情数据，我们应用传播动力学和黄森忠博士建构的普适SEIR动力学模型，着重研究了武汉市，湖北省和全国的疫情发展情况，并对未来五天的确诊人数进行了预测。</p>  
+    <p>  疾控的成功离不开国家对于疫情采取的有效措施以及广大人民群众的积极相应。随着春运返程高峰的到来，疾控工作不能有一丝松懈。我们一起注意防护，保持乐观，众志成城，共度时艰！</p>   
+    </br>
+    </br>
+    </br> 
+    <h2>新型冠状病毒肺炎确诊病例数时序图</h2>
+    <p> 注：实线为真实数据，虚线为预测数据</p>
+    <div id="liandong" style="width:100%;height:800px;"></div>
+    </br>
+    </br>
+    </br> 
+
+    <h2>新型冠状病毒肺炎新增病例数时序图</h2>
+    <div id="add" style="width:100%;height:800px;"></div>
+    <p>截止目前，每日新增的确诊、疑似病例数仍是增长状态，形式不容乐观。依据黄森忠教授的模型预测，预计在2月7日前后会出现爆发增长的拐点。</p>
+    </br>
+    </br>
+    </br>
+    
+    <h2>全国新型冠状病毒肺炎确诊病例数日历图</h2>
+    <div id="dateplot" style="width:100%;height:600px;"></div>
+    <p>日历图将每日数据与2020年1月以来与疫情相关的重大事件结合，能更直观的了解到疫情发展情况与所采取的有效防控措施的关系。</p>
+    </br>
+    </br>
+    </br>
+    <h2>全国各指标环状图</h2>
+    <div id="ring" style="width:100%;height:500px; "></div>
+    </br>
+    </br>
+    </br>
+    </br>
+    <h2>全国死亡与治愈病例数双向对比图</h2>
+    <div id="arrow" style="width:100%;height:800px;"></div>
+    <p>双向对比图直观反映了疫情的治愈速率与死亡速率的关系。到目前为止，治愈速率小于死亡速率，疫情防控和医疗救治工作仍然十分艰巨，需要大家的共同努力。</p>
+    </br>
+    </br>
+    </br>
+    <h2>武汉真实预测折柱图</h2>
+    <p>本图含交互组件，可进行『数据窗口缩放』『数据窗口平移』操作，即在坐标系内进行拖动，以及用滚轮（或移动触屏上的两指滑动）进行缩放。</p>
+    <div id="linebarwuhan" style="width:100%;height:800px;"></div>
+    </br>
+    </br>
+    </br>
+    <h2>湖北真实预测折柱图</h2>
+    <div id="linebarhubei" style="width:100%;height:800px;"></div>
+    </br>
+    </br>
+    </br>
+    <h2>全国真实预测折柱图</h2>
+    <div id="linebarquanguo" style="width:100%;height:800px;"></div>
+
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <h3>数据可视化项目小组成员：陈笑洋 张宸玥 王玉珏 刘城昕 马佳明</h3>
+
+
+<!------------------------------->
+    <!--环形图-->
+    <!------------------------------->
+    <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('ring'));
+                var dataStyle = {
+        normal: {
+            label: {
+                show: false
+            },
+            labelLine: {
+                show: false
+            },
+            // shadowBlur: 15,
+            // shadowColor: 'white',
+        }
+    };
+    var placeHolderStyle = {
+        normal: {
+            color: 'rgba(0,0,0,0)',
+            label: {
+                show: false
+            },
+            labelLine: {
+                show: false
+            }
+        },
+        emphasis: {
+            color: 'rgba(0,0,0,0)'
+        }
+    };
+       option = {
+           backgroundColor: '#1c2e40',
+            color: ['#4DFFE3','#4DE0FF','#4DFF8F','#ADFF4D'],
+            tooltip : {
+                show: true,
+                formatter: "{b} : {c}"
+            },
+
+            legend: {
+                top: "13.5%",
+                x: 'right',
+                left: "42%",
+                itemWidth:0,itemHeight:0,
+                data: ['疑似病例','确诊病例','死亡人数' ,'治愈人数'],
+                itemGap: 50,
+                textStyle: {
+                    color: '#fff',
+                    align:'right',
+                    x: 'right',
+                    textAlign:'right'
+                },
+
+                selectedMode: true,
+                orient: "vertical",
+
+            },
+            series: [
+                {
+                name: 'Line 4',
+                type: 'pie',
+                clockWise: true,
+                hoverAnimation: false,
+                radius: ['65%', '75%'],
+                itemStyle: dataStyle,
+
+            data: [{
+                value: 19544,
+                name: '疑似病例'
+            }, {
+                value: 20000-19544,
+                name: '总数',
+                tooltip: {
+                    show: false
+                },
+                itemStyle: placeHolderStyle
+            }
+
+            ]
+        }, {
+            name: 'Line 3',
+            type: 'pie',
+            clockWise: true,
+            radius: ['50%', '60%'],
+            itemStyle: dataStyle,
+            hoverAnimation: false,
+
+            data: [{
+                value: 14423,
+                name: '确诊病例'
+            }, {
+                value: 20000-14423,
+                name: '总数',
+                tooltip: {
+                    show: false
+                },
+                itemStyle: placeHolderStyle
+            }]
+        }, {
+            name: 'Line 2',
+            type: 'pie',
+            clockWise: true,
+            hoverAnimation: false,
+            radius: ['35%', '45%'],
+            itemStyle: dataStyle,
+
+                    data: [{
+                        value: 304,
+                        name: '死亡人数'
+                    }, {
+                        value: 20000-304,
+                        name: '总数',
+                        tooltip: {
+                            show: false
+                        },
+                        itemStyle: placeHolderStyle
+                    }]
+                },
+                {
+                    name: 'Line 1',
+                    type: 'pie',
+                    clockWise: true,
+
+                    radius: ['20%', '30%'],
+                    itemStyle: dataStyle,
+                    hoverAnimation: false,
+
+                    data: [ {
+                        value: 331,
+                        name: '治愈人数'
+                    },{
+                        value:20000-331,
+                        name: '总数',
+                        tooltip: {
+                            show: false
+                        },
+                        itemStyle: placeHolderStyle
+                    }
+
+                    ]
+                }
+            ]
+        };
+            
+myChart.setOption(option);
+    </script>
+
+    <!------------------------------->
+    <!--多图联动-->
+    <!------------------------------->
+    <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('liandong'));
+            var xAxisData = ['12/8/19','12/31/19','1/3/20','1/5/20','1/11/20','1/12/20','1/13/20','1/14/20','1/15/20','1/16/20','1/17/20','1/18/20','1/19/20','1/20/20','1/21/20','1/22/20','1/23/20','1/24/20','1/25/20','1/26/20','1/27/20','1/28/20','1/29/20','1/30/20','1/31/20',
+            '2/1/20','2/2/20','2/3/20','2/4/20','2/5/20','2/6/20'];
+    //全国
+var firstLineData = [1,27,44,59,41,41,41,41,41,45,62,121,198,291,440,571,830,1287,1975,2744,4515,5974,7711,8149,11791,13831,'_', '_', '_', '_', '_'];
+var firstLineDottedData = ['_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_',9118,10602,12136,15363,17074,18627,19992,21166];
+    //湖北
+var sendLineData = [1,27,44,59,41,41,41,41,41,45,62,121,198,270,375,444,549,729,1052,1423,2714,3554,4586,6026,7153,9074,'_', '_', '_', '_', '_'];
+var sendLineDottedData = ['_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_',6026,6998,8033,9790,10987,12091,13069,13905];
+    //武汉
+var threeLineData = [1,27,44,59,41,41,41,41,41,45,62,121,198,270,375,437,495,572,618,698,1590,1905,2261,2639,3215,4109,'_', '_', '_', '_', '_'];
+var threeLineDottedData = ['_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_', '_','_', '_', '_', '_',2950,3720,4427,4596,5120,5568,6233,6808];
+
+var firstPieData = 13831;
+var sendPieData = 9074;
+var threePieData = 4109;
+
+var dataxAxis = 30;
+var datayAxis = 67.1;
+
+var labelTop = {
+    normal: {
+        label: {
+            show: true,
+            fontSize: 14,
+            position: 'center',
+            formatter: '{b}',
+            textStyle: {
+                baseline: 'bottom',
+                color: '#8cd2ff'
+            }
+        },
+        labelLine: {
+            show: false
+        }
+    }
+};
+
+var labelTopUpdata = {
+    normal: {
+        label: {
+            show: true,
+            fontSize: 14,
+            position: 'center',
+            formatter: '{b}',
+            textStyle: {
+                baseline: 'bottom',
+                color: '#fff'
+            }
+        },
+        labelLine: {
+            show: false
+        }
+    }
+};
+
+var labelFromatter = {
+    normal: {
+        label: {
+            formatter: function(params) {
+                return params.name;
+            },
+            fontSize: 24,
+            padding: [50, 0, 0, 0],
+            color: '#fff',
+            textStyle: {
+                baseline: 'top'
+            }
+        },
+        color: {
+            type: 'linear',
+            x: 1,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [{
+                offset: 0,
+                color: '#00fff6' // 0% 处的颜色
+            }, {
+                offset: 1,
+                color: '#005aff' // 100% 处的颜色
+            }],
+            globalCoord: false // 缺省为 false
+        }
+    }
+};
+var labelFromatter1 = {
+    normal: {
+        label: {
+            formatter: function(params) {
+                return params.name;
+            },
+            fontSize: 24,
+            padding: [50, 0, 0, 0],
+            color: '#fff',
+            textStyle: {
+                baseline: 'top'
+            }
+        },
+        color: {
+            type: 'linear',
+            x: 1,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [{
+                offset: 0,
+                color: '#ffea00' // 0% 处的颜色
+            }, {
+                offset: 1,
+                color: '#ff00c0' // 100% 处的颜色
+            }],
+            globalCoord: false // 缺省为 false
+        }
+    }
+};
+var labelFromatter2 = {
+    normal: {
+        label: {
+            formatter: function(params) {
+                return params.name;
+            },
+            fontSize: 24,
+            padding: [50, 0, 0, 0],
+            color: '#fff',
+            textStyle: {
+                baseline: 'top'
+            }
+        },
+        color: {
+            type: 'linear',
+            x: 1,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [{
+                offset: 0,
+                color: '#70fc1d' // 0% 处的颜色
+            }, {
+                offset: 1,
+                color: '#5d7f00' // 100% 处的颜色
+            }],
+            globalCoord: false // 缺省为 false
+        },
+        shadowColor: '#0c3da3',
+        shadowBlur: 10,
+        shadowOffsetX: 1,
+        shadowOffsetY: 1
+    }
+};
+var labelBottom = {
+    normal: {
+        color: 'rgba(12, 61, 163, 1)',
+        position: 'none',
+        label: {
+            show: true,
+            position: 'center'
+        },
+        labelLine: {
+            show: false
+        }
+    }
+};
+
+var lineitemStyle2 = {
+    normal: {
+        label: {
+            formatter: function(params) {
+                return params.name;
+            },
+            fontSize: 40,
+            padding: [90, 0, 0, 0],
+            color: '#fff',
+            textStyle: {
+                baseline: 'top'
+            }
+        },
+        color: '#66ff00',
+        borderColor: 'rgba(102, 255, 0, 0.5)',
+        borderWidth: 10
+    }
+};
+var lineitemStyle1 = {
+    normal: {
+        label: {
+            formatter: function(params) {
+                return params.name;
+            },
+            fontSize: 40,
+            padding: [90, 0, 0, 0],
+            color: '#fff',
+            textStyle: {
+                baseline: 'top'
+            }
+        },
+        color: '#ffea00',
+        borderColor: 'rgba(255, 234, 0, 0.5)',
+        borderWidth: 10
+    }
+};
+var lineitemStyle = {
+    normal: {
+        label: {
+            formatter: function(params) {
+                return params.name;
+            },
+            fontSize: 40,
+            padding: [90, 0, 0, 0],
+            color: '#fff',
+            textStyle: {
+                baseline: 'top'
+            }
+        },
+        color: '#01f2ee',
+        borderColor: 'rgba(1, 242, 238, 0.5)',
+        borderWidth: 10
+    }
+};
+
+var radius = [30, 60];
+option = {
+    backgroundColor: '#1c2e40',
+    tooltip: {
+        show: true,
+        trigger: 'item'
+    },
+    title: {
+        text: '',
+        subtext: '',
+        x: 'center'
+    },
+    grid: {
+        left: '4%',
+        right: '0',
+        top: '25%',
+        bottom: '1%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: true,
+        axisTick: {
+            show: false
+        },
+        axisLine: {
+            lineStyle: {
+                color: '#6995aa'
+            },
+            onZero: true
+        },
+        axisLabel: {
+            fontSize: 11,
+            color: '#A5CADB'
+        },
+        splitLine: {
+            show: false,
+            lineStyle: {
+                type: 'dotted',
+                color: '#1978D9'
+            }
+        },
+        data: xAxisData
+    },
+    yAxis: {
+        type: 'value',
+        axisTick: {
+            show: false
+        },
+        axisLine: {
+            lineStyle: {
+                color: '#6995aa'
+            },
+            onZero: false
+        },
+        axisLabel: {
+            fontSize: 11,
+            color: '#A5CADB'
+        },
+        splitLine: {
+            lineStyle: {
+                type: 'dotted',
+                color: '#1978D9'
+            }
+        },
+        scale: true
+    },
+    series: [{
+        name: '全国',
+        smooth: true,
+        type: 'line',
+        symbolSize: 5,
+        symbol: 'circle',
+        itemStyle: lineitemStyle,
+        data: firstLineData
+    }, {
+        name: '全国',
+        smooth: true,
+        type: 'line',
+        symbolSize: 5,
+        symbol: 'circle',
+        itemStyle: lineitemStyle,
+        lineStyle: {
+            normal: {
+                type: 'dotted'
+            }
+        },
+        tooltip: {
+            formatter: '{b0},{a0}: {c0}<br />{b2}'
+        },
+        data: firstLineDottedData
+    }, {
+        name: '湖北',
+        smooth: true,
+        type: 'line',
+        symbolSize: 5,
+        symbol: 'circle',
+        itemStyle: lineitemStyle1,
+        data: sendLineData
+    }, {
+        name: '湖北',
+        smooth: true,
+        type: 'line',
+        symbolSize: 5,
+        symbol: 'circle',
+        itemStyle: lineitemStyle1,
+        lineStyle: {
+            normal: {
+                type: 'dotted'
+            }
+        },
+        data: sendLineDottedData
+    }, {
+        type: 'line',
+        name: '武汉',
+        smooth: true,
+        symbolSize: 5,
+        symbol: 'circle',
+        itemStyle: lineitemStyle2,
+        data: threeLineData
+    }, {
+        type: 'line',
+        name: '武汉',
+        smooth: true,
+        symbol: 'circle',
+        symbolSize: 5,
+        itemStyle: lineitemStyle2,
+        lineStyle: {
+            normal: {
+                type: 'dotted'
+            }
+        },
+        data: threeLineDottedData
+    }, {
+        type: 'pie',
+        center: ['15%', '10%'],
+        startAngle: 180,
+        radius: radius,
+        clockwise: false,
+        itemStyle: labelFromatter,
+        data: [{
+            name: '全国',
+            value: firstPieData,
+            itemStyle: labelTop
+        }],
+        markLine: {
+            silent: true,
+            symbolSize: 0,
+            data: [{
+                0: {
+                    x: 15-(60/myChart.getWidth())*100+'%',
+                    y: '10%',
+                    lineStyle: {
+                        normal: {
+                            color: '#ccc',
+                            width: 1,
+                            type: 'solid'
+                        }
+                    }
+                },
+                1: {
+                    x: '15%',
+                    y: '10%'
+                }
+            }]
+        }
+    }, {
+        type: 'pie',
+        center: ['45%', '10%'],
+        radius: radius,
+        startAngle: 180,
+        clockwise: false,
+        itemStyle: labelFromatter1,
+        data: [{
+            name: '湖北',
+            value: sendPieData,
+            itemStyle: labelTop
+        }],
+        markLine: {
+            silent: true,
+            symbolSize: 0,
+            data: [{
+                0: {
+                    x: 45-(60/myChart.getWidth())*100+'%',
+                    y: '10%',
+                    lineStyle: {
+                        normal: {
+                            color: '#ccc',
+                            width: 1,
+                            type: 'solid'
+                        }
+                    }
+                },
+                1: {
+                    x: '45%',
+                    y: '10%'
+                }
+            }]
+        }
+    }, {
+        type: 'pie',
+        center: ['75%', '10%'],
+        radius: radius,
+        startAngle: 180,
+        clockwise: false,
+        itemStyle: labelFromatter2,
+        data: [{
+            name: '武汉',
+            value: threePieData,
+            itemStyle: labelTop
+        }],
+        markLine: {
+            silent: true,
+            symbolSize: 0,
+            data: [{
+                0: {
+                    x: 75-(60/myChart.getWidth())*100+'%',
+                    y: '10%',
+                    lineStyle: {
+                        normal: {
+                            color: '#ccc',
+                            width: 1,
+                            type: 'solid'
+                        }
+                    }
+                },
+                1: {
+                    x: '75%',
+                    y: '10%'
+                }
+            }]
+        }
+    }]
+};
+
+myChart.setOption(option);
+    </script>
+
+
+   <!------------------------------->
+    <!--折柱图-->
+    <!------------------------------->
+    <script type="text/javascript">
+        var example = 
+[{"日期":"2019.12.8","武汉确诊人数":1,"武汉预测人数":0},{"日期":"2019.12.31","武汉确诊人数":27,"武汉预测人数":0},{"日期":"2020.1.3","武汉确诊人数":44,"武汉预测人数":0},{"日期":"2020.1.5","武汉确诊人数":59,"武汉预测人数":0},{"日期":"2020.1.11","武汉确诊人数":41,"武汉预测人数":0},{"日期":"2020.1.12","武汉确诊人数":41,"武汉预测人数":0},{"日期":"2020.1.13","武汉确诊人数":41,"武汉预测人数":0},{"日期":"2020.1.14","武汉确诊人数":41,"武汉预测人数":0},{"日期":"2020.1.15","武汉确诊人数":41,"武汉预测人数":0},{"日期":"2020.1.16","武汉确诊人数":45,"武汉预测人数":0},{"日期":"2020.1.17","武汉确诊人数":62,"武汉预测人数":0},{"日期":"2020.1.18","武汉确诊人数":121,"武汉预测人数":0},{"日期":"2020.1.19","武汉确诊人数":198,"武汉预测人数":0},{"日期":"2020.1.20","武汉确诊人数":270,"武汉预测人数":0},{"日期":"2020.1.21","武汉确诊人数":375,"武汉预测人数":0},{"日期":"2020.1.22","武汉确诊人数":437,"武汉预测人数":0},{"日期":"2020.1.23","武汉确诊人数":495,"武汉预测人数":0},{"日期":"2020.1.24","武汉确诊人数":572,"武汉预测人数":0},{"日期":"2020.1.25","武汉确诊人数":618,"武汉预测人数":0},{"日期":"2020.1.26","武汉确诊人数":698,"武汉预测人数":0},{"日期":"2020.1.27","武汉确诊人数":1590,"武汉预测人数":0},{"日期":"2020.1.28","武汉确诊人数":1905,"武汉预测人数":0},{"日期":"2020.1.29","武汉确诊人数":2261,"武汉预测人数":0},{"日期":"2020.1.30","武汉确诊人数":2639,"武汉预测人数":2950},{"日期":"2020.1.31","武汉确诊人数":3215,"武汉预测人数":3720},{"日期":"2020.2.1","武汉确诊人数":4109,"武汉预测人数":4427},{"日期":"2020.2.2","武汉确诊人数":0,"武汉预测人数":4596},{"日期":"2020.2.3","武汉确诊人数":0,"武汉预测人数":5120},{"日期":"2020.2.4","武汉确诊人数":0,"武汉预测人数":5568},{"日期":"2020.2.5","武汉确诊人数":0,"武汉预测人数":6233},{"日期":"2020.2.6","武汉确诊人数":0,"武汉预测人数":6808}];
+           
+       
+          
+          
+
+            
+var myChart = echarts.init(document.getElementById('linebarwuhan'));
+    let keys1 = [];
+for (var key in example[0]){
+     
+        keys1.push(key);  
+    }
+   // console.log(keys1)
+
+    // 还需要获取一下日期2020-1-30
+    let items1 = [];
+  for (let i in example) {
+        items1.push(example[i][keys1[0]]);
+    }
+    //console.log(items1)
+
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!应该用处挺大的！！！！！！！splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。
+     var year = [];
+       year.name = keys1.splice(0, 1);  //意思就是从第0个对象开始删除一项，剩下除了月份的后4个名字，返回的是删除的项目，所以说折线图的x轴名字是月份，现在keys只剩下除了月份的后4个名字   
+      //console.log(keys1)
+
+      var def_wu = [];
+      var pre_wu=[];
+      var rated_wu=[];
+        for (let idx in example) { 
+         def_wu.push(example[idx][keys1[0]])};
+
+         for (let idx in example) { 
+         pre_wu.push(example[idx][keys1[1]])};
+
+         for (var i = 0; i < example.length ;i++) {
+
+            if(def_wu[i] == 0 |pre_wu[i]==0){ var rate=NaN; rated_wu[i] = rate }else{var rate=pre_wu[i]/def_wu[i];
+            rated_wu[i] = rate.toFixed(2)}}
+
+        
+
+         console.log(rated_wu)
+
+    
+
+option = {
+   "title": {
+      "text": "武汉确诊预测对比折柱图",
+      "left": "center",
+      "y": "10",
+      "textStyle": {
+        "color": "#fff"
+      }
+    },
+    "backgroundColor": "#1c2e40",
+    "color": "#384757",
+    "tooltip": {
+      "trigger": "axis",
+      "axisPointer": {
+        "type": "cross",
+        "crossStyle": {
+          "color": "#384757"
+        }
+      }
+    },
+    "legend": {
+      "data": [
+        {
+          "name": "确诊人数",
+          "icon": "circle",
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        },
+        {
+          "name": '预测人数',
+          "icon": "circle",
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        },
+        {
+          "name": "预测与实际人数比",
+          "icon": "circle",
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        }
+      ],
+      "top": "10%",
+      "textStyle": {
+        "color": "#fff"
+      }
+    },
+
+    "dataZoom": [{
+
+
+        "show": true,
+        "height": 20,
+        "xAxisIndex": [
+            0
+        ],
+        bottom: 15,
+       "start": 35,
+        "end": 95,
+        handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+        handleSize: '110%',
+        handleStyle:{
+            color:"#d3dee5",
+            
+        },
+           textStyle:{
+            color:"#fff"},
+           borderColor:"#90979c"
+        
+        
+    },{
+        "type": "inside",
+        "show": true,
+        "height": 15,
+        "start": 35,
+        "end": 65
+    }],
+    xAxis: {
+        type: 'category',
+        "axisLine": {
+            lineStyle: {
+                color: '#FF4500'
+            }
+        },
+        "axisTick": {
+            "show": false
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        boundaryGap: false,
+        data: items1
+    },
+   
+    "yAxis": [
+      {
+        "type": "value",
+        "name": "人数",
+        "nameTextStyle": {
+          "color": "#7d838b"
+        },
+        
+        "axisLabel": {
+          "show": true,
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        },
+        "axisLine": {
+          "show": true
+        },
+         splitLine: {
+            show: true,
+            lineStyle: {
+                color: '#fff'
+            }
+        },
+        "axisTick": {
+            "show": false
+        }},
+              
+      {
+        "type": "value",
+        "name": "预测与实际人数比",
+
+        "show": false,
+        "axisLabel": {
+          "show": true,
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        }
+      }
+    ],
+    "grid": {
+      "top": "20%"
+    },
+    "series": [
+      {
+        "name": "确诊人数",
+        "type": "bar",
+        "data": def_wu,
+        "barWidth": "auto",
+        "itemStyle": {
+          "normal": {
+            "color": {
+              "type": "linear",
+              "x": 0,
+              "y": 0,
+              "x2": 0,
+              "y2": 1,
+              "colorStops": [
+                {
+                  "offset": 0,
+                  "color": "rgba(255,37,117,0.7)"
+                },
+                {
+                  "offset": 0.5,
+                  "color": "rgba(0,133,245,0.7)"
+                },
+                {
+                  "offset": 1,
+                  "color": "rgba(0,133,245,0.3)"
+                }
+              ],
+              "globalCoord": false
+            }
+          }
+        }
+      },
+      {
+        "name": "预测人数",
+        "type": "bar",
+        "data": pre_wu,
+        "barWidth": "auto",
+        "itemStyle": {
+          "normal": {
+            "color": {
+              "type": "linear",
+              "x": 0,
+              "y": 0,
+              "x2": 0,
+              "y2": 1,
+              "colorStops": [
+                {
+                  "offset": 0,
+                  "color": "rgba(255,37,117,0.7)"
+                },
+                {
+                  "offset": 0.5,
+                  "color": "rgba(0,255,252,0.7)"
+                },
+                {
+                  "offset": 1,
+                  "color": "rgba(0,255,252,0.3)"
+                }
+              ],
+              "globalCoord": false
+            }
+          }
+        },
+        "barGap": "0"
+      },
+      {
+        "name": "预测与实际人数比",
+        "type": "line",
+        "yAxisIndex": 1,
+        "data": rated_wu,
+        "itemStyle": {
+          "normal": {
+            "color": "#ffaa00"
+          }
+        },
+        "smooth": true
+      }
+    ]
+};
+myChart.setOption(option);
+    
+
+
+
+
+
+
+var myChart2 = echarts.init(document.getElementById('linebarhubei'));
+
+ var zoomdata = [{"日期":"2019.12.8","湖北确诊人数":1,"湖北预测人数":0},{"日期":"2019.12.31","湖北确诊人数":27,"湖北预测人数":0},{"日期":"2020.1.3","湖北确诊人数":44,"湖北预测人数":0},{"日期":"2020.1.5","湖北确诊人数":59,"湖北预测人数":0},{"日期":"2020.1.11","湖北确诊人数":41,"湖北预测人数":0},{"日期":"2020.1.12","湖北确诊人数":41,"湖北预测人数":0},{"日期":"2020.1.13","湖北确诊人数":41,"湖北预测人数":0},{"日期":"2020.1.14","湖北确诊人数":41,"湖北预测人数":0},{"日期":"2020.1.15","湖北确诊人数":41,"湖北预测人数":0},{"日期":"2020.1.16","湖北确诊人数":45,"湖北预测人数":0},{"日期":"2020.1.17","湖北确诊人数":62,"湖北预测人数":0},{"日期":"2020.1.18","湖北确诊人数":121,"湖北预测人数":0},{"日期":"2020.1.19","湖北确诊人数":198,"湖北预测人数":0},{"日期":"2020.1.20","湖北确诊人数":270,"湖北预测人数":0},{"日期":"2020.1.21","湖北确诊人数":375,"湖北预测人数":0},{"日期":"2020.1.22","湖北确诊人数":444,"湖北预测人数":0},{"日期":"2020.1.23","湖北确诊人数":549,"湖北预测人数":0},{"日期":"2020.1.24","湖北确诊人数":729,"湖北预测人数":0},{"日期":"2020.1.25","湖北确诊人数":1052,"湖北预测人数":0},{"日期":"2020.1.26","湖北确诊人数":1423,"湖北预测人数":0},{"日期":"2020.1.27","湖北确诊人数":2714,"湖北预测人数":0},{"日期":"2020.1.28","湖北确诊人数":3554,"湖北预测人数":0},{"日期":"2020.1.29","湖北确诊人数":4586,"湖北预测人数":0},{"日期":"2020.1.30","湖北确诊人数":4903,"湖北预测人数":6026},{"日期":"2020.1.31","湖北确诊人数":7153,"湖北预测人数":6998},{"日期":"2020.2.1","湖北确诊人数":9074,"湖北预测人数":8033},{"日期":"2020.2.2","湖北确诊人数":0,"湖北预测人数":9790},{"日期":"2020.2.3","湖北确诊人数":0,"湖北预测人数":10987},{"日期":"2020.2.4","湖北确诊人数":0,"湖北预测人数":12091},{"日期":"2020.2.5","湖北确诊人数":0,"湖北预测人数":13069},{"日期":"2020.2.6","湖北确诊人数":0,"湖北预测人数":13905},{"__EMPTY_9":"标题，字体，首行空两个段落，两句话，改个名"}];
+          
+
+            
+let keys2 = [];
+for (var key in zoomdata[0]){
+     
+        keys2.push(key);  
+    }
+    //console.log(keys2)
+
+    // 还需要获取一下日期2020-1-30
+    let items2 = [];
+  for (let i in zoomdata) {
+        items2.push(zoomdata[i][keys2[0]]);
+    }
+    //console.log(items2)
+
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!应该用处挺大的！！！！！！！splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。
+     var year = [];
+       year.name = keys2.splice(0, 1);  //意思就是从第0个对象开始删除一项，剩下除了月份的后4个名字，返回的是删除的项目，所以说折线图的x轴名字是月份，现在keys只剩下除了月份的后4个名字   
+     // console.log(keys2)
+
+      var def_hu = [];
+      var pre_hu=[];
+      var rated_hu=[];
+        for (let idx in zoomdata) { 
+         def_hu.push(zoomdata[idx][keys2[0]])};
+
+         for (let idx in zoomdata) { 
+         pre_hu.push(zoomdata[idx][keys2[1]])};
+
+         for (var i = 0; i < zoomdata.length ;i++) {
+
+            if(def_hu[i] == 0||pre_hu[i] == 0){ var rate=NaN; rated_hu[i] = rate }else{var rate=pre_hu[i]/def_hu[i];
+            rated_hu[i] = rate.toFixed(2)}}
+
+         console.log(rated_hu)
+
+    
+
+option = {
+   "title": {
+      "text": "湖北确诊预测对比折柱图",
+      "left": "center",
+      "y": "10",
+      "textStyle": {
+        "color": "#fff"
+      }
+    },
+    "backgroundColor": "#1c2e40",
+    "color": "#384757",
+    "tooltip": {
+      "trigger": "axis",
+      "axisPointer": {
+        "type": "cross",
+        "crossStyle": {
+          "color": "#384757"
+        }
+      }
+    },
+    "legend": {
+      "data": [
+        {
+          "name": "确诊人数",
+          "icon": "circle",
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        },
+        {
+          "name": '预测人数',
+          "icon": "circle",
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        },
+        {
+          "name": "预测与实际人数比",
+          "icon": "circle",
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        }
+      ],
+      "top": "10%",
+      "textStyle": {
+        "color": "#fff"
+      }
+    },
+
+    "dataZoom": [{
+
+
+        "show": true,
+        "height": 20,
+        "xAxisIndex": [
+            0
+        ],
+        bottom: 15,
+        "start": 35,
+        "end": 95,
+        handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+        handleSize: '110%',
+        handleStyle:{
+            color:"#d3dee5",
+            
+        },
+           textStyle:{
+            color:"#fff"},
+           borderColor:"#90979c"
+        
+        
+    },{
+        "type": "inside",
+        "show": true,
+        "height": 15,
+        "start": 25,
+        "end": 65
+    }],
+    xAxis: {
+        type: 'category',
+        "axisLine": {
+            lineStyle: {
+                color: '#FF4500'
+            }
+        },
+        "axisTick": {
+            "show": false
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        boundaryGap: false,
+        data: items1
+    },
+   
+    "yAxis": [
+      {
+        "type": "value",
+        "name": "人数",
+        "nameTextStyle": {
+          "color": "#7d838b"
+        },
+        
+        "axisLabel": {
+          "show": true,
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        },
+        "axisLine": {
+          "show": true
+        },
+         splitLine: {
+            show: true,
+            lineStyle: {
+                color: '#fff'
+            }
+        },
+        "axisTick": {
+            "show": false
+        }},
+              
+      {
+        "type": "value",
+        "name": "预测与实际人数比",
+
+        "show": false,
+        "axisLabel": {
+          "show": true,
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        }
+      }
+    ],
+    "grid": {
+      "top": "20%"
+    },
+    "series": [
+      {
+        "name": "确诊人数",
+        "type": "bar",
+        "data": def_hu,
+        "barWidth": "auto",
+        "itemStyle": {
+          "normal": {
+            "color": {
+              "type": "linear",
+              "x": 0,
+              "y": 0,
+              "x2": 0,
+              "y2": 1,
+              "colorStops": [
+                {
+                  "offset": 0,
+                  "color": "rgba(255,37,117,0.7)"
+                },
+                {
+                  "offset": 0.5,
+                  "color": "rgba(0,133,245,0.7)"
+                },
+                {
+                  "offset": 1,
+                  "color": "rgba(0,133,245,0.3)"
+                }
+              ],
+              "globalCoord": false
+            }
+          }
+        }
+      },
+      {
+        "name": "预测人数",
+        "type": "bar",
+        "data": pre_hu,
+        "barWidth": "auto",
+        "itemStyle": {
+          "normal": {
+            "color": {
+              "type": "linear",
+              "x": 0,
+              "y": 0,
+              "x2": 0,
+              "y2": 1,
+              "colorStops": [
+                {
+                  "offset": 0,
+                  "color": "rgba(255,37,117,0.7)"
+                },
+                {
+                  "offset": 0.5,
+                  "color": "rgba(0,255,252,0.7)"
+                },
+                {
+                  "offset": 1,
+                  "color": "rgba(0,255,252,0.3)"
+                }
+              ],
+              "globalCoord": false
+            }
+          }
+        },
+        "barGap": "0"
+      },
+      {
+        "name": "预测与实际人数比",
+        "type": "line",
+        "yAxisIndex": 1,
+        "data": rated_hu,
+        "itemStyle": {
+          "normal": {
+            "color": "#ffaa00"
+          }
+        },
+        "smooth": true
+      }
+    ]
+};
+myChart2.setOption(option);
+
+    
+// 
+
+    var barline = 
+
+[{"日期":"2019.12.8","全国确诊人数":1,"预测人数":0},{"日期":"2019.12.31","全国确诊人数":27,"预测人数":0},{"日期":"2020.1.3","全国确诊人数":44,"预测人数":0},{"日期":"2020.1.5","全国确诊人数":59,"预测人数":0},{"日期":"2020.1.11","全国确诊人数":41,"预测人数":0},{"日期":"2020.1.12","全国确诊人数":41,"预测人数":0},{"日期":"2020.1.13","全国确诊人数":41,"预测人数":0},{"日期":"2020.1.14","全国确诊人数":41,"预测人数":0},{"日期":"2020.1.15","全国确诊人数":41,"预测人数":0},{"日期":"2020.1.16","全国确诊人数":45,"预测人数":0},{"日期":"2020.1.17","全国确诊人数":62,"预测人数":0},{"日期":"2020.1.18","全国确诊人数":121,"预测人数":0},{"日期":"2020.1.19","全国确诊人数":198,"预测人数":0},{"日期":"2020.1.20","全国确诊人数":291,"预测人数":0},{"日期":"2020.1.21","全国确诊人数":440,"预测人数":0},{"日期":"2020.1.22","全国确诊人数":571,"预测人数":0},{"日期":"2020.1.23","全国确诊人数":830,"预测人数":0},{"日期":"2020.1.24","全国确诊人数":1287,"预测人数":0},{"日期":"2020.1.25","全国确诊人数":1975,"预测人数":0},{"日期":"2020.1.26","全国确诊人数":2744,"预测人数":0},{"日期":"2020.1.27","全国确诊人数":4515,"预测人数":0},{"日期":"2020.1.28","全国确诊人数":5974,"预测人数":0},{"日期":"2020.1.29","全国确诊人数":7711,"预测人数":0},{"日期":"2020.1.30","全国确诊人数":8149,"预测人数":9118},{"日期":"2020.1.31","全国确诊人数":11791,"预测人数":10602},{"日期":"2020.2.1","全国确诊人数":13831,"预测人数":12136},{"日期":"2020.2.2","全国确诊人数":0,"预测人数":15363},{"日期":"2020.2.3","全国确诊人数":0,"预测人数":17074},{"日期":"2020.2.4","全国确诊人数":0,"预测人数":18627},{"日期":"2020.2.5","全国确诊人数":0,"预测人数":19992},{"日期":"2020.2.6","全国确诊人数":0,"预测人数":21166}]
+
+    var myChart3 = echarts.init(document.getElementById('linebarquanguo'));
+    let keys5 = [];
+for (var key in barline[0]){
+     
+        keys5.push(key);  
+    }
+   // console.log(keys5)
+
+    // 还需要获取一下日期2020-1-30
+    let items5 = [];
+  for (let i in barline) {
+        items5.push(barline[i][keys5[0]]);
+    }
+    //console.log(items5)
+
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!应该用处挺大的！！！！！！！splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。
+     var year = [];
+       year.name = keys5.splice(0, 1);  //意思就是从第0个对象开始删除一项，剩下除了月份的后4个名字，返回的是删除的项目，所以说折线图的x轴名字是月份，现在keys只剩下除了月份的后4个名字   
+      //console.log(keys5)
+
+      var def = [];
+      var pre =[];
+      var rated=[];
+        for (let idx in barline) { 
+         def.push(barline[idx][keys5[0]])};
+
+         for (let idx in barline) { 
+         pre.push(barline[idx][keys5[1]])};
+
+         for (var i = 0; i < barline.length ;i++) {
+
+            if(def[i] == 0||pre[i]==0){ var rate=NaN; rated[i] = rate }else{var rate=pre[i]/def[i];
+            rated[i] = rate.toFixed(2)}}
+
+         
+        
+        
+
+         
+        console.log(rated)
+
+    
+
+option = {
+   "title": {
+      "text": "全国确诊预测对比折柱图",
+      "left": "center",
+      "y": "10",
+      "textStyle": {
+        "color": "#fff"
+      }
+    },
+    "backgroundColor": "#1c2e40",
+    "color": "#384757",
+    "tooltip": {
+      "trigger": "axis",
+      "axisPointer": {
+        "type": "cross",
+        "crossStyle": {
+          "color": "#384757"
+        }
+      }
+    },
+    "legend": {
+      "data": [
+        {
+          "name": "确诊人数",
+          "icon": "circle",
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        },
+        {
+          "name": '预测人数',
+          "icon": "circle",
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        },
+        {
+          "name": "预测与实际人数比",
+          "icon": "circle",
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        }
+      ],
+      "top": "10%",
+      "textStyle": {
+        "color": "#fff"
+      }
+    },
+
+    "dataZoom": [{
+
+
+        "show": true,
+        "height": 20,
+        "xAxisIndex": [
+            0
+        ],
+        bottom: 15,
+        "start": 35,
+        "end": 95,
+    
+        handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+        handleSize: '110%',
+        handleStyle:{
+            color:"#d3dee5",
+            
+        },
+           textStyle:{
+            color:"#fff"},
+           borderColor:"#90979c"
+        
+        
+    },{
+        "type": "inside",
+        "show": true,
+        "height": 15,
+        "start": 25,
+        "end": 65
+    }],
+    xAxis: {
+        type: 'category',
+        "axisLine": {
+            lineStyle: {
+                color: '#FF4500'
+            }
+        },
+        "axisTick": {
+            "show": false
+        },
+        axisLabel: {
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        boundaryGap: false,
+        data: items5
+    },
+   
+    "yAxis": [
+      {
+        "type": "value",
+        "name": "人数",
+        "nameTextStyle": {
+          "color": "#7d838b"
+        },
+        
+        "axisLabel": {
+          "show": true,
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        },
+        "axisLine": {
+          "show": true
+        },
+         splitLine: {
+            show: true,
+            lineStyle: {
+                color: '#fff'
+            }
+        },
+        "axisTick": {
+            "show": false
+        }},
+              
+      {
+        "type": "value",
+        "name": "预测与实际人数比",
+
+        "show": false,
+        "axisLabel": {
+          "show": true,
+          "textStyle": {
+            "color": "#7d838b"
+          }
+        }
+      }
+    ],
+    "grid": {
+      "top": "20%"
+    },
+    "series": [
+      {
+        "name": "确诊人数",
+        "type": "bar",
+        "data": def,
+        "barWidth": "auto",
+        "itemStyle": {
+          "normal": {
+            "color": {
+              "type": "linear",
+              "x": 0,
+              "y": 0,
+              "x2": 0,
+              "y2": 1,
+              "colorStops": [
+                {
+                  "offset": 0,
+                  "color": "rgba(255,37,117,0.7)"
+                },
+                {
+                  "offset": 0.5,
+                  "color": "rgba(0,133,245,0.7)"
+                },
+                {
+                  "offset": 1,
+                  "color": "rgba(0,133,245,0.3)"
+                }
+              ],
+              "globalCoord": false
+            }
+          }
+        }
+      },
+      {
+        "name": "预测人数",
+        "type": "bar",
+        "data": pre,
+        "barWidth": "auto",
+        "itemStyle": {
+          "normal": {
+            "color": {
+              "type": "linear",
+              "x": 0,
+              "y": 0,
+              "x2": 0,
+              "y2": 1,
+              "colorStops": [
+                {
+                  "offset": 0,
+                  "color": "rgba(255,37,117,0.7)"
+                },
+                {
+                  "offset": 0.5,
+                  "color": "rgba(0,255,252,0.7)"
+                },
+                {
+                  "offset": 1,
+                  "color": "rgba(0,255,252,0.3)"
+                }
+              ],
+              "globalCoord": false
+            }
+          }
+        },
+        "barGap": "0"
+      },
+      {
+        "name": "预测与实际人数比",
+        "type": "line",
+        "yAxisIndex": 1,
+        "data": rated,
+        "itemStyle": {
+          "normal": {
+            "color": "#ffaa00"
+          }
+        },
+        "smooth": true
+      }
+    ]
+};
+
+
+    
+
+
+    myChart3.setOption(option);
+
+     
+
+
+
+    </script>
+           
+
+    <!------------------------------->
+    <!--日历图-->
+    <!------------------------------->
+    <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('dateplot'));
+            var dateList = [[ "2020-1-1","初七","华南海鲜市场休市"],[ "2020-1-2","初八" ],[ "2020-1-3","初九" ],[ "2020-1-4","初十" ],[ "2020-1-5","十一" ],[ "2020-1-6","十二" ],[ "2020-1-7","十三" ],[ "2020-1-8","十四" ],[ "2020-1-9","十五" ],[ "2020-1-10","十六" ],[ "2020-1-11","十七" ],[ "2020-1-12","十八" ],[ "2020-1-13","十九" ],[ "2020-1-14","二十" ],[ "2020-1-15","廿一" ],[ "2020-1-16","廿二" ],[ "2020-1-17","廿三" ],[ "2020-1-18","廿四" ],[ "2020-1-19","廿五" ],[ "2020-1-20","廿六","钟南山提出确定有人传人现象" ],[ "2020-1-21","廿七" ],[ "2020-1-22","廿八" ],[ "2020-1-23","廿九","武汉封城" ],[ "2020-1-24","除夕","湖北封省" ],[ "2020-1-25","春节","火神山医院开工" ],[ "2020-1-26","初二","雷神山医院开工"],[ "2020-1-27","初三" ],[ "2020-1-28","初四" ],[ "2020-1-29","初五" ],[ "2020-1-30","初六" ],[ "2020-1-31","初七","WHO宣布把新型冠状病毒被列为PHEIC（国际突发公共卫生事件" ]
+];
+
+var heatmapData = [];
+var lunarData = [];
+var people=[27,27,27,27,27,27,27,27,27,41,41,41,41,41,41,45,
+62,121,198,291,440,571,830,1287,1975,2744,4515,5974,7711,8149,11791];
+for (var i = 0; i < dateList.length; i++) {
+    heatmapData.push([
+        dateList[i][0],
+        people[i]
+    ]);
+    lunarData.push([
+        dateList[i][0],
+        1,
+        dateList[i][1],
+        dateList[i][2]
+    ]);
+}
+
+
+option = {
+    backgroundColor:'#1c2e40',
+    tooltip: {
+        formatter: function (params) {
+            return '全国确诊人数: ' + params.value[1];
+        }
+    },
+    visualMap: {
+        "min": 0,
+        "max": 12000,
+        "calculable": true,
+        "seriesIndex": [2],
+        "orient": "horizontal",
+        "right": "center",
+        "bottom": "150",
+        "color": ["#3686e7", "#bcfdd6"]
+    },
+  
+   
+
+    calendar: [{
+        left: 'center',
+        top: 'middle',
+        cellSize: [150, 80],
+        yearLabel: {show: false},
+        orient: 'vertical',
+        dayLabel: {
+            firstDay: 1,
+            nameMap: 'cn'
+        },
+        
+        monthLabel: {
+            show: true,
+            color:'#fff'
+        },
+        range: '2020-01'
+    }],
+
+    series: [{
+        type: 'scatter',
+        coordinateSystem: 'calendar',
+        symbolSize: 1,
+        label: {
+            normal: {
+                show: true,
+                formatter: function (params) {
+                    var d = echarts.number.parseDate(params.value[0]);
+                    return d.getDate() + '\n\n' + params.value[2] + '\n\n';
+                },
+                textStyle: {
+                    color: '#000'
+                }
+            }
+        },
+        data: lunarData
+    }, {
+        type: 'scatter',
+        coordinateSystem: 'calendar',
+        symbolSize: 1,
+        label: {
+            normal: {
+                show: true,
+                formatter: function (params) {
+                    return '\n\n\n' + (params.value[3] || '');
+                },
+                textStyle: {
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: "#CD5C5C"
+                }
+            }
+        },
+        data: lunarData
+    }, {
+        name: '降雨量',
+        type: 'heatmap',
+        coordinateSystem: 'calendar',
+        data: heatmapData
+    }]
+};
+            
+myChart.setOption(option);
+    </script>
+    <!------------------------------->
+    <!--双向图-->
+    <!------------------------------->
+    <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('arrow'));
+                var dataStyle = {
+        normal: {
+            label: {
+                show: false
+            },
+            labelLine: {
+                show: false
+            },
+            // shadowBlur: 15,
+            // shadowColor: 'white',
+        }
+    };
+   //------------------------------------引用请注明出处
+
+var myData = ['1/11/20','1/12/20','1/13/20','1/14/20','1/15/20','1/16/20','1/17/20','1/18/20','1/19/20','1/20/20','1/21/20','1/22/20','1/23/20','1/24/20','1/25/20','1/26/20','1/27/20','1/28/20','1/29/20','1/30/20','1/31/20','2/1/20'];
+var datadie = {
+  
+    7: [1,1,1,1,1,2,2,3,4,6,9,17,25,41,41,80,106,132,170,213,259,304]
+   
+
+};
+var datacure = {
+  
+    7: [6,7,7,7,7,15,19,25,25,25,28,28,34,38,39,51,60,103,124,171,243,328]
+   
+
+};
+var timeLineData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+option = {
+    baseOption: {
+        backgroundColor: '#1c2e40',
+        timeline: {
+            show: false,
+            axisType: 'category',
+            autoPlay: false,
+            currentIndex: 6,
+            playInterval: 3000000,
+            data: [],
+        },
+        title: {
+            textStyle: {
+                color: '#fff',
+                fontSize: 16,
+            }
+        },
+        legend: {
+            data: ['全国死亡人数', '全国治愈人数'],
+            top: 4,
+            right: '20%',
+            textStyle: {
+                color: '#fff',
+            },
+        },
+        grid: [{
+            show: false,
+            left: '4%',
+            top: 60,
+            bottom: 60,
+            containLabel: true,
+            width: '40%',
+        }, {
+            show: false,
+            left: '50.5%',
+            top: 80,
+            bottom: 60,
+            width: '0%',
+        }, {
+            show: false,
+            right: '4%',
+            top: 60,
+            bottom: 60,
+            containLabel: true,
+            width: '40%',
+        }, ],
+
+        xAxis: [
+            {
+            type: 'value',
+            inverse: true,
+            axisLine: {
+                show: false,
+            },
+            axisTick: {
+                show: false,
+            },
+            position: 'top',
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#B2B2B2',
+                    fontSize: 12,
+                },
+            },
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    color: '#778899',
+                    width: 1,
+                    type: 'solid',
+                },
+            },
+        }, {
+            gridIndex: 1,
+            show: false,
+        }, {
+            gridIndex: 2,
+            type: 'value',
+            axisLine: {
+                show: false,
+            },
+            axisTick: {
+                show: false,
+            },
+            position: 'top',
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#B2B2B2',
+                    fontSize: 12,
+                },
+            },
+            splitLine: {
+                show: true,
+                lineStyle: {
+                    color: '#778899',
+                    width: 1,
+                    type: 'solid',
+                },
+            },
+        }, ],
+        yAxis: [{
+            type: 'category',
+            inverse: true,
+            position: 'right',
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                show: false,
+                margin: 8,
+                textStyle: {
+                    color: '#fff',
+                    fontSize: 12,
+                },
+
+            },
+            data: myData,
+        }, {
+            gridIndex: 1,
+            type: 'category',
+            inverse: true,
+            position: 'left',
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: '#fff',
+                    fontSize: 12,
+                },
+
+            },
+            data: myData.map(function(value) {
+                return {
+                    value: value,
+                    textStyle: {
+                        align: 'center',
+                    }
+                }
+            }),
+        }, {
+            gridIndex: 2,
+            type: 'category',
+            inverse: true,
+            position: 'left',
+            axisLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                show: false,
+                textStyle: {
+                    color: '#fff',
+                    fontSize: 12,
+                },
+
+            },
+            data: myData,
+        }, ],
+        series: [],
+
+    },
+
+    options: [],
+
+
+};
+
+for (var i = 0; i < timeLineData.length; i++) {
+  //  option.baseOption.timeline.data.push(timeLineData[i]);
+    option.options.push({
+        title: {
+            text: '全国死亡人数与治愈人数统计',
+        },
+        series: [{
+                name: '全国死亡人数',
+                type: 'bar',
+                barGap: 20,
+                barWidth: 20,
+                label: {
+                    normal: {
+                        show: false,
+                    },
+                    emphasis: {
+                        show: true,
+                        position: 'left',
+                        offset: [0, 0],
+                        textStyle: {
+                            color: '#000000',
+                            fontSize: 14,
+                        },
+                    },
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#659F83',
+                    },
+                    emphasis: {
+                        color: '#08C7AE',
+                    },
+                },
+                data: datadie[timeLineData[i]],
+            },
+
+
+            {
+                name: '全国治愈人数',
+                type: 'bar',
+                barGap: 20,
+                barWidth: 20,
+                xAxisIndex: 2,
+                yAxisIndex: 2,
+                label: {
+                    normal: {
+                        show: false,
+                    },
+                    emphasis: {
+                        show: true,
+                        position: 'right',
+                        offset: [0, 0],
+                        textStyle: {
+                            color: '#000000',
+                            fontSize: 14,
+                        },
+                    },
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#F68989',
+                    },
+                    emphasis: {
+                        color: '#F94646',
+                    },
+                },
+                data: datacure[timeLineData[i]],
+            }
+        ]
+    });
+};
+
+myChart.setOption(option);
+    </script>
+
+    <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('add'));
+            var charts = {
+    unit: '病例数',
+    names: ['全国每日新增的确诊病例数'],
+    lineX: ['1/15/20','1/16/20','1/17/20','1/18/20','1/19/20','1/20/20','1/21/20','1/22/20','1/23/20','1/24/20','1/25/20','1/26/20','1/27/20','1/28/20','1/29/20','1/30/20','1/31/20','2/1/20'],
+    value: [
+        [4,17,59,77,93,149,131,259,457,688,769,1771,1459,1737,438,3642,2040]
+    ]
+
+}
+var color = ['rgba(23, 255, 243', 'rgba(119,61,190']
+var lineY = []
+
+for (var i = 0; i < charts.names.length; i++) {
+    var x = i
+    if (x > color.length - 1) {
+        x = color.length - 1
+    }
+    var data = {
+        name: charts.names[i],
+        type: 'line',
+        color: color[x] + ')',
+        smooth: true,
+        areaStyle: {
+            normal: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: color[x] + ', 0.3)'
+                }, {
+                    offset: 0.8,
+                    color: color[x] + ', 0)'
+                }], false),
+                shadowColor: 'rgba(0, 0, 0, 0.1)',
+                shadowBlur: 10
+            }
+        },
+        symbol: 'circle',
+        symbolSize: 5,
+        data: charts.value[i]
+    }
+    lineY.push(data)
+}
+
+
+var option = {
+    backgroundColor:'#1c2e40',
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: charts.names,
+        textStyle: {
+            fontSize: 12,
+            color: 'rgb(0,253,255,0.6)'
+        },
+        right: '4%'
+    },
+    grid: {
+        top: '14%',
+        left: '4%',
+        right: '4%',
+        bottom: '12%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: charts.lineX,
+        axisLabel: {
+            textStyle: {
+                color: 'rgb(0,253,255,0.6)'
+            },
+            formatter: function(params) {
+                return params.split(' ')[0] 
+            }
+        }
+    },
+    yAxis: {
+        name: charts.unit,
+        type: 'value',
+        axisLabel: {
+            formatter: '{value}',
+            textStyle: {
+                color: 'rgb(0,253,255,0.6)'
+            }
+        },
+        splitLine: {
+            lineStyle: {
+                color: 'rgb(23,255,243,0.3)'
+            }
+        },
+        axisLine: {
+            lineStyle: {
+                color: 'rgb(0,253,255,0.6)'
+            }
+        }
+    },
+    series: lineY
+}
+setInterval(() => {
+    myChart.setOption({
+      legend: {
+        selected: {
+          '出口': false,
+          '入口': false
+        }
+      }
+    })
+    myChart.setOption({
+      legend: {
+        selected: {
+          '出口': true,
+          '入口': true
+        }
+      }
+    })
+},10000);
+       
+myChart.setOption(option);
+    </script>
+</body>
+
+</html>

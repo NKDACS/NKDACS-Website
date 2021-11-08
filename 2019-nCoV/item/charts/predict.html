@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?fefb7ff4c65399524bc151da04f6c52a";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+            
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="Content-Type" content="charset=utf-8" />
+        <title>2019nCoV</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <link rel="icon" href="../../assets/img/icon.png" type="image/x-icon"/>
+        <!-- Fonts and icons -->
+        <script src="../../assets/js/plugin/webfont/webfont.min.js"></script>
+        <script>
+            WebFont.load({
+                google: {"families":["Open+Sans:300,400,600"]},
+                custom: {"families":["Font Awesome 5 Solid", "Font Awesome 5 Regular"], urls: ['../../assets/css/fonts.css']},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
+        <!-- CSS Files -->
+        <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../assets/css/azzara.min.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="main-header" data-background-color="purple">
+                <!-- Logo Header -->
+                <div class="logo-header">
+                    <a href="../index.html" class="logo">
+                        <img src="../../assets/img/logonkdacs.svg" alt="navbar brand" class="navbar-brand">
+                    </a>
+                    <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </button>
+                    <button class="topbar-toggler more">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <div class="navbar-minimize">
+                        <button class="btn btn-minimize btn-rounded">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Navbar Header -->
+                <nav class="navbar navbar-header navbar-expand-lg">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                            <li class="nav-item dropdown hidden-caret">
+                                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-info"></i>
+                                </a>
+                                <ul class="dropdown-menu animated fadeIn" aria-labelledby="infoDropdown">
+                                    <li>
+                                        <div class="dropdown-item">
+                                            <h5 style="text-align:center;margin:0;">NKDACS数据可视化</h5>
+                                        </div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="dropdown-item">
+                                            <p class="text-muted" style="text-align:center;text-indent:0;font-size:14px;margin:0;">陈笑洋 张宸玥 王玉珏 刘城昕 马佳明</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown hidden-caret">
+                                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+                                    <div class="avatar-sm">
+                                        <img src="../../assets/img/nkdacs_square.png" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-background"></div>
+                <div class="sidebar-wrapper scrollbar-inner">
+                    <div class="sidebar-content">
+                        <div class="user">
+                                <div class="avatar">
+                                <img src="../../assets/img/nkdacs.png">
+                                </div>
+                        </div>
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a href="../index.html">
+                                    <i class="fas fa-home"></i>
+                                    <p>项目介绍</p>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a data-toggle="collapse" href="#charts">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <p>疫情发展</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse show" id="charts">
+                                    <ul class="nav nav-collapse">
+                                        <li class="active">
+                                            <a href="predict.html">
+                                                <span class="sub-item">疫情发展预测</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="review.html">
+                                               <span class="sub-item">疫情发展回顾</span> 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Panel -->
+            <div class="main-panel">
+                <div class="content">
+                    <div class="page-inner">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto" style="padding:0 2.5%;">
+                                <div class="page-header">
+                                    <h4 class="page-title">疫情发展预测</h4>
+                                </div>
+                                <p>基于传播动力学及黄森忠博士建构的普适SEIR模型，运用“南开大学智英健康数据研究中心”开发的程序EpiSIX，我们对2019-nCoV新型冠状病毒数据做出疫情发展及至今疾控效率的研判。我们依据国家及各地卫健委公布的从2019.12.12日至2020.3.7日的被确诊病例总数的数据链，对疫情发展做出如下5天（2020.3.8 至 2020.3.12）的区间预测及可能的停时(即疫情结束时间点)的估计。</p>
+                                <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>
+                                    海外新冠肺炎确诊病例数时序区间预测图</p>
+                                    
+                                <div class="nav-item">
+                                    <p>点击左侧按钮，可切换不同国家</p>
+                                    <select class="selectpicker" id="dropdown2" style="width:100px;">
+                                        <option value=0 selected="">韩国</option>
+                                        <option value=1 >日本</option>
+                                        <option value=2 >伊朗</option>
+                                        <option value=3>意大利</option>
+                                        <option value=4>德国</option>
+                                        <option value=5>法国</option>
+                                        <option value=6>西班牙</option>
+                                        <option value=7>英国</option>
+                                        <option value=8>美国</option>
+                                    </select>
+                                </div>
+                                <div class="c-height">
+                                    <div class="chart" id="worldPredict"></div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <p style="margin:0;">注：从3月13日起日本确诊人数中去掉了钻石公主号的累积确诊人数。</p>
+                                </div>
+                            </div>
+                                </div>
+
+
+                            <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>
+                                    世界各国新冠肺炎拐点及停时日期图</p>
+                                    <div class="nav-item">
+                                        <select class="selectpicker" id="dropdown3" style="width:100px;">
+                                            <option value=0 >亚洲</option>
+                                            <option value=1>欧洲1</option>
+                                            <option value=2>欧洲2</option>
+                                            <option value=3>北美洲</option>
+                                            <option value=4>大洋洲</option>
+                                          
+                                        </select>
+                                    </div>
+                                    <div class="c-height">
+                                        <div class="chart" id="golbaldata"></div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p style="margin:0;">图标指示处为拐点，在此之后流行病进程将下降； 停时指不再有新增确诊病例的日期。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                               <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>新冠肺炎确诊病例数时序区间预测图</p>
+                                    <div class="c-height">
+                                        <div class="chart" id="mainPredict"></div>
+                                    </div>
+                                   
+                                
+                                </div>
+                            </br>
+                                <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>新冠肺炎各省市停时日期图</p>
+                                    <div class="nav-item">
+                                        <select class="selectpicker" id="dropdown1" style="width:100px;">
+                                            <option value=0 >东北</option>
+                                            <option value=1>华东</option>
+                                            <option value=2>华北</option>
+                                            <option value=3>华中</option>
+                                            <option value=4>华南</option>
+                                            <option value=5>西南</option>
+                                            <option value=6>西北</option>
+                                            
+                                           
+                                        </select>
+                                    </div>
+                                    <div class="c-height">
+                                        <div class="chart" id="tingshi"></div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p style="margin:0;">停时指不再有新增确诊病例的日期，海外输入病例不计入统计。全国、湖北、武汉疫情可能的停时估计在2020年4月14日至5月21日之间。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </br>
+                                <div class="c">
+                                    <p style="text-indent:0;font-size:18px"><i class="fas fa-chevron-right" style="margin-right:5px;"></i>新冠肺炎累计确诊增长率时序图</p>
+                                    <div class="c-height">
+                                        <div class="chart" id="add"></div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <p style="margin:0;">总体结论：所有的实际值都落在预测区间的下界。这是疫情处于受控状态的特征。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="../charts/review.html">
+                                <button class="btn btn-secondary">疫情发展回顾</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--   Core JS Files   -->
+        <script src="../../assets/js/core/jquery.3.2.1.min.js"></script>
+        <script src="../../assets/js/core/popper.min.js"></script>
+        <script src="../../assets/js/core/bootstrap.min.js"></script>
+        <!-- jQuery UI -->
+        <script src="../../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <script src="../../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+        <!-- Chart JS -->
+        <script src="../../assets/js/plugin/chart.js/chart.min.js"></script>
+        <!-- jQuery Scrollbar -->
+        <script src="../../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <!-- Azzara JS -->
+        <script src="../../assets/js/ready.min.js"></script>
+        <!-- echart JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.common.js"></script>
+       
+        
+        <!-- Import Data -->
+        <script type="text/javascript">
+            function dataJson(fileData) {
+                worlddata = fileData;
+            }
+        </script>
+        <script type="text/javascript" src="./wdata.json?cb=dataJson"></script>
+
+        <script type="text/javascript">
+            function dataJson(fileData) {
+                data = fileData;
+            }
+        </script>
+        <script type="text/javascript" src="./data.json?cb=dataJson"></script>
+
+        <script type="text/javascript">
+            function dataJson(fileData) {
+                goldata = fileData;
+            }
+        </script>
+        <script type="text/javascript" src="./golbal.json?cb=dataJson"></script>
+
+        <!-- Process Data -->
+        <script type="text/javascript">
+            dateReal=[];dateWithPredict=[];total=[];hubei=[];wuhan=[];zhejiang=[];others=[];jjj=[];totalDelta=[];totalLow=[];hubeiDelta=[];hubeiLow=[];wuhanDelta=[];wuhanLow=[];othersDelta=[];othersLow=[];zhejiangDelta=[];zhejiangLow=[];jjjDelta=[];jjjLow=[];dateWithPredict1=[];
+            function addData(date,r0,r1,r2,r3,r4,r5,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12){ 
+                dateWithPredict.push(date);
+                total.push(r0);
+                hubei.push(r1);
+                wuhan.push(r2);
+                others.push(r3);
+                zhejiang.push(r4);
+                jjj.push(r5);
+                othersDelta.push(p1-p2);
+                othersLow.push(p2);
+                zhejiangDelta.push(p3-p4);
+                zhejiangLow.push(p4);
+                jjjDelta.push(p5-p6);
+                jjjLow.push(p6);
+                totalDelta.push(p7-p8);
+                totalLow.push(p8);
+                hubeiDelta.push(p9-p10);
+                hubeiLow.push(p10);
+                wuhanDelta.push(p11-p12);
+                wuhanLow.push(p12);
+            };
+            n = 0;
+            rdays = data["real"].length;
+            pdays = data["predictive"].length;
+            delta = rdays-10;
+
+            for (i = pdays-1; i > -1; i--) {
+                if (data["real"][rdays-delta]["date"] == data["predictive"][i]["date"]){n = i;break;}
+            };
+            for (i = 0; i < rdays+pdays-n-delta; i++) {
+                if (i < rdays-delta) {
+                    addData(data["real"][i]["date"],
+                    data["real"][i]["diagnosis"],data["real"][i]["hubei"],data["real"][i]["wuhan"],
+                    data["real"][i]["qita"],data["real"][i]["zhejiang"],data["real"][i]["jjj"],
+                    '_','_','_','_','_','_','_','_','_','_','_','_');
+                } else {
+                    j = i+delta-rdays+n;
+                    addData(data["real"][i]["date"],
+                    data["real"][i]["diagnosis"],data["real"][i]["hubei"],data["real"][i]["wuhan"],
+                    data["real"][i]["qita"],data["real"][i]["zhejiang"],data["real"][i]["jjj"],
+                    data["predictive"][j]["qitashang"],data["predictive"][j]["qitaxia"],
+                    data["predictive"][j]["zhejiangshang"],data["predictive"][j]["zhejiangxia"],
+                    data["predictive"][j]["jjjshang"],data["predictive"][j]["jjjxia"],
+                    data["predictive"][j]["quanguoshang"],data["predictive"][j]["quanguoxia"],
+                    data["predictive"][j]["hubeishang"],data["predictive"][j]["hubeixia"],
+                    data["predictive"][j]["wuhanshang"],data["predictive"][j]["wuhanxia"]);
+                } 
+            };
+
+            for (i = pdays; i < rdays; i++) {
+                    addData(data["real"][i]["date"],
+                    data["real"][i]["diagnosis"],data["real"][i]["hubei"],data["real"][i]["wuhan"],
+                    data["real"][i]["qita"],data["real"][i]["zhejiang"],data["real"][i]["jjj"],
+                    '_','_','_','_','_','_','_','_','_','_','_','_');
+            };
+      
+            lineX = []; lineY1 = [];lineY2 = [];lineY3 = []; var a=0;
+            for (i = 0; i < rdays; i++) {
+                lineX.push(data["real"][i]["date"]);
+                a=(data["real"][i]["diagnosis"]-data["real"][(i-1<0)?0:i-1]["diagnosis"])/data["real"][(i-1<0)?0:i-1]["diagnosis"];
+                lineY1.push(a.toFixed(2));
+                a=(data["real"][i]["hubei"]-data["real"][(i-1<0)?0:i-1]["hubei"])/data["real"][(i-1<0)?0:i-1]["hubei"];
+                lineY2.push(a.toFixed(2));
+                a=(data["real"][i]["wuhan"]-data["real"][(i-1<0)?0:i-1]["wuhan"])/data["real"][(i-1<0)?0:i-1]["wuhan"];
+                lineY3.push(a.toFixed(2));
+            }
+            
+            addminut=[];addminuthubei=[];addminutothers=[];
+            for (i = 0; i < rdays; i++) {
+                a=data["real"][i]["add-cure"]/data["real"][i]["add"];
+                addminut.push(a.toFixed(2));
+                a=data["real"][i]["add-cure-hubei"]/data["real"][i]["add-hubei"];
+                addminuthubei.push(a.toFixed(2));
+                a=data["real"][i]["add-cure-qita"]/data["real"][i]["add-qita"];
+               addminutothers.push(a.toFixed(2));
+            }
+
+
+        </script>
+
+         <script type="text/javascript">
+            
+            choose1=["韩国","日本","伊朗","意大利","德国","法国","西班牙","英国","美国"];
+    choosereal1=["韩国","日本","伊朗","意大利","德国","法国","西班牙","英国","美国"];
+    chooseshang1=["hanguoshang","ribenshang","yilangshang","yidalishang","deguoshang","faguoshang","xibanyashang","yingguoshang","meiguoshang"];
+    choosexia1=["hanguoxia","ribenxia","yilangxia","yidalixia","deguoxia","faguoxia","xibanyaxia","yingguoxia","meiguoxia"];
+
+
+            var myChart6;
+            function selectChart2(n){
+                shengfen=choose1[n];
+                NN=0;
+                for (var i = 0; i < choose1.length; i++) {
+                    if(choose1[i]==shengfen){
+                        NN=i
+                    }
+                }
+                var dateworld=[];
+                    function addDatachoose(date,r,pup,plow){ 
+                        dateworld.push(date);
+                        totalchoose.push(r);
+                        totalDeltachoose.push(pup-plow);
+                        totalLowchoose.push(plow);
+                    };
+                    n = 0;
+                    rdays = worlddata["real"].length;
+                    pdays = worlddata["predictive"].length;
+                    delta = rdays-52;
+
+                    // for (i = pdays-1; i > -1; i--) {
+                    //     if (worlddata["real"][rdays-delta]["date"] == worlddata["predictive"][i]["date"]){n = i;break;}
+                    // };
+                    function addDataN(N){
+                        totalchoose=[];totalDeltachoose=[];totalLowchoose=[];
+                        for (i = 0; i < rdays+pdays-n-delta; i++) {
+                            if (i < rdays-delta) {
+                                addDatachoose(worlddata["real"][i]["date"],
+                                worlddata["real"][i][choosereal1[N]],
+                                '_','_');
+                            } else if (i < rdays) {
+                                j = i+delta-rdays+n;
+                                addDatachoose(worlddata["real"][i]["date"],
+                                worlddata["real"][i][choosereal1[N]],
+                                worlddata["predictive"][j][chooseshang1[N]],worlddata["predictive"][j][choosexia1[N]]);
+                            } 
+                        }
+                        for (i = rdays+pdays-n-delta+1; i < rdays; i++) {
+                                addDatachoose(worlddata["real"][i]["date"],
+                                worlddata["real"][i][choosereal1[N]],
+                                '_','_');
+                        };
+
+
+
+                    }
+                    addDataN(NN);
+                    //if (myChart != null && myChart != "" && myChart != undefined) {myChart.dispose();}
+                    myChart6 = echarts.init(document.getElementById('worldPredict'));
+                    option6 = {
+                        backgroundColor: 'transparent',
+                        legend: {
+                            right: '5%',
+                            data: [shengfen]
+                        },
+                        grid: {
+                            left: 0,
+                            right: 15,
+                            top: '15%',
+                            bottom: '10%',
+                            containLabel: true
+                        },
+                        tooltip: {
+                            trigger: 'axis',
+                            formatter: function(params) {
+                                res=params[0].name+'<br>';
+                                for (i=0;i<params.length/3;i++) {
+                                    res+=params[3*i].seriesName+': '+params[3*i].value+'<br>';
+                                    lower=params[3*i+1].value;
+                                    upper=(isNaN(params[3*i+2].value))?'_':lower+params[3*i+2].value;
+                                    res+=params[3*i+1].seriesName+'预测区间: ['+lower+', '+upper+']<br>';
+                                };
+                                return res
+                            }
+                        },
+                        series: [
+                            {   name: shengfen,
+                                type: 'line',
+                                symbolSize: 4,
+                                symbol: 'rect',
+                                itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:2},
+                                data: totalchoose
+                            },
+                            {   name: shengfen, //下界
+                                type: 'line',
+                                data: totalLowchoose,
+                                stack: '预测',
+                                itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:1},
+                                lineStyle: {opacity: 0}
+                            },
+                            {   name: shengfen, //区间长度
+                                type: 'line',
+                                data: totalDeltachoose,
+                                stack: '预测',
+                                itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:1},
+                                lineStyle: {opacity: 0},
+                                areaStyle: {color: '#E7FAFA',opacity: 0.8}
+                            }
+                        ],
+                        xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            axisTick: {
+                                show: false
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#566573'
+                                }
+                            },
+                            axisLabel: {
+                                fontSize: 11
+                            },
+                            data: dateworld
+                        },
+                        yAxis: {
+                            name:"病例数",
+                            type: 'value',
+                            nameTextStyle: {
+                                verticalAlign: 'middle'
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#566573'
+                                }
+                            },
+                            axisLabel: {
+                                fontSize: 8.5,
+                                rotate:60
+                            },
+                            scale: true
+                        },
+                        dataZoom: {
+                            type: 'slider',
+                            xAxisIndex: [0],
+                            height: '6%',
+                            bottom: '2%',
+                            start: 50,
+                            end: 100,
+                            showDetail: false,
+                            handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                            borderColor: '#90979c'
+                        }
+                    };
+                    myChart6.setOption(option6);
+
+                $(window).resize(function(){
+                
+                    myChart6.resize();
+                })
+            }
+            selectChart2(0);
+        </script>
+
+        <!-- select -->
+        <script type="text/javascript">
+            choose=["北京","广东","上海","浙江","天津","河南","重庆","四川","山东","云南","湖南","江西","辽宁","海南","安徽","福建","贵州","山西","宁夏","广西","河北","黑龙江","江苏","吉林","内蒙古","陕西","新疆","甘肃"];
+            choosereal=["beijing","guangdong","shanghai","zhejiang","tianjin","henan","chongqing","sichuan","shandong","yunnan","hunan","jiangxi","liaoning","hainan","anhui","fujian","guizhou","shan1xi","ningxia","guangxi","hebei","heilongjiang","jiangsu","jilin","neimenggu","shan3xi","xinjiang","gansu"];
+            chooseshang=["beijingshang","guangdongshang","shanghaishang","zhejiangshang","tianjinshang","henanshang","chongqingshang","sichuanshang","shandongshang","yunnanshang","hunanshang","jiangxishang","liaoningshang","hainanshang","anhuishang","fujianshang","guizhoushang","shan1xishang","ningxiashang","guangxishang","hebeishang","heilongjiangshang","jiangsushang","jilinshang","neimenggushang","shan3xishang",
+            "xinjiangshang","gansushang"];
+            choosexia=["beijingxia","guangdongxia","shanghaixia","zhejiangxia","tianjinxia","henanxia","chongqingxia","sichuanxia","shandongxia","yunnanxia","hunanxia","jiangxixia","liaoningxia","hainanxia","anhuixia","fujianxia","guizhouxia","shan1xixia","ningxiaxia","guangxixia","hebeixia","heilongjiangxia","jiangsuxia","jilinxia","neimengguxia","shan3xixia","xinjiangxia","gansuxia"];
+
+            var myChart;
+            function selectChart(n){
+                shengfen=choose[n];
+                NN=0;
+                for (var i = 0; i < choose.length; i++) {
+                    if(choose[i]==shengfen){
+                        NN=i
+                    }
+                }
+                    function addDatachoose(date,r,pup,plow){ 
+                        totalchoose.push(r);
+                        totalDeltachoose.push(pup-plow);
+                        totalLowchoose.push(plow);
+                    };
+                    n = 0;
+                    rdays = data["real"].length;
+                    pdays = data["predictive"].length;
+                    delta = rdays-25;
+
+                    for (i = pdays-1; i > -1; i--) {
+                        if (data["real"][rdays-delta]["date"] == data["predictive"][i]["date"]){n = i;break;}
+                    };
+                    function addDataN(N){
+                        totalchoose=[];totalDeltachoose=[];totalLowchoose=[];
+                        for (i = 0; i < rdays+pdays-n-delta; i++) {
+                            if (i < 25) {
+                                addDatachoose(data["real"][i]["date"],
+                                data["real"][i][choosereal[N]],
+                                '_','_');
+                            } else if (i < rdays) {
+                                j = i+delta-rdays+n;
+                                addDatachoose(data["real"][i]["date"],
+                                data["real"][i][choosereal[N]],
+                                data["predictive"][j][chooseshang[N]],data["predictive"][j][choosexia[N]]);
+                            } 
+                        }
+                        for (i = rdays+pdays-n-delta; i < rdays; i++) {
+                               addDatachoose(data["real"][i]["date"],
+                                data["real"][i][choosereal[N]],
+                                '_','_');
+                        }
+                    }
+                    addDataN(NN);
+                    //if (myChart != null && myChart != "" && myChart != undefined) {myChart.dispose();}
+                    myChart = echarts.init(document.getElementById('extraPredict'));
+                    option = {
+                        backgroundColor: 'transparent',
+                        legend: {
+                            right: '5%',
+                            data: [shengfen]
+                        },
+                        grid: {
+                            left: 0,
+                            right: 15,
+                            top: '15%',
+                            bottom: '10%',
+                            containLabel: true
+                        },
+                        tooltip: {
+                            trigger: 'axis',
+                            formatter: function(params) {
+                                res=params[0].name+'<br>';
+                                for (i=0;i<params.length/3;i++) {
+                                    res+=params[3*i].seriesName+': '+params[3*i].value+'<br>';
+                                    lower=params[3*i+1].value;
+                                    upper=(isNaN(params[3*i+2].value))?'_':lower+params[3*i+2].value;
+                                    res+=params[3*i+1].seriesName+'预测区间: ['+lower+', '+upper+']<br>';
+                                };
+                                return res
+                            }
+                        },
+                        series: [
+                            {   name: shengfen,
+                                type: 'line',
+                                symbolSize: 4,
+                                symbol: 'rect',
+                                itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:2},
+                                data: totalchoose
+                            },
+                            {   name: shengfen, //下界
+                                type: 'line',
+                                data: totalLowchoose,
+                                stack: '预测',
+                                itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:1},
+                                lineStyle: {opacity: 0}
+                            },
+                            {   name: shengfen, //区间长度
+                                type: 'line',
+                                data: totalDeltachoose,
+                                stack: '预测',
+                                itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:1},
+                                lineStyle: {opacity: 0},
+                                areaStyle: {color: '#FFE9EE',opacity: 0.8}
+                            }
+                        ],
+                        xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            axisTick: {
+                                show: false
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#566573'
+                                }
+                            },
+                            axisLabel: {
+                                fontSize: 11
+                            },
+                            data: dateWithPredict
+                        },
+                        yAxis: {
+                            name:"病例数",
+                            type: 'value',
+                            nameTextStyle: {
+                                verticalAlign: 'middle'
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    color: '#566573'
+                                }
+                            },
+                            axisLabel: {
+                                fontSize: 8.5,
+                                rotate:60
+                            },
+                            scale: true
+                        },
+                        dataZoom: {
+                            type: 'slider',
+                            xAxisIndex: [0],
+                            height: '6%',
+                            bottom: '2%',
+                            start: 50,
+                            end: 100,
+                            showDetail: false,
+                            handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                            borderColor: '#90979c'
+                        }
+                    };
+                    myChart.setOption(option);
+            }
+            selectChart(0);
+        </script>
+       
+            
+        </script>
+        <script type="text/javascript">
+            var myChart1 = echarts.init(document.getElementById('mainPredict'));
+            var myChart4 = echarts.init(document.getElementById('add'));
+            option1 = {
+                backgroundColor: 'transparent',
+                legend: {
+                    right: '5%',
+                    data: ['全国','湖北','武汉']
+                },
+                grid: {
+                    left: 0,
+                    right: 15,
+                    top: '15%',
+                    bottom: '10%',
+                    containLabel: true
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    formatter: function(params) {
+                        res=params[0].name+'<br>';
+                        for (i=0;i<params.length/3;i++) {
+                            res+=params[3*i].seriesName+': '+params[3*i].value+'<br>';
+                            lower=params[3*i+1].value;
+                            upper=(isNaN(params[3*i+2].value))?'_':lower+params[3*i+2].value;
+                            res+=params[3*i+1].seriesName+'预测区间: ['+lower+', '+upper+']<br>';
+                        };
+                        return res
+                    }
+                },
+                series: [
+                    {   name: '全国',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:2},
+                        data: total
+                    },
+                    {   name: '全国', //下界
+                        type: 'line',
+                        data: totalLow,
+                        stack: '全国预测',
+                        itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '全国', //区间长度
+                        type: 'line',
+                        data: totalDelta,
+                        stack: '全国预测',
+                        itemStyle: {color:'rgba(255,37,117,0.7)',borderColor:'rgba(255,37,117,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#FFE9EE',opacity: 0.8}
+                    },
+                    {   name: '湖北',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:2},
+                        data: hubei
+                    },
+                    {   name: '湖北', //下界
+                        type: 'line',
+                        data: hubeiLow,
+                        stack: '湖北预测',
+                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '湖北', //区间长度
+                        type: 'line',
+                        data: hubeiDelta,
+                        stack: '湖北预测',
+                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#E7FAFA',opacity: 0.8}
+                    },
+                    {   name: '武汉',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(255,170,0,0.7)',borderColor:'rgba(255,170,0,0.5)',borderWidth:2},
+                        data: wuhan
+                    },
+                    {   name: '武汉', //下界
+                        type: 'line',
+                        data: wuhanLow,
+                        stack: '武汉预测',
+                        itemStyle: {color:'rgba(255,170,0,0.7)',borderColor:'rgba(255,170,0,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '武汉', //区间长度
+                        type: 'line',
+                        data: wuhanDelta,
+                        stack: '武汉预测',
+                        itemStyle: {color:'rgba(255,170,0,0.7)',borderColor:'rgba(255,170,0,0.5)',borderWidth:1},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#FFF3B2',opacity: 0.8}
+                    }
+                ],
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#566573'
+                        }
+                    },
+                    axisLabel: {
+                        fontSize: 11
+                    },
+                    data: dateWithPredict
+                },
+                yAxis: {
+                    name:"病例数",
+                    type: 'value',
+                    nameTextStyle: {
+                        verticalAlign: 'middle'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#566573'
+                        }
+                    },
+                    axisLabel: {
+                        fontSize: 8.5,
+                        rotate:60
+                    },
+                    scale: true
+                },
+                dataZoom: {
+                    type: 'slider',
+                    xAxisIndex: [0],
+                    height: '6%',
+                    bottom: '2%',
+                    start: 50,
+                    end: 100,
+                    showDetail: false,
+                    handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                    borderColor: '#90979c'
+                }
+            };
+            option2 = {
+                backgroundColor: 'transparent',
+                legend: {
+                    right: '5%',
+                    data: ['浙江']
+                },              
+                grid: {
+                    left: 0,
+                    right: 15,
+                    top: '15%',
+                    bottom: '10%',
+                    containLabel: true
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    formatter: function(params) {
+                        res=params[0].name+'<br>';
+                        for (i=0;i<params.length/3;i++) {
+                            res+=params[3*i].seriesName+': '+params[3*i].value+'<br>';
+                            lower=params[3*i+1].value;
+                            upper=(isNaN(params[3*i+2].value))?'_':lower+params[3*i+2].value;
+                            res+=params[3*i+1].seriesName+'预测区间: ['+lower+', '+upper+']<br>';
+                        };
+                        return res
+                    }
+                },
+                series: [
+                    {   name: '浙江',
+                        type: 'line',
+                        symbolSize: 4,
+                        symbol: 'rect',
+                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:2},
+                        data: zhejiang
+                    },
+                    {   name: '浙江', //下界
+                        type: 'line',
+                        data: zhejiangLow,
+                        stack: '浙江预测',
+                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:2},
+                        lineStyle: {opacity: 0}
+                    },
+                    {   name: '浙江', //区间长度
+                        type: 'line',
+                        data: zhejiangDelta,
+                        stack: '浙江预测',
+                        itemStyle: {color:'rgba(0,133,245,0.7)',borderColor:'rgba(0,133,245,0.5)',borderWidth:2},
+                        lineStyle: {opacity: 0},
+                        areaStyle: {color: '#E7FAFA',opacity: 0.8}
+                    }
+                ],
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#566573'
+                        }
+                    },
+                    axisLabel: {
+                        fontSize: 11
+                    },
+                    data: dateWithPredict
+                },
+                yAxis: {
+                    name:"病例数",
+                    type: 'value',
+                    nameTextStyle: {
+                        verticalAlign: 'middle'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#566573'
+                        }
+                    },
+                    axisLabel: {
+                        fontSize: 8.5,
+                        rotate:60
+                    },
+                    scale: true
+                },
+
+                dataZoom: {
+                    type: 'slider',
+                    xAxisIndex: [0],
+                    height: '6%',
+                    bottom: '2%',
+                    start: 50,
+                    end: 100,
+                    showDetail: false,
+                    handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                    borderColor: '#90979c'
+                }
+            };
+            option3 = {
+                backgroundColor:'transparent',
+
+                legend: {
+                        data: ['全国', '湖北','湖北以外全国各地'],
+                        right: '5%',
+                        
+                    },
+                title: {
+                    text: '',
+                    subtext: '',
+                    x: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                grid: {
+                    left: 0,
+                    right: 15,
+                    top: '15%',
+                    bottom: '10%',
+                    containLabel: true
+                },
+                
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#566573'
+                        }
+                    },
+                    axisLabel: {
+                        fontSize: 11,
+                        formatter: function(params) {
+                            return params.split(' ')[0] 
+                        }
+                    },
+                    data: lineX,
+                },
+             
+                yAxis: {
+                    name: "指标",
+                    type: 'value',
+                    nameTextStyle: {
+                        verticalAlign: 'middle'
+                    },
+                    axisLabel: {
+                        formatter: '{value}',
+                        fontSize: 11,
+                        
+                    },
+                   
+                    axisLine: {
+                        lineStyle: {
+                            color: '#566573'
+                        }
+                    },
+                    scale: true
+                },
+               dataZoom: {
+                    type: 'slider',
+                    xAxisIndex: [0],
+                    height: '6%',
+                    bottom: '2%',
+                    start: 50,
+                    end: 100,
+                    showDetail: false,
+                    handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                    borderColor: '#90979c'
+                },
+                series: [{
+                    name: '全国',
+                    type: 'line',
+                    color: 'rgba(255,37,117)',
+                    smooth: true,
+                    areaStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgba(255,37,117,0.3)'
+                            }, {
+                                offset: 0.8,
+                                color: 'rgba(255,37,117,0)'
+                            }], false),
+                            shadowColor: 'rgba(0, 0, 0, 0.1)',
+                            shadowBlur: 10
+                        }
+                    },
+                    symbol: 'circle',
+                    symbolSize: 5,
+                    data: addminut
+                },{
+                    name: '湖北',
+                    type: 'line',
+                    color: 'rgba(0,133,245)',
+                    smooth: true,
+                    areaStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgba(0,133,245,0.3)'
+                            }, {
+                                offset: 0.8,
+                                color: 'rgba(0,133,245,0)'
+                            }], false),
+                            shadowColor: 'rgba(0, 0, 0, 0.1)',
+                            shadowBlur: 10
+                        }
+                    },
+                    symbol: 'circle',
+                    symbolSize: 5,
+                    data: addminuthubei
+                },{
+                    name: '湖北以外全国各地',
+                    type: 'line',
+                    color: 'rgba(255,170,0)',
+                    smooth: true,
+                    areaStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgba(255,170,0,0.3)'
+                            }, {
+                                offset: 0.8,
+                                color: 'rgba(255,170,0,0)'
+                            }], false),
+                            shadowColor: 'rgba(0, 0, 0, 0.1)',
+                            shadowBlur: 10
+                        }
+                    },
+                    symbol: 'circle',
+                    symbolSize: 5,
+                    data: addminutothers
+                }]
+            };
+            option4 = {
+                backgroundColor:'transparent',
+                legend: {
+                        data: ['全国', '湖北','武汉'],
+                        right: '5%',
+                        
+                    },
+                title: {
+                    text: '',
+                    subtext: '',
+                    x: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+               grid: {
+                    left: 0,
+                    right: 15,
+                    top: '15%',
+                    bottom: '10%',
+                    containLabel: true
+                },
+               
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: lineX,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#566573'
+                        }
+                    },
+                    axisLabel: {
+                        fontSize: 11,
+                        formatter: function(params) {
+                            return params.split(' ')[0] 
+                        }
+                    },
+                },
+                 
+                yAxis: {
+                    name: "增长率",
+                    type: 'value',
+                     nameTextStyle: {
+                        verticalAlign: 'middle'
+                    },
+                    axisLabel: {
+                        formatter: '{value}',
+                        fontSize: 11,
+                       
+                    },
+                    
+                    axisLine: {
+                        lineStyle: {
+                            color: '#566573'
+                        }
+                    },
+
+                    scale: true
+
+                },
+
+
+              dataZoom: {
+                    type: 'slider',
+                    xAxisIndex: [0],
+                    height: '6%',
+                    bottom: '2%',
+                    start: 50,
+                    end: 100,
+                    showDetail: false,
+                    handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                    borderColor: '#90979c'
+                },
+                series: [{
+                    name: '全国',
+                    type: 'line',
+                    color: 'rgba(255,37,117)',
+                    smooth: true,
+                    areaStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgba(255,37,117,0.3)'
+                            }, {
+                                offset: 0.8,
+                                color: 'rgba(255,37,117,0)'
+                            }], false),
+                            shadowColor: 'rgba(0, 0, 0, 0.1)',
+                            shadowBlur: 10
+                        }
+                    },
+                    symbol: 'circle',
+                    symbolSize: 5,
+                    data: lineY1
+                },{
+                    name: '湖北',
+                    type: 'line',
+                    color: 'rgba(0,133,245)',
+                    smooth: true,
+                    areaStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgba(0,133,245,0.3)'
+                            }, {
+                                offset: 0.8,
+                                color: 'rgba(0,133,245,0)'
+                            }], false),
+                            shadowColor: 'rgba(0, 0, 0, 0.1)',
+                            shadowBlur: 10
+                        }
+                    },
+                    symbol: 'circle',
+                    symbolSize: 5,
+                    data: lineY2
+                },{
+                    name: '武汉',
+                    type: 'line',
+                    color: 'rgba(255,170,0)',
+                    smooth: true,
+                    areaStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'rgba(255,170,0,0.3)'
+                            }, {
+                                offset: 0.8,
+                                color: 'rgba(255,170,0,0)'
+                            }], false),
+                            shadowColor: 'rgba(0, 0, 0, 0.1)',
+                            shadowBlur: 10
+                        }
+                    },
+                    symbol: 'circle',
+                    symbolSize: 5,
+                    data: lineY3
+                }]
+            };
+
+
+             var charts = { // 按顺序排列从大到小
+  cityList: ["湖南","四川","河北","广东","江西","河南","黑龙江","北京","江苏","重庆","安徽","山东","福建","陕西","浙江","山西","天津",
+              // "云南","贵州","辽宁","吉林","海南","广西","内蒙古","宁夏","甘肃","新疆",
+              "上海"],
+  cityList11:["黑龙江","吉林","辽宁"],
+  cityData11:[17,3,3],
+  cityList22:["江西","江苏","安徽","山东","福建","浙江","上海"],
+  cityData22:[21,15,11,10,10,9,2],
+  cityList33:["河北","北京","山西","天津","内蒙古"],
+  cityData33:[24,15,4,3,3],
+  cityList44:["湖南","河南"],
+  cityData44:[29,20],
+  cityList55:["广东","广西","海南"],
+  cityData55:[21,3,3],
+  cityList66:["四川","重庆","贵州","云南"],
+  cityData66:[25,14,3,3],
+  cityList77:["陕西","甘肃","宁夏","新疆"],
+  cityData77:[10,3,3,3],
+  
+
+  cityData: [29,25,24,21,21,20,17,15,15,14,13,10,10,10,9,4,3,
+                  // 3,3,3,3,3,3,3,3,3,3,
+                  2]
+}
+var label11 = ["2020.3.17","2020.3.17","2020.4.01"];
+var label22 = ["2020.3.16","2020.3.23","2020.3.24","2020.3.24","2020.3.27","2020.3.29","2020.4.05"];
+var label33 = ["2020.3.17","2020.3.17","2020.3.18","2020.3.29","2020.4.08"]
+var label44 = ["2020.4.04","2020.4.13"];
+var label55 = ["2020.3.17","2020.3.17","2020.4.05"];
+var label66 = ["2020.3.17","2020.3.17","2020.3.28","2020.4.09"];
+var label77 = ["2020.3.17","2020.3.17","2020.3.17","2020.3.24"];
+var labelall=[label11,label22,label33,label44,label55,label66,label77];
+
+var top10CityList11 = charts.cityList11
+var top10CityData11 = charts.cityData11
+var top10CityList22 = charts.cityList22
+var top10CityData22 = charts.cityData22
+var top10CityList33 = charts.cityList33
+var top10CityData33 = charts.cityData33
+var top10CityList44 = charts.cityList44
+var top10CityData44 = charts.cityData44
+var top10CityList55 = charts.cityList55
+var top10CityData55 = charts.cityData55
+var top10CityList66 = charts.cityList66
+var top10CityData66 = charts.cityData66
+var top10CityList77 = charts.cityList77
+var top10CityData77 = charts.cityData77
+var top10CityListall=[top10CityList11,top10CityList22,top10CityList33,top10CityList44,top10CityList55,top10CityList66,top10CityList77]
+var top10CityDataall=[top10CityData11,top10CityData22,top10CityData33,top10CityData44,top10CityData55,top10CityData66,top10CityData77]
+var label = ["2020.3.16","2020.3.17",
+             // "2020.3.17","2020.3.17","2020.3.17","2020.3.17","2020.3.17","2020.3.17","2020.3.17","2020.3.17","2020.3.17","2020.3.17","2020.3.17",
+             "2020.3.18","2020.3.23","2020.3.24","2020.3.24","2020.3.24","2020.3.27","2020.3.28","2020.3.29","2020.3.29","2020.4.1","2020.4.4","2020.4.5","2020.4.5","2020.4.8","2020.4.9","2020.4.13"]//顺序颠倒过来
+// var color = ['rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255', 'rgba(248,195,248', 'rgba(100,255,249','rgba(208,230,165','rgba(248,195,248','rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255', 'rgba(248,195,248', 'rgba(100,255,249','rgba(208,230,165',
+    // 'rgba(248,195,248','rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255', 'rgba(248,195,248', 'rgba(100,255,249','rgba(208,230,165','rgba(248,195,248','rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255', 
+     // 'rgba(248,195,248', 'rgba(100,255,249','rgba(208,230,165','rgba(248,195,248','rgba(135,183,255']
+//rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255', 'rgba(248,195,248', 'rgba(100,255,249','rgba(100,255,249'
+var color11 = ['rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255'] ;var color22 = ['rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255','rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255','rgba(248,195,248'] ;var color33 = ['rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255','rgba(248,195,248', 'rgba(100,255,249'] ;var color44 = ['rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255'] ;var color55= ['rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255'] ;var color66 = ['rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255','rgba(248,195,248'] ;var color77 = ['rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255','rgba(248,195,248'] ;
+var colorall= [color11,color22,color33,color44,color55,color66,color77]
+let lineY11 = [];let lineY22 = [];let lineY33 = [];let lineY44 = [];let lineY55 = [];let lineY66 = [];let lineY77 = [];
+var lineYall =[lineY11,lineY22,lineY33,lineY44,lineY55,lineY66,lineY77];
+var dataall =[data11,data22,data33,data44,data55,data66,data77]
+//1
+for (var i = 0; i < charts.cityList11.length; i++) {
+  var x = i
+  if (x > color11.length - 1) {
+    x = color11.length - 1
+  }
+  var data11 = {
+    name: charts.cityList11[i],
+    color: color11[x] + ')',
+    value: top10CityData11[i],
+    itemStyle: {
+      normal: {
+        show: true,
+        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+          offset: 0,
+          color: color11[x] + ', 0.3)'
+        }, {
+          offset: 1,
+          color: color11[x] + ', 1)'
+        }], false),
+        barBorderRadius: 10
+      },
+      emphasis: {
+        shadowBlur: 15,
+        shadowColor: 'rgba(0, 0, 0, 0.1)'
+      }
+    }
+  }
+  lineY11.push(data11)
+}
+
+console.log(lineY11)
+//2
+for (var i = 0; i < charts.cityList22.length; i++) {
+  var x = i
+  if (x > color22.length - 1) {
+    x = color22.length - 1
+  }
+  var data22 = {
+    name: charts.cityList22[i],
+    color: color22[x] + ')',
+    value: top10CityData22[i],
+    itemStyle: {
+      normal: {
+        show: true,
+        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+          offset: 0,
+          color: color22[x] + ', 0.3)'
+        }, {
+          offset: 1,
+          color: color22[x] + ', 1)'
+        }], false),
+        barBorderRadius: 10
+      },
+      emphasis: {
+        shadowBlur: 15,
+        shadowColor: 'rgba(0, 0, 0, 0.1)'
+      }
+    }
+  }
+  lineY22.push(data22)
+}
+//3
+for (var i = 0; i < charts.cityList33.length; i++) {
+  var x = i
+  if (x > color33.length - 1) {
+    x = color33.length - 1
+  }
+  var data33 = {
+    name: charts.cityList33[i],
+    color: color33[x] + ')',
+    value: top10CityData33[i],
+    itemStyle: {
+      normal: {
+        show: true,
+        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+          offset: 0,
+          color: color33[x] + ', 0.3)'
+        }, {
+          offset: 1,
+          color: color33[x] + ', 1)'
+        }], false),
+        barBorderRadius: 10
+      },
+      emphasis: {
+        shadowBlur: 15,
+        shadowColor: 'rgba(0, 0, 0, 0.1)'
+      }
+    }
+  }
+  lineY33.push(data33)
+}
+
+//4
+for (var i = 0; i < charts.cityList44.length; i++) {
+  var x = i
+  if (x > color44.length - 1) {
+    x = color44.length - 1
+  }
+  var data44 = {
+    name: charts.cityList44[i],
+    color: color44[x] + ')',
+    value: top10CityData44[i],
+    itemStyle: {
+      normal: {
+        show: true,
+        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+          offset: 0,
+          color: color44[x] + ', 0.3)'
+        }, {
+          offset: 1,
+          color: color44[x] + ', 1)'
+        }], false),
+        barBorderRadius: 10
+      },
+      emphasis: {
+        shadowBlur: 15,
+        shadowColor: 'rgba(0, 0, 0, 0.1)'
+      }
+    }
+  }
+  lineY44.push(data44)
+}
+
+
+//5
+for (var i = 0; i < charts.cityList55.length; i++) {
+  var x = i
+  if (x > color55.length - 1) {
+    x = color55.length - 1
+  }
+  var data55 = {
+    name: charts.cityList55[i],
+    color: color55[x] + ')',
+    value: top10CityData55[i],
+    itemStyle: {
+      normal: {
+        show: true,
+        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+          offset: 0,
+          color: color55[x] + ', 0.3)'
+        }, {
+          offset: 1,
+          color: color55[x] + ', 1)'
+        }], false),
+        barBorderRadius: 10
+      },
+      emphasis: {
+        shadowBlur: 15,
+        shadowColor: 'rgba(0, 0, 0, 0.1)'
+      }
+    }
+  }
+  lineY55.push(data55)
+}
+
+//6
+for (var i = 0; i < charts.cityList66.length; i++) {
+  var x = i
+  if (x > color66.length - 1) {
+    x = color66.length - 1
+  }
+  var data66 = {
+    name: charts.cityList66[i],
+    color: color66[x] + ')',
+    value: top10CityData66[i],
+    itemStyle: {
+      normal: {
+        show: true,
+        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+          offset: 0,
+          color: color66[x] + ', 0.3)'
+        }, {
+          offset: 1,
+          color: color66[x] + ', 1)'
+        }], false),
+        barBorderRadius: 10
+      },
+      emphasis: {
+        shadowBlur: 15,
+        shadowColor: 'rgba(0, 0, 0, 0.1)'
+      }
+    }
+  }
+  lineY66.push(data66)
+}
+
+//7
+for (var i = 0; i < charts.cityList77.length; i++) {
+  var x = i
+  if (x > color77.length - 1) {
+    x = color77.length - 1
+  }
+  var data77 = {
+    name: charts.cityList77[i],
+    color: color77[x] + ')',
+    value: top10CityData77[i],
+    itemStyle: {
+      normal: {
+        show: true,
+        color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+          offset: 0,
+          color: color77[x] + ', 0.3)'
+        }, {
+          offset: 1,
+          color: color77[x] + ', 1)'
+        }], false),
+        barBorderRadius: 10
+      },
+      emphasis: {
+        shadowBlur: 15,
+        shadowColor: 'rgba(0, 0, 0, 0.1)'
+      }
+    }
+  }
+  lineY77.push(data77)
+}
+
+ function selectChart1(nn){
+
+
+                 top10CityList = top10CityListall[nn];
+                 top10CityData = top10CityDataall[nn];
+                 label=labelall[nn];
+                 color=colorall[nn];
+                 lineY=lineYall[nn];
+                 datatingshi=dataall[nn];
+
+var myChart5 = echarts.init(document.getElementById('tingshi'));                   
+option5= {
+    backgroundColor:'transparent',
+  title: {
+    show: false
+  },
+  
+  grid: {
+    borderWidth: 0,
+    top: '10%',
+    left: '0%',
+    right: '20%',
+    bottom: '3%'
+  },
+  color: color,
+  yAxis: [{
+    type: 'category',
+    inverse: true,
+    axisTick: {
+      show: false
+    },
+    axisLine: {
+      show: false
+    },
+    axisLabel: {
+      show: false,
+      inside: false
+    },
+    data: top10CityList
+  }, {
+    type: 'category',
+    axisLine: {
+      show: false
+    },
+    axisTick: {
+      show: false
+    },
+    axisLabel: {
+      show: true,
+      inside: false,
+      
+      textStyle: {
+        color: '#607B8B',
+        fontSize: '14',
+        fontFamily: 'PingFangSC-Regular'
+      },
+      formatter: function (val) {
+        return `${val}`
+      }
+    },
+    splitArea: {
+      show: false
+    },
+    splitLine: {
+      show: false
+    },
+    data: label
+  }],
+  xAxis: {
+    type: 'value',
+    axisTick: {
+      show: false
+    },
+    axisLine: {
+      show: false
+    },
+    splitLine: {
+      show: false
+    },
+    axisLabel: {
+      show: false
+    }
+  },
+  series: [{
+    name: '',
+    type: 'bar',
+    zlevel: 2,
+    barWidth: '10px',
+
+
+    data: lineY,
+    animationDuration: 1500,
+    label: {
+      normal: {
+        color: '#607B8B',//省份的颜色
+        show: true,
+        position: [0, '-24px'],//改省份的位置的可以放到左边，感觉在上边好看
+        textStyle: {
+          fontSize: 16
+        },
+        formatter: function (a, b) {
+          return a.name
+        }
+      }
+    }
+  }],
+  animationEasing: 'cubicOut'
+}
+myChart5.setOption(option5);
+ $(window).resize(function(){
+                
+                    myChart5.resize();
+                })
+              
+}
+ selectChart1(0);
+
+            myChart1.setOption(option1);
+            myChart4.setOption(option4);
+            charts = [myChart1,myChart,myChart4];
+            $(window).resize(function(){
+                for(var i = 0; i < charts.length; i++) {
+                    charts[i].resize();
+                }
+            });
+            select=document.getElementById("dropdown");
+            select.onchange=function(){
+                selectChart(select.value);
+            }
+        </script>
+
+        <script type="text/javascript">
+
+            function selectChart3(nnn){
+
+
+                
+
+            var item1 =  {
+                // normal:{color:'#b250ff',barBorderRadius:[0,10,10,0],}
+                normal: {
+                    barBorderRadius: [0, 10, 10, 0],
+                   color: {
+                        type: 'bar',
+                        colorStops: [{
+                            offset: 0,
+                            color: '#9FB6CD' // 0% 处的颜色
+                        }, {
+                            offset: 1,
+                            color: '#9FB6CD' // 100% 处的颜色
+                        }],
+                        globalCoord: false, // 缺省为 false
+
+                    }
+                }
+            };
+             gdvaluedata=[];namelabel=[];
+
+             var dazhou=["亚洲","欧洲1","欧洲2","北美洲","大洋洲"];
+             var cn = dazhou[nnn];
+        
+    
+             var countryname=[];gdlabeldata=[];stlabeldata=[];stvaluedata=[];
+       for (i = 0; i < goldata[cn].length; i++) {
+             gdvaluedata.push({value: goldata[cn][i]["gdvalue"], itemStyle:item1 ,label:goldata[cn][i]["gdlabel"]});
+             countryname.push(goldata[cn][i]["name"])
+             gdlabeldata.push(goldata[cn][i]["gdlabel"])
+             stlabeldata.push(goldata[cn][i]["stlabel"])
+             stvaluedata.push(goldata[cn][i]["stvalue"])
+
+                };
+        //影响组织TOP柱状图
+        var myChart6 = echarts.init(document.getElementById('golbaldata'));
+
+option6 = {
+ backgroundColor: 'transparent',
+      grid: {
+        top: '17',
+        left: '0',
+        right: '7%',
+        bottom: '-8',
+        containLabel: true
+      },
+      yAxis: [{
+        type: 'category',
+        data: countryname,
+        inverse: true,
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+                // color: '#fff',
+                fontSize: '13',
+            
+                inside: true,
+                padding: [-25, 0, 10, -5],
+                data:[1,2,3,4]
+            },
+        axisLine: {
+          show: false
+        }
+      },
+      {
+        show: true,
+        inverse: true,
+        data:stlabeldata,
+        axisLabel: {
+            textStyle: {
+                fontSize: 14,
+                // color: '#fff',
+            },
+        },
+        axisLine: {
+            show: false
+        },
+        splitLine: {
+            show: false
+        },
+        axisTick: {
+            show: false
+        },
+
+    }],
+      xAxis: [{
+        type: 'value',
+        axisLabel: {
+          show: false
+        },
+        axisLine: {
+          show: false
+        },
+        splitLine: {
+          show: false
+        }
+      }],
+      series: [{
+        type: 'bar',
+        barWidth: 10,
+      
+        data: gdvaluedata,
+        label: {
+          normal: {
+            show: true,
+            position: 'insideBottomRight',
+            formatter:function(params){ 
+    str =  params.data.label
+    return str
+},
+            distance: -10,
+            offset: [30, -20],
+            color: '#fff',
+            fontSize: 12,
+            padding: [5, 15, 10, 15],
+            backgroundColor: {
+              image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAA+CAYAAAD5wvNAAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA0xpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjQ3NTQ1RkVGOUM1MTFFOEJCQTdENzhFNjM5MzM3NkYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjQ3NTQ1RkRGOUM1MTFFOEJCQTdENzhFNjM5MzM3NkYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmE5M2UxZjIxLTQyMmYtMTE3Yy05MTVlLWVhNzA0NDUwYzIzOSIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmE5M2UxZjIxLTQyMmYtMTE3Yy05MTVlLWVhNzA0NDUwYzIzOSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvulhDwAAAQ3SURBVHja7J1JaBRBGIX/iZEQN1CjwVxUcL+4hUnUU8SDHjQiiqJR0EOCYMAtIG4HRQXBBUQkXgQxxoOieJZ4UzO4oAe3CKJoQI2IGhUTZHz/dI12mul090xcJvU+ePSkpqsTXr1Ud81Ud8UW1SZFYuJgtsn0z+Iqd+2TFPHWGY1tFVSJ96ZgOx5lo7AdDBX9OmbMczx3mas8076BZQUhfoe3ns+xve/7/X6JcpyIZRK17u+2+I7tF5S/w+vneP0YuoXX16G33mMk5kkkCiV7RkLroNXQbE/Tk39HkdEIaDK00JTr//kd6Dx0FnqfzcELsqgzBjoCvYCOQuUMS14QM22lbfYSOgGV/cnAaG/UAD2FtkKD2QZ5yyBoE/QkfkMaoIF9HZiJerqDDkND6He/YYhp0wRCM62vAlMN3YZm0t9+ywyoNX5TluYamFroEjSMnlrR21xEaGqzDcxGqBEaQC+tQdu6MX4r1faRArPEXEUTOzkRb01lIFRgpkJN7Fms72maEJqpQYHR4VUzR0LEZKA5nug55PYGZjM0nV4Rg2Zhi19g9FO/vfSIeNiDXqYsU2B28lREfE5Nu7yBKYE20Bviw3r0MiXuwNRAxfSF+FBsMtIjMIT0xpp0YEZDs+gHCWC2XvxqYOYL57OQYDQjVRqYCnpBQlKugZlCH0hIJmtgJtAHEpKJGphS+kBCUqqBGUofSEiGFtADEgUGhjAwhIEhDAzJQ7o0MJ/pAwnJZw3MG/pAQvJBA/OMPpCQtGlgHtMHEpInGphW+kBCckcDo08mStILEoBmpCV90XuXfpAA7ibi0p7+HOYc/SAB6KPOxB2Yb/SE+KDZOOsOTAd0hr4QH87gdNThDoxyAOqkN8RDp8mGeAPTDu2jP8TDfr3YzRQY5Th0jx4Rg2bhmLvAG5huaCX0iV5Zj34pvQq9S3dvgVHaoLXQD3pmLdr2NYmK1DOZJSgwylWonr5ZSz3CcjXTG71NoDoF1bGnsa5nqUtUptpeogZGOQ0t5zWNNcPnFYk5qTaXbAOjXBFnUQOOnvov96EKhOVy0I5h5/TqhXClOI+u4lcI/Qdty91QPDFXHoapEGUSeBd0UJyFKnRs/oV+5y1foZPQJATlANQVtmI2dw28Fmf5m3Fmq4s2cT7N/096gS1ts7HiLH/zKupBclmRrcP0NCq9ob9KnGfN6NOjnSX8nCcwDmRb/VW6zQWss4SfyCNxZlXqRLmcJ/wX9tEfqX/IBaN84RC0I8dj6Opm22xKo803sulziZtyqK91t9tmms2B0XO6Ppv4WhZ1W0zdJANjFzo6qJZod07o/Odlpq4wMHYOMRdLuBv6dB9d1vejrWYxMA46olhktrnsw8BYhPYeC3x6j84IvRADYxEPMlyfZHOdw8BYhHsElB5JtdAWh0JakBH9jGW4OJ9UN9GO3/wUYAAaXtVsjsG1HQAAAABJRU5ErkJggg=='
+            }
+          }
+        },
+        itemStyle: {
+          normal: {
+            
+            barBorderRadius:4
+          }
+        }
+        
+      }, {
+        type: "bar",
+        barWidth: 10,
+        xAxisIndex: 0,
+        barGap: "-100%",
+        data:stvaluedata,
+
+        itemStyle: {
+          normal: {
+            color: "#D9D9D9",
+            barBorderRadius: 4
+          }
+        },
+        zlevel: -1
+      },
+      ]
+    };
+     myChart6.setOption(option6);
+     $(window).resize(function(){
+                
+                    myChart6.resize();
+                })
+ }
+
+           
+ selectChart3(0);
+
+       </script>
+
+         <script type="text/javascript">
+             select1=document.getElementById("dropdown1");
+            select1.onchange=function(){
+                selectChart1(select1.value);
+            }
+        </script>
+         <script type="text/javascript">
+            select2=document.getElementById("dropdown2");
+           select2.onchange=function(){
+               selectChart2(select2.value);
+           }
+       </script>
+        <script type="text/javascript">
+            select3=document.getElementById("dropdown3");
+           select3.onchange=function(){
+               selectChart3(select3.value);
+           }
+       </script>
+       
+
+
+        
+        
+    </body>
+</html> 

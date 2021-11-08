@@ -1,0 +1,1454 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="NKDACS 是一个南开大学统计与数据科学学院属下的科研组织，向学界及社会各界提供统计咨询服务。">
+      
+      
+        <link rel="canonical" href="https://www.nkdacs.com/tutorial/md-template/">
+      
+      
+        <meta name="author" content="NKDACS IT Team">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Markdown 模板 - NKDACS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.nkdacs.com" title="NKDACS" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                NKDACS
+              </span>
+              <span class="md-header-nav__topic">
+                Markdown 模板
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/NKDACS/NKDACS-Website/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="主页" class="md-tabs__link">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../competition/case/" title="案例比赛" class="md-tabs__link">
+          案例比赛
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../consulting/all/" title="统计咨询" class="md-tabs__link">
+          统计咨询
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../share/bootstrap/bootstrap/" title="知识分享" class="md-tabs__link">
+          知识分享
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="教程" class="md-tabs__link md-tabs__link--active">
+          教程
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../about/website-intro/" title="关于" class="md-tabs__link">
+          关于
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../others/cc/" title="其他" class="md-tabs__link">
+          其他
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.nkdacs.com" title="NKDACS" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    NKDACS
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/NKDACS/NKDACS-Website/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      案例比赛
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        案例比赛
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competition/case/" title="案例比赛" class="md-nav__link">
+      案例比赛
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      统计咨询
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        统计咨询
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../consulting/all/" title="咨询案例" class="md-nav__link">
+      咨询案例
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      知识分享
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        知识分享
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../share/bootstrap/bootstrap/" title="The Bootstrap" class="md-nav__link">
+      The Bootstrap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../share/chap1/chap1/" title="Chapter 1" class="md-nav__link">
+      Chapter 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../share/Random number/Random number/" title="Random number" class="md-nav__link">
+      Random number
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../share/lottery/lottery/" title="用数据揭开安大略省彩票零售商丑闻" class="md-nav__link">
+      用数据揭开安大略省彩票零售商丑闻
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      教程
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        教程
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Markdown 模板
+      </label>
+    
+    <a href="./" title="Markdown 模板" class="md-nav__link md-nav__link--active">
+      Markdown 模板
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1 标题" class="md-nav__link">
+    1 标题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" title="一级标题（1 绪论）" class="md-nav__link">
+    一级标题（1 绪论）
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" title="二级标题（1.1 背景介绍）" class="md-nav__link">
+    二级标题（1.1 背景介绍）
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" title="三级标题（1.1.1 国内现状介绍）" class="md-nav__link">
+    三级标题（1.1.1 国内现状介绍）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2 段落" class="md-nav__link">
+    2 段落
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" title="2.1 背景介绍" class="md-nav__link">
+    2.1 背景介绍
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3 区块引用" class="md-nav__link">
+    3 区块引用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4 序列" class="md-nav__link">
+    4 序列
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" title="5 代码区块" class="md-nav__link">
+    5 代码区块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" title="6 数学公式" class="md-nav__link">
+    6 数学公式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" title="7 网页链接与图片插入" class="md-nav__link">
+    7 网页链接与图片插入
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" title="8 强调" class="md-nav__link">
+    8 强调
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" title="9 表格" class="md-nav__link">
+    9 表格
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" title="10 大纲" class="md-nav__link">
+    10 大纲
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-note" title="11 Note" class="md-nav__link">
+    11 Note
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" title="12 折叠显示" class="md-nav__link">
+    12 折叠显示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" title="13 注脚" class="md-nav__link">
+    13 注脚
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../md-tutorial/" title="Markdown 说明" class="md-nav__link">
+      Markdown 说明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pytorch-install/" title="Pytorch安装教程" class="md-nav__link">
+      Pytorch安装教程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      关于
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        关于
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/website-intro/" title="网站简介" class="md-nav__link">
+      网站简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/intro/" title="团队介绍" class="md-nav__link">
+      团队介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../about/structure/" title="组织架构" class="md-nav__link">
+      组织架构
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      其他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        其他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../others/cc/" title="知识共享协议" class="md-nav__link">
+      知识共享协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../others/color/" title="更换站点颜色" class="md-nav__link">
+      更换站点颜色
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1 标题" class="md-nav__link">
+    1 标题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" title="一级标题（1 绪论）" class="md-nav__link">
+    一级标题（1 绪论）
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" title="二级标题（1.1 背景介绍）" class="md-nav__link">
+    二级标题（1.1 背景介绍）
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" title="三级标题（1.1.1 国内现状介绍）" class="md-nav__link">
+    三级标题（1.1.1 国内现状介绍）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2 段落" class="md-nav__link">
+    2 段落
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" title="2.1 背景介绍" class="md-nav__link">
+    2.1 背景介绍
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3 区块引用" class="md-nav__link">
+    3 区块引用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4 序列" class="md-nav__link">
+    4 序列
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" title="5 代码区块" class="md-nav__link">
+    5 代码区块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" title="6 数学公式" class="md-nav__link">
+    6 数学公式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" title="7 网页链接与图片插入" class="md-nav__link">
+    7 网页链接与图片插入
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" title="8 强调" class="md-nav__link">
+    8 强调
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" title="9 表格" class="md-nav__link">
+    9 表格
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" title="10 大纲" class="md-nav__link">
+    10 大纲
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-note" title="11 Note" class="md-nav__link">
+    11 Note
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" title="12 折叠显示" class="md-nav__link">
+    12 折叠显示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" title="13 注脚" class="md-nav__link">
+    13 注脚
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/NKDACS/NKDACS-Website/edit/master/docs/tutorial/md-template.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Markdown 模板</h1>
+                
+                <p>本模板用于向IT部提交markdown的格式规范，各小组提交markdown文档可在Rmarkdown中试运行。标题，段落严格按照模板格式标注，其中各类模块按小组报告需求添加，目的在于使得小组报告更为简洁明了，美观大方。</p>
+<h2 id="1">1 标题<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p><mark class="critic">标题的markdown代码如下，在标题符号#后面请记得加一个空格，而加粗符号中间不要空格</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## 一级标题（1 绪论）
+
+### 二级标题（1.1 背景介绍）
+
+#### 三级标题（1.1.1 国内现状介绍）
+
+再细分的内容采用 **(1)细分内容代替**
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">代码在界面中展示结果如下</mark></p>
+<h2 id="1_1">一级标题（1 绪论）<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h2>
+<h3 id="11">二级标题（1.1 背景介绍）<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<h4 id="111">三级标题（1.1.1 国内现状介绍）<a class="headerlink" href="#111" title="Permanent link">&para;</a></h4>
+<p>再细分的内容采用 <strong>(1)细分内容代替</strong></p>
+<h2 id="2">2 段落<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>(1)段落首行不需要缩进</p>
+<p>(2)每个标题代码后面,段落后面统一空一行表示另起一段，以防回车识别不出</p>
+<p><mark class="critic">例如，markdown代码如下</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>### 2.1 背景介绍
+
+Markdown 是一个 Web 上使用的文本到 HTML 的转换工具，可以通过简单、易读易写的文本格式生成结构化的 HTML 文档。
+
+目前 github、Stackoverflow、 知乎等网站均支持这种格式。而在我们的常用工具中，如 Jupyter Notebook、R Studio 也均支持了 Markdown。如今 Markdown 的使用范围也远不止 Web 上 HTML 生成，它凭借着优秀的排版效果、使用体验和跨平台支持，在学术界也开始备受青睐。
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">在页面中展示的结果如下</mark></p>
+<h3 id="21">2.1 背景介绍<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>Markdown 是一个 Web 上使用的文本到 HTML 的转换工具，可以通过简单、易读易写的文本格式生成结构化的 HTML 文档。</p>
+<p>目前 github、Stackoverflow、 知乎等网站均支持这种格式。而在我们的常用工具中，如 Jupyter Notebook、R Studio 也均支持了 Markdown。如今 Markdown 的使用范围也远不止 Web 上 HTML 生成，它凭借着优秀的排版效果、使用体验和跨平台支持，在学术界也开始备受青睐。</p>
+<h2 id="3">3 区块引用<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p><mark class="critic">对名词或概念解释时可以用区块让版面更清晰，区块代码如下。</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>**markdown**
+
+&gt; Markdown 是一个 Web 上使用的文本到 HTML 的转换工具，可以通过简单、易读易写的文本格式生成结构化的 HTML 文档。
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">在页面中展示的结果如下</mark></p>
+<p><strong>markdown</strong></p>
+<blockquote>
+<p>Markdown 是一个 Web 上使用的文本到 HTML 的转换工具，可以通过简单、易读易写的文本格式生成结构化的 HTML 文档。</p>
+</blockquote>
+<h2 id="4">4 序列<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>(1)无序序列</p>
+<p><mark class="critic">代码如下，其中的*可以用+或-代替</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>* 早饭
+* 午饭
+* 晚饭
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">在页面显示结果如下</mark></p>
+<ul>
+<li>早饭</li>
+<li>午饭</li>
+<li>晚饭</li>
+</ul>
+<p>(2)段落列表</p>
+<p><mark class="critic">代码如下，第一项中有一段，第二项中两段，这里段落前面打制表符Tab</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>1.  Markdown的概念： 是一个 Web 上使用的文本到 HTML 的转换工具，可以通过简单、易读易写的文本格式生成结构化的 HTML 文档。
+
+2.  现如今的Markdown:如今 Markdown 的使用范围也远不止 Web 上 HTML 生成，它凭借着优秀的排版效果、使用体验和跨平台支持，在学术界也开始备
+
+    目前 github、Stackoverflow、 知乎等网站均支持这种格式。而在我们的常用工具中，如 Jupyter Notebook、R Studio 也均支持了 Markdown。
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">展示结果如下</mark></p>
+<ol>
+<li>
+<p>Markdown的概念： 是一个 Web 上使用的文本到 HTML 的转换工具，可以通过简单、易读易写的文本格式生成结构化的 HTML 文档。</p>
+</li>
+<li>
+<p>现如今的Markdown:如今 Markdown 的使用范围也远不止 Web 上 HTML 生成，它凭借着优秀的排版效果、使用体验和跨平台支持，在学术界也开始备</p>
+<p>目前 github、Stackoverflow、 知乎等网站均支持这种格式。而在我们的常用工具中，如 Jupyter Notebook、R Studio 也均支持了 Markdown。</p>
+</li>
+</ol>
+<h2 id="5">5 代码区块<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p><mark class="critic">示例如下,使用三个`,后面根据语言不同可写成python,r,markdown等，如果反映输出结果可不写。</mark></p>
+<p><center><img alt="1" src="../files/1.png" /></center></p>
+<p><mark class="critic">页面展示结果为</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">np_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">torch_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np_data</span><span class="p">)</span>
+<span class="n">tensor2array</span> <span class="o">=</span> <span class="n">torch_data</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+</pre></div>
+</td></tr></table>
+<h2 id="6">6 数学公式<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<p>Markdown公式插入请参考这个网页：<a href="https://www.cnblogs.com/q735613050/p/7253073.html">Markdown公式编辑学习笔记</a></p>
+<p>需要特别注意的是行内公式两个$ 中不能有空格，而行间公式的$$符号公式的左右至少要有一个空格。</p>
+<p><mark class="critic">行内公式</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>行内公式：$p(x|y) = \frac{p(y|x)p(x)}{p(y)}$
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">展示结果</mark></p>
+<p>行内公式：<span><span class="MathJax_Preview">p(x|y) = \frac{p(y|x)p(x)}{p(y)}</span><script type="math/tex">p(x|y) = \frac{p(y|x)p(x)}{p(y)}</script></span></p>
+<p><mark class="critic">行间公式</mark></p>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>行间公式：$$ \frac{n!}{k!(n-k)!} = \binom{n}{k}$$
+</pre></div>
+</td></tr></table>
+<mark class="critic">展示结果</mark></p>
+<p>行间公式：$$ \frac{n!}{k!(n-k)!} = \binom{n}{k}$$</p>
+<h2 id="7">7 网页链接与图片插入<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p>(1)单个网页链接</p>
+<p><mark class="critic">下面代码的格式能让网页两个字变成括号里的链接</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>我们 NKDACS 的[官网](https://www.nkdacs.com)
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">展示结果</mark></p>
+<p>我们 NKDACS 的<a href="https://www.nkdacs.com">官网</a></p>
+<p>(2)多个网页链接</p>
+<p><mark class="critic">下面代码的格式能让中括号里的字变成各自序号代表的链接，引号中的内容是鼠标长留时显示的标签，两个中括号中间的空格不能省略</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>I get 10 times more traffic from [Google] [1] than from
+[Yahoo] [2] or [MSN] [3].
+[1]: http://google.com/     &quot;Google&quot;
+[2]: http://search.yahoo.com/     &quot;Yahoo Search&quot;
+[3]: http://search.msn.com/     &quot;MSN Search&quot;
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">展示结果</mark></p>
+<p>I get 10 times more traffic from <a href="http://google.com/" title="Google">Google</a> than from
+<a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
+<p>(3)本地图片插入</p>
+<p>本地图片需要存在与markdown文件相同的文件夹中，如下代码中files文件夹与本markdown文件在一个文件夹，插入的图片为files文件夹中的名为'1'的png类型图。左右的center为使图片居中。中括号中为对图片的描述。</p>
+<p><mark class="critic">代码</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&lt;center&gt;![图 1: 代码图](files/1.png)&lt;/center&gt;
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">展示结果</mark></p>
+<p><center><img alt="图 1: 代码图" src="../files/1.png" /></center></p>
+<p>(4)网上图片插入</p>
+<p><mark class="critic">代码，与单个网页链接相似，在其前加感叹号</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&lt;center&gt;![南开](http://www.nankai.edu.cn/_upload/tpl/00/3f/63/template63/images/logo.png)&lt;/center&gt;
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">展示结果</mark></p>
+<p><img alt="南开" src="http://www.nankai.edu.cn/_upload/tpl/00/3f/63/template63/images/logo.png" /></p>
+<h2 id="8">8 强调<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<p><mark class="critic">代码</mark></p>
+<p><img alt="图 1: 代码图" src="../files/2.png" /></p>
+<p><mark class="critic">展示结果</mark></p>
+<p>对文字的强调有<strong>加粗</strong>，<mark class="critic">高亮</mark>，<del class="critic">删除的文字</del>，<ins class="critic">增加的文字</ins>，<span class="critic comment">点评</span>等</p>
+<h2 id="9">9 表格<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
+<p><mark class="critic">代码，根据冒号位置确定居中与否</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>First Header | Second Header | Third Header
+:----------- |:-------------:| -----------:
+居左         | 居中        | 居右
+居左         | 居中        | 居右
+居左         | 居中        | 居右
+居左         | 居中        | 居右
+居左         | 居中        | 居右
+居左         | 居中        | 居右
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">展示结果</mark></p>
+<table>
+<thead>
+<tr>
+<th align="left">属性名称1</th>
+<th align="center">属性名称2</th>
+<th align="right">属性名称3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">居左</td>
+<td align="center">居中</td>
+<td align="right">居右</td>
+</tr>
+<tr>
+<td align="left">居左</td>
+<td align="center">居中</td>
+<td align="right">居右</td>
+</tr>
+<tr>
+<td align="left">居左</td>
+<td align="center">居中</td>
+<td align="right">居右</td>
+</tr>
+<tr>
+<td align="left">居左</td>
+<td align="center">居中</td>
+<td align="right">居右</td>
+</tr>
+<tr>
+<td align="left">居左</td>
+<td align="center">居中</td>
+<td align="right">居右</td>
+</tr>
+<tr>
+<td align="left">居左</td>
+<td align="center">居中</td>
+<td align="right">居右</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10">10 大纲<a class="headerlink" href="#10" title="Permanent link">&para;</a></h2>
+<p><mark class="critic">网站支持下面样式的大纲，效果很棒</mark></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 学术分享</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 教程制作</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 讨论班</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 网站制作<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 基本设计</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 样式设计</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 服务器维护</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 正式发布</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> NKDACS正式展开活动</li>
+</ul>
+<p><mark class="critic">它的Markdown代码如下：</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>* [x] 学术分享
+* [x] 教程制作
+* [x] 讨论班
+* [ ] 网站制作
+    * [x] 基本设计
+    * [x] 样式设计
+    * [ ] 服务器维护
+    * [ ] 正式发布
+* [ ] NKDACS正式展开活动
+</pre></div>
+</td></tr></table>
+<h2 id="11-note">11 Note<a class="headerlink" href="#11-note" title="Permanent link">&para;</a></h2>
+<p>网站支持通过特殊Markdown代码来设计如下的Note样式</p>
+<p><mark class="critic">代码</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>!!! note &quot;这是一个小Note&quot;
+            可以在这个可爱的小Note中记录一些要点，这样的样式更能吸引读者的眼球，从而将你想要表达的重点凸显出来。
+            Note中依然可以正常使用各种形式的Markdown。无论是数学格式还是代码格式，都能正常地包含在Note中。
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">展示结果</mark></p>
+<div class="admonition note">
+<p class="admonition-title">这是一个小Note</p>
+<p>可以在这个可爱的小Note中记录一些要点，这样的样式更能吸引读者的眼球，从而将你想要表达的重点凸显出来。
+Note中依然可以正常使用各种形式的Markdown。无论是数学格式还是代码格式，都能正常地包含在Note中。  </p>
+</div>
+<h2 id="12">12 折叠显示<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<p><mark class="critic">代码</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>??? note &quot;NKDACS是由学生与老师共同参与的项目组织吗？&quot;
+
+    是的，NKDACS有强大的教授团体对项目组的学生进行学术指导。
+
+默认是收起来的，当然，改为默认展开也是可以的
+
+???+ note &quot;NKDACS是由学生与老师共同参与的项目组织吗？&quot;
+
+    是的，NKDACS有强大的教授团体对项目组的学生进行学术指导。
+</pre></div>
+</td></tr></table>
+<p>可以像下面这样对部分文字进行折叠操作，通过鼠标点击可以展开/收回文字块，从而能满足一些特殊场景下的需求</p>
+<p><mark class="critic">展示结果</mark></p>
+<details class="note"><summary>NKDACS是由学生与老师共同参与的项目组织吗？</summary><p>是的，NKDACS有强大的教授团体对项目组的学生进行学术指导。</p>
+</details>
+<p>默认是收起来的，当然，改为默认展开也是可以的</p>
+<details class="note" open="open"><summary>NKDACS是由学生与老师共同参与的项目组织吗？</summary><p>是的，NKDACS有强大的教授团体对项目组的学生进行学术指导。</p>
+</details>
+<h2 id="13">13 注脚<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<p>注脚系统可用于参考文献的引用排版。</p>
+<p><mark class="critic">代码，同样中括号中为显示文字，圆括号中可以是网址，也可类似图片插入是本地文件位置和名称，当参考文献为本地文献时，也需要保存到相同文件夹下</mark></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>本网站基于MkDocs[^1]系统，采用了Material for MkDocs[^2]主题样式，感谢开源社区的贡献！
+[^1]: [https://www.mkdocs.org/](https://www.mkdocs.org/)
+[^2]: [https://squidfunk.github.io/mkdocs-material/](https://squidfunk.github.io/mkdocs-material/)
+</pre></div>
+</td></tr></table>
+<p><mark class="critic">下面展示注脚效果</mark></p>
+<p>本网站基于MkDocs<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>系统，采用了Material for MkDocs<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>主题样式，感谢开源社区的贡献！</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://www.mkdocs.org/">https://www.mkdocs.org/</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://squidfunk.github.io/mkdocs-material/">https://squidfunk.github.io/mkdocs-material/</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../share/lottery/lottery/" title="用数据揭开安大略省彩票零售商丑闻" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                用数据揭开安大略省彩票零售商丑闻
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../md-tutorial/" title="Markdown 说明" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                Markdown 说明
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017 - 2018 NKDACS
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/NKDACS" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="http://stat.nankai.edu.cn/" class="md-footer-social__link fa fa-globe"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../_static/js/extra.js"></script>
+      
+        <script src="//cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_SVG"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
