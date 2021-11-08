@@ -1,6 +1,6 @@
 # NKDACS-Website
-
 欢迎来访NKDACS！
+[![Publish docs via GitHub Pages](https://github.com/NKDACS/NKDACS-Website/actions/workflows/deploy.yml/badge.svg)](https://github.com/NKDACS/NKDACS-Website/actions/workflows/deploy.yml)
 
 NKDACS-Website的全部内容均已开源，欢迎各位向本Repo贡献代码！
 
